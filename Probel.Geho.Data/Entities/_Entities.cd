@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Probel.Geho.Data.Entities.Absence">
+    <Position X="5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIIAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Absence.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Person" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Probel.Geho.Data.Entities.Activity">
+    <Position X="5.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAEAAEAABA=</HashCode>
+      <FileName>Entities\Activity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Probel.Geho.Data.Entities.Week">
+    <Position X="9.75" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Week.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Days" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Probel.Geho.Data.Entities.Person">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAIAAAQABAAAAAAAQAAAAIAAAAQ=</HashCode>
+      <FileName>Entities\Person.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Probel.Geho.Data.Entities.Group">
+    <Position X="1" Y="7.25" Width="1.5" />
+    <Members>
+      <Method Name="Group" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Entities\Group.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Probel.Geho.Data.Entities.Day">
+    <Position X="6.5" Y="7" Width="2" />
+    <Members>
+      <Method Name="Day" Hidden="true" />
+    </Members>
+    <AssociationLine Name="Group" Type="Probel.Geho.Data.Entities.Group" FixedToPoint="true">
+      <Path>
+        <Point X="6.5" Y="8.062" />
+        <Point X="2.5" Y="8.062" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAEAABA=</HashCode>
+      <FileName>Entities\Day.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Group" />
+    </ShowAsAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

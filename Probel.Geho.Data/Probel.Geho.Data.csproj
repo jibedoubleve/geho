@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=4.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.4.1.1\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -40,6 +44,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -48,11 +53,61 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessLogic\EntityAlreadyExistException.cs" />
+    <Compile Include="BusinessLogic\EntityNotFountException.cs" />
+    <Compile Include="BusinessLogic\Hr\ActivityAdapter.cs" />
+    <Compile Include="BusinessLogic\Hr\GroupAdapter.cs" />
+    <Compile Include="BusinessLogic\Hr\HrService.cs" />
+    <Compile Include="Dto\ValidationStatusDto.cs" />
+    <Compile Include="IHrService.cs" />
+    <Compile Include="BusinessLogic\BusinessRules\AbsenceValidator.cs" />
+    <Compile Include="BusinessLogic\BusinessRules\IValidator.cs" />
+    <Compile Include="BusinessLogic\BusinessRuleException.cs" />
+    <Compile Include="BusinessLogic\Schedule\AbsenceChecker.cs" />
+    <Compile Include="BusinessLogic\Schedule\DayFiller.cs" />
+    <Compile Include="BusinessLogic\Schedule\DayManager.cs" />
+    <Compile Include="BusinessLogic\Schedule\ScheduleService.cs" />
+    <Compile Include="IScheduleService.cs" />
+    <Compile Include="BusinessLogic\Schedule\WeekAdapter.cs" />
+    <Compile Include="Database\DataHelpers.cs" />
+    <Compile Include="Database\DataContext.cs" />
+    <Compile Include="DataBootstrap.cs" />
+    <Compile Include="DataCfg.cs" />
+    <Compile Include="Dto\AbsenceDto.cs" />
+    <Compile Include="Dto\ActivityDto.cs" />
+    <Compile Include="Dto\BaseDto.cs" />
+    <Compile Include="Dto\DayDto.cs" />
+    <Compile Include="Dto\GroupDto.cs" />
+    <Compile Include="Dto\PersonDto.cs" />
+    <Compile Include="Dto\WeekDto.cs" />
+    <Compile Include="Entities\Absence.cs" />
+    <Compile Include="Entities\Activity.cs" />
+    <Compile Include="Entities\Day.cs" />
+    <Compile Include="Entities\Person.cs" />
+    <Compile Include="Entities\Entity.cs" />
+    <Compile Include="Entities\Group.cs" />
+    <Compile Include="Entities\Week.cs" />
+    <Compile Include="Database\MappingExtension.cs" />
+    <Compile Include="Helpers\DateTimeExtension.cs" />
+    <Compile Include="Helpers\StringExtension.cs" />
+    <Compile Include="InMemoryQuery\QueryEducators.cs" />
+    <Compile Include="Properties\Messages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Messages.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Entities\_Entities.cd" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Messages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Messages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
