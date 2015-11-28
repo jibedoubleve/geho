@@ -8,7 +8,7 @@
 
     using Probel.Geho.Shell.Helpers;
 
-    [Command("list-free", "lsf", "List free educators", "lsf -date:[date]")]
+    [Command("list-free", "lsf", "List free educators", "lsf -date:[date] -isMorning:[true|false]")]
     public class ListFreeEducatorCommand : BaseCommand
     {
         #region Methods
@@ -18,7 +18,10 @@
             var dateStr = ArgProcessor.Get("date");
             var date = ArgProcessor.ParseDate(dateStr);
 
-            var educators = ScheduleManager.GetFreeEducators(date);
+            var isMorningStr = ArgProcessor.Get("isMorning");
+            var isMorning = ArgProcessor.ParseBool(isMorningStr);
+
+            var educators = HrManager.GetEducatorWithoutActivities(date.DayOfWeek, isMorning);
 
             foreach (var e in educators)
             {

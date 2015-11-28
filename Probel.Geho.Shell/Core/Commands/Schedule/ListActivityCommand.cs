@@ -28,7 +28,7 @@
                     {
                         Output.InWhite.WriteLine("'{0}' {1} {2}", a.Name
                             , a.DayOfWeek
-                            , a.IsMorning ? "MORNING" : "AFTERNOON");
+                            , a.MomentDay.ToString());
                     }
                 }
             }

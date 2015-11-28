@@ -1,9 +1,12 @@
 ﻿namespace Probel.Geho.Gui.ViewModels
 {
+    using System;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
     using System.Linq;
     using System.Windows.Input;
+
+    using Data.Entities;
 
     using Probel.Geho.Data.BusinessLogic;
     using Probel.Geho.Data.Dto;
@@ -161,6 +164,12 @@
             this.Activities.Refill(ActivityViewModel.ToActivityViewModel(a, Service, this));
 
             this.PeopleWithoutGroup = PersonModel.ToModel(this.Service.GetBeneficiariesWithoutGroup());
+
+            this.SelectedActivity = null;
+            this.SelectedGroup = null;
+            this.BeneficiariesInActivity.Clear();
+            this.EducatorsInActivity.Clear();
+            this.BeneficiariesInGroup.Clear();
         }
 
         private void AddActivity()
@@ -182,12 +191,15 @@
         private bool CanAddActivity()
         {
             return this.ActivityToAdd != null
-                && !string.IsNullOrWhiteSpace(this.ActivityToAdd.Name);
+                && !string.IsNullOrWhiteSpace(this.ActivityToAdd.Name)
+                && this.ActivityToAdd.DayOfWeek != DayOfWeek.Sunday
+                && this.ActivityToAdd.DayOfWeek != DayOfWeek.Saturday;
         }
 
         private bool CanAddGroup()
         {
-            return !string.IsNullOrWhiteSpace(this.GroupToAdd.Name);
+            return this.GroupToAdd != null
+               && !string.IsNullOrWhiteSpace(this.GroupToAdd.Name);
         }
 
         private bool CanUpdateActivity()
@@ -207,12 +219,12 @@
             || this.SelectedActivity.Beneficiaries == null
             || this.SelectedActivity.Educators == null) { return; }
 
-            var fe = this.Service.GetFreeEducators(this.SelectedActivity.DayOfWeek, this.SelectedActivity.IsMorning);
+            var fe = this.Service.GetEducatorWithoutActivities(this.SelectedActivity.DayOfWeek, (this.SelectedActivity.MomentDay & MomentDay.Morning) != 0);
             this.EducatorsInActivity.Refill(PersonModel.ToModel(SelectedActivity.Educators));
             this.EducatorsInActivity.SetSelected();
             this.EducatorsInActivity.AddRange(PersonModel.ToModel(fe));
 
-            var fb = this.Service.GetFreeBeneficiaries(this.SelectedActivity.DayOfWeek, this.SelectedActivity.IsMorning);
+            var fb = this.Service.GetBeneficiariesWithoutActivities(this.SelectedActivity.DayOfWeek, (this.SelectedActivity.MomentDay & MomentDay.Morning) != 0);
             this.BeneficiariesInActivity.Refill(PersonModel.ToModel(SelectedActivity.Beneficiaries));
             this.BeneficiariesInActivity.SetSelected();
             this.BeneficiariesInActivity.AddRange(PersonModel.ToModel(fb));
@@ -222,12 +234,12 @@
         {
             if (this.SelectedGroup == null
             || this.SelectedGroup.Group == null
-            || this.SelectedGroup.Group.Persons == null) { return; }
+            || this.SelectedGroup.Group.People == null) { return; }
 
             foreach (var b in BeneficiariesInGroup) { b.IsSelected = false; }
 
-            this.BeneficiariesInGroup.Refill(this.PeopleWithoutGroup.Concat(PersonModel.ToModel(SelectedGroup.Group.Persons)));
-            foreach (var p in SelectedGroup.Group.Persons)
+            this.BeneficiariesInGroup.Refill(this.PeopleWithoutGroup.Concat(PersonModel.ToModel(SelectedGroup.Group.People)));
+            foreach (var p in SelectedGroup.Group.People)
             {
                 var sp = (from b in this.BeneficiariesInGroup
                           where b.Id == p.Id
@@ -259,7 +271,7 @@
                 var persons = (from p in this.BeneficiariesInGroup
                                where p.IsSelected
                                select p.Person).ToList();
-                this.SelectedGroup.Group.Persons = persons;
+                this.SelectedGroup.Group.People = persons;
                 this.Service.UpdateGroup(this.SelectedGroup.Group);
                 this.Load();
             }

@@ -35,7 +35,7 @@
                 }
             }
 
-            grp.Persons = beneficiaries;
+            grp.People = beneficiaries;
             HrManager.UpdateGroup(grp);
 
             Output.InWhite.WriteLine(" Done");

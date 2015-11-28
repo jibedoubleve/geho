@@ -129,9 +129,11 @@
                                   Margin="5"
                                   SelectionChanged="Selected_cb_Noon_Selected">
                                 <ComboBoxItem Content="{x:Static t:Messages.Day_Morning}" 
-                                                  Tag="true"/>
+                                                  Tag="1"/>
                                 <ComboBoxItem Content="{x:Static t:Messages.Day_Afternoon}" 
-                                                  Tag="false"/>
+                                                  Tag="2"/>
+                                <ComboBoxItem Content="{x:Static t:Messages.Day_AllDay}"
+                                              Tag="3"/>
                             </ComboBox>
                         </Grid>
                     </DockPanel>
@@ -182,9 +184,11 @@
                                   Margin="5"
                                   SelectionChanged="Selected_cb_NoonUpdate">
                                 <ComboBoxItem Content="{x:Static t:Messages.Day_Morning}" 
-                                                  Tag="true"/>
+                                                  Tag="1"/>
                                 <ComboBoxItem Content="{x:Static t:Messages.Day_Afternoon}" 
-                                                  Tag="false"/>
+                                                  Tag="2"/>
+                                <ComboBoxItem Content="{x:Static t:Messages.Day_AllDay}"
+                                              Tag="3"/>
                             </ComboBox>
                         </Grid>
                     </DockPanel>
@@ -229,6 +233,5 @@
                 </DockPanel>
             </HeaderedContentControl>
         </DockPanel>
-
     </Grid>
 </Page>

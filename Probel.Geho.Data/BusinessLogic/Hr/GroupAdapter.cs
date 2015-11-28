@@ -26,12 +26,12 @@
 
         internal void ClearForeignKeys(DataContext db)
         {
-            while (Group.Persons.Count > 0) { Group.Persons.RemoveAt(0); }
+            while (Group.People.Count > 0) { Group.People.RemoveAt(0); }
 
             var days = (from d in db.Days
                         where d.Group.Id == this.Group.Id
                         select d);
-            foreach (var d in days) { d.Group = null; }
+            foreach (var d in days) { db.Days.Remove(d);  }
 
             db.SaveChanges();
         }

@@ -14,7 +14,7 @@
 
         public Group()
         {
-            this.Persons = new List<Person>();
+            this.People = new List<Person>();
         }
 
         #endregion Constructors
@@ -28,7 +28,7 @@
             set;
         }
 
-        public IList<Person> Persons
+        public IList<Person> People
         {
             get;
             set;

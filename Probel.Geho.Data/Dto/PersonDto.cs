@@ -1,7 +1,9 @@
 ﻿namespace Probel.Geho.Data.Dto
 {
     using System.Collections.Generic;
+    using System.Diagnostics;
 
+    [DebuggerDisplay("{Name} {Surname} Educator: {IsEducator}")]
     public class PersonDto : BaseDto
     {
         #region Properties
@@ -20,6 +22,11 @@
         {
             get;
             set;
+        }
+
+        public string GroupNames
+        {
+            get; set;
         }
 
         public bool IsEducator

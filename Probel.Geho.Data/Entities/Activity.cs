@@ -15,7 +15,7 @@
         }
 
         [Required]
-        public bool IsMorning
+        public MomentDay MomentDay
         {
             get; set;
         }

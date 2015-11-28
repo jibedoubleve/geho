@@ -11,7 +11,7 @@
     using Probel.Geho.Data.Database;
     using Probel.Geho.Data.Dto;
     using Probel.Geho.Data.Entities;
-
+    using Helpers;
     public class HrService : IHrService
     {
         #region Methods
@@ -59,7 +59,7 @@
         }
 
         public void CreateActivity(DayOfWeek day
-            , bool isMorning
+            , MomentDay momentDay
             , IEnumerable<PersonDto> people
             , string name)
         {
@@ -73,7 +73,7 @@
                 var activity = new Activity()
                 {
                     People = eList,
-                    IsMorning = isMorning,
+                    MomentDay = momentDay,
                     DayOfWeek = day,
                     Name = name,
                 };
@@ -84,7 +84,7 @@
 
         public void CreateActivity(ActivityDto activity)
         {
-            this.CreateActivity(activity.DayOfWeek, activity.IsMorning, activity.People, activity.Name);
+            this.CreateActivity(activity.DayOfWeek, activity.MomentDay, activity.People, activity.Name);
         }
 
         public void CreateGroup(string name)
@@ -173,6 +173,26 @@
             }
         }
 
+        /// <summary>
+        /// Get free beneficiaries for the specified day and part of day. It does not take into account
+        /// neither absences nor week schedule
+        /// </summary>
+        /// <param name="dayOfWeek">The day of week</param>
+        /// <param name="isMorning"><c>True</c> for the morning. Otherwise, it is set for the afternoon</param>
+        /// <returns>The free beneficiaries</returns>
+        public IEnumerable<PersonDto> GetBeneficiariesWithoutActivities(DayOfWeek dayOfWeek, bool isMorning)
+        {
+            var md = isMorning ? MomentDay.Morning : MomentDay.Afternoon;
+            using (var db = new DataContext())
+            {
+                var people = (from p in db.People.Include(e => e.Activities)
+                              where !p.IsEducator
+                              && p.Activities.Where(e => e.DayOfWeek == dayOfWeek && (e.MomentDay & md) != 0).Count() == 0
+                              select p).ToList();
+                return people.ToDto();
+            }
+        }
+
         public IEnumerable<PersonDto> GetBeneficiariesWithoutGroup()
         {
             using (var db = new DataContext())
@@ -223,25 +243,21 @@
             }
         }
 
-        public IEnumerable<PersonDto> GetFreeBeneficiaries(DayOfWeek dayOfWeek, bool isMorning)
+        /// <summary>
+        /// Get free educators for the specified day and part of day. It does not take into account
+        /// neither absences nor week schedule
+        /// </summary>
+        /// <param name="dayOfWeek">The day of week</param>
+        /// <param name="isMorning"><c>True</c> for the morning. Otherwise, it is set for the afternoon</param>
+        /// <returns>The free educators</returns>
+        public IEnumerable<PersonDto> GetEducatorWithoutActivities(DayOfWeek dayOfWeek, bool isMorning)
         {
-            using (var db = new DataContext())
-            {
-                var people = (from p in db.People.Include(e => e.Activities)
-                              where !p.IsEducator
-                              && p.Activities.Where(e => e.DayOfWeek == dayOfWeek && e.IsMorning == isMorning).Count() == 0
-                              select p).ToList();
-                return people.ToDto();
-            }
-        }
-
-        public IEnumerable<PersonDto> GetFreeEducators(DayOfWeek dayOfWeek, bool isMorning)
-        {
+            var md = isMorning ? MomentDay.Morning : MomentDay.Afternoon;
             using (var db = new DataContext())
             {
                 var people = (from p in db.People.Include(e => e.Activities)
                               where p.IsEducator
-                              && p.Activities.Where(e => e.DayOfWeek == dayOfWeek && e.IsMorning == isMorning).Count() == 0
+                                 && p.Activities.Where(e => e.DayOfWeek == dayOfWeek && (e.MomentDay & md) != 0).Count() == 0
                               select p).ToList();
                 return people.ToDto();
             }
@@ -258,7 +274,7 @@
 
                 if (result == null) { return null; }
 
-                db.Entry(result).Collection(e => e.Persons).Load();
+                db.Entry(result).Collection(e => e.People).Load();
 
                 if (result == null) { throw new EntityNotFountException(); }
                 else { return Mapper.Map<Group, GroupDto>(result); }
@@ -281,7 +297,7 @@
             using (var db = new DataContext())
             {
                 var entities = (from g in db.Groups
-                                            .Include(e => e.Persons)
+                                            .Include(e => e.People)
                                 select g).ToList();
                 return Mapper.Map<IEnumerable<Group>, IEnumerable<GroupDto>>(entities);
             }
@@ -387,7 +403,7 @@
             using (var db = new DataContext())
             {
                 var entity = (from g in db.Groups
-                                          .Include(e => e.Persons)
+                                          .Include(e => e.People)
                               where g.Id == id
                               select g).SingleOrDefault();
 
@@ -413,9 +429,9 @@
                 if (person == null) { return; }
 
                 var groups = (from g in db.Groups
-                              where g.Persons.Select(e => e.Id).Contains(id)
+                              where g.People.Select(e => e.Id).Contains(id)
                               select g);
-                foreach (var group in groups) { group.Persons.Remove(person); }
+                foreach (var group in groups) { group.People.Remove(person); }
 
                 var absences = (from a in db.Absences
                                 where a.Person.Id == id
@@ -456,19 +472,19 @@
         {
             using (var db = new DataContext())
             {
-                var eGroup = (from g in db.Groups.Include(e => e.Persons)
+                var eGroup = (from g in db.Groups.Include(e => e.People)
                               where g.Id == @group.Id
                               select g).FirstOrDefault();
 
                 if (eGroup == null) { throw new EntityNotFountException(); }
 
-                while (eGroup.Persons.Count() > 0) { eGroup.Persons.RemoveAt(0); }
+                while (eGroup.People.Count() > 0) { eGroup.People.RemoveAt(0); }
 
                 var benefs = new List<Person>();
-                foreach (var benef in group.Persons)
+                foreach (var benef in group.People)
                 {
                     var b = db.People.Find(benef.Id);
-                    eGroup.Persons.Add(b);
+                    eGroup.People.Add(b);
                 }
                 eGroup.Name = group.Name;
                 db.SaveChanges();
@@ -479,6 +495,17 @@
         {
             surname = (surname == null) ? string.Empty : surname.ToLower();
             name = name.ToLower() ?? string.Empty;
+        }
+
+        public void UpdatePerson(PersonDto person)
+        {
+            using (var db = new DataContext())
+            {
+                var e = db.People.Find(person.Id);
+                e.Name = person.Name;
+                e.Surname = person.Surname;
+                db.SaveChanges();
+            }
         }
 
         #endregion Methods

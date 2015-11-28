@@ -3,6 +3,8 @@
     using System;
     using System.Collections.Generic;
 
+    using Entities;
+
     using Probel.Geho.Data.Dto;
 
     public interface IHrService
@@ -16,7 +18,7 @@
         void CreateAbsence(AbsenceDto absenceDto);
 
         void CreateActivity(DayOfWeek day
-            , bool isMorning
+            , MomentDay momentDay
             , IEnumerable<PersonDto> people
             , string name);
 
@@ -36,17 +38,17 @@
 
         IEnumerable<PersonDto> GetBeneficiaries();
 
+        IEnumerable<PersonDto> GetBeneficiariesWithoutActivities(DayOfWeek dayOfWeek, bool isMorning);
+
         IEnumerable<PersonDto> GetBeneficiariesWithoutGroup();
 
         PersonDto GetBeneficiary(int id);
-
+        void UpdatePerson(PersonDto person);
         IEnumerable<PersonDto> GetEducators(string name, string surname = null);
 
         IEnumerable<PersonDto> GetEducators();
 
-        IEnumerable<PersonDto> GetFreeBeneficiaries(DayOfWeek dayOfWeek, bool isMorning);
-
-        IEnumerable<PersonDto> GetFreeEducators(DayOfWeek dayOfWeek, bool isMorning);
+        IEnumerable<PersonDto> GetEducatorWithoutActivities(DayOfWeek dayOfWeek, bool isMorning);
 
         GroupDto GetGroup(string name);
 

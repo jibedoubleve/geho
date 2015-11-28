@@ -6,6 +6,8 @@
     using System.Text;
     using System.Threading.Tasks;
 
+    using Data.Entities;
+
     using Probel.Geho.Data.Dto;
 
     [Command("make-activity", "mkac", "Make a new activity", "")]
@@ -32,7 +34,7 @@
                 people.Add(HrManager.GetPerson(i));
             }
 
-            HrManager.CreateActivity(day, isMorning, people, name);
+            HrManager.CreateActivity(day, isMorning ? MomentDay.Morning : MomentDay.Afternoon, people, name);
         }
 
         #endregion Methods

@@ -14,7 +14,7 @@
         {
             var jean = "JEAN";
             var result = jean.CapitaliseFirst();
-            Assert.That(jean, Is.EqualTo("Jean"));
+            Assert.That(result, Is.EqualTo("Jean"));
         }
 
         [Test]
@@ -22,7 +22,7 @@
         {
             var jean = "jean";
             var result = jean.CapitaliseFirst();
-            Assert.That(jean, Is.EqualTo("Jean"));
+            Assert.That(result, Is.EqualTo("Jean"));
         }
 
         [Test]
@@ -30,7 +30,7 @@
         {
             var jean = "Jean";
             var result = jean.CapitaliseFirst();
-            Assert.That(jean, Is.EqualTo("Jean"));
+            Assert.That(result, Is.EqualTo("Jean"));
         }
 
         #endregion Methods

@@ -13,7 +13,7 @@
         public static string CapitaliseFirst(this string s)
         {
             if (string.IsNullOrEmpty(s)) { return string.Empty; }
-            else { return char.ToUpper(s[0]) + s.Substring(1); }
+            else { return char.ToUpper(s[0]) + s.Substring(1).ToLower(); }
         }
 
         #endregion Methods

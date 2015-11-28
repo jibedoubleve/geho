@@ -10,7 +10,7 @@
     using Probel.Geho.Data.Dto;
     using Probel.Geho.Data.Entities;
 
-    class DayManager
+    internal class DayManager
     {
         #region Fields
 
@@ -47,7 +47,7 @@
             foreach (var e in educators)
             {
                 var eeduc = db.People.Find(e.Id);
-                newDay.Persons.Add(eeduc);
+                newDay.People.Add(eeduc);
             }
 
             week.Days.Add(newDay);
@@ -63,7 +63,7 @@
 
         public void UpdateEducatorForDay(IEnumerable<PersonDto> educators, bool isMorning)
         {
-            var list = day.Persons;
+            var list = day.People;
 
             while (list.Count > 0) { list.RemoveAt(0); }
             db.SaveChanges();

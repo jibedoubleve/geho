@@ -30,7 +30,7 @@
                        Margin="15,0,0,0">
                 <Run Text="{Binding Group.Name}"/>
             </TextBlock>
-            <ItemsControl ItemsSource="{Binding Group.Persons}">
+            <ItemsControl ItemsSource="{Binding Group.People}">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
                         <ctrl:PersonCardView />

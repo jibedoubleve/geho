@@ -17,7 +17,7 @@
             set;
         }
 
-        public IList<PersonDto> Persons
+        public IList<PersonDto> People
         {
             get;
             set;

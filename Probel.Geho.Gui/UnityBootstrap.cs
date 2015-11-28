@@ -1,11 +1,5 @@
 ﻿namespace Probel.Geho.Gui
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-
     using Microsoft.Practices.Unity;
 
     using Probel.Geho.Data.BusinessLogic;
@@ -14,13 +8,27 @@
 
     class UnityBootstrap
     {
+        #region Fields
+
+        internal static IUnityContainer Container;
+
+        #endregion Fields
+
+        #region Constructors
+
+        static UnityBootstrap()
+        {
+            Container = new UnityContainer();
+        }
+
+        #endregion Constructors
+
         #region Methods
 
         internal static void Initialise()
         {
-            var container = new UnityContainer();
-            container.RegisterType<IHrService, HrService>();
-            container.RegisterType<IScheduleService, ScheduleService>();
+            Container.RegisterType<IHrService, HrService>();
+            Container.RegisterType<IScheduleService, ScheduleService>();
         }
 
         #endregion Methods

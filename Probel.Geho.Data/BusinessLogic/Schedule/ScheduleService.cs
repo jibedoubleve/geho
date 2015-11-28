@@ -19,6 +19,8 @@
 
         public void CreateWeek(DateTime dateInWeek)
         {
+            if (WeekExists(dateInWeek)) { throw new EntityAlreadyExistException("This week is already in the database."); }
+
             var date = dateInWeek.GetMonday();
             using (var db = new DataContext())
             {
@@ -35,7 +37,7 @@
             {
                 var week = (from w in db.Weeks
                                         .Include(e => e.Days)
-                                        .Include(e => e.Days.Select(f => f.Persons))
+                                        .Include(e => e.Days.Select(f => f.People))
                                         .Include(e => e.Days.Select(f => f.Group))
                             where w.Monday == monday
                             select w).SingleOrDefault();
@@ -67,7 +69,7 @@
             {
                 var week = (from w in db.Weeks
                         .Include(e => e.Days)
-                        .Include(e => e.Days.Select(f => f.Persons))
+                        .Include(e => e.Days.Select(f => f.People))
                         .Include(e => e.Days.Select(f => f.Group))
                             where w.Monday == monday
                             select w).Single();
@@ -85,18 +87,72 @@
             }
         }
 
-        public IEnumerable<PersonDto> GetFreeEducators(DateTime date)
+        public IEnumerable<PersonDto> GetEducatorsBusyInDay(DateTime currentDay, bool isMorning)
         {
             using (var db = new DataContext())
             {
-                date = date.Date;
-                var educators = (from e in db.People
-                                 where e.IsEducator
-                                 && e.Activities.Where(f => f.DayOfWeek == date.DayOfWeek).Count() == 0
-                                 && e.Days.Where(f => f.Date == date).Count() == 0
-                                 && e.Absences.Where(f => f.Start <= date && date <= f.End).Count() == 0
-                                 select e);
-                return educators.ToDto();
+                var freeEducators = (from educ in db.People
+                                                    .Include(e => e.Days.Select(g => g.Group))
+                                     where educ.Days.Where(e => e.Date == currentDay.Date && e.IsMorning == isMorning).Count() > 0
+                                        && educ.IsEducator
+                                     select educ);
+                var result = freeEducators.ToDto();
+
+                foreach (var r in result)
+                {
+                    if (r.Days.Count() > 0)
+                    {
+                        var gn = (from d in r.Days
+                                  where d.Date.Date == currentDay && d.IsMorning == isMorning
+                                  select d.Group.Name);
+                        if (gn.Count() > 0) { r.GroupNames = gn.Aggregate((e, f) => e + " - " + f); }
+                    }
+                    else { r.GroupNames = string.Empty; }
+                }
+
+                return result;
+            }
+        }
+
+        public IEnumerable<PersonDto> GetFreeBeneficiaries(GroupDto group, DateTime currentDay, bool isMorning)
+        {
+            var md = isMorning ? MomentDay.Morning : MomentDay.Afternoon;
+            using (var db = new DataContext())
+            {
+                var b = (from g in db.Groups
+                                     .Include(e => e.People)
+                         where g.Id == @group.Id
+                         select g.People.Where(e => !e.IsEducator
+                                                  && e.Absences.Where(f => f.Start <= currentDay 
+                                                                        && currentDay <= f.End).Count() == 0
+                                                  && e.Activities.Where(f => f.DayOfWeek == currentDay.DayOfWeek 
+                                                                        && (f.MomentDay & md) != 0).Count() == 0))
+                                        .SingleOrDefault();
+
+                return (b != null)
+                    ? b.ToDto()
+                    : new List<PersonDto>();
+            }
+        }
+
+        public IEnumerable<PersonDto> GetFreeEducators(DateTime currentDay, bool isMorning)
+        {
+            var md = isMorning ? MomentDay.Morning : MomentDay.Afternoon;
+            currentDay = currentDay.Date;
+            using (var db = new DataContext())
+            {
+                var people = (from p in db.People
+                                          .Include(e => e.Activities)
+                                          .Include(e => e.Absences)
+                                          .Include(e => e.Days.Select(g => g.Group))
+                              where p.IsEducator
+                                 && p.Absences.Where(e => e.Start <= currentDay && currentDay <= e.End).Count() == 0
+                                 && p.Activities.Where(e => e.DayOfWeek == currentDay.DayOfWeek && (e.MomentDay & md) != 0).Count() == 0
+                              select p);
+
+                var result = people.ToDto();
+
+                return result;
             }
         }
 
@@ -105,10 +161,22 @@
             using (var db = new DataContext())
             {
                 var entity = (from g in db.Groups
-                                          .Include(e => e.Persons)
+                                          .Include(e => e.People)
                               where g.Id == id
                               select g).Single();
                 return Mapper.Map<Group, GroupDto>(entity);
+            }
+        }
+
+        public IEnumerable<GroupDto> GetGroups()
+        {
+            using (var db = new DataContext())
+            {
+                return (from g in db.Groups
+                                    .Include(e => e.People)
+                                    .Include(e => e.People.Select(f => f.Absences))
+                                    .Include(e => e.People.Select(f => f.Activities))
+                        select g).ToDto();
             }
         }
 
@@ -125,8 +193,9 @@
         {
             using (var db = new DataContext())
             {
-                var entity = (from w in db.Weeks.Include(e => e.Days)
-                                          .Include(e => e.Days.Select(f => f.Persons))
+                var entity = (from w in db.Weeks
+                                          .Include(e => e.Days)
+                                          .Include(e => e.Days.Select(f => f.People))
                                           .Include(e => e.Days.Select(f => f.Group))
                               where w.Id == id
                               select w).Single();
@@ -140,7 +209,7 @@
             {
                 var entities = (from w in db.Weeks
                                             .Include(e => e.Days)
-                                            .Include(e => e.Days.Select(f => f.Persons))
+                                            .Include(e => e.Days.Select(f => f.People))
                                             .Include(e => e.Days.Select(f => f.Group))
                                 select w).OrderBy(e => e.Monday)
                                          .ToList();
@@ -164,7 +233,7 @@
             var monday = dateInWeek.GetMonday().Date;
 
             return (from w in db.Weeks.Include(e => e.Days)
-                                      .Include(e => e.Days.Select(f => f.Persons))
+                                      .Include(e => e.Days.Select(f => f.People))
                                       .Include(e => e.Days.Select(f => f.Group))
                     where w.Monday == monday
                     select w).FirstOrDefault();

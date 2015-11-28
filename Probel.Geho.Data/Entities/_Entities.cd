@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Probel.Geho.Data.Entities.Absence">
-    <Position X="5" Y="1.75" Width="1.5" />
+    <Position X="7.75" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AIIAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Entities\Absence.cs</FileName>
@@ -11,14 +11,22 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="Probel.Geho.Data.Entities.Activity">
-    <Position X="5.25" Y="3.75" Width="1.5" />
+    <Position X="7.75" Y="1.75" Width="1.5" />
+    <AssociationLine Name="People" Type="Probel.Geho.Data.Entities.Person">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-1.276" Y="-0.002" />
+      </MemberNameLabel>
+    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAEAAEAABA=</HashCode>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAQAAAAAAAAAAAAEAAAAABA=</HashCode>
       <FileName>Entities\Activity.cs</FileName>
     </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="People" />
+    </ShowAsCollectionAssociation>
   </Class>
   <Class Name="Probel.Geho.Data.Entities.Week">
-    <Position X="9.75" Y="7" Width="1.5" />
+    <Position X="4.25" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
       <FileName>Entities\Week.cs</FileName>
@@ -28,40 +36,59 @@
     </ShowAsCollectionAssociation>
   </Class>
   <Class Name="Probel.Geho.Data.Entities.Person">
-    <Position X="2.25" Y="1.5" Width="1.5" />
+    <Position X="4.75" Y="3.25" Width="1.5" />
+    <Members>
+      <Method Name="Person" Hidden="true" />
+    </Members>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAIAAAQABAAAAAAAQAAAAIAAAAQ=</HashCode>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAQABAAAQAAAQAAAAIAAAAQ=</HashCode>
       <FileName>Entities\Person.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Group" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="Probel.Geho.Data.Entities.Group">
-    <Position X="1" Y="7.25" Width="1.5" />
+    <Position X="1.25" Y="3.5" Width="1.5" />
     <Members>
       <Method Name="Group" Hidden="true" />
     </Members>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Entities\Group.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Probel.Geho.Data.Entities.Day">
-    <Position X="6.5" Y="7" Width="2" />
+    <Position X="1" Y="1.25" Width="2" />
     <Members>
       <Method Name="Day" Hidden="true" />
     </Members>
     <AssociationLine Name="Group" Type="Probel.Geho.Data.Entities.Group" FixedToPoint="true">
       <Path>
-        <Point X="6.5" Y="8.062" />
-        <Point X="2.5" Y="8.062" />
+        <Point X="1.938" Y="2.675" />
+        <Point X="1.938" Y="3.5" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.795" Y="0.193" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="People" Type="Probel.Geho.Data.Entities.Person" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="3" Y="2.5" />
+        <Point X="5.25" Y="2.5" />
+        <Point X="5.25" Y="3.25" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAEAABA=</HashCode>
+      <HashCode>AAAAAEAAAIAAAAAAAAAAAAAAAAAAAAABAAAAAAAAABA=</HashCode>
       <FileName>Entities\Day.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="Group" />
     </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="People" />
+    </ShowAsCollectionAssociation>
   </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

@@ -46,6 +46,7 @@
     <Compile Include="Helpers\Test_AbsenceChecker.cs" />
     <Compile Include="Helpers\Test_CapitaliseFirst.cs" />
     <Compile Include="Helpers\Test_GetMonday.cs" />
+    <Compile Include="Helpers\Test_MomentDay.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -5,7 +5,9 @@
 
     using Microsoft.Practices.Unity;
 
+    using Probel.Geho.Data.BusinessLogic;
     using Probel.Geho.Data.BusinessLogic.Hr;
+    using Probel.Geho.Data.BusinessLogic.Schedule;
     using Probel.Geho.Gui.Tools;
     using Probel.Geho.Gui.ViewModels;
     using Probel.Geho.Gui.Views;
@@ -18,14 +20,15 @@
     {
         #region Fields
 
-        private readonly IUnityContainer Ioc = new UnityContainer();
+        private readonly IUnityContainer Ioc;
 
         #endregion Fields
 
         #region Constructors
 
-        public MainWindow()
+        public MainWindow(IUnityContainer ioc)
         {
+            Ioc = ioc;
             InitializeComponent();
         }
 
@@ -37,8 +40,7 @@
         {
             try
             {
-                var model = Ioc.Resolve<HrService>();
-                var vm = new GroupHrViewModel(model);
+                var vm = Ioc.Resolve<GroupHrViewModel>();
 
                 using (WaitingCursor.While) { vm.Load(); }
                 var view = new GroupHrView(vm);
@@ -54,8 +56,7 @@
         {
             try
             {
-                var model = Ioc.Resolve<HrService>();
-                var vm = new HrViewModel(model);
+                var vm = Ioc.Resolve<HrViewModel>();
 
                 using (WaitingCursor.While) { vm.Load(); }
                 var view = new HrView(vm);
@@ -69,6 +70,17 @@
 
         private void Click_ScheduleManagement(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                var vm = Ioc.Resolve<ScheduleViewModel>();
+
+                var view = new ScheduleView(vm);
+                this.mainFrame.Navigate(view);
+            }
+            catch (Exception ex)
+            {
+                ViewService.MessageBox.Error(ex.ToString());
+            }
         }
 
         #endregion Methods

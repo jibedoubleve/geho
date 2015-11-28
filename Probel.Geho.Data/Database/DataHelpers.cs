@@ -21,6 +21,7 @@
                 db.People.RemoveRange(db.People);
                 db.Days.RemoveRange(db.Days);
                 db.Weeks.RemoveRange(db.Weeks);
+                db.Activities.RemoveRange(db.Activities);
 
                 db.SaveChanges();
             }

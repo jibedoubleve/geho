@@ -55,7 +55,7 @@
                     day.Date.DayOfWeek,
                     day.IsMorning ? "MORNING" : "AFTERNOON");
                 Output.DarkYellow(offset).WriteLine("{0}", day.Group.Name);
-                foreach (var e in day.Persons) { Output.White(offset).WriteLine("{0} {1}", e.Name, e.Surname); }
+                foreach (var e in day.People) { Output.White(offset).WriteLine("{0} {1}", e.Name, e.Surname); }
             }
         }
 

@@ -15,9 +15,15 @@
 
         void FeedDay(DateTime date, GroupDto group, bool isMorning);
 
-        IEnumerable<PersonDto> GetFreeEducators(DateTime date);
+        IEnumerable<PersonDto> GetEducatorsBusyInDay(DateTime currentDay, bool isMorning);
+
+        IEnumerable<PersonDto> GetFreeBeneficiaries(GroupDto group, DateTime currentDay, bool isMorning);
+
+        IEnumerable<PersonDto> GetFreeEducators(DateTime currentDay, bool isMorning);
 
         GroupDto GetGroup(int id);
+
+        IEnumerable<GroupDto> GetGroups();
 
         WeekDto GetWeek(DateTime dateInWeek);
 

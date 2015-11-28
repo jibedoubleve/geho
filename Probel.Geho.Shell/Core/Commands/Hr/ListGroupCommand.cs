@@ -30,7 +30,7 @@
             Output.InYellow.WriteLine("[{1,3}] {0}", group.Name, group.Id);
             Output.InWhite.WriteLine("----------------------------");
             Output.InDarkYellow.WriteLine("Beneficiaries:");
-            foreach (var b in group.Persons)
+            foreach (var b in group.People)
             {
                 Output.InWhite.WriteLine("\t[{0}] {1} {2}", b.IsEducator ? "EDUCATOR" : "BENEFICIARY", b.Name, b.Surname);
             }

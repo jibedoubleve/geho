@@ -28,7 +28,7 @@
             get; set;
         }
 
-        public IEnumerable<Person> Persons
+        public IEnumerable<PersonDto> People
         {
             get; set;
         }

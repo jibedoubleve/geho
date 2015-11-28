@@ -1,11 +1,13 @@
 ﻿namespace Probel.Geho.Gui.Views
 {
     using System;
+    using System.Collections.Generic;
     using System.Windows;
     using System.Windows.Controls;
 
+    using Data.Entities;
+
     using Probel.Geho.Gui.ViewModels;
-    using System.Collections.Generic;
 
     /// <summary>
     /// Interaction logic for GroupView.xaml
@@ -24,6 +26,10 @@
                 if (e.PropertyName == "SelectedActivity") { this.RefreshActivityToUpdate(); }
             };
         }
+
+        #endregion Constructors
+
+        #region Methods
 
         private void RefreshActivityToUpdate()
         {
@@ -49,7 +55,7 @@
                     if (item is ComboBoxItem && vm.SelectedActivity != null)
                     {
                         var ci = (ComboBoxItem)item;
-                        if (ci.Tag.ToString().ToLower() == ((bool)vm.SelectedActivity.IsMorning).ToString().ToLower())
+                        if (ci.Tag.ToString().ToLower() == ((int)vm.SelectedActivity.MomentDay).ToString().ToLower())
                         {
                             cb_NoonUpdate.SelectedItem = ci;
                         }
@@ -57,10 +63,6 @@
                 }
             }
         }
-
-        #endregion Constructors
-
-        #region Methods
 
         private void Selected_cb_Day(object sender, RoutedEventArgs e)
         {
@@ -72,19 +74,6 @@
                 if (vm.ActivityToAdd != null) { vm.ActivityToAdd.DayOfWeek = (DayOfWeek)dow; }
             }
         }
-
-        private void Selected_cb_Noon_Selected(object sender, RoutedEventArgs e)
-        {
-            var cbi = cb_Noon.SelectedItem as ComboBoxItem;
-            if (this.DataContext is GroupHrViewModel && cb_Noon.SelectedItem is ComboBoxItem)
-            {
-                var isMorning = Boolean.Parse((string)cbi.Tag);
-                var vm = this.DataContext as GroupHrViewModel;
-                if (vm.ActivityToAdd != null) { vm.ActivityToAdd.IsMorning = isMorning; }
-            }
-        }
-
-        #endregion Methods
 
         private void Selected_cb_DayUpdate(object sender, SelectionChangedEventArgs e)
         {
@@ -102,10 +91,25 @@
             var cbi = cb_NoonUpdate.SelectedItem as ComboBoxItem;
             if (this.DataContext is GroupHrViewModel && cb_NoonUpdate.SelectedItem is ComboBoxItem)
             {
-                var isMorning = Boolean.Parse((string)cbi.Tag);
+                var value = int.Parse((string)cbi.Tag);
+                var momentDay = (MomentDay)value;
                 var vm = this.DataContext as GroupHrViewModel;
-                if (vm.SelectedActivity != null) { vm.SelectedActivity.IsMorning = (bool)isMorning; }
+                if (vm.SelectedActivity != null) { vm.SelectedActivity.MomentDay = momentDay; }
             }
         }
+
+        private void Selected_cb_Noon_Selected(object sender, RoutedEventArgs e)
+        {
+            var cbi = cb_Noon.SelectedItem as ComboBoxItem;
+            if (this.DataContext is GroupHrViewModel && cb_Noon.SelectedItem is ComboBoxItem)
+            {
+                var integer = int.Parse((string)cbi.Tag);
+                var momentDay = (MomentDay)integer;
+                var vm = this.DataContext as GroupHrViewModel;
+                if (vm.ActivityToAdd != null) { vm.ActivityToAdd.MomentDay = momentDay; }
+            }
+        }
+
+        #endregion Methods
     }
 }

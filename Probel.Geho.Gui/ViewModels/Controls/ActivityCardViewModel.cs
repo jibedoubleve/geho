@@ -3,9 +3,8 @@
     using System;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
+
+    using Data.Entities;
 
     using Probel.Geho.Data.BusinessLogic;
     using Probel.Geho.Data.Dto;
@@ -29,18 +28,20 @@
             this.Service = service;
 
             if (activity == null) { throw new ArgumentNullException("activity"); }
-            else if (activity.People == null) { throw new ArgumentNullException("activity.Persons"); }
+            else if (activity.People == null) { throw new ArgumentNullException("activity.People"); }
 
             this.Activity = activity;
 
-            var b = activity.People.GetBeneficiaries();
-            Beneficiaries = new ObservableCollection<PersonDto>(b);
+            var beneficiaries = activity.People.GetBeneficiaries();
+            Beneficiaries = new ObservableCollection<PersonDto>(beneficiaries);
+            HasBeneficiaries = Beneficiaries.Count > 0;
+            Beneficiaries.CollectionChanged += (s, e) => this.HasBeneficiaries = Beneficiaries.Count > 0;
 
-            var e = activity.People.GetEducators();
-            Educators = new ObservableCollection<PersonDto>(e);
+            var educators = activity.People.GetEducators();
+            Educators = new ObservableCollection<PersonDto>(educators);
 
             Name = Activity.Name;
-            IsMorning = Activity.IsMorning;
+            MomentDay = Activity.MomentDay;
             DayOfWeek = Activity.DayOfWeek;
         }
 
@@ -48,6 +49,16 @@
 
         #region Properties
 
+        private bool hasBeneficiaries;
+        public bool HasBeneficiaries
+        {
+            get { return this.hasBeneficiaries; }
+            set
+            {
+                this.hasBeneficiaries = value;
+                this.OnPropertyChanged(() => HasBeneficiaries);
+            }
+        }
         public ActivityDto Activity
         {
             get;
@@ -76,13 +87,13 @@
             private set;
         }
 
-        public bool IsMorning
+        public MomentDay MomentDay
         {
-            get { return this.Activity.IsMorning; }
+            get { return this.Activity.MomentDay; }
             set
             {
-                this.Activity.IsMorning = value;
-                this.OnPropertyChanged(() => IsMorning);
+                this.Activity.MomentDay = value;
+                this.OnPropertyChanged(() => MomentDay);
             }
         }
 

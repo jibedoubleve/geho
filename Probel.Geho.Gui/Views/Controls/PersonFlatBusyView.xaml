@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="Probel.Geho.Gui.Views.Controls.PersonFlatBusyView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             
+             xmlns:conv="clr-namespace:Probel.Geho.Gui.Converters"
+             
+             mc:Ignorable="d" d:DesignWidth="300"
+             MouseUp="UserControl_MouseUp">
+    <UserControl.Resources>
+        <conv:StatusToColourConverter x:Key="stc"/>
+    </UserControl.Resources>
+    <DockPanel Background="{Binding ColourStatus, Converter={StaticResource stc}}">
+        <CheckBox x:Name="cb_IsBusy" DockPanel.Dock="Left" 
+                  HorizontalAlignment="Center"
+                  Margin="5"
+                  IsChecked="{Binding IsSelected}"
+                  Checked="CheckBox_Checked"
+                  Unchecked="CheckBox_Checked"/>
+        <Image DockPanel.Dock="Left"
+                   Source="/Probel.Geho.Gui;component/Images/Educator.png"
+                   Width="16"
+                   Height="16"/>
+        <TextBlock DockPanel.Dock="Top"
+                   FontWeight="Bold" VerticalAlignment="Center" 
+                   Margin="15,0,5,0">
+            <Run Text="{Binding Name}"/>
+            <Run Text="{Binding Surname}"/>
+            <Run Text="{Binding GroupNames}"/>
+        </TextBlock>
+    </DockPanel>
+</UserControl>

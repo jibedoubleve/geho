@@ -7,36 +7,39 @@
              
              xmlns:t="clr-namespace:Probel.Geho.Gui.Properties"
              xmlns:conv="clr-namespace:Probel.Geho.Gui.Converters"
+             xmlns:ctrl="clr-namespace:Probel.Geho.Gui.Views.Controls"
              
-             d:DesignWidth="300">
+             d:DesignWidth="720"
+             d:DesignHeight="200">
     <UserControl.Resources>
         <conv:DayOfWeekToStringConverter x:Key="dayOfWeekConv"/>
-        <conv:BoolToNoonConverter x:Key="noonConv"/>
     </UserControl.Resources>
-    <Border BorderThickness="5"
-            CornerRadius="5"
-            Background="#FFF4F8FC">
-        <Border.Effect>
-            <DropShadowEffect Color="#FFB6B6B6"/>
-        </Border.Effect>
-        <DockPanel>
-            <Image DockPanel.Dock="Left"
-                   Source="/Probel.Geho.Gui;component/Images/Day.png"
-                   Width="32"
-                   Height="32"/>
-            <TextBlock DockPanel.Dock="Top"
-                       FontWeight="Bold" VerticalAlignment="Center" 
-                       Margin="15,0,0,0">
-                <Run Text="{Binding Date, StringFormat=dd-MM-yyyy}"/>
-                <Run Text="("/>
-                <Run Text="{Binding IsMorning,Converter={StaticResource noonConv}}"/>
-                <Run Text=")"/>
-            </TextBlock>
-            <TextBlock DockPanel.Dock="Top"
-                       FontWeight="Bold" VerticalAlignment="Center" 
-                       Margin="15,0,0,0">
-                <Run Text="{Binding Group.Name}"/>
-            </TextBlock>
-        </DockPanel>
-    </Border>
-</UserControl>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBlock DockPanel.Dock="Top"
+                   Grid.Column="1">
+                <Run Text="{Binding CurrentDay, StringFormat={}{0:dddd d MMMM}}" FontSize="16" FontWeight="Bold" FontFamily="Segoe UI Black"/>
+        </TextBlock>
+        <ListView Grid.Row="1" 
+                  Width="250"
+                  x:Name="lvGroups" 
+                  HorizontalContentAlignment="Stretch"
+                  ItemsSource="{Binding Groups}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ctrl:GroupListItemView/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <ctrl:GroupDayView Grid.Column="1" 
+                           Grid.Row="1"
+                           DataContext="{Binding ElementName=lvGroups, Path=SelectedItem}"/>
+    </Grid>
+</UserControl>        

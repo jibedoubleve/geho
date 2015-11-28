@@ -12,7 +12,7 @@
 
         public Day()
         {
-            this.Persons = new List<Person>();
+            this.People = new List<Person>();
         }
 
         #endregion Constructors
@@ -38,7 +38,7 @@
             get; set;
         }
 
-        public IList<Person> Persons
+        public IList<Person> People
         {
             get;
             set;

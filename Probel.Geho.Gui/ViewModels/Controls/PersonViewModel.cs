@@ -29,8 +29,43 @@
             this.ParentVm = parentVm;
             this.Service = service;
             this.deletePersonCommand = new RelayCommand(DeletePerson, CanDeletePerson);
+            this.editCommand = new RelayCommand(Edit, CanEdit);
+            this.cancelCommand = new RelayCommand(Cancel, CanCancel);
         }
 
+        private readonly ICommand cancelCommand;
+        public ICommand CancelCommand
+        {
+            get { return this.cancelCommand; }
+        }
+        private void Cancel() { this.Person = this.Service.GetPerson(this.Person.Id); }
+        private bool CanCancel() { return this.Person != null; ; }
+
+        private readonly ICommand editCommand;
+        public ICommand EditCommand
+        {
+            get { return this.editCommand; }
+        }
+        private void Edit()
+        {
+            this.Service.UpdatePerson(this.Person);
+        }
+        private bool CanEdit()
+        {
+            return !string.IsNullOrWhiteSpace(this.Person.Name)
+                && !string.IsNullOrWhiteSpace(this.Person.Surname); ;
+        }
+
+        private bool isEdition;
+        public bool IsEdition
+        {
+            get { return this.isEdition; }
+            set
+            {
+                this.isEdition = value;
+                this.OnPropertyChanged(() => IsEdition);
+            }
+        }
         #endregion Constructors
 
         #region Properties

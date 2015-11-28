@@ -261,4 +261,52 @@ Vérifiez:
   <data name="Lbl_Span" xml:space="preserve">
     <value>Moment:</value>
   </data>
+  <data name="Header_ManageSchedule" xml:space="preserve">
+    <value>Gestion des horaires</value>
+  </data>
+  <data name="Tab_Friday" xml:space="preserve">
+    <value>Vendredi</value>
+  </data>
+  <data name="Tab_Monday" xml:space="preserve">
+    <value>Lundi</value>
+  </data>
+  <data name="Tab_Thursday" xml:space="preserve">
+    <value>Jeudi</value>
+  </data>
+  <data name="Tab_Tuesday" xml:space="preserve">
+    <value>Mardi</value>
+  </data>
+  <data name="Tab_Wednesday" xml:space="preserve">
+    <value>Mercredi</value>
+  </data>
+  <data name="Tab_Week" xml:space="preserve">
+    <value>Hebdo</value>
+  </data>
+  <data name="Btn_Display" xml:space="preserve">
+    <value>Afficher</value>
+  </data>
+  <data name="Msg_AskCreateNewWeek" xml:space="preserve">
+    <value>Cette semaine n'existe pas. Voulez-vous la créer?</value>
+  </data>
+  <data name="Lbl_Afternoon" xml:space="preserve">
+    <value>Après-midi</value>
+  </data>
+  <data name="Lbl_Morning" xml:space="preserve">
+    <value>Matin</value>
+  </data>
+  <data name="Lbl_EducatorsToShow" xml:space="preserve">
+    <value>Nombre d'éducateurs par groupe:</value>
+  </data>
+  <data name="Msg_Error_EducatorsAreBusy" xml:space="preserve">
+    <value>Ces personnes ne peuvent être assignées puisque déjà occupées:</value>
+  </data>
+  <data name="Header_PresentBeneficiary" xml:space="preserve">
+    <value>Bénéficiaires présents</value>
+  </data>
+  <data name="Day_AllDay" xml:space="preserve">
+    <value>journée</value>
+  </data>
+  <data name="Btn_Cancel" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
 </root>

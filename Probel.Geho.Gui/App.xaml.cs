@@ -29,6 +29,9 @@
             DataBootstrap.Initialise();
             UnityBootstrap.Initialise();
 
+            var view = new MainWindow(UnityBootstrap.Container);
+            view.Show();
+
             base.OnStartup(e);
         }
 

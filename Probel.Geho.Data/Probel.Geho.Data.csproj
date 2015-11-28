@@ -59,6 +59,8 @@
     <Compile Include="BusinessLogic\Hr\GroupAdapter.cs" />
     <Compile Include="BusinessLogic\Hr\HrService.cs" />
     <Compile Include="Dto\ValidationStatusDto.cs" />
+    <Compile Include="Entities\MomentDay.cs" />
+    <Compile Include="Helpers\MomentDayExtension.cs" />
     <Compile Include="IHrService.cs" />
     <Compile Include="BusinessLogic\BusinessRules\AbsenceValidator.cs" />
     <Compile Include="BusinessLogic\BusinessRules\IValidator.cs" />
@@ -107,6 +109,7 @@
     <EmbeddedResource Include="Properties\Messages.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Messages.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

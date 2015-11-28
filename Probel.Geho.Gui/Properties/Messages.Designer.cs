@@ -70,6 +70,24 @@ namespace Probel.Geho.Gui.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Annuler.
+        /// </summary>
+        public static string Btn_Cancel {
+            get {
+                return ResourceManager.GetString("Btn_Cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Afficher.
+        /// </summary>
+        public static string Btn_Display {
+            get {
+                return ResourceManager.GetString("Btn_Display", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Gestion des groupes.
         /// </summary>
         public static string Btn_GroupMgmt {
@@ -132,6 +150,15 @@ namespace Probel.Geho.Gui.Properties {
         public static string Day_Afternoon {
             get {
                 return ResourceManager.GetString("Day_Afternoon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to journée.
+        /// </summary>
+        public static string Day_AllDay {
+            get {
+                return ResourceManager.GetString("Day_AllDay", resourceCulture);
             }
         }
         
@@ -316,6 +343,24 @@ namespace Probel.Geho.Gui.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Gestion des horaires.
+        /// </summary>
+        public static string Header_ManageSchedule {
+            get {
+                return ResourceManager.GetString("Header_ManageSchedule", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bénéficiaires présents.
+        /// </summary>
+        public static string Header_PresentBeneficiary {
+            get {
+                return ResourceManager.GetString("Header_PresentBeneficiary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Occupations.
         /// </summary>
         public static string Header_WorkSummary {
@@ -339,6 +384,15 @@ namespace Probel.Geho.Gui.Properties {
         public static string Lbl_Activity {
             get {
                 return ResourceManager.GetString("Lbl_Activity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Après-midi.
+        /// </summary>
+        public static string Lbl_Afternoon {
+            get {
+                return ResourceManager.GetString("Lbl_Afternoon", resourceCulture);
             }
         }
         
@@ -370,6 +424,15 @@ namespace Probel.Geho.Gui.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Nombre d&apos;éducateurs par groupe:.
+        /// </summary>
+        public static string Lbl_EducatorsToShow {
+            get {
+                return ResourceManager.GetString("Lbl_EducatorsToShow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Du.
         /// </summary>
         public static string Lbl_From {
@@ -384,6 +447,15 @@ namespace Probel.Geho.Gui.Properties {
         public static string Lbl_Group {
             get {
                 return ResourceManager.GetString("Lbl_Group", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Matin.
+        /// </summary>
+        public static string Lbl_Morning {
+            get {
+                return ResourceManager.GetString("Lbl_Morning", resourceCulture);
             }
         }
         
@@ -442,6 +514,15 @@ namespace Probel.Geho.Gui.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cette semaine n&apos;existe pas. Voulez-vous la créer?.
+        /// </summary>
+        public static string Msg_AskCreateNewWeek {
+            get {
+                return ResourceManager.GetString("Msg_AskCreateNewWeek", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Voulez-vous supprimer cette absence?.
         /// </summary>
         public static string Msg_AskDeleteAbsence {
@@ -478,11 +559,74 @@ namespace Probel.Geho.Gui.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ces personnes ne peuvent être assignées puisque déjà occupées:.
+        /// </summary>
+        public static string Msg_Error_EducatorsAreBusy {
+            get {
+                return ResourceManager.GetString("Msg_Error_EducatorsAreBusy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Prêt..
         /// </summary>
         public static string Msg_NoMessage {
             get {
                 return ResourceManager.GetString("Msg_NoMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vendredi.
+        /// </summary>
+        public static string Tab_Friday {
+            get {
+                return ResourceManager.GetString("Tab_Friday", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lundi.
+        /// </summary>
+        public static string Tab_Monday {
+            get {
+                return ResourceManager.GetString("Tab_Monday", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Jeudi.
+        /// </summary>
+        public static string Tab_Thursday {
+            get {
+                return ResourceManager.GetString("Tab_Thursday", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mardi.
+        /// </summary>
+        public static string Tab_Tuesday {
+            get {
+                return ResourceManager.GetString("Tab_Tuesday", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mercredi.
+        /// </summary>
+        public static string Tab_Wednesday {
+            get {
+                return ResourceManager.GetString("Tab_Wednesday", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hebdo.
+        /// </summary>
+        public static string Tab_Week {
+            get {
+                return ResourceManager.GetString("Tab_Week", resourceCulture);
             }
         }
     }

@@ -6,6 +6,8 @@
     using System.Text;
     using System.Threading.Tasks;
 
+    using Entities;
+
     public class ActivityDto : BaseDto
     {
         #region Properties
@@ -16,7 +18,7 @@
             set;
         }
 
-        public bool IsMorning
+        public MomentDay MomentDay
         {
             get;
             set;

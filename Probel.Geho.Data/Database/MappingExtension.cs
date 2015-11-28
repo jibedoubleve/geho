@@ -36,6 +36,11 @@
             return Mapper.Map<Absence, AbsenceDto>(absence);
         }
 
+        public static IEnumerable<GroupDto> ToDto(this IEnumerable<Group> groups)
+        {
+            return Mapper.Map<IEnumerable<Group>, IEnumerable<GroupDto>>(groups);
+        }
+
         public static Activity ToEntity(this ActivityDto activity)
         {
             return Mapper.Map<ActivityDto, Activity>(activity);
