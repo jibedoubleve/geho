@@ -1,12 +1,13 @@
-﻿using Probel.Geho.Data.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Probel.Geho.Data.Helpers
+﻿namespace Probel.Geho.Data.Helpers
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
+    using Probel.Geho.Data.Entities;
+
     /// <summary>
     /// Indicates whether the Moment in day is the morning or afternoon
     /// </summary>
@@ -15,9 +16,13 @@ namespace Probel.Geho.Data.Helpers
     /// </remarks>
     public static class MomentDayExtension
     {
+        #region Methods
+
         public static bool IsMorning(this MomentDay mid)
         {
             return (mid & MomentDay.Morning) != 0;
         }
+
+        #endregion Methods
     }
 }

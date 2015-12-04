@@ -4,67 +4,84 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              
-             xmlns:t="clr-namespace:Probel.Geho.Gui.Properties"
-             
+             xmlns:t="clr-namespace:Probel.Geho.Gui.Properties"             
+             xmlns:Converters="clr-namespace:Probel.Geho.Gui.Converters" 
+
              mc:Ignorable="d" d:DesignWidth="300">
+    <UserControl.Resources>
+        <Converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+    </UserControl.Resources>
     <Border BorderThickness="5"
-            CornerRadius="5"
-            Background="#FFF4F8FC">
+		CornerRadius="5"
+		Background="#FFF4F8FC">
         <Border.Effect>
             <DropShadowEffect Color="#FFB6B6B6"/>
         </Border.Effect>
         <DockPanel>
             <Image DockPanel.Dock="Left"
-                   Source="/Probel.Geho.Gui;component/Images/Educator.png"
-                   Width="16"
-                   Height="16"/>
+				Source="/Probel.Geho.Gui;component/Images/Educator.png"
+				Width="16"
+				Height="16"/>
+            <Image DockPanel.Dock="Left" Source="/Probel.Geho.Gui;component/Images/Trainee.png" Width="15" Height="15" 
+                   Visibility="{Binding Person.IsTrainee, Converter={StaticResource BoolToVisibilityConverter}}">
+                <Image.ToolTip>
+                    <TextBlock Text="{x:Static t:Messages.Msg_ThisIsATrainee}"/>
+                </Image.ToolTip>
+            </Image>
             <Button DockPanel.Dock="Right"
                     Style="{StaticResource EditionButtonStyle}"
                     Command="{Binding DeletePersonCommand}">
                 <Image Source="/Probel.Geho.Gui;component/Images/Remove.png"/>
             </Button>
             <Button DockPanel.Dock="Right"
-                    Style="{StaticResource EditionButtonStyle}"
-                    Click="Click_Edit">
+				Style="{StaticResource EditionButtonStyle}"
+				Click="Click_Edit">
                 <Image Source="/Probel.Geho.Gui;component/Images/Edit.png"/>
             </Button>
             <TextBlock DockPanel.Dock="Top"
-                       FontWeight="Bold" VerticalAlignment="Center" 
-                       Margin="15,0,0,0">
-                <Run Text="{Binding Person.Name}"/>
-                <Run Text="{Binding Person.Surname}"/>
-            </TextBlock>
+				FontWeight="Bold" VerticalAlignment="Center" 
+				Margin="15,0,0,0"><Run Text="{Binding Person.Name}"/><Run Text=" "/><Run Text="{Binding Person.Surname}"/></TextBlock>
             <Popup DockPanel.Dock="Bottom"
-                   x:Name="editPopup"
-                   Placement="Bottom"
-                   StaysOpen="False"
-                   MinWidth="400">
+				x:Name="editPopup"
+				Placement="Bottom"
+				StaysOpen="False"
+				MinWidth="400">
                 <Border BorderThickness="5"
-                        CornerRadius="5"
-                        Background="#FF465A7D">
+					CornerRadius="5"
+					Background="#FF465A7D">
                     <Border.Effect>
                         <DropShadowEffect Color="#FFB6B6B6"/>
                     </Border.Effect>
-                    <HeaderedContentControl Header="Edition">
+                    <HeaderedContentControl Header="{x:Static t:Messages.Header_Edition}">
                         <DockPanel DockPanel.Dock="Bottom">
                             <DockPanel DockPanel.Dock="Top" LastChildFill="True">
                                 <TextBlock DockPanel.Dock="left" Text="{x:Static t:Messages.Lbl_Name}"
-                                           Style="{StaticResource TextBoxStyle}"/>
+									Style="{StaticResource TextBoxStyle}"/>
                                 <TextBox Text="{Binding Person.Name, UpdateSourceTrigger=PropertyChanged}"/>
                             </DockPanel>
                             <DockPanel DockPanel.Dock="Top" LastChildFill="True">
                                 <TextBlock DockPanel.Dock="Left" Text="{x:Static t:Messages.Lbl_Surname}"
-                               Style="{StaticResource TextBoxStyle}"/>
+									Style="{StaticResource TextBoxStyle}"/>
                                 <TextBox Text="{Binding Person.Surname, UpdateSourceTrigger=PropertyChanged}"/>
+                            </DockPanel>
+                            <DockPanel DockPanel.Dock="Top"
+                                       Visibility="{Binding Person.IsEducator, Converter={StaticResource BoolToVisibilityConverter}}">
+                                <TextBlock DockPanel.Dock="Left"  
+                                           Text="{x:Static t:Messages.Cb_IsTrainee}"
+                                           Style="{StaticResource TextBoxStyle}"/>
+                                <CheckBox DockPanel.Dock="Right" 
+                                          IsChecked="{Binding Person.IsTrainee}" 
+                                          VerticalAlignment="Center" 
+                                          HorizontalAlignment="Center"/>
                             </DockPanel>
                             <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom" HorizontalAlignment="Right">
                                 <Button Content="{x:Static t:Messages.Btn_Update}"
-                                    Style="{StaticResource ButtonToolBoxStyle}"
-                                    Command="{Binding EditCommand}" Click="Click_Save"/>
+									Style="{StaticResource ButtonToolBoxStyle}"
+									Command="{Binding EditCommand}" Click="Click_Save"/>
                                 <Button Content="{x:Static t:Messages.Btn_Cancel}"
-                                        Style="{StaticResource ButtonToolBoxStyle}"
-                                        Command="{Binding CancelCommand}"
-                                        Click="Click_Cancel"/>
+									Style="{StaticResource ButtonToolBoxStyle}"
+									Command="{Binding CancelCommand}"
+									Click="Click_Cancel"/>
                             </StackPanel>
                         </DockPanel>
                     </HeaderedContentControl>

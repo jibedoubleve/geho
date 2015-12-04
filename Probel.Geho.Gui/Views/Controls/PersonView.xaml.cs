@@ -29,19 +29,23 @@
 
         #endregion Constructors
 
-        private void Click_Edit(object sender, RoutedEventArgs e)
-        {
-            this.editPopup.IsOpen = true;
-        }
+        #region Methods
 
         private void Click_Cancel(object sender, RoutedEventArgs e)
         {
             this.editPopup.IsOpen = false;
         }
 
+        private void Click_Edit(object sender, RoutedEventArgs e)
+        {
+            this.editPopup.IsOpen = true;
+        }
+
         private void Click_Save(object sender, RoutedEventArgs e)
         {
             this.editPopup.IsOpen = false;
         }
+
+        #endregion Methods
     }
 }

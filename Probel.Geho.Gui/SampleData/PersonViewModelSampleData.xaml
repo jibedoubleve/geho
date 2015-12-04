@@ -1,0 +1,272 @@
+﻿<Controls:PersonViewModel xmlns:Controls="clr-namespace:Probel.Geho.Gui.ViewModels.Controls" xmlns:Dto="clr-namespace:Probel.Geho.Data.Dto;assembly=Probel.Geho.Data" IsEdition="True" IsInpcActive="True">
+    <Controls:PersonViewModel.Person>
+        <Dto:PersonDto GroupNames="Adipiscing sagittis senectus" Id="63" IsEducator="False" Name="Maecenas" Surname="Cras">
+            <Dto:PersonDto.Activities>
+                <Dto:ActivityDto DayOfWeek="Tuesday" Id="32" MomentDay="Afternoon" Name="Hendrerit eros placerat">
+                    <Dto:ActivityDto.People>
+                        <Dto:PersonDto GroupNames="Mollis himenaeos parturient dis fames" Id="88" IsEducator="False" Name="Praesent" Surname="Duis"/>
+                        <Dto:PersonDto GroupNames="Nisi dapibus ornare nisl felis" Id="76" IsEducator="True" Name="Cras" Surname="Aliquam"/>
+                        <Dto:PersonDto GroupNames="Nunc malesuada" Id="44" IsEducator="False" Name="Aenean" Surname="Class"/>
+                        <Dto:PersonDto GroupNames="Senectus feugiat odio" Id="94" IsEducator="True" Name="Nam" Surname="Nam"/>
+                        <Dto:PersonDto GroupNames="Leo iaculis pede suscipit" Id="99" IsEducator="False" Name="Aliquam" Surname="Nunc"/>
+                    </Dto:ActivityDto.People>
+                </Dto:ActivityDto>
+                <Dto:ActivityDto DayOfWeek="Monday" Id="56" MomentDay="AllDay" Name="Metus morbi adipiscing">
+                    <Dto:ActivityDto.People>
+                        <Dto:PersonDto GroupNames="Lacinia non sapien torquent" Id="59" IsEducator="True" Name="Class" Surname="Aenean"/>
+                        <Dto:PersonDto GroupNames="Ultrices posuere" Id="77" IsEducator="False" Name="Integer" Surname="Amet"/>
+                        <Dto:PersonDto GroupNames="Per nunc volutpat tellus tristique" Id="45" IsEducator="True" Name="Accumsan" Surname="Mauris"/>
+                        <Dto:PersonDto GroupNames="Tempor tempus" Id="19" IsEducator="False" Name="Mauris" Surname="Sed"/>
+                        <Dto:PersonDto GroupNames="Arcu sem praesent adipiscing aenean" Id="14" IsEducator="True" Name="Quisque" Surname="Dis"/>
+                    </Dto:ActivityDto.People>
+                </Dto:ActivityDto>
+                <Dto:ActivityDto DayOfWeek="Saturday" Id="47" MomentDay="Morning" Name="Diam eget">
+                    <Dto:ActivityDto.People>
+                        <Dto:PersonDto GroupNames="Venenatis vestibulum" Id="15" IsEducator="False" Name="Bibendum" Surname="Maecenas"/>
+                        <Dto:PersonDto GroupNames="Enim sodales risus velit" Id="38" IsEducator="True" Name="Curae" Surname="Nullam"/>
+                        <Dto:PersonDto GroupNames="Erat parturient class curae" Id="52" IsEducator="False" Name="Dictumst" Surname="Curae"/>
+                        <Dto:PersonDto GroupNames="Convallis vestibulum nisi nisl donec" Id="41" IsEducator="True" Name="Donec" Surname="Integer"/>
+                        <Dto:PersonDto GroupNames="Aliquet aptent nunc" Id="49" IsEducator="False" Name="Nullam" Surname="Praesent"/>
+                    </Dto:ActivityDto.People>
+                </Dto:ActivityDto>
+                <Dto:ActivityDto DayOfWeek="Friday" Id="48" MomentDay="AllDay" Name="Auctor congue nascetur sed">
+                    <Dto:ActivityDto.People>
+                        <Dto:PersonDto GroupNames="Orci pharetra conubia" Id="77" IsEducator="True" Name="Aptent" Surname="Quisque"/>
+                        <Dto:PersonDto GroupNames="Quam fermentum adipiscing sagittis lectus" Id="64" IsEducator="False" Name="Eleifend" Surname="Aptent"/>
+                        <Dto:PersonDto GroupNames="Etiam vestibulum fusce ligula" Id="55" IsEducator="True" Name="Auctor" Surname="Auctor"/>
+                        <Dto:PersonDto GroupNames="Parturient vestibulum morbi" Id="36" IsEducator="False" Name="Etiam" Surname="Est"/>
+                        <Dto:PersonDto GroupNames="Adipiscing parturient" Id="75" IsEducator="True" Name="Duis" Surname="Congue"/>
+                    </Dto:ActivityDto.People>
+                </Dto:ActivityDto>
+                <Dto:ActivityDto DayOfWeek="Wednesday" Id="96" MomentDay="AllDay" Name="Nulla malesuada">
+                    <Dto:ActivityDto.People>
+                        <Dto:PersonDto GroupNames="Iaculis penatibus proin vestibulum porttitor" Id="29" IsEducator="False" Name="Nunc" Surname="Accumsan"/>
+                        <Dto:PersonDto GroupNames="Dolor tincidunt magnis laoreet" Id="85" IsEducator="True" Name="Facilisi" Surname="Donec"/>
+                        <Dto:PersonDto GroupNames="Sem parturient mattis mauris sit" Id="20" IsEducator="False" Name="Sed" Surname="Bibendum"/>
+                        <Dto:PersonDto GroupNames="Vehicula justo arcu" Id="58" IsEducator="True" Name="Fusce" Surname="Cursus"/>
+                        <Dto:PersonDto GroupNames="Lacus potenti" Id="37" IsEducator="False" Name="Faucibus" Surname="Ante"/>
+                    </Dto:ActivityDto.People>
+                </Dto:ActivityDto>
+                <Dto:ActivityDto DayOfWeek="Sunday" Id="21" MomentDay="Afternoon" Name="Vestibulum sodales bibendum viverra">
+                    <Dto:ActivityDto.People>
+                        <Dto:PersonDto GroupNames="Lorem adipiscing" Id="93" IsEducator="True" Name="Vivamus" Surname="Arcu"/>
+                        <Dto:PersonDto GroupNames="Facilisi convallis montes" Id="49" IsEducator="False" Name="Dis" Surname="Hac"/>
+                        <Dto:PersonDto GroupNames="Eget facilisis mus" Id="20" IsEducator="True" Name="Aliquam" Surname="Leo"/>
+                        <Dto:PersonDto GroupNames="Interdum fermentum fringilla" Id="61" IsEducator="False" Name="Est" Surname="Dictumst"/>
+                        <Dto:PersonDto GroupNames="Erat nec nascetur integer sapien" Id="72" IsEducator="True" Name="Amet" Surname="Dictum"/>
+                    </Dto:ActivityDto.People>
+                </Dto:ActivityDto>
+                <Dto:ActivityDto DayOfWeek="Wednesday" Id="70" MomentDay="AllDay" Name="Nibh parturient">
+                    <Dto:ActivityDto.People>
+                        <Dto:PersonDto GroupNames="Massa metus aliquam himenaeos semper" Id="15" IsEducator="False" Name="Habitant" Surname="Diam"/>
+                        <Dto:PersonDto GroupNames="Nisi vestibulum placerat imperdiet pulvinar" Id="79" IsEducator="True" Name="Congue" Surname="Vivamus"/>
+                        <Dto:PersonDto GroupNames="Sagittis vestibulum" Id="13" IsEducator="False" Name="Lorem" Surname="Etiam"/>
+                        <Dto:PersonDto GroupNames="Tincidunt nisl suscipit purus" Id="12" IsEducator="True" Name="Hac" Surname="Eget"/>
+                        <Dto:PersonDto GroupNames="Nunc torquent" Id="11" IsEducator="False" Name="Cursus" Surname="Lectus"/>
+                    </Dto:ActivityDto.People>
+                </Dto:ActivityDto>
+                <Dto:ActivityDto DayOfWeek="Friday" Id="13" MomentDay="Morning" Name="Commodo conubia cubilia">
+                    <Dto:ActivityDto.People>
+                        <Dto:PersonDto GroupNames="Vestibulum vulputate orci pede dapibus" Id="82" IsEducator="True" Name="Leo" Surname="Libero"/>
+                        <Dto:PersonDto GroupNames="Donec gravida sed etiam" Id="81" IsEducator="False" Name="Morbi" Surname="Aliquam"/>
+                        <Dto:PersonDto GroupNames="Ultrices lorem quam quis iaculis" Id="90" IsEducator="True" Name="Mus" Surname="Fusce"/>
+                        <Dto:PersonDto GroupNames="Convallis urna cras nulla duis" Id="80" IsEducator="False" Name="Dictum" Surname="Ligula"/>
+                        <Dto:PersonDto GroupNames="Facilisis fermentum" Id="36" IsEducator="True" Name="Ante" Surname="Mus"/>
+                    </Dto:ActivityDto.People>
+                </Dto:ActivityDto>
+                <Dto:ActivityDto DayOfWeek="Friday" Id="37" MomentDay="AllDay" Name="Habitasse adipiscing parturient">
+                    <Dto:ActivityDto.People>
+                        <Dto:PersonDto GroupNames="Amet volutpat maecenas ante proin" Id="23" IsEducator="False" Name="Lectus" Surname="Aliquet"/>
+                        <Dto:PersonDto GroupNames="Adipiscing laoreet praesent" Id="11" IsEducator="True" Name="Aliquet" Surname="Lorem"/>
+                        <Dto:PersonDto GroupNames="Himenaeos vestibulum" Id="88" IsEducator="False" Name="Nec" Surname="Morbi"/>
+                        <Dto:PersonDto GroupNames="Non facilisi posuere" Id="50" IsEducator="True" Name="Non" Surname="Nulla"/>
+                        <Dto:PersonDto GroupNames="Ipsum malesuada dictum" Id="53" IsEducator="False" Name="Inceptos" Surname="Elit"/>
+                    </Dto:ActivityDto.People>
+                </Dto:ActivityDto>
+                <Dto:ActivityDto DayOfWeek="Friday" Id="23" MomentDay="Afternoon" Name="Justo habitant vestibulum pretium porttitor">
+                    <Dto:ActivityDto.People>
+                        <Dto:PersonDto GroupNames="Tincidunt tristique inceptos" Id="84" IsEducator="True" Name="Arcu" Surname="Enim"/>
+                        <Dto:PersonDto GroupNames="Sodales nam" Id="62" IsEducator="False" Name="Blandit" Surname="Proin"/>
+                        <Dto:PersonDto GroupNames="Erat lobortis" Id="10" IsEducator="True" Name="Interdum" Surname="Blandit"/>
+                        <Dto:PersonDto GroupNames="Nascetur nibh phasellus" Id="96" IsEducator="False" Name="Per" Surname="Litora"/>
+                        <Dto:PersonDto GroupNames="Neque odio" Id="74" IsEducator="True" Name="Libero" Surname="Nec"/>
+                    </Dto:ActivityDto.People>
+                </Dto:ActivityDto>
+            </Dto:PersonDto.Activities>
+            <Dto:PersonDto.Absences>
+                <Dto:AbsenceDto End="12/09/2015 21:14:18" Id="49" Start="12/09/2015 21:14:18">
+                    <Dto:AbsenceDto.Person>
+                        <Dto:PersonDto GroupNames="Aenean maecenas mauris" Id="87" IsEducator="False" Name="Ligula" Surname="Luctus"/>
+                    </Dto:AbsenceDto.Person>
+                </Dto:AbsenceDto>
+                <Dto:AbsenceDto End="12/09/2015 21:14:18" Id="13" Start="12/09/2015 21:14:18">
+                    <Dto:AbsenceDto.Person>
+                        <Dto:PersonDto GroupNames="Sed duis" Id="73" IsEducator="True" Name="Diam" Surname="Magnis"/>
+                    </Dto:AbsenceDto.Person>
+                </Dto:AbsenceDto>
+                <Dto:AbsenceDto End="12/09/2015 21:14:18" Id="60" Start="12/09/2015 21:14:18">
+                    <Dto:AbsenceDto.Person>
+                        <Dto:PersonDto GroupNames="Bibendum hac vestibulum aliquam donec" Id="34" IsEducator="False" Name="Nulla" Surname="Augue"/>
+                    </Dto:AbsenceDto.Person>
+                </Dto:AbsenceDto>
+                <Dto:AbsenceDto End="12/09/2015 21:14:18" Id="28" Start="12/09/2015 21:14:18">
+                    <Dto:AbsenceDto.Person>
+                        <Dto:PersonDto GroupNames="Auctor phasellus congue" Id="48" IsEducator="True" Name="Eget" Surname="Mattis"/>
+                    </Dto:AbsenceDto.Person>
+                </Dto:AbsenceDto>
+                <Dto:AbsenceDto End="12/09/2015 21:14:18" Id="95" Start="12/09/2015 21:14:18">
+                    <Dto:AbsenceDto.Person>
+                        <Dto:PersonDto GroupNames="Mus parturient" Id="90" IsEducator="False" Name="Litora" Surname="Erat"/>
+                    </Dto:AbsenceDto.Person>
+                </Dto:AbsenceDto>
+                <Dto:AbsenceDto End="12/09/2015 21:14:18" Id="41" Start="12/09/2015 21:14:18">
+                    <Dto:AbsenceDto.Person>
+                        <Dto:PersonDto GroupNames="Quisque eleifend facilisi dictum vivamus" Id="36" IsEducator="True" Name="Lobortis" Surname="Commodo"/>
+                    </Dto:AbsenceDto.Person>
+                </Dto:AbsenceDto>
+                <Dto:AbsenceDto End="12/09/2015 21:14:18" Id="66" Start="12/09/2015 21:14:18">
+                    <Dto:AbsenceDto.Person>
+                        <Dto:PersonDto GroupNames="Ante per arcu elementum sed" Id="42" IsEducator="False" Name="Sed" Surname="Eleifend"/>
+                    </Dto:AbsenceDto.Person>
+                </Dto:AbsenceDto>
+                <Dto:AbsenceDto End="12/09/2015 21:14:18" Id="38" Start="12/09/2015 21:14:18">
+                    <Dto:AbsenceDto.Person>
+                        <Dto:PersonDto GroupNames="Habitant augue inceptos interdum diam" Id="43" IsEducator="True" Name="Elit" Surname="Conubia"/>
+                    </Dto:AbsenceDto.Person>
+                </Dto:AbsenceDto>
+                <Dto:AbsenceDto End="12/09/2015 21:14:18" Id="31" Start="12/09/2015 21:14:18">
+                    <Dto:AbsenceDto.Person>
+                        <Dto:PersonDto GroupNames="Dolor luctus" Id="87" IsEducator="False" Name="Sem" Surname="Cubilia"/>
+                    </Dto:AbsenceDto.Person>
+                </Dto:AbsenceDto>
+                <Dto:AbsenceDto End="12/09/2015 21:14:18" Id="39" Start="12/09/2015 21:14:18">
+                    <Dto:AbsenceDto.Person>
+                        <Dto:PersonDto GroupNames="Mattis eget elit" Id="92" IsEducator="True" Name="Sit" Surname="Facilisi"/>
+                    </Dto:AbsenceDto.Person>
+                </Dto:AbsenceDto>
+            </Dto:PersonDto.Absences>
+            <Dto:PersonDto.Days>
+                <Dto:DayDto Date="12/09/2015 21:14:18" IsMorning="False" Id="45">
+                    <Dto:DayDto.Group>
+                        <Dto:GroupDto Id="21" Name="Risus velit"/>
+                    </Dto:DayDto.Group>
+                    <Dto:DayDto.People>
+                        <Dto:PersonDto GroupNames="Vestibulum pede quisque" Id="10" IsEducator="True" Name="Proin" Surname="Mauris"/>
+                        <Dto:PersonDto GroupNames="Dignissim vestibulum senectus" Id="50" IsEducator="False" Name="Vel" Surname="Non"/>
+                        <Dto:PersonDto GroupNames="Aliquam aliquet elementum nec" Id="48" IsEducator="True" Name="Commodo" Surname="Mollis"/>
+                        <Dto:PersonDto GroupNames="Curae vestibulum" Id="26" IsEducator="False" Name="Enim" Surname="Dolor"/>
+                        <Dto:PersonDto GroupNames="Mauris sed facilisis blandit sem" Id="65" IsEducator="True" Name="Conubia" Surname="Faucibus"/>
+                    </Dto:DayDto.People>
+                </Dto:DayDto>
+                <Dto:DayDto Date="12/09/2015 21:14:18" IsMorning="False" Id="74">
+                    <Dto:DayDto.Group>
+                        <Dto:GroupDto Id="53" Name="Vestibulum nostra suscipit torquent fringilla"/>
+                    </Dto:DayDto.Group>
+                    <Dto:DayDto.People>
+                        <Dto:PersonDto GroupNames="Nunc amet conubia ultrices" Id="65" IsEducator="True" Name="Augue" Surname="Eros"/>
+                        <Dto:PersonDto GroupNames="Arcu ornare vestibulum" Id="41" IsEducator="False" Name="Nam" Surname="Per"/>
+                        <Dto:PersonDto GroupNames="Adipiscing cubilia parturient dapibus maecenas" Id="36" IsEducator="True" Name="Nascetur" Surname="Nibh"/>
+                        <Dto:PersonDto GroupNames="Praesent vestibulum malesuada feugiat penatibus" Id="70" IsEducator="False" Name="Pharetra" Surname="Sed"/>
+                        <Dto:PersonDto GroupNames="Nulla primis hac adipiscing" Id="44" IsEducator="True" Name="Luctus" Surname="Nisi"/>
+                    </Dto:DayDto.People>
+                </Dto:DayDto>
+                <Dto:DayDto Date="12/09/2015 21:14:18" IsMorning="False" Id="59">
+                    <Dto:DayDto.Group>
+                        <Dto:GroupDto Id="63" Name="Vestibulum facilisi semper dolor"/>
+                    </Dto:DayDto.Group>
+                    <Dto:DayDto.People>
+                        <Dto:PersonDto GroupNames="Leo fames" Id="84" IsEducator="True" Name="Sed" Surname="Sem"/>
+                        <Dto:PersonDto GroupNames="Erat vestibulum ultricies" Id="53" IsEducator="False" Name="Cubilia" Surname="Sit"/>
+                        <Dto:PersonDto GroupNames="Nec curabitur non" Id="94" IsEducator="True" Name="Dis" Surname="Vel"/>
+                        <Dto:PersonDto GroupNames="Eros habitant sem inceptos lacus" Id="57" IsEducator="False" Name="Erat" Surname="Nam"/>
+                        <Dto:PersonDto GroupNames="Consequat pretium convallis nibh tempor" Id="49" IsEducator="True" Name="Magnis" Surname="Dapibus"/>
+                    </Dto:DayDto.People>
+                </Dto:DayDto>
+                <Dto:DayDto Date="12/09/2015 21:14:18" IsMorning="False" Id="82">
+                    <Dto:DayDto.Group>
+                        <Dto:GroupDto Id="16" Name="Metus vestibulum"/>
+                    </Dto:DayDto.Group>
+                    <Dto:DayDto.People>
+                        <Dto:PersonDto GroupNames="Morbi rhoncus sit elementum" Id="44" IsEducator="True" Name="Mattis" Surname="Montes"/>
+                        <Dto:PersonDto GroupNames="Viverra facilisis nisl placerat" Id="35" IsEducator="False" Name="Dapibus" Surname="Sed"/>
+                        <Dto:PersonDto GroupNames="Orci nulla porta pulvinar turpis" Id="18" IsEducator="True" Name="Placerat" Surname="Fames"/>
+                        <Dto:PersonDto GroupNames="Integer purus pede" Id="52" IsEducator="False" Name="Dolor" Surname="Felis"/>
+                        <Dto:PersonDto GroupNames="Vestibulum habitasse senectus vivamus" Id="95" IsEducator="True" Name="Egestas" Surname="Dis"/>
+                    </Dto:DayDto.People>
+                </Dto:DayDto>
+                <Dto:DayDto Date="12/09/2015 21:14:18" IsMorning="False" Id="91">
+                    <Dto:DayDto.Group>
+                        <Dto:GroupDto Id="77" Name="Leo class hendrerit mauris mus"/>
+                    </Dto:DayDto.Group>
+                    <Dto:DayDto.People>
+                        <Dto:PersonDto GroupNames="Suscipit blandit nullam curae" Id="20" IsEducator="True" Name="Pulvinar" Surname="Habitant"/>
+                        <Dto:PersonDto GroupNames="Nec non porttitor" Id="20" IsEducator="False" Name="Est" Surname="Nisl"/>
+                        <Dto:PersonDto GroupNames="Sed tincidunt parturient tristique" Id="19" IsEducator="True" Name="Mauris" Surname="Nostra"/>
+                        <Dto:PersonDto GroupNames="Egestas vel nunc ultricies" Id="14" IsEducator="False" Name="Mollis" Surname="Egestas"/>
+                        <Dto:PersonDto GroupNames="Vehicula morbi lectus" Id="89" IsEducator="True" Name="Euismod" Surname="Inceptos"/>
+                    </Dto:DayDto.People>
+                </Dto:DayDto>
+                <Dto:DayDto Date="12/09/2015 21:14:18" IsMorning="False" Id="82">
+                    <Dto:DayDto.Group>
+                        <Dto:GroupDto Id="10" Name="Adipiscing proin"/>
+                    </Dto:DayDto.Group>
+                    <Dto:DayDto.People>
+                        <Dto:PersonDto GroupNames="Venenatis dis vulputate maecenas" Id="30" IsEducator="True" Name="Feugiat" Surname="Ornare"/>
+                        <Dto:PersonDto GroupNames="Felis parturient vestibulum hac" Id="43" IsEducator="False" Name="Eros" Surname="Nunc"/>
+                        <Dto:PersonDto GroupNames="Eget natoque ipsum" Id="65" IsEducator="True" Name="Nibh" Surname="Interdum"/>
+                        <Dto:PersonDto GroupNames="Enim justo" Id="34" IsEducator="False" Name="Fames" Surname="Lobortis"/>
+                        <Dto:PersonDto GroupNames="Sem sit eros vel nibh" Id="44" IsEducator="True" Name="Montes" Surname="Nascetur"/>
+                    </Dto:DayDto.People>
+                </Dto:DayDto>
+                <Dto:DayDto Date="12/09/2015 21:14:18" IsMorning="False" Id="74">
+                    <Dto:DayDto.Group>
+                        <Dto:GroupDto Id="47" Name="Lorem pretium nam"/>
+                    </Dto:DayDto.Group>
+                    <Dto:DayDto.People>
+                        <Dto:PersonDto GroupNames="Habitant sed" Id="82" IsEducator="True" Name="Sagittis" Surname="Platea"/>
+                        <Dto:PersonDto GroupNames="Lobortis nascetur hac adipiscing" Id="75" IsEducator="False" Name="Nisi" Surname="Pharetra"/>
+                        <Dto:PersonDto GroupNames="Nec pharetra" Id="27" IsEducator="True" Name="Hac" Surname="Euismod"/>
+                        <Dto:PersonDto GroupNames="Viverra elementum non aliquam per" Id="15" IsEducator="False" Name="Nostra" Surname="Primis"/>
+                        <Dto:PersonDto GroupNames="Parturient integer pulvinar" Id="79" IsEducator="True" Name="Gravida" Surname="Rutrum"/>
+                    </Dto:DayDto.People>
+                </Dto:DayDto>
+                <Dto:DayDto Date="12/09/2015 21:14:18" IsMorning="False" Id="14">
+                    <Dto:DayDto.Group>
+                        <Dto:GroupDto Id="10" Name="Fermentum vestibulum quis"/>
+                    </Dto:DayDto.Group>
+                    <Dto:DayDto.People>
+                        <Dto:PersonDto GroupNames="Sagittis senectus" Id="18" IsEducator="True" Name="Ornare" Surname="Feugiat"/>
+                        <Dto:PersonDto GroupNames="Urna adipiscing" Id="16" IsEducator="False" Name="Leo" Surname="Gravida"/>
+                        <Dto:PersonDto GroupNames="Nulla adipiscing torquent nunc mus" Id="48" IsEducator="True" Name="Senectus" Surname="Placerat"/>
+                        <Dto:PersonDto GroupNames="Ante commodo" Id="35" IsEducator="False" Name="Felis" Surname="Sapien"/>
+                        <Dto:PersonDto GroupNames="Vehicula vitae malesuada" Id="64" IsEducator="True" Name="Platea" Surname="Pulvinar"/>
+                    </Dto:DayDto.People>
+                </Dto:DayDto>
+                <Dto:DayDto Date="12/09/2015 21:14:18" IsMorning="False" Id="76">
+                    <Dto:DayDto.Group>
+                        <Dto:GroupDto Id="66" Name="Parturient nostra tincidunt ornare"/>
+                    </Dto:DayDto.Group>
+                    <Dto:DayDto.People>
+                        <Dto:PersonDto GroupNames="Arcu donec" Id="24" IsEducator="True" Name="Mus" Surname="Est"/>
+                        <Dto:PersonDto GroupNames="Sem cubilia etiam dapibus" Id="40" IsEducator="False" Name="Iaculis" Surname="Odio"/>
+                        <Dto:PersonDto GroupNames="Nulla nam elit" Id="73" IsEducator="True" Name="Sociosqu" Surname="Semper"/>
+                        <Dto:PersonDto GroupNames="Feugiat primis vulputate bibendum adipiscing" Id="70" IsEducator="False" Name="Primis" Surname="Orci"/>
+                        <Dto:PersonDto GroupNames="Vestibulum augue dis phasellus dolor" Id="63" IsEducator="True" Name="Ipsum" Surname="Hac"/>
+                    </Dto:DayDto.People>
+                </Dto:DayDto>
+                <Dto:DayDto Date="12/09/2015 21:14:18" IsMorning="False" Id="62">
+                    <Dto:DayDto.Group>
+                        <Dto:GroupDto Id="55" Name="Laoreet sapien"/>
+                    </Dto:DayDto.Group>
+                    <Dto:DayDto.People>
+                        <Dto:PersonDto GroupNames="Adipiscing natoque nisi" Id="31" IsEducator="True" Name="Suscipit" Surname="Sociis"/>
+                        <Dto:PersonDto GroupNames="Nisl vestibulum faucibus" Id="27" IsEducator="False" Name="Nisl" Surname="Taciti"/>
+                        <Dto:PersonDto GroupNames="Vestibulum adipiscing elementum inceptos" Id="65" IsEducator="True" Name="Nec" Surname="Ipsum"/>
+                        <Dto:PersonDto GroupNames="Ipsum lobortis justo" Id="55" IsEducator="False" Name="Rutrum" Surname="Iaculis"/>
+                        <Dto:PersonDto GroupNames="Tellus pede" Id="83" IsEducator="True" Name="Non" Surname="Lacinia"/>
+                    </Dto:DayDto.People>
+                </Dto:DayDto>
+            </Dto:PersonDto.Days>
+        </Dto:PersonDto>
+    </Controls:PersonViewModel.Person>
+</Controls:PersonViewModel>

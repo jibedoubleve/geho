@@ -3,7 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Converters="clr-namespace:Probel.Geho.Gui.Converters"
              mc:Ignorable="d" d:DesignWidth="300">
+    <UserControl.Resources>
+        <Converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+    </UserControl.Resources>
     <Border BorderThickness="5"
             CornerRadius="5"
             Background="#FFF4F8FC">
@@ -15,6 +19,8 @@
                    Source="/Probel.Geho.Gui;component/Images/Educator.png"
                    Width="16"
                    Height="16"/>
+            <Image DockPanel.Dock="Left" Source="/Probel.Geho.Gui;component/Images/Trainee.png" Width="15" Height="15" 
+               Visibility="{Binding IsTrainee, Converter={StaticResource BoolToVisibilityConverter}}"/>
             <TextBlock DockPanel.Dock="Top"
                        FontWeight="Bold" VerticalAlignment="Center" 
                        Margin="15,0,0,0">

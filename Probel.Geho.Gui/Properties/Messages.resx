@@ -309,4 +309,43 @@ Vérifiez:
   <data name="Btn_Cancel" xml:space="preserve">
     <value>Annuler</value>
   </data>
+  <data name="Header_DisplaySchedule" xml:space="preserve">
+    <value>Afficher les horaires</value>
+  </data>
+  <data name="Btn_ScheduleDisplay" xml:space="preserve">
+    <value>Afficher les horaires</value>
+  </data>
+  <data name="Msg_Print" xml:space="preserve">
+    <value>Impression des documents</value>
+  </data>
+  <data name="Lbl_At" xml:space="preserve">
+    <value>à</value>
+  </data>
+  <data name="Cb_IsTrainee" xml:space="preserve">
+    <value>Stagiaire?</value>
+  </data>
+  <data name="Msg_ThisIsATrainee" xml:space="preserve">
+    <value>C'est un stagiaire</value>
+  </data>
+  <data name="Header_LunchTime" xml:space="preserve">
+    <value>Temps de midi</value>
+  </data>
+  <data name="Header_TimeTable" xml:space="preserve">
+    <value>Horaires</value>
+  </data>
+  <data name="Btn_ManageLunch" xml:space="preserve">
+    <value>Gérer les temps de midi</value>
+  </data>
+  <data name="Header_AdministrativeTasks" xml:space="preserve">
+    <value>Activités administratives</value>
+  </data>
+  <data name="Btn_Print" xml:space="preserve">
+    <value>Imprimer</value>
+  </data>
+  <data name="Header_Edition" xml:space="preserve">
+    <value>Edition</value>
+  </data>
+  <data name="Header_Print" xml:space="preserve">
+    <value>Impression</value>
+  </data>
 </root>

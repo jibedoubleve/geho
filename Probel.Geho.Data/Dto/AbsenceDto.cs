@@ -1,10 +1,20 @@
 ﻿namespace Probel.Geho.Data.Dto
 {
     using System;
-    using System.ComponentModel.DataAnnotations;
 
     public class AbsenceDto : BaseDto
     {
+        #region Constructors
+
+        public AbsenceDto()
+        {
+            this.Start
+                = this.End
+                = DateTime.Today;
+        }
+
+        #endregion Constructors
+
         #region Properties
 
         public DateTime End

@@ -18,17 +18,17 @@
         }
 
         [Test]
-        public void When_Morning_And_Shoud_Be_Morning()
+        public void When_AllDay_And_Shoud_Be_Morning()
         {
-            var md = MomentDay.Morning;
-
+            var md = MomentDay.AllDay;
             Assert.That(md.IsMorning(), Is.True);
         }
 
         [Test]
-        public void When_AllDay_And_Shoud_Be_Morning()
+        public void When_Morning_And_Shoud_Be_Morning()
         {
-            var md = MomentDay.AllDay;
+            var md = MomentDay.Morning;
+
             Assert.That(md.IsMorning(), Is.True);
         }
 

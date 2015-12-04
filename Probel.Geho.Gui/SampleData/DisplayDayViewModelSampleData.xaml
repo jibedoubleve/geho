@@ -1,0 +1,164 @@
+﻿<Controls:DisplayDayViewModel xmlns:Controls="clr-namespace:Probel.Geho.Gui.ViewModels.Controls" xmlns:Dto="clr-namespace:Probel.Geho.Data.Dto;assembly=Probel.Geho.Data" DayOfWeek="Friday" IsInpcActive="True">
+	<Controls:DisplayDayViewModel.Groups>
+		<Controls:DisplayGroupViewModel GroupName="Ligula odio" IsInpcActive="True">
+			<Controls:DisplayGroupViewModel.EducatorsAfternoon>
+				<Dto:PersonDto GroupNames="Nam maecenas sed" Id="49" IsEducator="True" Name="Curabitur cras vestibulum class duis" Surname="Aliquam phasellus"/>
+				<Dto:PersonDto GroupNames="Integer consequat convallis dignissim dis" Id="96" IsEducator="False" Name="Aenean adipiscing elementum facilisis" Surname="Est nunc amet"/>
+				<Dto:PersonDto GroupNames="Ante fermentum quisque mauris curae" Id="22" IsEducator="True" Name="Praesent vivamus" Surname="Fringilla parturient hac"/>
+				<Dto:PersonDto GroupNames="Accumsan donec leo aliquam vestibulum" Id="88" IsEducator="False" Name="Arcu etiam habitasse fusce vestibulum" Surname="Diam bibendum eget aliquet dictumst"/>
+				<Dto:PersonDto GroupNames="Mus blandit hendrerit nullam" Id="66" IsEducator="True" Name="Adipiscing commodo elit aptent" Surname="Himenaeos auctor"/>
+			</Controls:DisplayGroupViewModel.EducatorsAfternoon>
+			<Controls:DisplayGroupViewModel.EducatorsMorning>
+				<Dto:PersonDto GroupNames="Lorem enim imperdiet eleifend" Id="44" IsEducator="False" Name="Facilisi conubia malesuada penatibus cubilia" Surname="Erat congue faucibus"/>
+				<Dto:PersonDto GroupNames="Dapibus egestas" Id="86" IsEducator="True" Name="Habitant euismod nec" Surname="Inceptos eros parturient feugiat gravida"/>
+				<Dto:PersonDto GroupNames="Non interdum" Id="24" IsEducator="False" Name="Morbi nibh" Surname="Lobortis nulla per cursus"/>
+				<Dto:PersonDto GroupNames="Dictum vestibulum nisi sed" Id="48" IsEducator="True" Name="Iaculis vestibulum lacinia nisl" Surname="Nascetur lectus proin porttitor"/>
+				<Dto:PersonDto GroupNames="Laoreet augue nunc dolor" Id="89" IsEducator="False" Name="Adipiscing fames" Surname="Pharetra libero natoque"/>
+			</Controls:DisplayGroupViewModel.EducatorsMorning>
+		</Controls:DisplayGroupViewModel>
+		<Controls:DisplayGroupViewModel GroupName="Erat eros" IsInpcActive="False">
+			<Controls:DisplayGroupViewModel.EducatorsAfternoon>
+				<Dto:PersonDto GroupNames="Tincidunt parturient placerat orci sem" Id="95" IsEducator="False" Name="Litora luctus" Surname="Tristique magnis"/>
+				<Dto:PersonDto GroupNames="Ultricies pede" Id="93" IsEducator="True" Name="Venenatis posuere" Surname="Mattis mauris vestibulum vulputate sit"/>
+				<Dto:PersonDto GroupNames="Vestibulum vel" Id="69" IsEducator="False" Name="Curabitur potenti" Surname="Pulvinar adipiscing sagittis"/>
+				<Dto:PersonDto GroupNames="Pretium parturient quam mollis" Id="65" IsEducator="True" Name="Senectus rhoncus vestibulum vestibulum" Surname="Sociosqu felis quis phasellus consequat"/>
+				<Dto:PersonDto GroupNames="Montes suscipit" Id="15" IsEducator="False" Name="Ipsum sodales" Surname="Adipiscing nam nostra"/>
+			</Controls:DisplayGroupViewModel.EducatorsAfternoon>
+			<Controls:DisplayGroupViewModel.EducatorsMorning>
+				<Dto:PersonDto GroupNames="Viverra aliquam convallis" Id="60" IsEducator="True" Name="Integer justo parturient ornare quisque" Surname="Platea primis lacus urna dignissim"/>
+				<Dto:PersonDto GroupNames="Vivamus aliquam rutrum cras sapien" Id="80" IsEducator="False" Name="Elementum duis nunc" Surname="Facilisis vestibulum sed lorem"/>
+				<Dto:PersonDto GroupNames="Amet vestibulum" Id="32" IsEducator="True" Name="Aliquet ante fermentum magna torquent" Surname="Ultrices blandit dis adipiscing est"/>
+				<Dto:PersonDto GroupNames="Vehicula arcu" Id="32" IsEducator="False" Name="Volutpat diam semper commodo eget" Surname="Hac parturient leo elit"/>
+				<Dto:PersonDto GroupNames="Vestibulum massa mus" Id="33" IsEducator="True" Name="Nec non" Surname="Fringilla enim maecenas conubia habitasse"/>
+			</Controls:DisplayGroupViewModel.EducatorsMorning>
+		</Controls:DisplayGroupViewModel>
+		<Controls:DisplayGroupViewModel GroupName="Lorem habitasse morbi natoque habitant" IsInpcActive="True">
+			<Controls:DisplayGroupViewModel.EducatorsAfternoon>
+				<Dto:PersonDto GroupNames="Vestibulum hendrerit metus cubilia nibh" Id="89" IsEducator="True" Name="Dapibus sociis" Surname="Nisi taciti egestas morbi tellus"/>
+				<Dto:PersonDto GroupNames="Nisl nunc" Id="30" IsEducator="False" Name="Adipiscing himenaeos neque imperdiet parturient" Surname="Netus per praesent accumsan"/>
+				<Dto:PersonDto GroupNames="Vestibulum malesuada odio bibendum" Id="26" IsEducator="True" Name="Vestibulum nulla tempor porta purus" Surname="Tempus sed dictumst tortor"/>
+				<Dto:PersonDto GroupNames="Sem adipiscing sit euismod" Id="64" IsEducator="False" Name="Turpis penatibus" Surname="Porttitor risus parturient feugiat tincidunt"/>
+				<Dto:PersonDto GroupNames="Vestibulum tristique velit vitae" Id="60" IsEducator="True" Name="Ultricies venenatis vulputate" Surname="Vel orci pede"/>
+			</Controls:DisplayGroupViewModel.EducatorsAfternoon>
+			<Controls:DisplayGroupViewModel.EducatorsMorning>
+				<Dto:PersonDto GroupNames="Varius curabitur" Id="59" IsEducator="False" Name="Nam phasellus gravida consequat" Surname="Sed class"/>
+				<Dto:PersonDto GroupNames="Dis vestibulum" Id="58" IsEducator="True" Name="Quam aenean iaculis convallis curae" Surname="Dignissim mauris elementum quis adipiscing"/>
+				<Dto:PersonDto GroupNames="Donec est urna" Id="69" IsEducator="False" Name="Etiam facilisis hac leo mus" Surname="Nullam aptent lacinia parturient"/>
+				<Dto:PersonDto GroupNames="Auctor cras eleifend duis vestibulum" Id="32" IsEducator="True" Name="Facilisi vestibulum adipiscing" Surname="Fermentum nec"/>
+				<Dto:PersonDto GroupNames="Fringilla laoreet faucibus congue fusce" Id="42" IsEducator="False" Name="Cursus non per" Surname="Dictum sed parturient"/>
+			</Controls:DisplayGroupViewModel.EducatorsMorning>
+		</Controls:DisplayGroupViewModel>
+		<Controls:DisplayGroupViewModel GroupName="Non ornare cras torquent" IsInpcActive="False">
+			<Controls:DisplayGroupViewModel.EducatorsAfternoon>
+				<Dto:PersonDto GroupNames="Sem lectus" Id="19" IsEducator="False" Name="Hendrerit vestibulum himenaeos posuere" Surname="Libero nulla vestibulum"/>
+				<Dto:PersonDto GroupNames="Proin nunc amet imperdiet" Id="90" IsEducator="True" Name="Inceptos adipiscing ante arcu" Surname="Augue diam potenti"/>
+				<Dto:PersonDto GroupNames="Interdum ligula" Id="12" IsEducator="False" Name="Malesuada pretium sit litora" Surname="Vel rhoncus nam eget luctus"/>
+				<Dto:PersonDto GroupNames="Dolor sodales fames" Id="20" IsEducator="True" Name="Lobortis magnis elit penatibus enim" Surname="Erat eros"/>
+				<Dto:PersonDto GroupNames="Mattis mauris parturient felis" Id="18" IsEducator="False" Name="Porttitor ipsum nascetur" Surname="Sed pharetra nibh"/>
+			</Controls:DisplayGroupViewModel.EducatorsAfternoon>
+			<Controls:DisplayGroupViewModel.EducatorsMorning>
+				<Dto:PersonDto GroupNames="Viverra nisi" Id="18" IsEducator="True" Name="Dis est placerat pulvinar" Surname="Justo vestibulum mollis aliquam tincidunt"/>
+				<Dto:PersonDto GroupNames="Nisl tristique vestibulum ultricies" Id="93" IsEducator="False" Name="Sagittis integer" Surname="Hac quisque leo"/>
+				<Dto:PersonDto GroupNames="Lacus nunc adipiscing montes lorem" Id="19" IsEducator="True" Name="Parturient venenatis" Surname="Odio orci pede"/>
+				<Dto:PersonDto GroupNames="Magna vivamus massa" Id="24" IsEducator="False" Name="Mus vulputate" Surname="Quam aliquam quis"/>
+				<Dto:PersonDto GroupNames="Nec curabitur" Id="53" IsEducator="True" Name="Phasellus vestibulum senectus sociosqu" Surname="Nostra urna suscipit"/>
+			</Controls:DisplayGroupViewModel.EducatorsMorning>
+		</Controls:DisplayGroupViewModel>
+		<Controls:DisplayGroupViewModel GroupName="Eros nibh lobortis tempor nisi" IsInpcActive="True">
+			<Controls:DisplayGroupViewModel.EducatorsAfternoon>
+				<Dto:PersonDto GroupNames="Ultrices aliquet vehicula consequat" Id="59" IsEducator="True" Name="Platea duis" Surname="Blandit convallis dignissim elementum per"/>
+				<Dto:PersonDto GroupNames="Volutpat metus" Id="62" IsEducator="False" Name="Morbi nunc" Surname="Vestibulum facilisis sed"/>
+				<Dto:PersonDto GroupNames="Maecenas amet neque sem" Id="80" IsEducator="True" Name="Praesent ante netus primis" Surname="Nulla adipiscing sit arcu fermentum"/>
+				<Dto:PersonDto GroupNames="Fringilla vel rutrum" Id="18" IsEducator="False" Name="Commodo nam accumsan" Surname="Diam sapien sed"/>
+				<Dto:PersonDto GroupNames="Parturient porta purus" Id="18" IsEducator="True" Name="Dis habitasse" Surname="Risus semper sociis"/>
+			</Controls:DisplayGroupViewModel.EducatorsAfternoon>
+			<Controls:DisplayGroupViewModel.EducatorsMorning>
+				<Dto:PersonDto GroupNames="Eget velit" Id="54" IsEducator="False" Name="Vestibulum vestibulum" Surname="Hendrerit adipiscing vitae bibendum"/>
+				<Dto:PersonDto GroupNames="Himenaeos conubia" Id="38" IsEducator="True" Name="Taciti parturient imperdiet" Surname="Dictumst eleifend"/>
+				<Dto:PersonDto GroupNames="Cubilia vestibulum class dapibus" Id="80" IsEducator="False" Name="Vestibulum facilisi elit" Surname="Enim egestas faucibus habitant"/>
+				<Dto:PersonDto GroupNames="Erat est" Id="80" IsEducator="True" Name="Malesuada inceptos tellus hac" Surname="Adipiscing parturient"/>
+				<Dto:PersonDto GroupNames="Interdum penatibus" Id="80" IsEducator="False" Name="Curae vestibulum vestibulum leo" Surname="Mus porttitor"/>
+			</Controls:DisplayGroupViewModel.EducatorsMorning>
+		</Controls:DisplayGroupViewModel>
+		<Controls:DisplayGroupViewModel GroupName="Quis vestibulum accumsan" IsInpcActive="False">
+			<Controls:DisplayGroupViewModel.EducatorsAfternoon>
+				<Dto:PersonDto GroupNames="Donec euismod nascetur nec tempus" Id="46" IsEducator="False" Name="Pharetra feugiat placerat" Surname="Non per etiam fusce"/>
+				<Dto:PersonDto GroupNames="Sed tincidunt" Id="61" IsEducator="True" Name="Lorem adipiscing sem sit tortor" Surname="Parturient vestibulum vestibulum adipiscing nisl"/>
+				<Dto:PersonDto GroupNames="Vel morbi turpis" Id="15" IsEducator="False" Name="Tristique ultricies" Surname="Parturient nam venenatis nunc"/>
+				<Dto:PersonDto GroupNames="Varius vestibulum" Id="80" IsEducator="True" Name="Aenean sed" Surname="Pulvinar dis nulla mauris odio"/>
+				<Dto:PersonDto GroupNames="Sagittis vulputate vestibulum gravida" Id="96" IsEducator="False" Name="Adipiscing proin senectus parturient est" Surname="Hac augue nullam"/>
+			</Controls:DisplayGroupViewModel.EducatorsAfternoon>
+			<Controls:DisplayGroupViewModel.EducatorsMorning>
+				<Dto:PersonDto GroupNames="Dolor aptent sociosqu iaculis" Id="29" IsEducator="True" Name="Leo mus" Surname="Fames suscipit"/>
+				<Dto:PersonDto GroupNames="Vestibulum orci nec lacinia non" Id="79" IsEducator="False" Name="Torquent curabitur" Surname="Vestibulum adipiscing auctor per"/>
+				<Dto:PersonDto GroupNames="Sed laoreet ultrices" Id="57" IsEducator="True" Name="Felis sem ipsum congue cursus" Surname="Pede sit parturient phasellus"/>
+				<Dto:PersonDto GroupNames="Vestibulum natoque" Id="38" IsEducator="False" Name="Vehicula vel posuere volutpat potenti" Surname="Pretium vestibulum nam"/>
+				<Dto:PersonDto GroupNames="Maecenas quam dictum consequat lectus" Id="17" IsEducator="True" Name="Libero justo ligula convallis" Surname="Adipiscing praesent parturient"/>
+			</Controls:DisplayGroupViewModel.EducatorsMorning>
+		</Controls:DisplayGroupViewModel>
+		<Controls:DisplayGroupViewModel GroupName="Semper sociis vestibulum dis" IsInpcActive="True">
+			<Controls:DisplayGroupViewModel.EducatorsAfternoon>
+				<Dto:PersonDto GroupNames="Urna rhoncus" Id="85" IsEducator="True" Name="Cras sodales viverra duis" Surname="Aliquam sed lacus dis"/>
+				<Dto:PersonDto GroupNames="Vestibulum litora integer" Id="26" IsEducator="False" Name="Lorem nunc" Surname="Luctus dignissim amet est elementum"/>
+				<Dto:PersonDto GroupNames="Magnis facilisis magna adipiscing parturient" Id="92" IsEducator="True" Name="Ante bibendum massa" Surname="Vestibulum arcu vestibulum"/>
+				<Dto:PersonDto GroupNames="Mattis fermentum mauris mollis" Id="16" IsEducator="False" Name="Hac metus leo" Surname="Morbi fringilla diam"/>
+				<Dto:PersonDto GroupNames="Eget elit dictumst" Id="80" IsEducator="True" Name="Montes mus" Surname="Eleifend enim quisque vivamus"/>
+			</Controls:DisplayGroupViewModel.EducatorsAfternoon>
+			<Controls:DisplayGroupViewModel.EducatorsMorning>
+				<Dto:PersonDto GroupNames="Habitasse hendrerit nec non erat" Id="14" IsEducator="False" Name="Neque eros netus aliquam" Surname="Nostra aliquet nulla nibh nisi"/>
+				<Dto:PersonDto GroupNames="Per blandit commodo sed adipiscing" Id="90" IsEducator="True" Name="Nisl sem himenaeos imperdiet porta" Surname="Facilisi purus"/>
+				<Dto:PersonDto GroupNames="Faucibus habitant ornare malesuada" Id="59" IsEducator="False" Name="Conubia platea inceptos primis rutrum" Surname="Sit risus"/>
+				<Dto:PersonDto GroupNames="Interdum velit vel penatibus" Id="56" IsEducator="True" Name="Nam sapien parturient" Surname="Vitae porttitor"/>
+				<Dto:PersonDto GroupNames="Sed vestibulum" Id="96" IsEducator="False" Name="Lobortis tincidunt" Surname="Cubilia dapibus class"/>
+			</Controls:DisplayGroupViewModel.EducatorsMorning>
+		</Controls:DisplayGroupViewModel>
+		<Controls:DisplayGroupViewModel GroupName="Amet parturient integer nullam" IsInpcActive="False">
+			<Controls:DisplayGroupViewModel.EducatorsAfternoon>
+				<Dto:PersonDto GroupNames="Tristique taciti adipiscing nascetur" Id="66" IsEducator="False" Name="Egestas ultricies venenatis" Surname="Parturient est euismod vulputate"/>
+				<Dto:PersonDto GroupNames="Curabitur vestibulum curae phasellus consequat" Id="70" IsEducator="True" Name="Vestibulum donec" Surname="Hac etiam adipiscing parturient convallis"/>
+				<Dto:PersonDto GroupNames="Fusce pharetra vestibulum" Id="18" IsEducator="False" Name="Placerat lorem vestibulum" Surname="Nunc morbi adipiscing tellus"/>
+				<Dto:PersonDto GroupNames="Leo feugiat nulla" Id="79" IsEducator="True" Name="Tempor proin odio augue" Surname="Pulvinar parturient dolor fames"/>
+				<Dto:PersonDto GroupNames="Felis orci sagittis gravida" Id="74" IsEducator="False" Name="Senectus sociosqu ipsum" Surname="Mus tempus iaculis nec dignissim"/>
+			</Controls:DisplayGroupViewModel.EducatorsAfternoon>
+			<Controls:DisplayGroupViewModel.EducatorsMorning>
+				<Dto:PersonDto GroupNames="Lacinia laoreet non" Id="36" IsEducator="True" Name="Suscipit pede tortor" Surname="Vestibulum elementum quam"/>
+				<Dto:PersonDto GroupNames="Facilisis turpis" Id="50" IsEducator="False" Name="Fermentum torquent natoque varius" Surname="Posuere quis fringilla ultrices per"/>
+				<Dto:PersonDto GroupNames="Vehicula potenti sed pretium" Id="18" IsEducator="True" Name="Justo sem rhoncus" Surname="Urna habitasse lacus"/>
+				<Dto:PersonDto GroupNames="Sodales hendrerit sit" Id="55" IsEducator="False" Name="Volutpat himenaeos imperdiet lorem viverra" Surname="Vel cras vestibulum"/>
+				<Dto:PersonDto GroupNames="Aenean nam mauris malesuada penatibus" Id="15" IsEducator="True" Name="Porttitor duis nunc tincidunt" Surname="Tristique aliquam adipiscing sed"/>
+			</Controls:DisplayGroupViewModel.EducatorsMorning>
+		</Controls:DisplayGroupViewModel>
+		<Controls:DisplayGroupViewModel GroupName="Interdum lacinia laoreet" IsInpcActive="True">
+			<Controls:DisplayGroupViewModel.EducatorsAfternoon>
+				<Dto:PersonDto GroupNames="Magna dis vestibulum" Id="30" IsEducator="True" Name="Ultricies vestibulum venenatis massa quisque" Surname="Vulputate est maecenas praesent metus"/>
+				<Dto:PersonDto GroupNames="Vivamus accumsan aptent hac ante" Id="78" IsEducator="False" Name="Auctor aliquam" Surname="Curabitur congue arcu cursus leo"/>
+				<Dto:PersonDto GroupNames="Mus dictum" Id="89" IsEducator="True" Name="Adipiscing parturient vestibulum lectus" Surname="Phasellus diam consequat eget nec"/>
+				<Dto:PersonDto GroupNames="Morbi elit aliquet" Id="52" IsEducator="False" Name="Enim non erat per" Surname="Convallis libero"/>
+				<Dto:PersonDto GroupNames="Ligula litora neque vestibulum" Id="95" IsEducator="True" Name="Luctus adipiscing sed" Surname="Magnis parturient"/>
+			</Controls:DisplayGroupViewModel.EducatorsAfternoon>
+			<Controls:DisplayGroupViewModel.EducatorsMorning>
+				<Dto:PersonDto GroupNames="Bibendum vestibulum vestibulum" Id="57" IsEducator="False" Name="Blandit dictumst adipiscing mattis mauris" Surname="Commodo dignissim eleifend parturient"/>
+				<Dto:PersonDto GroupNames="Conubia cubilia" Id="84" IsEducator="True" Name="Netus facilisi sem elementum" Surname="Dapibus nulla mollis egestas porta"/>
+				<Dto:PersonDto GroupNames="Montes vestibulum" Id="32" IsEducator="False" Name="Euismod feugiat eros vestibulum nostra" Surname="Adipiscing purus risus nibh"/>
+				<Dto:PersonDto GroupNames="Sit velit vel facilisis ornare" Id="23" IsEducator="True" Name="Faucibus fermentum habitant inceptos nisi" Surname="Nisl gravida parturient"/>
+				<Dto:PersonDto GroupNames="Vestibulum vestibulum vitae" Id="89" IsEducator="False" Name="Platea nunc primis" Surname="Odio iaculis nam"/>
+			</Controls:DisplayGroupViewModel.EducatorsMorning>
+		</Controls:DisplayGroupViewModel>
+		<Controls:DisplayGroupViewModel GroupName="Egestas vestibulum tristique arcu" IsInpcActive="False">
+			<Controls:DisplayGroupViewModel.EducatorsAfternoon>
+				<Dto:PersonDto GroupNames="Orci class pede rutrum" Id="38" IsEducator="False" Name="Sed fringilla" Surname="Curae lobortis donec sapien"/>
+				<Dto:PersonDto GroupNames="Dis natoque etiam" Id="46" IsEducator="True" Name="Semper adipiscing sociis habitasse" Surname="Parturient est quam taciti"/>
+				<Dto:PersonDto GroupNames="Posuere potenti fusce nascetur" Id="80" IsEducator="False" Name="Hac hendrerit himenaeos leo pharetra" Surname="Mus placerat pretium quis"/>
+				<Dto:PersonDto GroupNames="Lorem morbi" Id="16" IsEducator="True" Name="Rhoncus nulla sodales tellus" Surname="Imperdiet malesuada"/>
+				<Dto:PersonDto GroupNames="Viverra aliquam" Id="67" IsEducator="False" Name="Penatibus pulvinar urna" Surname="Sagittis integer senectus"/>
+			</Controls:DisplayGroupViewModel.EducatorsAfternoon>
+			<Controls:DisplayGroupViewModel.EducatorsMorning>
+				<Dto:PersonDto GroupNames="Sociosqu cras quisque proin duis" Id="42" IsEducator="True" Name="Vivamus suscipit vestibulum torquent nec" Surname="Vestibulum tempor aliquam"/>
+				<Dto:PersonDto GroupNames="Ultrices tempus tortor adipiscing" Id="70" IsEducator="False" Name="Non per aliquet parturient" Surname="Blandit augue vehicula"/>
+				<Dto:PersonDto GroupNames="Dolor commodo sed sem" Id="74" IsEducator="True" Name="Turpis vestibulum" Surname="Vestibulum nunc fames felis adipiscing"/>
+				<Dto:PersonDto GroupNames="Porttitor sit ipsum" Id="38" IsEducator="False" Name="Vel volutpat" Surname="Maecenas conubia"/>
+				<Dto:PersonDto GroupNames="Cubilia dapibus varius aenean justo" Id="14" IsEducator="True" Name="Parturient amet" Surname="Lacus tincidunt ante"/>
+			</Controls:DisplayGroupViewModel.EducatorsMorning>
+		</Controls:DisplayGroupViewModel>
+	</Controls:DisplayDayViewModel.Groups>
+</Controls:DisplayDayViewModel>

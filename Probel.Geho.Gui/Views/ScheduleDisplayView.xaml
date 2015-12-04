@@ -5,53 +5,107 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       
       xmlns:t="clr-namespace:Probel.Geho.Gui.Properties"
+      xmlns:ctrl="clr-namespace:Probel.Geho.Gui.Views.Controls"
+      xmlns:Converters="clr-namespace:Probel.Geho.Gui.Converters"
       
       mc:Ignorable="d" 
       d:DesignHeight="720" d:DesignWidth="1200"
-	Title="ScheduleDisplayView">
-
-    <TabControl>
-        <TabItem>
-            <TabItem.Header>
-                <TextBlock>
-                            <Run Text="{x:Static t:Messages.Tab_Week}"/>
-                </TextBlock>
-            </TabItem.Header>
-        </TabItem>
-        <TabItem>
-            <TabItem.Header>
-                <TextBlock>
-                            <Run Text="{x:Static t:Messages.Tab_Monday}"/>
-                </TextBlock>
-            </TabItem.Header>
-        </TabItem>
-        <TabItem>
-            <TabItem.Header>
-                <TextBlock>
-                            <Run Text="{x:Static t:Messages.Tab_Tuesday}"/>
-                </TextBlock>
-            </TabItem.Header>
-        </TabItem>
-        <TabItem>
-            <TabItem.Header>
-                <TextBlock>
-                            <Run Text="{x:Static t:Messages.Tab_Wednesday}"/>
-                </TextBlock>
-            </TabItem.Header>
-        </TabItem>
-        <TabItem>
-            <TabItem.Header>
-                <TextBlock>
-                            <Run Text="{x:Static t:Messages.Tab_Thursday}"/>
-                </TextBlock>
-            </TabItem.Header>
-        </TabItem>
-        <TabItem>
-            <TabItem.Header>
-                <TextBlock>
-                            <Run Text="{x:Static t:Messages.Tab_Friday}"/>
-                </TextBlock>
-            </TabItem.Header>
-        </TabItem>
-    </TabControl>
-</Page>
+      Title="ScheduleDisplayView"
+      Loaded="Page_Loaded">
+    <Page.Resources>
+        <Converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+    </Page.Resources>
+    <HeaderedContentControl Header="{x:Static t:Messages.Header_DisplaySchedule}">
+        <DockPanel LastChildFill="True">
+            <DockPanel DockPanel.Dock="Top">
+                <ComboBox x:Name="cb_Dates" 
+                          ItemsSource="{Binding Mondays}"
+                          ItemStringFormat="D"
+                          Margin="5"
+                          MinWidth="200" SelectionChanged="SelectionChanged_cb_Dates"/>
+                <DockPanel DockPanel.Dock="Right">
+                    <Button DockPanel.Dock="Right" Click="Click_Print">
+                        <Button.Content>
+                            <Image Source="/Probel.Geho.Gui;component/Images/Print.png"
+                               Width="16"
+                               Height="16"/>
+                        </Button.Content>
+                    </Button>
+                    <Popup DockPanel.Dock="Right"	
+                           x:Name="printPopup"
+                           Placement="Left"
+                           StaysOpen="False">
+                        <Border BorderThickness="5"
+                                CornerRadius="5"
+                                Background="#FF465A7D">
+                            <Border.Effect>
+                                <DropShadowEffect Color="#FFB6B6B6"/>
+                            </Border.Effect>
+                            <ctrl:PrintView Printing="PrintView_Printing"  Cancelled="PrintView_Cancelled"/>
+                        </Border>
+                    </Popup>
+                </DockPanel>
+                <Grid/>
+            </DockPanel>
+            <TabControl Background="#FF293955">
+                <TabItem x:Name="tab_week">
+                    <TabItem.Header>
+                        <TextBlock Text="{x:Static t:Messages.Tab_Week}" FontWeight="Bold"/>
+                    </TabItem.Header>
+                    <ScrollViewer ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                                  ScrollViewer.VerticalScrollBarVisibility="Auto">
+                        <ctrl:DisplayWeekView x:Name="uc_week" DataContext="{Binding DisplayWeekViewModel}"/>
+                    </ScrollViewer>
+                </TabItem>
+                <TabItem  x:Name="tab_monday"
+                          Header="{x:Static t:Messages.Tab_Monday}">
+                    <ScrollViewer ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                                  ScrollViewer.VerticalScrollBarVisibility="Auto">
+                        <ctrl:DisplayOneDayView x:Name="uc_Monday" DataContext="{Binding Monday}"/>
+                    </ScrollViewer>
+                </TabItem>
+                <TabItem x:Name="tab_tuesday"
+                         Header="{x:Static t:Messages.Tab_Tuesday}">
+                    <ScrollViewer ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                                  ScrollViewer.VerticalScrollBarVisibility="Auto">
+                        <ctrl:DisplayOneDayView x:Name="uc_Tuesday"  DataContext="{Binding Tuesday}"/>
+                    </ScrollViewer>
+                </TabItem>
+                <TabItem x:Name="tab_wednesday"
+                         Header="{x:Static t:Messages.Tab_Wednesday}">
+                    <ScrollViewer ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                                  ScrollViewer.VerticalScrollBarVisibility="Auto">
+                        <ctrl:DisplayOneDayView x:Name="uc_Wednesday" DataContext="{Binding Wednesday}"/>
+                    </ScrollViewer>
+                </TabItem>
+                <TabItem x:Name="tab_thursday" Header="{x:Static t:Messages.Tab_Thursday}">
+                    <ScrollViewer ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                                  ScrollViewer.VerticalScrollBarVisibility="Auto">
+                        <ctrl:DisplayOneDayView x:Name="uc_Thursday" DataContext="{Binding Thursday}"/>
+                    </ScrollViewer>
+                </TabItem>
+                <TabItem x:Name="tab_friday" Header="{x:Static t:Messages.Tab_Friday}">
+                    <ScrollViewer ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                                  ScrollViewer.VerticalScrollBarVisibility="Auto">
+                        <ctrl:DisplayOneDayView x:Name="uc_Friday" DataContext="{Binding Friday}"/>
+                    </ScrollViewer>
+                </TabItem>
+                <TabItem x:Name="tab_activities">
+                    <TabItem.Header>
+                        <TextBlock Text="{x:Static t:Messages.Header_Activities}" FontWeight="Bold"/>
+                    </TabItem.Header>
+                    <ctrl:ActivityListView x:Name="uc_Activities" DataContext="{Binding ActivityListViewModel}"/>
+                </TabItem>
+                <TabItem x:Name="tab_lunches">
+                    <TabItem.Header>
+                        <TextBlock Text="{x:Static t:Messages.Header_LunchTime}" FontWeight="Bold"/>
+                    </TabItem.Header>
+                    <ScrollViewer ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                                  ScrollViewer.VerticalScrollBarVisibility="Auto">
+                        <ctrl:DisplayLunchView x:Name="uc_LunchTime" DataContext="{Binding DisplayLunchViewModel}"/>
+                    </ScrollViewer>
+                </TabItem>
+            </TabControl>
+        </DockPanel>
+    </HeaderedContentControl>
+</Page>        

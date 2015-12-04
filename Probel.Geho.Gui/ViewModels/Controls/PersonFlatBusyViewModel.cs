@@ -94,6 +94,17 @@
                 this.isSelected = value;
                 this.SetColourStatus();
                 this.OnPropertyChanged(() => IsSelected);
+                this.Save();
+            }
+        }
+
+        public bool IsTrainee
+        {
+            get { return this._person.IsTrainee; }
+            set
+            {
+                this._person.IsTrainee = value;
+                this.OnPropertyChanged(() => IsTrainee);
             }
         }
 
@@ -140,6 +151,12 @@
         {
             this.ParentVm.Save();
             this.ParentVm.ParentVm.MarkBusyEducators();
+        }
+
+        public void SetSelected()
+        {
+            this.isSelected = true;
+            this.SetColourStatus();
         }
 
         private void SetColourStatus()

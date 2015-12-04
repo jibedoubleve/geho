@@ -15,6 +15,8 @@
 
         void FeedDay(DateTime date, GroupDto group, bool isMorning);
 
+        IEnumerable<ActivityDto> GetActivities();
+
         IEnumerable<PersonDto> GetEducatorsBusyInDay(DateTime currentDay, bool isMorning);
 
         IEnumerable<PersonDto> GetFreeBeneficiaries(GroupDto group, DateTime currentDay, bool isMorning);
@@ -24,6 +26,14 @@
         GroupDto GetGroup(int id);
 
         IEnumerable<GroupDto> GetGroups();
+
+        IEnumerable<LunchTimeDto> GetLunchTimes();
+
+        /// <summary>
+        /// Gets all the mondays of the configured weeks
+        /// </summary>
+        /// <returns>A list of datetime representing the monday of the configured weeks</returns>
+        IEnumerable<DateTime> GetMondays();
 
         WeekDto GetWeek(DateTime dateInWeek);
 

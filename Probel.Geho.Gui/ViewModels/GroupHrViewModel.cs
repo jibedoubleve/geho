@@ -39,6 +39,7 @@
             this.Service = service;
             this.Groups = new ObservableCollection<GroupViewModel>();
             this.Activities = new ObservableCollection<ActivityViewModel>();
+            this.AdministrativeActivities = new ObservableCollection<ActivityViewModel>();
             this.BeneficiariesInGroup = new ObservableCollection<PersonModel>();
             this.BeneficiariesInActivity = new ObservableCollection<PersonModel>();
             this.EducatorsInActivity = new ObservableCollection<PersonModel>();
@@ -77,6 +78,12 @@
         public ICommand AddGroupCommand
         {
             get { return this.addGroupCommand; }
+        }
+
+        public ObservableCollection<ActivityViewModel> AdministrativeActivities
+        {
+            get;
+            private set;
         }
 
         public ObservableCollection<PersonModel> BeneficiariesInActivity
@@ -162,6 +169,9 @@
 
             var a = this.Service.GetActivities();
             this.Activities.Refill(ActivityViewModel.ToActivityViewModel(a, Service, this));
+
+            var aa = this.Service.GetAdministrativeActivities();
+            this.AdministrativeActivities.Refill(ActivityViewModel.ToActivityViewModel(aa, Service, this));
 
             this.PeopleWithoutGroup = PersonModel.ToModel(this.Service.GetBeneficiariesWithoutGroup());
 

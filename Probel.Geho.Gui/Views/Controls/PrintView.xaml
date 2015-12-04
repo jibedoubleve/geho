@@ -1,0 +1,65 @@
+﻿<UserControl x:Class="Probel.Geho.Gui.Views.Controls.PrintView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Probel.Geho.Gui.Views.Controls"
+             
+             xmlns:t="clr-namespace:Probel.Geho.Gui.Properties"
+             mc:Ignorable="d">
+
+    <HeaderedContentControl Header="{x:Static t:Messages.Header_Print}">
+        <DockPanel DockPanel.Dock="Bottom">
+            <DockPanel DockPanel.Dock="Top" LastChildFill="True">
+                <TextBlock DockPanel.Dock="Left" Text="{x:Static t:Messages.Tab_Week}"
+                           Style="{StaticResource TextBoxStyle}"/>
+                <CheckBox x:Name="cb_Week" VerticalAlignment="Center" IsChecked="true"/>
+            </DockPanel>
+            <DockPanel DockPanel.Dock="Top" LastChildFill="True">
+                <TextBlock DockPanel.Dock="Left" Text="{x:Static t:Messages.Tab_Monday}"
+                           Style="{StaticResource TextBoxStyle}"/>
+                <CheckBox x:Name="cb_Monday" VerticalAlignment="Center" IsChecked="true"/>
+            </DockPanel>
+            <DockPanel DockPanel.Dock="Top" LastChildFill="True">
+                <TextBlock DockPanel.Dock="Left" Text="{x:Static t:Messages.Tab_Tuesday}"
+                           Style="{StaticResource TextBoxStyle}"/>
+                <CheckBox x:Name="cb_Tuesday" VerticalAlignment="Center" IsChecked="true"/>
+            </DockPanel>
+            <DockPanel DockPanel.Dock="Top" LastChildFill="True">
+                <TextBlock DockPanel.Dock="Left" Text="{x:Static t:Messages.Tab_Wednesday}"
+                           Style="{StaticResource TextBoxStyle}"/>
+                <CheckBox x:Name="cb_Wednesday" VerticalAlignment="Center" IsChecked="true"/>
+            </DockPanel>
+            <DockPanel DockPanel.Dock="Top" LastChildFill="True">
+                <TextBlock DockPanel.Dock="Left" Text="{x:Static t:Messages.Tab_Thursday}"
+                           Style="{StaticResource TextBoxStyle}"/>
+                <CheckBox x:Name="cb_Thursday" VerticalAlignment="Center" IsChecked="true"/>
+            </DockPanel>
+            <DockPanel DockPanel.Dock="Top" LastChildFill="True">
+                <TextBlock DockPanel.Dock="Left" Text="{x:Static t:Messages.Tab_Friday}"
+                           Style="{StaticResource TextBoxStyle}"/>
+                <CheckBox x:Name="cb_Friday" VerticalAlignment="Center" IsChecked="true"/>
+            </DockPanel>
+            <DockPanel DockPanel.Dock="Top" LastChildFill="True">
+                <TextBlock DockPanel.Dock="Left" Text="{x:Static t:Messages.Header_Activities}"
+                           Style="{StaticResource TextBoxStyle}"/>
+                <CheckBox x:Name="cb_Activities" VerticalAlignment="Center" IsChecked="true"/>
+            </DockPanel>
+            <DockPanel DockPanel.Dock="Top" LastChildFill="True">
+                <TextBlock DockPanel.Dock="Left" Text="{x:Static t:Messages.Header_LunchTime}"
+                           Style="{StaticResource TextBoxStyle}"/>
+                <CheckBox x:Name="cb_LunchTime" VerticalAlignment="Center"/>
+            </DockPanel>
+            <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom" HorizontalAlignment="Right">
+                <Button Content="{x:Static t:Messages.Btn_Print}"
+                        Style="{StaticResource ButtonToolBoxStyle}"
+                        Command="{Binding EditCommand}"
+                        Click="Click_Printed"/>
+                <Button Content="{x:Static t:Messages.Btn_Cancel}"
+                        Style="{StaticResource ButtonToolBoxStyle}"
+                        Command="{Binding CancelCommand}"
+                        Click="Click_Cancel"/>
+            </StackPanel>
+        </DockPanel>
+    </HeaderedContentControl>
+</UserControl>

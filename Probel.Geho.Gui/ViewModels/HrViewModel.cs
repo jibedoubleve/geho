@@ -24,10 +24,13 @@
         private readonly ICommand addPersonCommand;
         private readonly IHrService Service;
 
-        private AbsenceDto absenceToAdd = new AbsenceDto() { Start = DateTime.Today, End = DateTime.Today };
+        private AbsenceDto absenceToAdd;
         private IEnumerable<PersonDto> bufferPersons = new List<PersonDto>();
+        private int endOffset = 18;
         private bool filterEducator;
+        private LunchManagementViewModel lunchManagementViewModel;
         private PersonDto personToAdd;
+        private int startOffset = 8;
 
         #endregion Fields
 
@@ -44,6 +47,7 @@
             this.Activities = new ObservableCollection<ActivityCardViewModel>();
 
             this.PersonToAdd = new PersonDto();
+            this.AbsenceToAdd = new AbsenceDto();
 
             this.addPersonCommand = new RelayCommand(AddPerson, CanAddPerson);
             this.addAbsenceCommand = new RelayCommand(AddAbsence, CanAddAbsence);
@@ -97,6 +101,16 @@
             private set;
         }
 
+        public int EndOffset
+        {
+            get { return this.endOffset; }
+            set
+            {
+                this.endOffset = value;
+                this.OnPropertyChanged(() => EndOffset);
+            }
+        }
+
         public ObservableCollection<PersonDto> FilteredPersons
         {
             get;
@@ -123,6 +137,16 @@
             private set;
         }
 
+        public LunchManagementViewModel LunchManagementViewModel
+        {
+            get { return this.lunchManagementViewModel; }
+            set
+            {
+                this.lunchManagementViewModel = value;
+                this.OnPropertyChanged(() => LunchManagementViewModel);
+            }
+        }
+
         public PersonDto PersonToAdd
         {
             get { return this.personToAdd; }
@@ -130,6 +154,16 @@
             {
                 this.personToAdd = value;
                 this.OnPropertyChanged(() => PersonToAdd);
+            }
+        }
+
+        public int StartOffset
+        {
+            get { return this.startOffset; }
+            set
+            {
+                this.startOffset = value;
+                this.OnPropertyChanged(() => StartOffset);
             }
         }
 
@@ -153,17 +187,23 @@
             this.Educators.Refill(PersonViewModel.ToViewModels(p.GetEducators(), Service, this));
             this.Absences.Refill(AbsenceViewModel.ToViewModels(a, Service, this));
             this.Groups.Refill(GroupViewModel.ToViewModels(g, Service, this));
-            this.Activities.Refill(ActivityCardViewModel.ToActivityCardViewModel(ac, Service, this));
+            this.Activities.Refill(ActivityCardViewModel.ToActivityCardViewModel(ac));
+
+            var vm = new LunchManagementViewModel(this.Service);
+            vm.Load();
+            this.LunchManagementViewModel = vm;
         }
 
         private void AddAbsence()
         {
-            var status = this.Service.IsAbsenceValid(this.AbsenceToAdd);
+            this.AbsenceToAdd.Start = this.AbsenceToAdd.Start.Date.AddHours(this.StartOffset);
+            this.AbsenceToAdd.End = this.AbsenceToAdd.End.Date.AddHours(this.EndOffset);
 
+            var status = this.Service.IsAbsenceValid(this.AbsenceToAdd);
             if (status.IsValid)
             {
                 this.Service.CreateAbsence(this.AbsenceToAdd);
-                this.AbsenceToAdd = new AbsenceDto() { Start = DateTime.Today, End = DateTime.Today };
+                this.AbsenceToAdd = new AbsenceDto();
                 this.Load();
             }
             else { ViewService.MessageBox.Warning(status.Error); }
@@ -184,14 +224,13 @@
             return this.AbsenceToAdd != null
                 && this.AbsenceToAdd.Person != null
                 && AbsenceToAdd.Start <= AbsenceToAdd.End
-                && AbsenceToAdd.Start >= DateTime.Today;
+                && AbsenceToAdd.Start >= DateTime.Today.AddDays(-1);
         }
 
         private bool CanAddPerson()
         {
             return this.PersonToAdd != null
-                && !string.IsNullOrWhiteSpace(this.PersonToAdd.Name)
-                && !string.IsNullOrWhiteSpace(this.personToAdd.Surname);
+                && !string.IsNullOrWhiteSpace(this.PersonToAdd.Name);
         }
 
         #endregion Methods

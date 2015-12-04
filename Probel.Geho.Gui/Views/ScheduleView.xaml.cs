@@ -1,19 +1,7 @@
 ﻿namespace Probel.Geho.Gui.Views
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
     using System.Windows;
     using System.Windows.Controls;
-    using System.Windows.Data;
-    using System.Windows.Documents;
-    using System.Windows.Input;
-    using System.Windows.Media;
-    using System.Windows.Media.Imaging;
-    using System.Windows.Navigation;
-    using System.Windows.Shapes;
 
     using Probel.Geho.Gui.ViewModels;
 
@@ -31,5 +19,27 @@
         }
 
         #endregion Constructors
+
+        #region Methods
+
+        private void click_After(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is ScheduleViewModel)
+            {
+                var vm = DataContext as ScheduleViewModel;
+                vm.NextWeek();
+            }
+        }
+
+        private void click_Before(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is ScheduleViewModel)
+            {
+                var vm = DataContext as ScheduleViewModel;
+                vm.PreviousWeek();
+            }
+        }
+
+        #endregion Methods
     }
 }

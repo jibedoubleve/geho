@@ -1,10 +1,8 @@
 ﻿namespace Probel.Geho.Data.BusinessLogic.BusinessRules
 {
     using System;
-    using System.Collections.Generic;
     using System.Linq;
     using System.Text;
-    using System.Threading.Tasks;
 
     using Probel.Geho.Data.Database;
     using Probel.Geho.Data.Entities;

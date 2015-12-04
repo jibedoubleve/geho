@@ -106,6 +106,33 @@ namespace Probel.Geho.Gui.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Gérer les temps de midi.
+        /// </summary>
+        public static string Btn_ManageLunch {
+            get {
+                return ResourceManager.GetString("Btn_ManageLunch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Imprimer.
+        /// </summary>
+        public static string Btn_Print {
+            get {
+                return ResourceManager.GetString("Btn_Print", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Afficher les horaires.
+        /// </summary>
+        public static string Btn_ScheduleDisplay {
+            get {
+                return ResourceManager.GetString("Btn_ScheduleDisplay", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Gestion des horaires.
         /// </summary>
         public static string Btn_ScheduleManagement {
@@ -141,6 +168,15 @@ namespace Probel.Geho.Gui.Properties {
         public static string Cb_IsEducator {
             get {
                 return ResourceManager.GetString("Cb_IsEducator", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stagiaire?.
+        /// </summary>
+        public static string Cb_IsTrainee {
+            get {
+                return ResourceManager.GetString("Cb_IsTrainee", resourceCulture);
             }
         }
         
@@ -280,6 +316,15 @@ namespace Probel.Geho.Gui.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Activités administratives.
+        /// </summary>
+        public static string Header_AdministrativeTasks {
+            get {
+                return ResourceManager.GetString("Header_AdministrativeTasks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bénéficiaires.
         /// </summary>
         public static string Header_Beneficiary {
@@ -298,6 +343,24 @@ namespace Probel.Geho.Gui.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Afficher les horaires.
+        /// </summary>
+        public static string Header_DisplaySchedule {
+            get {
+                return ResourceManager.GetString("Header_DisplaySchedule", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edition.
+        /// </summary>
+        public static string Header_Edition {
+            get {
+                return ResourceManager.GetString("Header_Edition", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Educateurs.
         /// </summary>
         public static string Header_Educators {
@@ -312,6 +375,15 @@ namespace Probel.Geho.Gui.Properties {
         public static string Header_Groups {
             get {
                 return ResourceManager.GetString("Header_Groups", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Temps de midi.
+        /// </summary>
+        public static string Header_LunchTime {
+            get {
+                return ResourceManager.GetString("Header_LunchTime", resourceCulture);
             }
         }
         
@@ -361,6 +433,24 @@ namespace Probel.Geho.Gui.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Impression.
+        /// </summary>
+        public static string Header_Print {
+            get {
+                return ResourceManager.GetString("Header_Print", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Horaires.
+        /// </summary>
+        public static string Header_TimeTable {
+            get {
+                return ResourceManager.GetString("Header_TimeTable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Occupations.
         /// </summary>
         public static string Header_WorkSummary {
@@ -393,6 +483,15 @@ namespace Probel.Geho.Gui.Properties {
         public static string Lbl_Afternoon {
             get {
                 return ResourceManager.GetString("Lbl_Afternoon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to à.
+        /// </summary>
+        public static string Lbl_At {
+            get {
+                return ResourceManager.GetString("Lbl_At", resourceCulture);
             }
         }
         
@@ -573,6 +672,24 @@ namespace Probel.Geho.Gui.Properties {
         public static string Msg_NoMessage {
             get {
                 return ResourceManager.GetString("Msg_NoMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Impression des documents.
+        /// </summary>
+        public static string Msg_Print {
+            get {
+                return ResourceManager.GetString("Msg_Print", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to C&apos;est un stagiaire.
+        /// </summary>
+        public static string Msg_ThisIsATrainee {
+            get {
+                return ResourceManager.GetString("Msg_ThisIsATrainee", resourceCulture);
             }
         }
         

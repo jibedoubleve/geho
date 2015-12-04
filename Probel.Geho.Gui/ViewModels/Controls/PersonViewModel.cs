@@ -14,10 +14,13 @@
     {
         #region Fields
 
+        private readonly ICommand cancelCommand;
         private readonly ICommand deletePersonCommand;
+        private readonly ICommand editCommand;
         private readonly ILoadeableViewModel ParentVm;
         private readonly IHrService Service;
 
+        private bool isEdition;
         private PersonDto person;
 
         #endregion Fields
@@ -33,30 +36,25 @@
             this.cancelCommand = new RelayCommand(Cancel, CanCancel);
         }
 
-        private readonly ICommand cancelCommand;
+        #endregion Constructors
+
+        #region Properties
+
         public ICommand CancelCommand
         {
             get { return this.cancelCommand; }
         }
-        private void Cancel() { this.Person = this.Service.GetPerson(this.Person.Id); }
-        private bool CanCancel() { return this.Person != null; ; }
 
-        private readonly ICommand editCommand;
+        public ICommand DeletePersonCommand
+        {
+            get { return this.deletePersonCommand; }
+        }
+
         public ICommand EditCommand
         {
             get { return this.editCommand; }
         }
-        private void Edit()
-        {
-            this.Service.UpdatePerson(this.Person);
-        }
-        private bool CanEdit()
-        {
-            return !string.IsNullOrWhiteSpace(this.Person.Name)
-                && !string.IsNullOrWhiteSpace(this.Person.Surname); ;
-        }
 
-        private bool isEdition;
         public bool IsEdition
         {
             get { return this.isEdition; }
@@ -65,14 +63,6 @@
                 this.isEdition = value;
                 this.OnPropertyChanged(() => IsEdition);
             }
-        }
-        #endregion Constructors
-
-        #region Properties
-
-        public ICommand DeletePersonCommand
-        {
-            get { return this.deletePersonCommand; }
         }
 
         public PersonDto Person
@@ -99,9 +89,24 @@
             return result;
         }
 
+        private bool CanCancel()
+        {
+            return this.Person != null; ;
+        }
+
+        private void Cancel()
+        {
+            this.Person = this.Service.GetPerson(this.Person.Id);
+        }
+
         private bool CanDeletePerson()
         {
             return this.Person != null;
+        }
+
+        private bool CanEdit()
+        {
+            return !string.IsNullOrWhiteSpace(this.Person.Name);
         }
 
         private void DeletePerson()
@@ -115,6 +120,11 @@
                     this.ParentVm.Load();
                 }
             }
+        }
+
+        private void Edit()
+        {
+            this.Service.UpdatePerson(this.Person);
         }
 
         #endregion Methods

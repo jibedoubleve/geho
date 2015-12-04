@@ -131,7 +131,7 @@
 
         public static IEnumerable<GroupDayViewModel> ToViewModel(IEnumerable<GroupDto> groups, IScheduleService srv, DayViewModel parentVm)
         {
-            if (srv == null) { throw new ArgumentNullException("The specified service is null", "srv"); }
+            if (srv == null) { throw new ArgumentNullException("srv"); }
             var list = new List<GroupDayViewModel>();
             foreach (var item in groups)
             {
@@ -158,9 +158,11 @@
                                && d.Group.Id == this.Group.Id
                             select d).ToList();
 
-                MarkEducatorSelectedInThisGroup(days);
                 this.BeneficiariesMorning.Refill(this.Service.GetFreeBeneficiaries(this.Group, this.ParentVm.CurrentDay, isMorning: true));
                 this.BenificiariesAfternoon.Refill(this.Service.GetFreeBeneficiaries(this.Group, this.ParentVm.CurrentDay, isMorning: false));
+
+                MarkEducatorSelectedInThisGroup(days);
+                MarkEducatorsBusyInOtherGroups();
             }
         }
 
@@ -224,9 +226,9 @@
                 {
                     foreach (var p in mornings.People)
                     {
-                        this.EducatorsMorning.Where(e => e.Person.Id == p.Id)
-                                             .ToList()
-                                             .ForEach(e => e.IsSelected = true);
+                        var r = this.EducatorsMorning.Where(e => e.Person.Id == p.Id)
+                                                 .ToList();
+                        r.ForEach(e => e.SetSelected());
                     }
                 }
 
@@ -237,7 +239,7 @@
                     {
                         this.EducatorsAfternoon.Where(e => e.Person.Id == p.Id)
                                                .ToList()
-                                               .ForEach(e => e.IsSelected = true);
+                                               .ForEach(e => e.SetSelected());
                     }
                 }
             }

@@ -9,7 +9,7 @@
              mc:Ignorable="d" d:DesignWidth="300">
     <Border BorderThickness="5"
             CornerRadius="5"
-            Background="#FFC6E2FD">
+            Background="#FFD6DBE9">
         <Border.Effect>
             <DropShadowEffect Color="#FFB6B6B6"/>
         </Border.Effect>

@@ -76,6 +76,16 @@
 
         #region Methods
 
+        public void NextWeek()
+        {
+            WeekDate = WeekDate.AddDays(7).GetMonday();
+        }
+
+        internal void PreviousWeek()
+        {
+            WeekDate = WeekDate.AddDays(-7).GetMonday();
+        }
+
         private bool CanLoadWeek()
         {
             return true;

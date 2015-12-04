@@ -19,16 +19,18 @@
         <DockPanel>
             <HeaderedContentControl  Header="{x:Static t:Messages.Header_Groups}">
                 <DockPanel>
-                    <ListView ItemsSource="{Binding Groups}"                          
+                    <ScrollViewer VerticalScrollBarVisibility="Auto">
+                        <ListView ItemsSource="{Binding Groups}"                          
                               SelectedItem="{Binding SelectedGroup}"
                               HorizontalContentAlignment="Stretch"
                               VerticalContentAlignment="Stretch">
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <ctrl:GroupView/>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ctrl:GroupView/>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </ScrollViewer>
                 </DockPanel>
             </HeaderedContentControl>
         </DockPanel>
@@ -61,33 +63,54 @@
                     <Button DockPanel.Dock="Bottom"
                         Content="{x:Static t:Messages.Btn_Update}"
                         Command="{Binding UpdateGroupCommand}"/>
-                    <ItemsControl DockPanel.Dock="Bottom"
-                                  BorderThickness="1" BorderBrush="#FF828790"
+                    <ScrollViewer VerticalScrollBarVisibility="Auto" DockPanel.Dock="Bottom">
+                        <ItemsControl BorderThickness="1" BorderBrush="#FF828790"
                                   ItemsSource="{Binding BeneficiariesInGroup}">
-                        <ItemsControl.ItemTemplate>
-                            <DataTemplate>
-                                <ctrl:PersonCheckboxView/>
-                            </DataTemplate>
-                        </ItemsControl.ItemTemplate>
-                    </ItemsControl>
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <ctrl:PersonCheckboxView/>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </ScrollViewer>
                 </DockPanel>
             </HeaderedContentControl>
         </DockPanel>
-        <DockPanel Grid.Column="2">
-            <HeaderedContentControl DockPanel.Dock="Top" 
-                                    Header="{x:Static t:Messages.Header_Activities}">
-                <ListView ItemsSource="{Binding Activities}"
+        <Grid Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <HeaderedContentControl Header="{x:Static t:Messages.Header_Activities}">
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <ListView ItemsSource="{Binding Activities}"
                           SelectedItem="{Binding SelectedActivity}"
                           HorizontalContentAlignment="Stretch"
                           VerticalContentAlignment="Stretch">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ctrl:ActivityView/>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ctrl:ActivityView/>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </ScrollViewer>
             </HeaderedContentControl>
-        </DockPanel>
+            <HeaderedContentControl Header="{x:Static t:Messages.Header_AdministrativeTasks}"
+                                    Grid.Row="1">
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <ListView ItemsSource="{Binding AdministrativeActivities}"
+                              SelectedItem="{Binding SelectedActivity}"
+                              HorizontalContentAlignment="Stretch"
+                              VerticalContentAlignment="Stretch">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ctrl:ActivityView/>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </ScrollViewer>
+            </HeaderedContentControl>
+        </Grid>
         <DockPanel Grid.Column="3">
             <HeaderedContentControl DockPanel.Dock="Bottom"
                                     Header="{x:Static t:Messages.Header_AddActivity}">

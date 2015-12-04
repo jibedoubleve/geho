@@ -33,6 +33,9 @@
 
             Mapper.CreateMap<Activity, ActivityDto>();
             Mapper.CreateMap<ActivityDto, Activity>();
+
+            Mapper.CreateMap<LunchTime, LunchTimeDto>();
+            Mapper.CreateMap<LunchTimeDto, LunchTime>();
         }
 
         #endregion Methods

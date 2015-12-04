@@ -15,18 +15,14 @@
     {
         #region Fields
 
-        protected readonly ILoadeableViewModel ParentVm;
-        protected readonly IHrService Service;
+        private bool hasBeneficiaries;
 
         #endregion Fields
 
         #region Constructors
 
-        public ActivityCardViewModel(ActivityDto activity, IHrService service, ILoadeableViewModel parentVm)
+        public ActivityCardViewModel(ActivityDto activity)
         {
-            this.ParentVm = parentVm;
-            this.Service = service;
-
             if (activity == null) { throw new ArgumentNullException("activity"); }
             else if (activity.People == null) { throw new ArgumentNullException("activity.People"); }
 
@@ -49,16 +45,6 @@
 
         #region Properties
 
-        private bool hasBeneficiaries;
-        public bool HasBeneficiaries
-        {
-            get { return this.hasBeneficiaries; }
-            set
-            {
-                this.hasBeneficiaries = value;
-                this.OnPropertyChanged(() => HasBeneficiaries);
-            }
-        }
         public ActivityDto Activity
         {
             get;
@@ -87,6 +73,16 @@
             private set;
         }
 
+        public bool HasBeneficiaries
+        {
+            get { return this.hasBeneficiaries; }
+            set
+            {
+                this.hasBeneficiaries = value;
+                this.OnPropertyChanged(() => HasBeneficiaries);
+            }
+        }
+
         public MomentDay MomentDay
         {
             get { return this.Activity.MomentDay; }
@@ -111,12 +107,12 @@
 
         #region Methods
 
-        public static IEnumerable<ActivityCardViewModel> ToActivityCardViewModel(IEnumerable<ActivityDto> activities, IHrService service, ILoadeableViewModel parentVm)
+        public static IEnumerable<ActivityCardViewModel> ToActivityCardViewModel(IEnumerable<ActivityDto> activities)
         {
             var list = new List<ActivityCardViewModel>();
             foreach (var a in activities)
             {
-                list.Add(new ActivityCardViewModel(a, service, parentVm));
+                list.Add(new ActivityCardViewModel(a));
             }
             return list;
         }

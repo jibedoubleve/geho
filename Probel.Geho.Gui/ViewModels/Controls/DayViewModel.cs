@@ -25,8 +25,8 @@
 
         public DayViewModel(DateTime d, IEnumerable<GroupDto> groups, IScheduleService service, ScheduleViewModel parentVm)
         {
-            if (parentVm == null) { throw new ArgumentNullException("Parent ViewModel not set.", "parentVm"); }
-            if (service == null) { throw new ArgumentNullException("Service not set.", "service"); }
+            if (parentVm == null) { throw new ArgumentNullException("parentVm"); }
+            if (service == null) { throw new ArgumentNullException("service"); }
 
             this.ParentVm = parentVm;
             this.CurrentDay = d;

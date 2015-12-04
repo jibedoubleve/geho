@@ -18,7 +18,7 @@
 
         public GroupHrView(GroupHrViewModel vm)
         {
-            if (vm == null) { throw new ArgumentNullException("ViewModel is not assigned", "vm"); }
+            if (vm == null) { throw new ArgumentNullException("vm"); }
             InitializeComponent();
             this.DataContext = vm;
             vm.PropertyChanged += (s, e) =>

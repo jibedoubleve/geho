@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.40629.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Probel.Geho.Data", "Probel.Geho.Data\Probel.Geho.Data.csproj", "{0FEE0206-AED7-49CE-9603-521A534C2A59}"
 EndProject
@@ -10,6 +10,17 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Probel.Geho.Tests", "Probel.Geho.Tests\Probel.Geho.Tests.csproj", "{DD1D5175-BEC5-4653-8AFF-A59E47ADC75B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Probel.Geho.Gui", "Probel.Geho.Gui\Probel.Geho.Gui.csproj", "{37FD8019-50B3-4870-A4EE-288D57B86D03}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".scripts", ".scripts", "{A9BB61FB-A2AA-4A4C-B954-5E5901A18C65}"
+	ProjectSection(SolutionItems) = preProject
+		_scripts\InsertData.sql = _scripts\InsertData.sql
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".setup", ".setup", "{049048F7-2AE2-4369-8FE2-BDDEA4A38890}"
+	ProjectSection(SolutionItems) = preProject
+		_Setup\License.txt = _Setup\License.txt
+		_Setup\Setup.iss = _Setup\Setup.iss
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

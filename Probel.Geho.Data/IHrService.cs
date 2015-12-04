@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Collections.ObjectModel;
 
     using Entities;
 
@@ -34,6 +35,8 @@
 
         IEnumerable<ActivityDto> GetActivities();
 
+        IEnumerable<ActivityDto> GetAdministrativeActivities();
+
         IEnumerable<PersonDto> GetBeneficiaries(string name, string surname = null);
 
         IEnumerable<PersonDto> GetBeneficiaries();
@@ -43,7 +46,7 @@
         IEnumerable<PersonDto> GetBeneficiariesWithoutGroup();
 
         PersonDto GetBeneficiary(int id);
-        void UpdatePerson(PersonDto person);
+
         IEnumerable<PersonDto> GetEducators(string name, string surname = null);
 
         IEnumerable<PersonDto> GetEducators();
@@ -56,9 +59,13 @@
 
         IEnumerable<GroupDto> GetGroups();
 
+        IEnumerable<LunchTimeDto> GetLunchTimes();
+
         PersonDto GetPerson(int id);
 
         IEnumerable<PersonDto> GetPersons();
+
+        IEnumerable<PersonDto> GetTrainees();
 
         ValidationStatusDto IsAbsenceValid(AbsenceDto absence);
 
@@ -81,6 +88,10 @@
         void UpdateActivity(ActivityDto activity);
 
         void UpdateGroup(GroupDto group);
+
+        void UpdateLunch(IEnumerable<LunchTimeDto> lunches);
+
+        void UpdatePerson(PersonDto person);
 
         #endregion Methods
     }

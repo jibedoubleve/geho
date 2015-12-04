@@ -15,14 +15,18 @@
         #region Fields
 
         private readonly ICommand deleteActivityCommand;
+        private readonly ILoadeableViewModel ParentVm;
+        private readonly IHrService Service;
 
         #endregion Fields
 
         #region Constructors
 
         public ActivityViewModel(ActivityDto activity, IHrService service, ILoadeableViewModel parentVm)
-            : base(activity, service, parentVm)
+            : base(activity)
         {
+            this.ParentVm = parentVm;
+            this.Service = service;
             this.deleteActivityCommand = new RelayCommand(DeleteActivity, CanDeleteActivity);
         }
 

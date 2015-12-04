@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="Probel.Geho.Gui.Views.Controls.DisplayGroupView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Probel.Geho.Gui.Views.Controls"
+             
+             xmlns:ctrl="clr-namespace:Probel.Geho.Gui.Views.Controls"
+             xmlns:t="clr-namespace:Probel.Geho.Gui.Properties"
+             
+             mc:Ignorable="d" 
+             Width="300"
+             Margin="5,0,5,0" d:DataContext="{d:DesignData /SampleData/DisplayGroupViewModelSampleData.xaml}">
+    <HeaderedContentControl Style="{StaticResource LightHeaderedContent}"
+                            Header="{Binding GroupName}"
+                            Background="#FFD6DBE9">
+        <Grid Margin="0">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="5"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <ItemsControl ItemsSource="{Binding EducatorsMorning}" Background="White">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <ctrl:PersonFlatCardView/>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+            <ItemsControl Grid.Row="2"
+				ItemsSource="{Binding EducatorsAfternoon}" Background="White">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <ctrl:PersonFlatCardView/>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </Grid>
+    </HeaderedContentControl>
+</UserControl>

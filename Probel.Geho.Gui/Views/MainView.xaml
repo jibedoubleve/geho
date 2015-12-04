@@ -1,4 +1,4 @@
-﻿<Window x:Class="Probel.Geho.Gui.MainWindow"
+﻿<Window x:Class="Probel.Geho.Gui.MainView"
         
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -58,6 +58,16 @@
                     <DockPanel>
                         <Image DockPanel.Dock="Left" Source="/Probel.Geho.Gui;component/Images/Schedule.png"/>
                         <TextBlock Text="{x:Static t:Messages.Btn_ScheduleManagement}"
+                                   Visibility="{s:GuiSettings IsMenuTextVisible}"
+                                   VerticalAlignment="Center"
+                                   Margin="5,0,0,0"/>
+                    </DockPanel>
+                </Button>
+                <Button ToolTip="{x:Static t:Messages.Btn_ScheduleDisplay}"
+                        Click="Click_ScheduleDisplay">
+                    <DockPanel>
+                        <Image DockPanel.Dock="Left" Source="/Probel.Geho.Gui;component/Images/ScheduleDisplay.png"/>
+                        <TextBlock Text="{x:Static t:Messages.Btn_ScheduleDisplay}"
                                    Visibility="{s:GuiSettings IsMenuTextVisible}"
                                    VerticalAlignment="Center"
                                    Margin="5,0,0,0"/>

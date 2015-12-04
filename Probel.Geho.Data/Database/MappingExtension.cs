@@ -16,6 +16,11 @@
             return Mapper.Map<ActivityDto, Activity>(activity);
         }
 
+        public static IEnumerable<ActivityDto> ToDto(this IEnumerable<Activity> activities)
+        {
+            return Mapper.Map<IEnumerable<Activity>, IEnumerable<ActivityDto>>(activities);
+        }
+
         public static IEnumerable<PersonDto> ToDto(this IEnumerable<Person> people)
         {
             return Mapper.Map<IEnumerable<Person>, IEnumerable<PersonDto>>(people);
@@ -39,6 +44,11 @@
         public static IEnumerable<GroupDto> ToDto(this IEnumerable<Group> groups)
         {
             return Mapper.Map<IEnumerable<Group>, IEnumerable<GroupDto>>(groups);
+        }
+
+        public static IEnumerable<LunchTimeDto> ToDto(this IEnumerable<LunchTime> lunches)
+        {
+            return Mapper.Map<IEnumerable<LunchTime>, IEnumerable<LunchTimeDto>>(lunches);
         }
 
         public static Activity ToEntity(this ActivityDto activity)

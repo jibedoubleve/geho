@@ -34,6 +34,11 @@
             get; set;
         }
 
+        public bool IsTrainee
+        {
+            get; set;
+        }
+
         public string Name
         {
             get;

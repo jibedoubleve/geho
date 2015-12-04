@@ -2,6 +2,8 @@
 {
     using System.Windows.Controls;
 
+    using ViewModels.Controls;
+
     /// <summary>
     /// Interaction logic for GroupDayView.xaml
     /// </summary>

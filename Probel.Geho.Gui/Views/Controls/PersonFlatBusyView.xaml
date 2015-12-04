@@ -4,24 +4,26 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              
+             xmlns:Converters="clr-namespace:Probel.Geho.Gui.Converters"
              xmlns:conv="clr-namespace:Probel.Geho.Gui.Converters"
              
              mc:Ignorable="d" d:DesignWidth="300"
              MouseUp="UserControl_MouseUp">
     <UserControl.Resources>
         <conv:StatusToColourConverter x:Key="stc"/>
-    </UserControl.Resources>
+        <Converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+        </UserControl.Resources>
     <DockPanel Background="{Binding ColourStatus, Converter={StaticResource stc}}">
         <CheckBox x:Name="cb_IsBusy" DockPanel.Dock="Left" 
                   HorizontalAlignment="Center"
                   Margin="5"
-                  IsChecked="{Binding IsSelected}"
-                  Checked="CheckBox_Checked"
-                  Unchecked="CheckBox_Checked"/>
+                  IsChecked="{Binding IsSelected}"/>
         <Image DockPanel.Dock="Left"
                    Source="/Probel.Geho.Gui;component/Images/Educator.png"
                    Width="16"
                    Height="16"/>
+        <Image DockPanel.Dock="Left" Source="/Probel.Geho.Gui;component/Images/Trainee.png" Width="15" Height="15" 
+               Visibility="{Binding IsTrainee, Converter={StaticResource BoolToVisibilityConverter}}"/>
         <TextBlock DockPanel.Dock="Top"
                    FontWeight="Bold" VerticalAlignment="Center" 
                    Margin="15,0,5,0">

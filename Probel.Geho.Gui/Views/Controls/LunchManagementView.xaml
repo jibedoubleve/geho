@@ -1,0 +1,84 @@
+﻿<UserControl x:Class="Probel.Geho.Gui.Views.Controls.LunchManagementView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Probel.Geho.Gui.Views.Controls"
+             
+             xmlns:t="clr-namespace:Probel.Geho.Gui.Properties"
+             
+             mc:Ignorable="d"  d:DesignWidth="300">
+
+    <HeaderedContentControl DockPanel.Dock="Top"
+                                    Header="{x:Static t:Messages.Header_LunchTime}">
+        <StackPanel>
+            <DockPanel>
+                <TextBlock Text="{x:Static t:Messages.Day_Monday}" HorizontalAlignment="Center" VerticalAlignment="Center"
+                               Style="{StaticResource TextBoxStyle}"/>
+                <ComboBox SelectedItem="{Binding Monday}"
+                          ItemsSource="{Binding Trainees}"
+                          Margin="5">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <local:PersonFlatCardView/>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ComboBox>
+            </DockPanel>
+            <DockPanel>
+                <TextBlock Text="{x:Static t:Messages.Day_Tuesday}" HorizontalAlignment="Center" VerticalAlignment="Center"
+                               Style="{StaticResource TextBoxStyle}"/>
+                <ComboBox SelectedItem="{Binding Tuesday}"
+                          ItemsSource="{Binding Trainees}"
+                          Margin="5">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <local:PersonFlatCardView/>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ComboBox>
+            </DockPanel>
+            <DockPanel>
+                <TextBlock Text="{x:Static t:Messages.Day_Wednesday}" HorizontalAlignment="Center" VerticalAlignment="Center"
+                               Style="{StaticResource TextBoxStyle}"/>
+                <ComboBox SelectedItem="{Binding Wednesday}"
+                          ItemsSource="{Binding Trainees}"
+                          Margin="5">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <local:PersonFlatCardView/>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ComboBox>
+            </DockPanel>
+            <DockPanel>
+                <TextBlock Text="{x:Static t:Messages.Day_Thursday}" HorizontalAlignment="Center" VerticalAlignment="Center"
+                               Style="{StaticResource TextBoxStyle}"/>
+                <ComboBox SelectedItem="{Binding Thursday}"
+                          ItemsSource="{Binding Trainees}"
+                          Margin="5">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <local:PersonFlatCardView/>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ComboBox>
+            </DockPanel>
+            <DockPanel>
+                <TextBlock Text="{x:Static t:Messages.Day_Friday}" HorizontalAlignment="Center" VerticalAlignment="Center"
+                               Style="{StaticResource TextBoxStyle}"/>
+                <ComboBox SelectedItem="{Binding Friday}"
+                          ItemsSource="{Binding Trainees}"
+                          Margin="5">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <local:PersonFlatCardView/>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ComboBox>
+            </DockPanel>
+            <Button DockPanel.Dock="Bottom" Content="{x:Static t:Messages.Btn_Update}"
+                    Command="{Binding UpdateCommand}"/>
+        </StackPanel>
+    </HeaderedContentControl>
+</UserControl>

@@ -1,10 +1,10 @@
-﻿using System;
-using System.Globalization;
-using System.Windows.Data;
-using System.Windows.Media;
-
-namespace Probel.Geho.Gui.Converters
+﻿namespace Probel.Geho.Gui.Converters
 {
+    using System;
+    using System.Globalization;
+    using System.Windows.Data;
+    using System.Windows.Media;
+
     class BoolToRedOrItemListBackgroundConverter : IValueConverter
     {
         #region Methods
@@ -16,7 +16,7 @@ namespace Probel.Geho.Gui.Converters
                 var boolean = (bool)value;
 
                 return boolean
-                    ? (SolidColorBrush)(new BrushConverter().ConvertFrom("#FFC6E2FD"))
+                    ? (SolidColorBrush)(new BrushConverter().ConvertFrom("#FFD6DBE9"))//FFC6E2FD
                     : (SolidColorBrush)(new BrushConverter().ConvertFrom("#FFC8F3B8"));
             }
             else { throw new NotSupportedException(string.Format("The value to convert should be a bool. But it is a {0}", value.GetType().Name)); }

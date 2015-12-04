@@ -14,29 +14,28 @@
     <Page.Resources>
         <conv:DayOfWeekToStringConverter x:Key="dowToText"/>
     </Page.Resources>
-    <Grid>
-        <HeaderedContentControl DockPanel.Dock="Top" 
-                                Header="{x:Static t:Messages.Header_ManageSchedule}">
-            <DockPanel LastChildFill="True">
-                <DockPanel DockPanel.Dock="Top">
-                    <DatePicker Margin="5" SelectedDate="{Binding WeekDate}"/>
-                    <Button Content="{x:Static t:Messages.Btn_Display}"
+    <HeaderedContentControl Header="{x:Static t:Messages.Header_ManageSchedule}">
+        <DockPanel LastChildFill="True">
+            <DockPanel DockPanel.Dock="Top">
+                <Button Content="&lt;&lt;" Click="click_Before"/>
+                <DatePicker Margin="5" SelectedDate="{Binding WeekDate}"/>
+                <Button Content="&gt;&gt;" Click="click_After"/>
+                <Button Content="{x:Static t:Messages.Btn_Display}"
                             Command="{Binding LoadWeekCommand}"/>
-                    <Grid/>
-                </DockPanel>
-                <TabControl ItemsSource="{Binding Days}">
-                    <TabControl.ItemTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding CurrentDay.DayOfWeek, Converter={StaticResource dowToText}}"/>
-                        </DataTemplate>
-                    </TabControl.ItemTemplate>
-                    <TabControl.ContentTemplate>
-                        <DataTemplate>
-                            <ctrl:DayView/>
-                        </DataTemplate>
-                    </TabControl.ContentTemplate>
-                </TabControl>
+                <Grid/>
             </DockPanel>
-        </HeaderedContentControl>
-    </Grid>
+            <TabControl ItemsSource="{Binding Days}">
+                <TabControl.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding CurrentDay.DayOfWeek, Converter={StaticResource dowToText}}"/>
+                    </DataTemplate>
+                </TabControl.ItemTemplate>
+                <TabControl.ContentTemplate>
+                    <DataTemplate>
+                        <ctrl:DayView/>
+                    </DataTemplate>
+                </TabControl.ContentTemplate>
+            </TabControl>
+        </DockPanel>
+    </HeaderedContentControl>
 </Page>

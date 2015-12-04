@@ -1,6 +1,8 @@
 ﻿namespace Probel.Geho.Data.Database
 {
+    using System;
     using System.Data.Entity;
+    using System.IO;
 
     using Probel.Geho.Data.Entities;
 
@@ -11,6 +13,7 @@
         public DataContext()
             : base("DatabaseConnection")
         {
+            CheckDirectory();
             if (DataCfg.EraseDatabase) { Database.SetInitializer(new DropCreateDatabaseAlways<DataContext>()); }
             else { Database.CreateIfNotExists(); }
         }
@@ -41,6 +44,11 @@
             set;
         }
 
+        public DbSet<LunchTime> LunchTimes
+        {
+            get; set;
+        }
+
         public DbSet<Person> People
         {
             get;
@@ -53,5 +61,17 @@
         }
 
         #endregion Properties
+
+        #region Methods
+
+        private static void CheckDirectory()
+        {
+            var path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Geho");
+            if (!Directory.Exists(path)) { Directory.CreateDirectory(path); }
+
+            AppDomain.CurrentDomain.SetData("DataDirectory", path);
+        }
+
+        #endregion Methods
     }
 }

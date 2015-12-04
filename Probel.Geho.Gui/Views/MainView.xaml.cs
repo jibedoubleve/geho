@@ -5,9 +5,6 @@
 
     using Microsoft.Practices.Unity;
 
-    using Probel.Geho.Data.BusinessLogic;
-    using Probel.Geho.Data.BusinessLogic.Hr;
-    using Probel.Geho.Data.BusinessLogic.Schedule;
     using Probel.Geho.Gui.Tools;
     using Probel.Geho.Gui.ViewModels;
     using Probel.Geho.Gui.Views;
@@ -16,7 +13,7 @@
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainView : Window
     {
         #region Fields
 
@@ -26,7 +23,7 @@
 
         #region Constructors
 
-        public MainWindow(IUnityContainer ioc)
+        public MainView(IUnityContainer ioc)
         {
             Ioc = ioc;
             InitializeComponent();
@@ -46,10 +43,7 @@
                 var view = new GroupHrView(vm);
                 this.mainFrame.Navigate(view);
             }
-            catch (Exception ex)
-            {
-                ViewService.MessageBox.Error(ex.ToString());
-            }
+            catch (Exception ex) { ViewService.MessageBox.Error(ex.ToString()); }
         }
 
         private void Click_HrManagement(object sender, RoutedEventArgs e)
@@ -62,10 +56,18 @@
                 var view = new HrView(vm);
                 this.mainFrame.Navigate(view);
             }
-            catch (Exception ex)
+            catch (Exception ex) { ViewService.MessageBox.Error(ex.ToString()); }
+        }
+
+        private void Click_ScheduleDisplay(object sender, RoutedEventArgs e)
+        {
+            try
             {
-                ViewService.MessageBox.Error(ex.ToString());
+                var vm = Ioc.Resolve<ScheduleDisplayViewModel>();
+                var view = new ScheduleDisplayView(vm);
+                this.mainFrame.Navigate(view);
             }
+            catch (Exception ex) { ViewService.MessageBox.Error(ex.ToString()); }
         }
 
         private void Click_ScheduleManagement(object sender, RoutedEventArgs e)
@@ -77,10 +79,7 @@
                 var view = new ScheduleView(vm);
                 this.mainFrame.Navigate(view);
             }
-            catch (Exception ex)
-            {
-                ViewService.MessageBox.Error(ex.ToString());
-            }
+            catch (Exception ex) { ViewService.MessageBox.Error(ex.ToString()); }
         }
 
         #endregion Methods

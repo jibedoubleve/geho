@@ -1,8 +1,11 @@
 ﻿namespace Probel.Geho.Data.Entities
 {
     using System.Collections.Generic;
+    using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
+    using System.Diagnostics;
 
+    [DebuggerDisplay("{Id} - Educ: {IsEducator} {Name} {Surname}")]
     public class Person : Entity
     {
         #region Constructors
@@ -42,13 +45,18 @@
             get; set;
         }
 
+        [DefaultValue(false)]
+        public bool IsTrainee
+        {
+            get; set;
+        }
+
         [Required]
         public string Name
         {
             get; set;
         }
 
-        [Required]
         public string Surname
         {
             get; set;

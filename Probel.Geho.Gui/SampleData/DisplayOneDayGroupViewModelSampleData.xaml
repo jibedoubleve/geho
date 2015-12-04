@@ -1,0 +1,2766 @@
+﻿<Controls:DisplayOneDayGroupViewModel xmlns:Controls="clr-namespace:Probel.Geho.Gui.ViewModels.Controls" xmlns:Dto="clr-namespace:Probel.Geho.Data.Dto;assembly=Probel.Geho.Data" HasMorningBeneficiaries="False" HasAfternoonBeneficiaries="True" IsInpcActive="True">
+	<Controls:DisplayOneDayGroupViewModel.BeneficiariesAfternoon>
+		<Dto:PersonDto GroupNames="Vulputate enim ligula erat massa" Id="13" IsEducator="True" Name="Metus curabitur sed adipiscing" Surname="Litora parturient dis eros dictumst">
+			<Dto:PersonDto.Activities>
+				<Dto:ActivityDto DayOfWeek="Saturday" Id="77" MomentDay="Afternoon" Name="Arcu justo maecenas"/>
+				<Dto:ActivityDto DayOfWeek="Monday" Id="22" MomentDay="AllDay" Name="Vestibulum adipiscing aptent aliquam"/>
+				<Dto:ActivityDto DayOfWeek="Tuesday" Id="55" MomentDay="Morning" Name="Vel parturient auctor"/>
+				<Dto:ActivityDto DayOfWeek="Tuesday" Id="34" MomentDay="Morning" Name="Congue cursus integer"/>
+				<Dto:ActivityDto DayOfWeek="Friday" Id="52" MomentDay="AllDay" Name="Dictum tristique lectus"/>
+			</Dto:PersonDto.Activities>
+			<Dto:PersonDto.Absences>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="79" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Vestibulum proin nec laoreet" Id="25" IsEducator="True" Name="Vestibulum tempor non per sagittis" Surname="Senectus quis adipiscing parturient tempus"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="49" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Tortor augue turpis malesuada" Id="23" IsEducator="False" Name="Natoque posuere" Surname="Vestibulum dolor urna penatibus"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="65" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Porttitor vestibulum varius potenti aenean" Id="51" IsEducator="True" Name="Sociosqu suscipit torquent pretium mauris" Surname="Adipiscing sed nullam sem"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="90" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Cras fames" Id="21" IsEducator="False" Name="Ultrices felis duis" Surname="Parturient vestibulum ipsum rhoncus"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="31" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Vehicula sit tincidunt" Id="67" IsEducator="True" Name="Nunc sodales" Surname="Amet volutpat ante viverra"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+			</Dto:PersonDto.Absences>
+			<Dto:PersonDto.Days>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="92">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="52" Name="Praesent lacus vestibulum"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="66">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="36" Name="Accumsan diam eget vestibulum quisque"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="91">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="22" Name="Lorem ultricies vivamus bibendum"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="67">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="72" Name="Libero nam aliquam"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="34">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="76" Name="Venenatis elit magna"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+			</Dto:PersonDto.Days>
+		</Dto:PersonDto>
+		<Dto:PersonDto GroupNames="Suscipit torquent ornare" Id="13" IsEducator="False" Name="Per ultrices malesuada penatibus" Surname="Vestibulum posuere vitae porttitor potenti">
+			<Dto:PersonDto.Activities>
+				<Dto:ActivityDto DayOfWeek="Monday" Id="27" MomentDay="Afternoon" Name="Leo gravida"/>
+				<Dto:ActivityDto DayOfWeek="Friday" Id="21" MomentDay="AllDay" Name="Porta habitasse adipiscing"/>
+				<Dto:ActivityDto DayOfWeek="Wednesday" Id="82" MomentDay="Afternoon" Name="Odio orci nascetur montes parturient"/>
+				<Dto:ActivityDto DayOfWeek="Thursday" Id="64" MomentDay="Morning" Name="Pede pharetra"/>
+				<Dto:ActivityDto DayOfWeek="Sunday" Id="18" MomentDay="AllDay" Name="Purus iaculis"/>
+			</Dto:PersonDto.Activities>
+			<Dto:PersonDto.Absences>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="63" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Vestibulum eleifend vestibulum phasellus consequat" Id="90" IsEducator="False" Name="Aliquet luctus adipiscing magnis nibh" Surname="Facilisi nisi"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="47" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Parturient vestibulum" Id="27" IsEducator="True" Name="Blandit convallis dignissim commodo" Surname="Morbi neque"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="28" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Conubia faucibus vestibulum mattis" Id="34" IsEducator="False" Name="Adipiscing cubilia elementum est netus" Surname="Mauris dapibus"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="10" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Nulla egestas facilisis habitant" Id="11" IsEducator="True" Name="Fermentum nisl" Surname="Inceptos parturient interdum"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="42" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Fringilla vestibulum lobortis nunc" Id="48" IsEducator="False" Name="Euismod hac mollis" Surname="Vestibulum feugiat"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+			</Dto:PersonDto.Absences>
+			<Dto:PersonDto.Days>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="72">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="56" Name="Vestibulum placerat risus pulvinar mus"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="57">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="85" Name="Quam hendrerit sagittis nec senectus"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="28">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="19" Name="Lacinia nostra sociosqu non himenaeos"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="40">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="37" Name="Imperdiet vestibulum quis adipiscing"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="90">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="10" Name="Laoreet velit parturient urna natoque"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+			</Dto:PersonDto.Days>
+		</Dto:PersonDto>
+		<Dto:PersonDto GroupNames="Vivamus habitasse aliquam nec" Id="81" IsEducator="True" Name="Felis ipsum vestibulum eget faucibus" Surname="Adipiscing parturient">
+			<Dto:PersonDto.Activities>
+				<Dto:ActivityDto DayOfWeek="Tuesday" Id="73" MomentDay="Morning" Name="Varius adipiscing parturient vestibulum aenean"/>
+				<Dto:ActivityDto DayOfWeek="Monday" Id="30" MomentDay="AllDay" Name="Diam vestibulum sodales"/>
+				<Dto:ActivityDto DayOfWeek="Saturday" Id="97" MomentDay="AllDay" Name="Dictumst sed adipiscing fermentum dis"/>
+				<Dto:ActivityDto DayOfWeek="Sunday" Id="58" MomentDay="AllDay" Name="Viverra est mauris parturient"/>
+				<Dto:ActivityDto DayOfWeek="Friday" Id="20" MomentDay="Afternoon" Name="Aliquam integer vestibulum nullam eleifend"/>
+			</Dto:PersonDto.Activities>
+			<Dto:PersonDto.Absences>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="13" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Class platea curae" Id="28" IsEducator="True" Name="Vehicula tincidunt primis" Surname="Rutrum volutpat cras"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="53" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Sapien semper" Id="21" IsEducator="False" Name="Duis vestibulum maecenas sed adipiscing" Surname="Praesent accumsan donec sem sociis"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="46" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Tristique parturient taciti bibendum ultricies" Id="22" IsEducator="True" Name="Vestibulum etiam venenatis pretium" Surname="Vulputate tellus nunc amet rhoncus"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="47" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Tempor curabitur" Id="24" IsEducator="False" Name="Fusce phasellus consequat tempus tortor" Surname="Lorem ante arcu"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="58" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Morbi sit vel" Id="75" IsEducator="True" Name="Convallis dignissim nulla elementum vestibulum" Surname="Facilisis nam turpis"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+			</Dto:PersonDto.Absences>
+			<Dto:PersonDto.Days>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="85">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="54" Name="Proin aptent facilisi vestibulum quisque"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="35">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="20" Name="Hac augue adipiscing"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="54">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="81" Name="Auctor congue"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="13">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="12" Name="Leo mus parturient"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="10">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="45" Name="Vestibulum dolor fringilla cursus fames"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+			</Dto:PersonDto.Days>
+		</Dto:PersonDto>
+		<Dto:PersonDto GroupNames="Volutpat orci curabitur mollis" Id="29" IsEducator="False" Name="Pede maecenas praesent est velit" Surname="Phasellus quam">
+			<Dto:PersonDto.Activities>
+				<Dto:ActivityDto DayOfWeek="Thursday" Id="89" MomentDay="AllDay" Name="Penatibus porttitor"/>
+				<Dto:ActivityDto DayOfWeek="Thursday" Id="95" MomentDay="AllDay" Name="Nisl tincidunt"/>
+				<Dto:ActivityDto DayOfWeek="Sunday" Id="30" MomentDay="AllDay" Name="Senectus magnis gravida neque mattis"/>
+				<Dto:ActivityDto DayOfWeek="Friday" Id="80" MomentDay="Morning" Name="Tristique sociosqu netus iaculis"/>
+				<Dto:ActivityDto DayOfWeek="Sunday" Id="96" MomentDay="AllDay" Name="Ultricies lacinia"/>
+			</Dto:PersonDto.Activities>
+			<Dto:PersonDto.Absences>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="25" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Dictum elit" Id="29" IsEducator="False" Name="Enim non habitant aliquet" Surname="Blandit erat commodo"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="62" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Inceptos hendrerit justo" Id="85" IsEducator="True" Name="Interdum lobortis conubia nascetur" Surname="Vestibulum cubilia eros per sed"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="27" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Nibh lacus lectus" Id="33" IsEducator="False" Name="Pharetra nisi lorem sem" Surname="Libero vestibulum magna"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="31" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Massa ligula sit vel metus" Id="56" IsEducator="True" Name="Adipiscing nam morbi" Surname="Litora himenaeos dapibus imperdiet"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="98" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Placerat pulvinar egestas parturient" Id="10" IsEducator="False" Name="Luctus malesuada euismod" Surname="Sed sagittis feugiat"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+			</Dto:PersonDto.Absences>
+			<Dto:PersonDto.Days>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="89">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="44" Name="Laoreet nunc suscipit"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="82">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="60" Name="Vestibulum nulla torquent porta mauris"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="88">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="51" Name="Purus ultrices"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="98">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="98" Name="Vehicula dis odio vestibulum risus"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="51">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="73" Name="Venenatis adipiscing natoque vulputate"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+			</Dto:PersonDto.Days>
+		</Dto:PersonDto>
+		<Dto:PersonDto GroupNames="Sit vestibulum ultricies vestibulum vel" Id="53" IsEducator="True" Name="Vivamus venenatis aenean interdum" Surname="Aliquam nam sed">
+			<Dto:PersonDto.Activities>
+				<Dto:ActivityDto DayOfWeek="Tuesday" Id="62" MomentDay="Morning" Name="Tempus sodales per sed"/>
+				<Dto:ActivityDto DayOfWeek="Monday" Id="22" MomentDay="Afternoon" Name="Hendrerit tortor parturient"/>
+				<Dto:ActivityDto DayOfWeek="Friday" Id="34" MomentDay="AllDay" Name="Himenaeos arcu"/>
+				<Dto:ActivityDto DayOfWeek="Monday" Id="56" MomentDay="Morning" Name="Viverra imperdiet malesuada"/>
+				<Dto:ActivityDto DayOfWeek="Friday" Id="73" MomentDay="Morning" Name="Faucibus aliquam penatibus"/>
+			</Dto:PersonDto.Activities>
+			<Dto:PersonDto.Absences>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="18" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Vitae quis accumsan" Id="74" IsEducator="True" Name="Class consequat posuere parturient urna" Surname="Montes convallis nostra"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="25" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Ornare vestibulum hac" Id="58" IsEducator="False" Name="Leo curae donec platea mus" Surname="Vestibulum bibendum dignissim elementum"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="76" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Cras etiam dictumst" Id="99" IsEducator="True" Name="Eleifend primis duis" Surname="Potenti pretium adipiscing rhoncus nec"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="40" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Rutrum sapien semper" Id="52" IsEducator="False" Name="Facilisis non fermentum parturient" Surname="Fringilla nunc vestibulum amet"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="99" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Habitasse vestibulum sociis" Id="26" IsEducator="True" Name="Ante taciti fusce facilisi lorem" Surname="Adipiscing tellus tempor"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+			</Dto:PersonDto.Absences>
+			<Dto:PersonDto.Days>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="58">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="75" Name="Turpis morbi diam vestibulum vestibulum"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="65">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="22" Name="Integer porttitor sem varius tincidunt"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="89">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="89" Name="Nulla proin"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="84">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="55" Name="Tristique eget adipiscing habitant quisque"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="23">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="19" Name="Inceptos parturient"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+			</Dto:PersonDto.Days>
+		</Dto:PersonDto>
+		<Dto:PersonDto GroupNames="Hendrerit himenaeos pretium" Id="86" IsEducator="False" Name="Parturient imperdiet" Surname="Rhoncus sociosqu per">
+			<Dto:PersonDto.Activities>
+				<Dto:ActivityDto DayOfWeek="Saturday" Id="73" MomentDay="Morning" Name="Consequat lacus sagittis convallis"/>
+				<Dto:ActivityDto DayOfWeek="Thursday" Id="85" MomentDay="Morning" Name="Parturient dignissim"/>
+				<Dto:ActivityDto DayOfWeek="Friday" Id="99" MomentDay="AllDay" Name="Leo iaculis"/>
+				<Dto:ActivityDto DayOfWeek="Tuesday" Id="23" MomentDay="Afternoon" Name="Lorem vestibulum vestibulum lacinia magna"/>
+				<Dto:ActivityDto DayOfWeek="Saturday" Id="52" MomentDay="Afternoon" Name="Elementum litora mus odio"/>
+			</Dto:PersonDto.Activities>
+			<Dto:PersonDto.Absences>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="58" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Lobortis nascetur aliquet" Id="62" IsEducator="False" Name="Adipiscing augue dis" Surname="Est mauris parturient blandit"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="31" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Nullam commodo dolor aptent elit" Id="93" IsEducator="True" Name="Hac conubia fames vestibulum enim" Surname="Erat vulputate cubilia"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="21" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Vestibulum dapibus" Id="26" IsEducator="False" Name="Auctor eros congue" Surname="Nibh nisi nisl cursus"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="13" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Dictum curabitur" Id="20" IsEducator="True" Name="Pharetra placerat felis ipsum" Surname="Egestas euismod"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="48" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Feugiat nunc adipiscing lectus libero" Id="52" IsEducator="False" Name="Justo pulvinar" Surname="Gravida ligula phasellus"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+			</Dto:PersonDto.Absences>
+			<Dto:PersonDto.Days>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="63">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="89" Name="Laoreet senectus luctus"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="82">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="97" Name="Facilisis massa fermentum metus"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="35">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="76" Name="Natoque adipiscing fringilla nec"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="77">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="36" Name="Posuere morbi habitasse potenti"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="50">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="22" Name="Non magnis neque"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+			</Dto:PersonDto.Days>
+		</Dto:PersonDto>
+		<Dto:PersonDto GroupNames="Etiam leo" Id="87" IsEducator="True" Name="Vestibulum sociis mus euismod eget" Surname="Ultricies nec taciti fusce inceptos">
+			<Dto:PersonDto.Activities>
+				<Dto:ActivityDto DayOfWeek="Sunday" Id="47" MomentDay="Afternoon" Name="Penatibus mollis bibendum"/>
+				<Dto:ActivityDto DayOfWeek="Tuesday" Id="95" MomentDay="Morning" Name="Est montes velit"/>
+				<Dto:ActivityDto DayOfWeek="Monday" Id="83" MomentDay="Morning" Name="Vitae parturient dictumst"/>
+				<Dto:ActivityDto DayOfWeek="Friday" Id="51" MomentDay="AllDay" Name="Nostra ante blandit ornare"/>
+				<Dto:ActivityDto DayOfWeek="Saturday" Id="11" MomentDay="Afternoon" Name="Vestibulum vestibulum adipiscing class platea"/>
+			</Dto:PersonDto.Activities>
+			<Dto:PersonDto.Absences>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="61" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Sodales suscipit vestibulum vestibulum" Id="18" IsEducator="True" Name="Orci sed mattis" Surname="Pede quam"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="29" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Malesuada adipiscing" Id="40" IsEducator="False" Name="Parturient viverra aliquam netus nulla" Surname="Vestibulum sem"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="48" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Sit vel vestibulum quis porta" Id="33" IsEducator="True" Name="Integer adipiscing quisque vivamus" Surname="Urna aliquam torquent parturient vestibulum"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="55" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Nam purus cras ultrices vehicula" Id="11" IsEducator="False" Name="Sed volutpat vestibulum duis" Surname="Nunc maecenas"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="94" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Praesent dis mauris accumsan" Id="23" IsEducator="True" Name="Amet aliquet" Surname="Risus adipiscing"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+			</Dto:PersonDto.Absences>
+			<Dto:PersonDto.Days>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="13">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="31" Name="Commodo eleifend parturient primis"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="12">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="35" Name="Hac porttitor tincidunt conubia"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="22">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="73" Name="Cubilia dapibus egestas tristique"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="47">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="51" Name="Rutrum facilisi curae faucibus arcu"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="91">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="99" Name="Sapien semper diam habitant donec"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+			</Dto:PersonDto.Days>
+		</Dto:PersonDto>
+		<Dto:PersonDto GroupNames="Dictum lectus" Id="52" IsEducator="False" Name="Himenaeos lacus viverra odio lorem" Surname="Suscipit hac">
+			<Dto:PersonDto.Activities>
+				<Dto:ActivityDto DayOfWeek="Thursday" Id="73" MomentDay="Afternoon" Name="Adipiscing pulvinar parturient"/>
+				<Dto:ActivityDto DayOfWeek="Sunday" Id="33" MomentDay="Morning" Name="Vestibulum rhoncus vestibulum"/>
+				<Dto:ActivityDto DayOfWeek="Thursday" Id="24" MomentDay="Morning" Name="Aptent auctor fames congue sagittis"/>
+				<Dto:ActivityDto DayOfWeek="Saturday" Id="34" MomentDay="AllDay" Name="Sodales nam"/>
+				<Dto:ActivityDto DayOfWeek="Friday" Id="83" MomentDay="Morning" Name="Sed cursus adipiscing"/>
+			</Dto:PersonDto.Activities>
+			<Dto:PersonDto.Absences>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="46" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Vestibulum interdum non lorem morbi" Id="37" IsEducator="False" Name="Venenatis elit adipiscing vulputate curabitur" Surname="Tellus phasellus per tempor"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="36" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Nulla consequat convallis" Id="28" IsEducator="True" Name="Feugiat gravida sed" Surname="Dignissim proin tempus elementum tortor"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="80" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Iaculis facilisis augue turpis fermentum" Id="80" IsEducator="False" Name="Varius sem" Surname="Lacinia lobortis fringilla nascetur pharetra"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="39" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Habitasse sit laoreet" Id="81" IsEducator="True" Name="Vel hendrerit" Surname="Natoque aenean posuere enim"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="59" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Mauris potenti dolor" Id="12" IsEducator="False" Name="Nullam parturient pretium vestibulum erat" Surname="Vestibulum placerat eros nibh"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+			</Dto:PersonDto.Absences>
+			<Dto:PersonDto.Days>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="99">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="53" Name="Dis parturient senectus vestibulum"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="52">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="58" Name="Felis nisi"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="23">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="68" Name="Nisl ipsum vestibulum"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="75">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="41" Name="Adipiscing parturient"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="32">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="13" Name="Vestibulum est justo sociosqu nunc"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+			</Dto:PersonDto.Days>
+		</Dto:PersonDto>
+		<Dto:PersonDto GroupNames="Venenatis parturient mollis" Id="88" IsEducator="True" Name="Vitae montes class" Surname="Est hac habitant elit">
+			<Dto:PersonDto.Activities>
+				<Dto:ActivityDto DayOfWeek="Thursday" Id="37" MomentDay="AllDay" Name="Luctus sit penatibus porttitor ante"/>
+				<Dto:ActivityDto DayOfWeek="Sunday" Id="87" MomentDay="Afternoon" Name="Bibendum vivamus"/>
+				<Dto:ActivityDto DayOfWeek="Thursday" Id="23" MomentDay="Afternoon" Name="Aliquam dictumst vestibulum arcu neque"/>
+				<Dto:ActivityDto DayOfWeek="Tuesday" Id="66" MomentDay="Afternoon" Name="Aliquet blandit eleifend vel"/>
+				<Dto:ActivityDto DayOfWeek="Sunday" Id="24" MomentDay="Morning" Name="Commodo netus nulla tincidunt"/>
+			</Dto:PersonDto.Activities>
+			<Dto:PersonDto.Absences>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="76" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Leo vestibulum adipiscing parturient torquent" Id="20" IsEducator="True" Name="Magna vestibulum" Surname="Orci vestibulum pede"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="67" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Mus adipiscing massa parturient ultrices" Id="73" IsEducator="False" Name="Aliquam vehicula vestibulum" Surname="Integer nec"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="40" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Libero ligula vestibulum imperdiet" Id="24" IsEducator="True" Name="Quisque quam" Surname="Volutpat quis non"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="46" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Litora adipiscing" Id="37" IsEducator="False" Name="Maecenas per parturient urna" Surname="Metus cras morbi duis praesent"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="65" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Vestibulum malesuada" Id="21" IsEducator="True" Name="Sed sem" Surname="Accumsan nunc amet"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+			</Dto:PersonDto.Absences>
+			<Dto:PersonDto.Days>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="48">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="53" Name="Magnis tristique mattis porta purus"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="58">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="52" Name="Facilisi ultricies nam"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="21">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="80" Name="Faucibus mauris adipiscing"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="90">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="78" Name="Diam risus"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="52">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="69" Name="Sed velit dis eget conubia"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+			</Dto:PersonDto.Days>
+		</Dto:PersonDto>
+		<Dto:PersonDto GroupNames="Quam magna" Id="33" IsEducator="False" Name="Habitasse hendrerit" Surname="Quis urna taciti">
+			<Dto:PersonDto.Activities>
+				<Dto:ActivityDto DayOfWeek="Thursday" Id="65" MomentDay="Afternoon" Name="Vestibulum nisi dignissim"/>
+				<Dto:ActivityDto DayOfWeek="Sunday" Id="45" MomentDay="Afternoon" Name="Iaculis elementum"/>
+				<Dto:ActivityDto DayOfWeek="Thursday" Id="44" MomentDay="Morning" Name="Sapien fames sed"/>
+				<Dto:ActivityDto DayOfWeek="Friday" Id="42" MomentDay="AllDay" Name="Dis lacinia"/>
+				<Dto:ActivityDto DayOfWeek="Monday" Id="95" MomentDay="Afternoon" Name="Felis sagittis ipsum est"/>
+			</Dto:PersonDto.Activities>
+			<Dto:PersonDto.Absences>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="33" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Enim inceptos nostra vulputate" Id="56" IsEducator="False" Name="Curae ornare interdum cubilia" Surname="Lobortis dapibus platea primis"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="96" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Vestibulum egestas" Id="73" IsEducator="True" Name="Curabitur donec leo mus nec" Surname="Euismod etiam nascetur phasellus"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="25" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Vestibulum feugiat" Id="71" IsEducator="False" Name="Fusce lorem non morbi per" Surname="Erat nulla"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="38" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Sed pharetra consequat" Id="13" IsEducator="True" Name="Sem adipiscing sit" Surname="Convallis parturient proin"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="14" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Placerat rutrum" Id="70" IsEducator="False" Name="Pulvinar eros augue vel" Surname="Vestibulum gravida nibh dolor nam"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+			</Dto:PersonDto.Absences>
+			<Dto:PersonDto.Days>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="22">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="77" Name="Semper nisl facilisis fermentum justo"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="26">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="27" Name="Adipiscing nunc hac"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="44">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="22" Name="Odio senectus lacus leo fringilla"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="53">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="86" Name="Orci lorem"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="92">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="70" Name="Sociis laoreet pede sociosqu"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+			</Dto:PersonDto.Days>
+		</Dto:PersonDto>
+	</Controls:DisplayOneDayGroupViewModel.BeneficiariesAfternoon>
+	<Controls:DisplayOneDayGroupViewModel.BeneficiariesMorning>
+		<Dto:PersonDto GroupNames="Blandit mattis interdum" Id="64" IsEducator="True" Name="Vestibulum lobortis mauris mollis nascetur" Surname="Adipiscing felis">
+			<Dto:PersonDto.Activities>
+				<Dto:ActivityDto DayOfWeek="Friday" Id="19" MomentDay="AllDay" Name="Dictum augue dictumst parturient enim"/>
+				<Dto:ActivityDto DayOfWeek="Saturday" Id="74" MomentDay="AllDay" Name="Lectus libero"/>
+				<Dto:ActivityDto DayOfWeek="Tuesday" Id="41" MomentDay="Afternoon" Name="Ligula fermentum eleifend facilisi"/>
+				<Dto:ActivityDto DayOfWeek="Saturday" Id="53" MomentDay="Morning" Name="Erat faucibus eros"/>
+				<Dto:ActivityDto DayOfWeek="Friday" Id="42" MomentDay="Morning" Name="Aliquet litora nibh dis"/>
+			</Dto:PersonDto.Activities>
+			<Dto:PersonDto.Absences>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="87" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Class nam aliquam curae donec" Id="32" IsEducator="True" Name="Maecenas integer" Surname="Curabitur cras"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="33" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Aenean etiam vestibulum" Id="52" IsEducator="False" Name="Quisque praesent" Surname="Duis accumsan"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="36" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Fusce nunc lorem" Id="67" IsEducator="True" Name="Amet morbi" Surname="Vivamus phasellus consequat ante"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="64" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Convallis arcu mauris dignissim nulla" Id="96" IsEducator="False" Name="Diam elementum eget nullam aliquam" Surname="Aptent auctor congue cursus"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="50" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Elit sed" Id="63" IsEducator="True" Name="Bibendum proin" Surname="Adipiscing facilisis"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+			</Dto:PersonDto.Absences>
+			<Dto:PersonDto.Days>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="77">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="27" Name="Fringilla nisi luctus habitasse nisl"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="46">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="13" Name="Est hendrerit dolor himenaeos imperdiet"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="78">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="33" Name="Nunc hac"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="94">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="65" Name="Habitant fames"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="56">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="80" Name="Vestibulum leo inceptos magnis"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+			</Dto:PersonDto.Days>
+		</Dto:PersonDto>
+		<Dto:PersonDto GroupNames="Vestibulum iaculis tempus lacinia" Id="64" IsEducator="False" Name="Laoreet nam tortor sed accumsan" Surname="Risus vestibulum natoque dis bibendum">
+			<Dto:PersonDto.Activities>
+				<Dto:ActivityDto DayOfWeek="Friday" Id="32" MomentDay="Morning" Name="Euismod feugiat sit parturient"/>
+				<Dto:ActivityDto DayOfWeek="Wednesday" Id="98" MomentDay="Afternoon" Name="Vestibulum venenatis vestibulum"/>
+				<Dto:ActivityDto DayOfWeek="Sunday" Id="86" MomentDay="Afternoon" Name="Cras netus"/>
+				<Dto:ActivityDto DayOfWeek="Saturday" Id="88" MomentDay="Afternoon" Name="Gravida duis"/>
+				<Dto:ActivityDto DayOfWeek="Sunday" Id="77" MomentDay="Morning" Name="Nunc amet vehicula"/>
+			</Dto:PersonDto.Activities>
+			<Dto:PersonDto.Absences>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="51" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Pharetra ipsum parturient malesuada penatibus" Id="90" IsEducator="False" Name="Placerat montes" Surname="Pulvinar justo"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="45" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Commodo odio conubia orci vestibulum" Id="71" IsEducator="True" Name="Cubilia sagittis lacus senectus mus" Surname="Lorem magna sociosqu"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="75" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Nostra nec porttitor suscipit" Id="69" IsEducator="False" Name="Massa tincidunt dapibus non ornare" Surname="Platea pede"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="40" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Primis egestas rutrum vestibulum" Id="61" IsEducator="True" Name="Sapien quam" Surname="Adipiscing tristique quis"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="77" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Ultricies urna metus per" Id="34" IsEducator="False" Name="Morbi torquent" Surname="Neque sed sem ultrices"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+			</Dto:PersonDto.Absences>
+			<Dto:PersonDto.Days>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="14">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="97" Name="Nulla volutpat porta ante vulputate"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="77">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="62" Name="Adipiscing semper arcu sociis diam"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="79">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="27" Name="Parturient purus maecenas curabitur taciti"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="77">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="36" Name="Praesent tellus"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="82">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="71" Name="Tempor vel phasellus"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+			</Dto:PersonDto.Days>
+		</Dto:PersonDto>
+		<Dto:PersonDto GroupNames="Vel quisque pulvinar" Id="42" IsEducator="True" Name="Sagittis porttitor" Surname="Cras tincidunt">
+			<Dto:PersonDto.Activities>
+				<Dto:ActivityDto DayOfWeek="Thursday" Id="92" MomentDay="Morning" Name="Facilisis per augue nascetur"/>
+				<Dto:ActivityDto DayOfWeek="Thursday" Id="27" MomentDay="Morning" Name="Viverra auctor pharetra fermentum"/>
+				<Dto:ActivityDto DayOfWeek="Sunday" Id="81" MomentDay="Afternoon" Name="Parturient vestibulum aliquam fringilla congue"/>
+				<Dto:ActivityDto DayOfWeek="Saturday" Id="44" MomentDay="Morning" Name="Sed odio"/>
+				<Dto:ActivityDto DayOfWeek="Thursday" Id="23" MomentDay="Morning" Name="Vestibulum dolor habitasse cursus"/>
+			</Dto:PersonDto.Activities>
+			<Dto:PersonDto.Absences>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="52" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Dictumst posuere" Id="58" IsEducator="True" Name="Velit eget" Surname="Elit enim erat turpis eros"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="66" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Adipiscing est eleifend hac nibh" Id="77" IsEducator="False" Name="Facilisi faucibus nisi" Surname="Consequat leo vitae"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="71" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Convallis habitant" Id="92" IsEducator="True" Name="Class inceptos interdum dignissim" Surname="Varius aenean potenti nisl curae"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="12" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Donec etiam mus nec elementum" Id="76" IsEducator="False" Name="Fusce lorem morbi parturient" Surname="Pretium mauris nullam aptent"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="55" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Rhoncus vestibulum vestibulum" Id="46" IsEducator="True" Name="Nulla proin adipiscing" Surname="Nunc non sodales lobortis"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+			</Dto:PersonDto.Absences>
+			<Dto:PersonDto.Days>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="29">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="11" Name="Orci hendrerit"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="95">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="64" Name="Dictum fames himenaeos"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="26">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="79" Name="Pede imperdiet malesuada quam sem"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="55">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="57" Name="Integer sit quis penatibus"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="61">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="81" Name="Placerat urna"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+			</Dto:PersonDto.Days>
+		</Dto:PersonDto>
+		<Dto:PersonDto GroupNames="Massa gravida elit" Id="22" IsEducator="False" Name="Metus enim habitasse adipiscing" Surname="Morbi iaculis lacinia platea">
+			<Dto:PersonDto.Activities>
+				<Dto:ActivityDto DayOfWeek="Tuesday" Id="62" MomentDay="Morning" Name="Est amet parturient"/>
+				<Dto:ActivityDto DayOfWeek="Sunday" Id="68" MomentDay="Morning" Name="Magna maecenas hac leo"/>
+				<Dto:ActivityDto DayOfWeek="Friday" Id="84" MomentDay="AllDay" Name="Conubia montes elementum"/>
+				<Dto:ActivityDto DayOfWeek="Friday" Id="60" MomentDay="AllDay" Name="Facilisis ante mus vestibulum vestibulum"/>
+				<Dto:ActivityDto DayOfWeek="Tuesday" Id="31" MomentDay="Afternoon" Name="Arcu adipiscing nostra parturient"/>
+			</Dto:PersonDto.Activities>
+			<Dto:PersonDto.Absences>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="39" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Lectus libero tristique" Id="12" IsEducator="False" Name="Ultricies vivamus adipiscing duis felis" Surname="Senectus ipsum aliquam justo"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="63" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Venenatis ligula sociosqu" Id="85" IsEducator="True" Name="Litora luctus vulputate" Surname="Aliquet blandit suscipit magnis"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="10" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Parturient mattis vestibulum torquent curabitur" Id="73" IsEducator="False" Name="Nam mauris" Surname="Ultrices sed vehicula vestibulum adipiscing"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="14" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Parturient phasellus" Id="62" IsEducator="True" Name="Dis lacus" Surname="Nunc vestibulum"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="18" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Vestibulum volutpat" Id="27" IsEducator="False" Name="Adipiscing consequat" Surname="Commodo mollis convallis dignissim lorem"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+			</Dto:PersonDto.Absences>
+			<Dto:PersonDto.Days>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="52">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="84" Name="Cubilia fermentum"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="14">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="32" Name="Ornare diam dapibus"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="81">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="86" Name="Praesent egestas nec"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="13">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="43" Name="Euismod eget vestibulum"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="17">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="78" Name="Feugiat vestibulum non fringilla"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+			</Dto:PersonDto.Days>
+		</Dto:PersonDto>
+		<Dto:PersonDto GroupNames="Curabitur leo mus vestibulum" Id="33" IsEducator="True" Name="Tortor cubilia" Surname="Pede fusce dapibus nascetur nec">
+			<Dto:PersonDto.Activities>
+				<Dto:ActivityDto DayOfWeek="Monday" Id="26" MomentDay="AllDay" Name="Parturient est porta"/>
+				<Dto:ActivityDto DayOfWeek="Wednesday" Id="83" MomentDay="AllDay" Name="Faucibus vivamus habitant odio aliquam"/>
+				<Dto:ActivityDto DayOfWeek="Saturday" Id="81" MomentDay="Morning" Name="Aliquet vestibulum vestibulum adipiscing blandit"/>
+				<Dto:ActivityDto DayOfWeek="Sunday" Id="92" MomentDay="AllDay" Name="Parturient vestibulum tempus purus"/>
+				<Dto:ActivityDto DayOfWeek="Tuesday" Id="65" MomentDay="Morning" Name="Inceptos commodo"/>
+			</Dto:PersonDto.Activities>
+			<Dto:PersonDto.Absences>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="13" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Accumsan parturient" Id="75" IsEducator="True" Name="Hendrerit vestibulum laoreet" Surname="Natoque per vestibulum erat"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="10" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Primis bibendum sed rutrum posuere" Id="47" IsEducator="False" Name="Eros sem" Surname="Sapien neque potenti netus himenaeos"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="96" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Nibh nisi" Id="96" IsEducator="True" Name="Pretium semper sit dictumst nisl" Surname="Vel eleifend"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="60" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Rhoncus imperdiet" Id="14" IsEducator="False" Name="Sodales nam adipiscing" Surname="Viverra nunc aliquam integer"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="47" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Nulla sociis sed malesuada" Id="69" IsEducator="True" Name="Taciti quisque tellus facilisi" Surname="Penatibus dis porttitor tempor"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+			</Dto:PersonDto.Absences>
+			<Dto:PersonDto.Days>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="26">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="76" Name="Vestibulum tincidunt tristique orci"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="48">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="14" Name="Ultricies interdum risus"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="79">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="60" Name="Venenatis adipiscing parturient velit vulputate"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="58">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="45" Name="Hac vitae class conubia"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="15">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="42" Name="Lobortis curae donec etiam"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+			</Dto:PersonDto.Days>
+		</Dto:PersonDto>
+		<Dto:PersonDto GroupNames="Dis arcu diam" Id="98" IsEducator="False" Name="Natoque vehicula" Surname="Est hac leo malesuada mus">
+			<Dto:PersonDto.Activities>
+				<Dto:ActivityDto DayOfWeek="Monday" Id="67" MomentDay="AllDay" Name="Habitasse gravida iaculis"/>
+				<Dto:ActivityDto DayOfWeek="Friday" Id="27" MomentDay="AllDay" Name="Lacus senectus"/>
+				<Dto:ActivityDto DayOfWeek="Friday" Id="22" MomentDay="AllDay" Name="Lacinia vestibulum duis"/>
+				<Dto:ActivityDto DayOfWeek="Tuesday" Id="66" MomentDay="AllDay" Name="Nullam vestibulum"/>
+				<Dto:ActivityDto DayOfWeek="Saturday" Id="64" MomentDay="AllDay" Name="Lorem hendrerit sociosqu"/>
+			</Dto:PersonDto.Activities>
+			<Dto:PersonDto.Absences>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="75" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Lorem non turpis phasellus" Id="77" IsEducator="False" Name="Egestas quam vestibulum" Surname="Varius adipiscing morbi parturient quis"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="68" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Euismod nulla" Id="61" IsEducator="True" Name="Per consequat" Surname="Pharetra proin"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="17" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Augue urna cras sed dolor" Id="35" IsEducator="False" Name="Convallis dignissim elementum" Surname="Facilisis fermentum fames"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="60" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Feugiat sem" Id="55" IsEducator="True" Name="Felis ipsum" Surname="Vestibulum vestibulum"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="59" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Placerat pulvinar aenean sagittis justo" Id="34" IsEducator="False" Name="Fringilla adipiscing" Surname="Mauris sit parturient"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+			</Dto:PersonDto.Absences>
+			<Dto:PersonDto.Days>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="90">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="34" Name="Vel himenaeos magna nam"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="67">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="83" Name="Sed aptent massa suscipit adipiscing"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="50">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="69" Name="Torquent auctor metus"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="30">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="21" Name="Nunc amet laoreet parturient"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="27">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="14" Name="Congue ante ultrices morbi imperdiet"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+			</Dto:PersonDto.Days>
+		</Dto:PersonDto>
+		<Dto:PersonDto GroupNames="Velit sed adipiscing parturient" Id="74" IsEducator="True" Name="Rutrum quam" Surname="Dis blandit est hac">
+			<Dto:PersonDto.Activities>
+				<Dto:ActivityDto DayOfWeek="Wednesday" Id="99" MomentDay="Afternoon" Name="Curabitur magnis phasellus mattis nisi"/>
+				<Dto:ActivityDto DayOfWeek="Wednesday" Id="11" MomentDay="AllDay" Name="Mauris mollis consequat sem montes"/>
+				<Dto:ActivityDto DayOfWeek="Thursday" Id="22" MomentDay="AllDay" Name="Vivamus aliquam faucibus"/>
+				<Dto:ActivityDto DayOfWeek="Monday" Id="19" MomentDay="Afternoon" Name="Habitant nisl nunc"/>
+				<Dto:ActivityDto DayOfWeek="Friday" Id="37" MomentDay="Afternoon" Name="Aliquet nostra ornare"/>
+			</Dto:PersonDto.Activities>
+			<Dto:PersonDto.Absences>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="57" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Posuere vestibulum vestibulum" Id="39" IsEducator="True" Name="Neque adipiscing parturient volutpat penatibus" Surname="Vestibulum porttitor eget"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="40" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Tincidunt tristique elit" Id="42" IsEducator="False" Name="Vestibulum potenti netus cursus nulla" Surname="Nec maecenas praesent"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="15" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Dictum ultricies adipiscing" Id="54" IsEducator="True" Name="Pretium enim rhoncus lectus" Surname="Libero erat sodales"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="72" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Non accumsan" Id="94" IsEducator="False" Name="Parturient ligula eros venenatis" Surname="Viverra vestibulum bibendum"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="38" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Litora dictumst aliquam integer nibh" Id="29" IsEducator="True" Name="Luctus per" Surname="Quisque sed eleifend facilisi vulputate"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+			</Dto:PersonDto.Absences>
+			<Dto:PersonDto.Days>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="68">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="31" Name="Convallis porta"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="19">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="15" Name="Purus odio sit vestibulum"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="92">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="99" Name="Orci dignissim pede vel"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="96">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="82" Name="Nam platea"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="54">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="55" Name="Inceptos primis elementum risus"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+			</Dto:PersonDto.Days>
+		</Dto:PersonDto>
+		<Dto:PersonDto GroupNames="Malesuada penatibus sed mauris" Id="24" IsEducator="False" Name="Dis lacinia vestibulum erat" Surname="Eros sagittis nibh est">
+			<Dto:PersonDto.Activities>
+				<Dto:ActivityDto DayOfWeek="Friday" Id="27" MomentDay="Morning" Name="Sem vestibulum"/>
+				<Dto:ActivityDto DayOfWeek="Tuesday" Id="93" MomentDay="Afternoon" Name="Adipiscing donec euismod sit"/>
+				<Dto:ActivityDto DayOfWeek="Sunday" Id="14" MomentDay="AllDay" Name="Etiam himenaeos eget vel"/>
+				<Dto:ActivityDto DayOfWeek="Thursday" Id="62" MomentDay="AllDay" Name="Fusce pharetra turpis elit"/>
+				<Dto:ActivityDto DayOfWeek="Sunday" Id="32" MomentDay="AllDay" Name="Lorem morbi nulla"/>
+			</Dto:PersonDto.Activities>
+			<Dto:PersonDto.Absences>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="45" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Vestibulum vestibulum" Id="75" IsEducator="False" Name="Sapien quis" Surname="Facilisis leo interdum"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="65" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Urna adipiscing commodo semper" Id="83" IsEducator="True" Name="Cras fermentum" Surname="Sociis parturient"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="56" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Conubia vitae" Id="55" IsEducator="False" Name="Fringilla mus nec habitasse" Surname="Non hendrerit taciti vestibulum"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="36" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Duis cubilia tellus vestibulum" Id="51" IsEducator="True" Name="Dapibus nunc" Surname="Lobortis amet adipiscing"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="98" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Per ante tempor parturient arcu" Id="77" IsEducator="False" Name="Sed nascetur tempus egestas" Surname="Class vestibulum diam curae tortor"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+			</Dto:PersonDto.Absences>
+			<Dto:PersonDto.Days>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="46">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="50" Name="Placerat parturient"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="35">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="35" Name="Imperdiet varius pulvinar"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="71">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="89" Name="Enim proin feugiat nam"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="42">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="57" Name="Augue dolor gravida"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="53">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="29" Name="Iaculis aenean"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+			</Dto:PersonDto.Days>
+		</Dto:PersonDto>
+		<Dto:PersonDto GroupNames="Morbi mattis neque arcu" Id="70" IsEducator="True" Name="Sed mauris netus diam" Surname="Eget nulla convallis sem aliquet">
+			<Dto:PersonDto.Activities>
+				<Dto:ActivityDto DayOfWeek="Tuesday" Id="88" MomentDay="Morning" Name="Parturient cras"/>
+				<Dto:ActivityDto DayOfWeek="Sunday" Id="64" MomentDay="Afternoon" Name="Integer lectus vulputate"/>
+				<Dto:ActivityDto DayOfWeek="Friday" Id="83" MomentDay="AllDay" Name="Vestibulum libero curabitur duis maecenas"/>
+				<Dto:ActivityDto DayOfWeek="Tuesday" Id="52" MomentDay="Morning" Name="Nunc quisque vestibulum ligula"/>
+				<Dto:ActivityDto DayOfWeek="Monday" Id="59" MomentDay="Morning" Name="Vivamus praesent litora"/>
+			</Dto:PersonDto.Activities>
+			<Dto:PersonDto.Absences>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="27" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Fames senectus laoreet" Id="95" IsEducator="True" Name="Natoque nullam" Surname="Nisi nisl vestibulum nunc odio"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="57" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Aptent hac" Id="16" IsEducator="False" Name="Felis sociosqu" Surname="Suscipit torquent posuere ultrices"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="87" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Adipiscing ipsum potenti pretium" Id="61" IsEducator="True" Name="Auctor porttitor justo" Surname="Tincidunt lacus vehicula congue rhoncus"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="80" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Tristique orci" Id="86" IsEducator="False" Name="Pede volutpat ultricies" Surname="Sodales leo cursus venenatis quam"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="58" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Lorem viverra" Id="39" IsEducator="True" Name="Quis aliquam dictum" Surname="Mus urna magna"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+			</Dto:PersonDto.Absences>
+			<Dto:PersonDto.Days>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="42">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="86" Name="Massa phasellus aliquam adipiscing nec"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="13">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="38" Name="Accumsan amet parturient bibendum"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="11">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="74" Name="Vestibulum non luctus vestibulum"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="76">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="56" Name="Magnis metus dictumst adipiscing consequat"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="45">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="51" Name="Ante per"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+			</Dto:PersonDto.Days>
+		</Dto:PersonDto>
+		<Dto:PersonDto GroupNames="Gravida leo" Id="13" IsEducator="False" Name="Morbi taciti pede iaculis mus" Surname="Lacinia tellus pulvinar nulla quam">
+			<Dto:PersonDto.Activities>
+				<Dto:ActivityDto DayOfWeek="Tuesday" Id="29" MomentDay="AllDay" Name="Class fringilla interdum dis"/>
+				<Dto:ActivityDto DayOfWeek="Saturday" Id="29" MomentDay="Afternoon" Name="Parturient curae donec"/>
+				<Dto:ActivityDto DayOfWeek="Friday" Id="47" MomentDay="Afternoon" Name="Etiam nisl lobortis habitasse"/>
+				<Dto:ActivityDto DayOfWeek="Monday" Id="40" MomentDay="Afternoon" Name="Nunc fusce nascetur"/>
+				<Dto:ActivityDto DayOfWeek="Monday" Id="17" MomentDay="Morning" Name="Odio egestas orci est"/>
+			</Dto:PersonDto.Activities>
+			<Dto:PersonDto.Absences>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="64" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Elit enim erat" Id="29" IsEducator="False" Name="Blandit mollis" Surname="Parturient montes nostra"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="27" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Commodo sit vestibulum" Id="13" IsEducator="True" Name="Ornare porta purus" Surname="Risus vestibulum adipiscing parturient"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="64" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Eleifend velit" Id="13" IsEducator="False" Name="Facilisi vel dignissim" Surname="Conubia vitae elementum faucibus"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="40" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Platea vestibulum habitant primis nam" Id="21" IsEducator="True" Name="Sed vestibulum" Surname="Inceptos eros"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="33" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Nibh nisi" Id="60" IsEducator="False" Name="Cubilia adipiscing facilisis dapibus" Surname="Fermentum rutrum"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+			</Dto:PersonDto.Absences>
+			<Dto:PersonDto.Days>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="32">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="34" Name="Sapien hendrerit"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="61">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="73" Name="Euismod himenaeos semper"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="52">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="82" Name="Sociis feugiat"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="39">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="82" Name="Hac pharetra placerat"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="25">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="84" Name="Lorem imperdiet"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+			</Dto:PersonDto.Days>
+		</Dto:PersonDto>
+	</Controls:DisplayOneDayGroupViewModel.BeneficiariesMorning>
+	<Controls:DisplayOneDayGroupViewModel.EducatorsAfternoon>
+		<Dto:PersonDto GroupNames="Vestibulum facilisi etiam dictum" Id="72" IsEducator="True" Name="Vestibulum sed faucibus habitant lectus" Surname="Fusce adipiscing">
+			<Dto:PersonDto.Activities>
+				<Dto:ActivityDto DayOfWeek="Sunday" Id="72" MomentDay="Afternoon" Name="Consequat risus velit vitae auctor"/>
+				<Dto:ActivityDto DayOfWeek="Monday" Id="25" MomentDay="Morning" Name="Pretium diam adipiscing"/>
+				<Dto:ActivityDto DayOfWeek="Thursday" Id="94" MomentDay="Morning" Name="Eget class rhoncus"/>
+				<Dto:ActivityDto DayOfWeek="Sunday" Id="21" MomentDay="Afternoon" Name="Sodales parturient convallis elit"/>
+				<Dto:ActivityDto DayOfWeek="Thursday" Id="83" MomentDay="Afternoon" Name="Dignissim elementum"/>
+			</Dto:PersonDto.Activities>
+			<Dto:PersonDto.Absences>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="51" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Himenaeos suscipit imperdiet torquent" Id="54" IsEducator="True" Name="Tellus malesuada" Surname="Tempor mus parturient penatibus cras"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="42" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Ultrices porttitor massa tincidunt vestibulum" Id="41" IsEducator="False" Name="Vestibulum duis metus tristique vehicula" Surname="Nec ultricies"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="14" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Volutpat non per" Id="86" IsEducator="True" Name="Adipiscing nunc maecenas natoque tempus" Surname="Posuere potenti parturient amet"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="35" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Tortor morbi turpis" Id="25" IsEducator="False" Name="Ante varius praesent venenatis neque" Surname="Aenean netus vulputate nulla"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="14" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Mauris porta nullam curabitur accumsan" Id="83" IsEducator="True" Name="Vestibulum aptent phasellus bibendum" Surname="Vestibulum arcu dictumst purus"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+			</Dto:PersonDto.Absences>
+			<Dto:PersonDto.Days>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="96">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="85" Name="Curae congue enim"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="88">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="19" Name="Facilisis viverra"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="17">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="13" Name="Fermentum donec eleifend fringilla aliquam"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="85">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="26" Name="Erat eros cursus integer"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="65">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="43" Name="Nibh habitasse"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+			</Dto:PersonDto.Days>
+		</Dto:PersonDto>
+		<Dto:PersonDto GroupNames="Tincidunt parturient" Id="43" IsEducator="False" Name="Tristique lorem" Surname="Iaculis rutrum ultrices sapien">
+			<Dto:PersonDto.Activities>
+				<Dto:ActivityDto DayOfWeek="Saturday" Id="96" MomentDay="Afternoon" Name="Blandit penatibus pulvinar sagittis"/>
+				<Dto:ActivityDto DayOfWeek="Thursday" Id="37" MomentDay="AllDay" Name="Sed platea senectus"/>
+				<Dto:ActivityDto DayOfWeek="Saturday" Id="27" MomentDay="Morning" Name="Sociosqu vestibulum commodo primis"/>
+				<Dto:ActivityDto DayOfWeek="Monday" Id="60" MomentDay="AllDay" Name="Dis justo vestibulum est"/>
+				<Dto:ActivityDto DayOfWeek="Thursday" Id="30" MomentDay="Afternoon" Name="Hac odio conubia"/>
+			</Dto:PersonDto.Activities>
+			<Dto:PersonDto.Absences>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="39" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Parturient lorem inceptos sem" Id="52" IsEducator="False" Name="Morbi vestibulum vestibulum quisque" Surname="Interdum vivamus libero nulla"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="70" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Ligula sit aliquam lobortis vel" Id="54" IsEducator="True" Name="Adipiscing hendrerit nascetur" Surname="Himenaeos litora pharetra parturient nisi"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="13" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Imperdiet luctus" Id="79" IsEducator="False" Name="Malesuada proin" Surname="Placerat magnis mattis"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="47" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Nisl vestibulum augue" Id="13" IsEducator="True" Name="Mauris nam mollis" Surname="Vestibulum nunc"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="61" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Aliquet adipiscing montes" Id="70" IsEducator="False" Name="Dolor nostra" Surname="Fames parturient felis ipsum ornare"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+			</Dto:PersonDto.Absences>
+			<Dto:PersonDto.Days>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="58">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="18" Name="Suscipit orci cubilia dapibus"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="15">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="90" Name="Leo egestas mus adipiscing parturient"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="33">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="97" Name="Lacus euismod vestibulum vestibulum"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="39">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="14" Name="Nec feugiat adipiscing"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="89">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="58" Name="Pede torquent porttitor gravida"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+			</Dto:PersonDto.Days>
+		</Dto:PersonDto>
+		<Dto:PersonDto GroupNames="Per varius parturient" Id="95" IsEducator="True" Name="Blandit eleifend vestibulum" Surname="Vestibulum nibh nisi nisl">
+			<Dto:PersonDto.Activities>
+				<Dto:ActivityDto DayOfWeek="Saturday" Id="81" MomentDay="Afternoon" Name="Purus vestibulum"/>
+				<Dto:ActivityDto DayOfWeek="Friday" Id="23" MomentDay="AllDay" Name="Risus quisque convallis sed vivamus"/>
+				<Dto:ActivityDto DayOfWeek="Sunday" Id="35" MomentDay="Morning" Name="Aliquam dignissim elementum"/>
+				<Dto:ActivityDto DayOfWeek="Wednesday" Id="69" MomentDay="Afternoon" Name="Aliquet dis est diam adipiscing"/>
+				<Dto:ActivityDto DayOfWeek="Thursday" Id="21" MomentDay="Afternoon" Name="Hac leo"/>
+			</Dto:PersonDto.Activities>
+			<Dto:PersonDto.Absences>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="89" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Vehicula semper" Id="82" IsEducator="True" Name="Magna massa quam" Surname="Metus volutpat quis ultricies non"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="38" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Maecenas per" Id="25" IsEducator="False" Name="Lacinia urna laoreet" Surname="Morbi cras sed"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="98" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Natoque sociis" Id="66" IsEducator="True" Name="Posuere neque venenatis taciti netus" Surname="Potenti praesent vulputate tellus duis"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="24" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Sem accumsan curabitur pretium nunc" Id="77" IsEducator="False" Name="Rhoncus sit" Surname="Amet phasellus sodales tempor nulla"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="85" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Ante vel vestibulum" Id="62" IsEducator="True" Name="Bibendum nam viverra porta" Surname="Aliquam arcu integer consequat"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+			</Dto:PersonDto.Absences>
+			<Dto:PersonDto.Days>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="51">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="56" Name="Eget mus elit"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="88">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="31" Name="Nec non enim"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="92">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="68" Name="Erat facilisis"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="83">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="37" Name="Tempus dictumst tortor eros"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="67">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="98" Name="Turpis fermentum"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+			</Dto:PersonDto.Days>
+		</Dto:PersonDto>
+		<Dto:PersonDto GroupNames="Natoque diam vestibulum vel sagittis" Id="17" IsEducator="False" Name="Adipiscing mattis posuere" Surname="Nam augue parturient vestibulum potenti">
+			<Dto:PersonDto.Activities>
+				<Dto:ActivityDto DayOfWeek="Tuesday" Id="32" MomentDay="AllDay" Name="Gravida malesuada penatibus parturient"/>
+				<Dto:ActivityDto DayOfWeek="Thursday" Id="41" MomentDay="Morning" Name="Ligula cras litora etiam"/>
+				<Dto:ActivityDto DayOfWeek="Saturday" Id="95" MomentDay="Morning" Name="Fusce pharetra porttitor vestibulum luctus"/>
+				<Dto:ActivityDto DayOfWeek="Friday" Id="98" MomentDay="AllDay" Name="Per vestibulum duis placerat tincidunt"/>
+				<Dto:ActivityDto DayOfWeek="Saturday" Id="60" MomentDay="Afternoon" Name="Nunc magnis iaculis lorem adipiscing"/>
+			</Dto:PersonDto.Activities>
+			<Dto:PersonDto.Absences>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="67" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Adipiscing commodo" Id="38" IsEducator="False" Name="Conubia cubilia sed" Surname="Parturient aenean sem"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="48" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Dapibus velit mauris" Id="48" IsEducator="True" Name="Nunc vitae facilisi odio faucibus" Surname="Sit fringilla nullam aptent"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="95" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Vel auctor class vestibulum congue" Id="10" IsEducator="False" Name="Egestas nam habitant orci sed" Surname="Dis vestibulum habitasse est"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="45" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Hac cursus inceptos" Id="80" IsEducator="True" Name="Interdum lobortis dictum pede lectus" Surname="Euismod quam"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="24" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Libero adipiscing quis urna curae" Id="31" IsEducator="False" Name="Leo hendrerit mus himenaeos imperdiet" Surname="Nec feugiat donec nascetur non"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+			</Dto:PersonDto.Absences>
+			<Dto:PersonDto.Days>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="98">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="13" Name="Morbi amet nulla"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="37">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="44" Name="Parturient sed sem vestibulum"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="65">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="45" Name="Lacinia ante sit"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="86">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="45" Name="Laoreet arcu"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="62">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="77" Name="Pulvinar proin"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+			</Dto:PersonDto.Days>
+		</Dto:PersonDto>
+		<Dto:PersonDto GroupNames="Semper habitasse sociis sem" Id="48" IsEducator="True" Name="Massa urna" Surname="Taciti vestibulum cras">
+			<Dto:PersonDto.Activities>
+				<Dto:ActivityDto DayOfWeek="Wednesday" Id="75" MomentDay="Morning" Name="Nec consequat convallis"/>
+				<Dto:ActivityDto DayOfWeek="Saturday" Id="23" MomentDay="Afternoon" Name="Maecenas dignissim lacus elementum"/>
+				<Dto:ActivityDto DayOfWeek="Tuesday" Id="85" MomentDay="Morning" Name="Vivamus lorem orci pede praesent"/>
+				<Dto:ActivityDto DayOfWeek="Friday" Id="85" MomentDay="Morning" Name="Accumsan magna primis"/>
+				<Dto:ActivityDto DayOfWeek="Wednesday" Id="42" MomentDay="Afternoon" Name="Quam adipiscing non"/>
+			</Dto:PersonDto.Activities>
+			<Dto:PersonDto.Absences>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="31" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Dolor senectus sed" Id="69" IsEducator="True" Name="Eget pretium" Surname="Elit tristique"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="54" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Rhoncus sociosqu enim erat mauris" Id="51" IsEducator="False" Name="Eros fames nibh sodales vestibulum" Surname="Adipiscing parturient felis vestibulum"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="26" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Nisi suscipit ipsum mollis vestibulum" Id="16" IsEducator="True" Name="Montes nostra torquent" Surname="Dis adipiscing est nisl"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="71" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Viverra aliquam ultricies nunc" Id="71" IsEducator="False" Name="Venenatis parturient" Surname="Vestibulum vulputate curabitur phasellus vestibulum"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="19" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Ultrices integer ornare quisque justo" Id="69" IsEducator="True" Name="Hac leo platea mus" Surname="Vehicula volutpat odio"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+			</Dto:PersonDto.Absences>
+			<Dto:PersonDto.Days>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="48">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="89" Name="Rutrum per sapien"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="34">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="96" Name="Bibendum dictumst facilisis aliquam"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="35">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="20" Name="Fermentum quis"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="18">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="90" Name="Eleifend sed"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="38">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="88" Name="Aliquet parturient blandit fringilla"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+			</Dto:PersonDto.Days>
+		</Dto:PersonDto>
+		<Dto:PersonDto GroupNames="Nec aptent suscipit gravida velit" Id="89" IsEducator="False" Name="Iaculis vestibulum non" Surname="Torquent adipiscing pede ultrices vitae">
+			<Dto:PersonDto.Activities>
+				<Dto:ActivityDto DayOfWeek="Friday" Id="94" MomentDay="AllDay" Name="Netus est nibh nisi nulla"/>
+				<Dto:ActivityDto DayOfWeek="Tuesday" Id="76" MomentDay="Afternoon" Name="Malesuada pharetra vestibulum nisl"/>
+				<Dto:ActivityDto DayOfWeek="Friday" Id="18" MomentDay="AllDay" Name="Penatibus porttitor placerat varius pulvinar"/>
+				<Dto:ActivityDto DayOfWeek="Thursday" Id="15" MomentDay="Afternoon" Name="Sagittis tincidunt"/>
+				<Dto:ActivityDto DayOfWeek="Monday" Id="69" MomentDay="Morning" Name="Hac porta aenean dapibus"/>
+			</Dto:PersonDto.Activities>
+			<Dto:PersonDto.Absences>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="31" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Facilisi tellus tempor faucibus vestibulum" Id="71" IsEducator="False" Name="Sit habitant" Surname="Adipiscing tempus"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="92" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Parturient duis commodo hendrerit tortor" Id="39" IsEducator="True" Name="Vel vestibulum" Surname="Nunc vestibulum amet ante conubia"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="71" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Inceptos arcu interdum" Id="80" IsEducator="False" Name="Himenaeos diam cubilia" Surname="Adipiscing eget lobortis"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="92" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Parturient vestibulum" Id="85" IsEducator="True" Name="Nam elit vestibulum" Surname="Enim turpis imperdiet"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="59" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Adipiscing erat" Id="36" IsEducator="False" Name="Parturient eros sed" Surname="Dis metus morbi nascetur neque"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+			</Dto:PersonDto.Absences>
+			<Dto:PersonDto.Days>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="38">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="34" Name="Mauris tristique"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="37">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="50" Name="Egestas purus"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="59">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="84" Name="Leo mus nunc nullam"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="13">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="52" Name="Senectus odio risus"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="97">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="76" Name="Euismod feugiat orci sociosqu"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+			</Dto:PersonDto.Days>
+		</Dto:PersonDto>
+		<Dto:PersonDto GroupNames="Interdum vestibulum sodales magna" Id="67" IsEducator="True" Name="Platea fermentum fringilla" Surname="Diam massa habitasse viverra lobortis">
+			<Dto:PersonDto.Activities>
+				<Dto:ActivityDto DayOfWeek="Friday" Id="41" MomentDay="Afternoon" Name="Sem mattis felis"/>
+				<Dto:ActivityDto DayOfWeek="Friday" Id="77" MomentDay="Morning" Name="Bibendum vestibulum mauris mollis"/>
+				<Dto:ActivityDto DayOfWeek="Monday" Id="39" MomentDay="AllDay" Name="Posuere sit montes dictumst convallis"/>
+				<Dto:ActivityDto DayOfWeek="Friday" Id="14" MomentDay="Afternoon" Name="Nostra ipsum adipiscing"/>
+				<Dto:ActivityDto DayOfWeek="Sunday" Id="38" MomentDay="Afternoon" Name="Dignissim justo"/>
+			</Dto:PersonDto.Activities>
+			<Dto:PersonDto.Absences>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="52" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Auctor class" Id="52" IsEducator="True" Name="Parturient per ultricies quam vestibulum" Surname="Congue lacinia"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="79" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Venenatis quis" Id="81" IsEducator="False" Name="Curae vehicula donec" Surname="Etiam vestibulum cursus"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="63" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Urna cras fusce adipiscing" Id="23" IsEducator="True" Name="Volutpat lorem dictum maecenas" Surname="Duis sed lectus"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="67" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Vulputate curabitur" Id="26" IsEducator="False" Name="Libero phasellus ligula parturient" Surname="Vestibulum morbi nulla nunc consequat"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="50" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Litora proin augue" Id="55" IsEducator="True" Name="Luctus laoreet magnis dolor praesent" Surname="Fames natoque amet ante accumsan"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+			</Dto:PersonDto.Absences>
+			<Dto:PersonDto.Days>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="59">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="92" Name="Vel potenti arcu ornare"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="94">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="83" Name="Eleifend nam"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="88">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="71" Name="Facilisi lacus elementum parturient"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="50">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="29" Name="Lorem pretium faucibus facilisis"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="61">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="10" Name="Rhoncus habitant inceptos"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+			</Dto:PersonDto.Days>
+		</Dto:PersonDto>
+		<Dto:PersonDto GroupNames="Class varius volutpat" Id="29" IsEducator="False" Name="Parturient gravida" Surname="Sed iaculis">
+			<Dto:PersonDto.Activities>
+				<Dto:ActivityDto DayOfWeek="Monday" Id="21" MomentDay="Morning" Name="Nunc parturient odio"/>
+				<Dto:ActivityDto DayOfWeek="Sunday" Id="56" MomentDay="Morning" Name="Conubia cubilia"/>
+				<Dto:ActivityDto DayOfWeek="Sunday" Id="46" MomentDay="AllDay" Name="Tempor tempus"/>
+				<Dto:ActivityDto DayOfWeek="Wednesday" Id="41" MomentDay="Morning" Name="Dapibus suscipit vestibulum"/>
+				<Dto:ActivityDto DayOfWeek="Tuesday" Id="60" MomentDay="AllDay" Name="Non malesuada egestas"/>
+			</Dto:PersonDto.Activities>
+			<Dto:PersonDto.Absences>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="53" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Eget elit primis" Id="60" IsEducator="False" Name="Vestibulum adipiscing aliquam integer parturient" Surname="Metus morbi rutrum"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="28" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Quisque sapien enim" Id="88" IsEducator="True" Name="Vivamus sed dis semper" Surname="Nascetur est hac"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="63" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Pharetra placerat" Id="27" IsEducator="False" Name="Vestibulum erat leo aliquam" Surname="Pulvinar sociis eros taciti nibh"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="91" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Mus sagittis" Id="95" IsEducator="True" Name="Aliquet hendrerit" Surname="Himenaeos blandit imperdiet nisi"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="42" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Nec senectus tellus neque commodo" Id="28" IsEducator="False" Name="Vestibulum adipiscing" Surname="Nisl netus sociosqu"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+			</Dto:PersonDto.Absences>
+			<Dto:PersonDto.Days>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="59">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="50" Name="Orci vestibulum pede"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="93">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="29" Name="Euismod torquent"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="21">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="61" Name="Feugiat ultrices nulla tortor vehicula"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="56">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="33" Name="Turpis adipiscing porta purus"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="93">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="67" Name="Risus velit vitae per"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+			</Dto:PersonDto.Days>
+		</Dto:PersonDto>
+		<Dto:PersonDto GroupNames="Habitant sem inceptos nisi nisl" Id="31" IsEducator="True" Name="Sit nunc parturient interdum" Surname="Vestibulum dignissim vel">
+			<Dto:PersonDto.Activities>
+				<Dto:ActivityDto DayOfWeek="Wednesday" Id="79" MomentDay="Afternoon" Name="Nulla proin vestibulum adipiscing"/>
+				<Dto:ActivityDto DayOfWeek="Saturday" Id="36" MomentDay="AllDay" Name="Erat eros leo cursus"/>
+				<Dto:ActivityDto DayOfWeek="Friday" Id="32" MomentDay="Afternoon" Name="Parturient posuere phasellus augue"/>
+				<Dto:ActivityDto DayOfWeek="Thursday" Id="78" MomentDay="Morning" Name="Mus nec"/>
+				<Dto:ActivityDto DayOfWeek="Wednesday" Id="81" MomentDay="Morning" Name="Dolor dictum potenti fames"/>
+			</Dto:PersonDto.Activities>
+			<Dto:PersonDto.Absences>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="35" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Sem quam" Id="81" IsEducator="True" Name="Curae quis penatibus" Surname="Porttitor urna cras duis nunc"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="33" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Aenean donec mauris amet" Id="10" IsEducator="False" Name="Maecenas praesent" Surname="Nullam accumsan etiam bibendum"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="81" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Lacinia ante" Id="11" IsEducator="True" Name="Sit arcu diam aptent" Surname="Tincidunt dictumst auctor tristique eget"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="55" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Fusce vel nam" Id="28" IsEducator="False" Name="Laoreet lorem congue" Surname="Sed natoque ultricies elit venenatis"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="72" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Dis est vulputate hac" Id="12" IsEducator="True" Name="Curabitur vestibulum" Surname="Eleifend facilisi enim morbi"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+			</Dto:PersonDto.Absences>
+			<Dto:PersonDto.Days>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="86">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="47" Name="Felis ipsum non lectus pretium"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="81">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="95" Name="Consequat per vestibulum"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="47">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="12" Name="Justo nibh rhoncus vestibulum"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="21">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="63" Name="Adipiscing faucibus sodales"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="69">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="47" Name="Convallis sed"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+			</Dto:PersonDto.Days>
+		</Dto:PersonDto>
+		<Dto:PersonDto GroupNames="Purus conubia vestibulum nostra" Id="60" IsEducator="False" Name="Senectus sociosqu vestibulum" Surname="Risus per convallis velit adipiscing">
+			<Dto:PersonDto.Activities>
+				<Dto:ActivityDto DayOfWeek="Thursday" Id="90" MomentDay="Morning" Name="Mattis ultricies mus vestibulum"/>
+				<Dto:ActivityDto DayOfWeek="Friday" Id="94" MomentDay="Afternoon" Name="Adipiscing venenatis vulputate duis nunc"/>
+				<Dto:ActivityDto DayOfWeek="Wednesday" Id="41" MomentDay="AllDay" Name="Aliquet amet mauris"/>
+				<Dto:ActivityDto DayOfWeek="Monday" Id="40" MomentDay="AllDay" Name="Placerat mollis morbi nec"/>
+				<Dto:ActivityDto DayOfWeek="Tuesday" Id="38" MomentDay="Afternoon" Name="Ante montes"/>
+			</Dto:PersonDto.Activities>
+			<Dto:PersonDto.Absences>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="10" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Elementum lobortis" Id="17" IsEducator="False" Name="Libero ligula lacus litora" Surname="Vestibulum lorem facilisis fermentum"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="37" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Nam fringilla odio" Id="55" IsEducator="True" Name="Habitasse hendrerit himenaeos" Surname="Sed viverra"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="31" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Dis imperdiet orci est" Id="97" IsEducator="False" Name="Aliquam magna malesuada pede" Surname="Hac quam penatibus"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="97" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Integer porttitor tincidunt" Id="35" IsEducator="True" Name="Massa adipiscing quisque luctus" Surname="Quis vivamus"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="70" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Nascetur urna" Id="81" IsEducator="False" Name="Pharetra aliquam cras tristique leo" Surname="Parturient vestibulum magnis metus"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+			</Dto:PersonDto.Absences>
+			<Dto:PersonDto.Days>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="38">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="90" Name="Neque netus nulla pulvinar"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="71">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="87" Name="Blandit parturient curabitur"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="96">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="33" Name="Non commodo"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="79">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="25" Name="Phasellus sagittis"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="47">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="74" Name="Porta consequat"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+			</Dto:PersonDto.Days>
+		</Dto:PersonDto>
+	</Controls:DisplayOneDayGroupViewModel.EducatorsAfternoon>
+	<Controls:DisplayOneDayGroupViewModel.EducatorsMorning>
+		<Dto:PersonDto GroupNames="Praesent eros accumsan" Id="34" IsEducator="True" Name="Fames vulputate nibh curabitur" Surname="Felis phasellus tempus mus vestibulum">
+			<Dto:PersonDto.Activities>
+				<Dto:ActivityDto DayOfWeek="Tuesday" Id="99" MomentDay="Afternoon" Name="Malesuada hac"/>
+				<Dto:ActivityDto DayOfWeek="Sunday" Id="75" MomentDay="AllDay" Name="Eget natoque"/>
+				<Dto:ActivityDto DayOfWeek="Tuesday" Id="75" MomentDay="Afternoon" Name="Vestibulum morbi"/>
+				<Dto:ActivityDto DayOfWeek="Friday" Id="58" MomentDay="Morning" Name="Elit enim sapien"/>
+				<Dto:ActivityDto DayOfWeek="Tuesday" Id="10" MomentDay="AllDay" Name="Semper sociis nulla posuere vestibulum"/>
+			</Dto:PersonDto.Activities>
+			<Dto:PersonDto.Absences>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="90" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Parturient cubilia dignissim sed arcu" Id="86" IsEducator="True" Name="Elementum facilisis fermentum" Surname="Dapibus egestas sem"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="27" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Vestibulum fringilla" Id="82" IsEducator="False" Name="Vitae diam" Surname="Sit vestibulum class adipiscing ornare"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="62" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Parturient suscipit vestibulum habitasse" Id="23" IsEducator="True" Name="Torquent vel" Surname="Ultrices curae donec nam"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="79" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Etiam euismod sed vehicula feugiat" Id="64" IsEducator="False" Name="Platea dis est primis" Surname="Vestibulum adipiscing gravida"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="28" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Fusce volutpat iaculis parturient" Id="73" IsEducator="True" Name="Lacinia lorem laoreet hendrerit rutrum" Surname="Himenaeos imperdiet"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+			</Dto:PersonDto.Absences>
+			<Dto:PersonDto.Days>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="96">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="34" Name="Leo penatibus porttitor adipiscing"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="56">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="21" Name="Tincidunt tristique parturient potenti taciti"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="64">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="91" Name="Proin erat augue"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="73">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="51" Name="Ultricies tellus dolor venenatis tempor"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="35">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="56" Name="Maecenas pretium"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+			</Dto:PersonDto.Days>
+		</Dto:PersonDto>
+		<Dto:PersonDto GroupNames="Pulvinar morbi conubia" Id="68" IsEducator="False" Name="Cubilia ante mus" Surname="Vestibulum sagittis vestibulum adipiscing luctus">
+			<Dto:PersonDto.Activities>
+				<Dto:ActivityDto DayOfWeek="Monday" Id="25" MomentDay="Afternoon" Name="Pede nam"/>
+				<Dto:ActivityDto DayOfWeek="Monday" Id="64" MomentDay="Morning" Name="Hendrerit sed auctor magna interdum"/>
+				<Dto:ActivityDto DayOfWeek="Friday" Id="57" MomentDay="Afternoon" Name="Dis massa congue"/>
+				<Dto:ActivityDto DayOfWeek="Thursday" Id="37" MomentDay="AllDay" Name="Cursus quam himenaeos imperdiet"/>
+				<Dto:ActivityDto DayOfWeek="Monday" Id="40" MomentDay="Afternoon" Name="Est lobortis dictum nascetur"/>
+			</Dto:PersonDto.Activities>
+			<Dto:PersonDto.Absences>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="46" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Ipsum vestibulum nec rhoncus" Id="76" IsEducator="False" Name="Sodales bibendum adipiscing viverra" Surname="Parturient consequat nisi"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="92" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Dictumst vestibulum justo aliquam" Id="35" IsEducator="True" Name="Integer eleifend convallis facilisi vestibulum" Surname="Dignissim elementum adipiscing faucibus"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="81" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Tortor turpis parturient facilisis" Id="30" IsEducator="False" Name="Non quisque nisl nunc lacus" Surname="Varius vestibulum aenean habitant fermentum"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="46" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Fringilla per vivamus" Id="89" IsEducator="True" Name="Sed aliquam" Surname="Habitasse sem sit"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="44" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Mauris nullam aliquet" Id="44" IsEducator="False" Name="Odio blandit vestibulum inceptos" Surname="Vel orci aptent adipiscing lorem"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+			</Dto:PersonDto.Absences>
+			<Dto:PersonDto.Days>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="66">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="61" Name="Quis urna"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="90">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="20" Name="Pharetra lectus hac commodo cras"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="21">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="62" Name="Parturient leo duis libero nunc"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="32">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="23" Name="Amet ligula"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="29">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="71" Name="Litora metus placerat"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+			</Dto:PersonDto.Days>
+		</Dto:PersonDto>
+		<Dto:PersonDto GroupNames="Rutrum nisl non sapien posuere" Id="63" IsEducator="True" Name="Per potenti curabitur interdum" Surname="Phasellus pretium nunc vestibulum adipiscing">
+			<Dto:PersonDto.Activities>
+				<Dto:ActivityDto DayOfWeek="Tuesday" Id="54" MomentDay="Afternoon" Name="Dictumst platea gravida eleifend"/>
+				<Dto:ActivityDto DayOfWeek="Saturday" Id="81" MomentDay="AllDay" Name="Parturient tristique"/>
+				<Dto:ActivityDto DayOfWeek="Saturday" Id="97" MomentDay="AllDay" Name="Vestibulum iaculis"/>
+				<Dto:ActivityDto DayOfWeek="Wednesday" Id="28" MomentDay="Afternoon" Name="Lacinia facilisi ultricies primis"/>
+				<Dto:ActivityDto DayOfWeek="Thursday" Id="85" MomentDay="Morning" Name="Erat faucibus"/>
+			</Dto:PersonDto.Activities>
+			<Dto:PersonDto.Absences>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="55" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Magnis senectus" Id="27" IsEducator="True" Name="Parturient nec sociosqu dapibus" Surname="Arcu malesuada suscipit penatibus non"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="45" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Diam porttitor egestas neque" Id="95" IsEducator="False" Name="Mattis euismod" Surname="Eget netus per torquent"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="36" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Mauris elit nulla" Id="27" IsEducator="True" Name="Mollis vestibulum" Surname="Sed sem sit ultrices"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="88" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Vehicula vel" Id="91" IsEducator="False" Name="Feugiat tincidunt montes" Surname="Porta purus nostra ornare volutpat"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="28" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Enim maecenas praesent" Id="86" IsEducator="True" Name="Vestibulum accumsan nam" Surname="Bibendum sed adipiscing"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+			</Dto:PersonDto.Absences>
+			<Dto:PersonDto.Days>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="23">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="38" Name="Vestibulum dis adipiscing habitant est"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="19">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="65" Name="Hac parturient leo"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="64">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="41" Name="Mus inceptos"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="61">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="29" Name="Laoreet venenatis vestibulum vulputate eros"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="84">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="13" Name="Natoque risus nibh nec nisi"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+			</Dto:PersonDto.Days>
+		</Dto:PersonDto>
+		<Dto:PersonDto GroupNames="Dolor blandit" Id="66" IsEducator="False" Name="Non vehicula" Surname="Commodo volutpat maecenas fames">
+			<Dto:PersonDto.Activities>
+				<Dto:ActivityDto DayOfWeek="Wednesday" Id="51" MomentDay="AllDay" Name="Sagittis parturient senectus hac vestibulum"/>
+				<Dto:ActivityDto DayOfWeek="Friday" Id="99" MomentDay="AllDay" Name="Morbi tempus vivamus tortor sociosqu"/>
+				<Dto:ActivityDto DayOfWeek="Wednesday" Id="27" MomentDay="Morning" Name="Duis nunc fermentum fringilla"/>
+				<Dto:ActivityDto DayOfWeek="Tuesday" Id="89" MomentDay="Morning" Name="Amet vestibulum ante"/>
+				<Dto:ActivityDto DayOfWeek="Wednesday" Id="72" MomentDay="Morning" Name="Leo nulla proin mus"/>
+			</Dto:PersonDto.Activities>
+			<Dto:PersonDto.Absences>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="72" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Lobortis consequat convallis semper" Id="66" IsEducator="False" Name="Rhoncus parturient vestibulum" Surname="Sodales sociis vestibulum"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="63" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Odio sed dignissim orci" Id="23" IsEducator="True" Name="Velit sem vitae" Surname="Nascetur taciti sit class"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="63" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Pharetra adipiscing tellus vel nam" Id="23" IsEducator="False" Name="Viverra pede curae" Surname="Quam sed donec"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="62" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Elementum parturient dis" Id="73" IsEducator="True" Name="Etiam placerat" Surname="Vestibulum aliquam est quis"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="43" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Vestibulum facilisis urna" Id="64" IsEducator="False" Name="Fusce integer cras lorem tempor" Surname="Pulvinar quisque adipiscing"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+			</Dto:PersonDto.Absences>
+			<Dto:PersonDto.Days>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="51">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="68" Name="Turpis habitasse varius hendrerit"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="16">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="22" Name="Himenaeos arcu aliquam"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="22">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="84" Name="Imperdiet diam suscipit torquent ultrices"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="77">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="72" Name="Nec aliquet"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="99">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="82" Name="Adipiscing augue parturient aenean"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+			</Dto:PersonDto.Days>
+		</Dto:PersonDto>
+		<Dto:PersonDto GroupNames="Adipiscing phasellus" Id="48" IsEducator="True" Name="Litora ante consequat" Surname="Parturient velit convallis">
+			<Dto:PersonDto.Activities>
+				<Dto:ActivityDto DayOfWeek="Thursday" Id="74" MomentDay="Afternoon" Name="Feugiat netus vel facilisi"/>
+				<Dto:ActivityDto DayOfWeek="Friday" Id="33" MomentDay="Afternoon" Name="Nam vestibulum"/>
+				<Dto:ActivityDto DayOfWeek="Sunday" Id="14" MomentDay="Morning" Name="Lectus nulla"/>
+				<Dto:ActivityDto DayOfWeek="Sunday" Id="90" MomentDay="Afternoon" Name="Adipiscing faucibus tristique gravida parturient"/>
+				<Dto:ActivityDto DayOfWeek="Friday" Id="18" MomentDay="Morning" Name="Habitant libero iaculis urna cras"/>
+			</Dto:PersonDto.Activities>
+			<Dto:PersonDto.Absences>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="87" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Mauris felis ipsum eget" Id="62" IsEducator="True" Name="Nullam aptent" Surname="Elit vestibulum justo per lacus"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="98" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Enim sed erat" Id="13" IsEducator="False" Name="Malesuada praesent" Surname="Eros sem auctor"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="91" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Congue penatibus nibh" Id="94" IsEducator="True" Name="Lorem conubia nisi" Surname="Cubilia vestibulum porttitor sit"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="63" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Accumsan magna bibendum nisl cursus" Id="60" IsEducator="False" Name="Dictumst massa dapibus adipiscing" Surname="Nunc metus egestas odio"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="29" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Orci parturient vestibulum tincidunt" Id="69" IsEducator="True" Name="Morbi pede eleifend neque euismod" Surname="Dictum quam quis"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+			</Dto:PersonDto.Absences>
+			<Dto:PersonDto.Days>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="64">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="45" Name="Ultricies duis vestibulum inceptos vestibulum"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="87">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="52" Name="Porta lacinia"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="48">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="24" Name="Purus risus"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="69">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="30" Name="Venenatis nunc vulputate"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="77">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="95" Name="Amet curabitur ligula"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+			</Dto:PersonDto.Days>
+		</Dto:PersonDto>
+		<Dto:PersonDto GroupNames="Viverra platea" Id="35" IsEducator="False" Name="Himenaeos sed imperdiet aliquam" Surname="Parturient malesuada nunc">
+			<Dto:PersonDto.Activities>
+				<Dto:ActivityDto DayOfWeek="Tuesday" Id="58" MomentDay="Afternoon" Name="Mollis rhoncus adipiscing sem sodales"/>
+				<Dto:ActivityDto DayOfWeek="Thursday" Id="66" MomentDay="AllDay" Name="Fermentum nulla sociosqu eros sit"/>
+				<Dto:ActivityDto DayOfWeek="Sunday" Id="48" MomentDay="AllDay" Name="Nibh parturient proin augue fringilla"/>
+				<Dto:ActivityDto DayOfWeek="Wednesday" Id="59" MomentDay="Afternoon" Name="Habitasse suscipit"/>
+				<Dto:ActivityDto DayOfWeek="Sunday" Id="48" MomentDay="Afternoon" Name="Torquent hendrerit vel nam"/>
+			</Dto:PersonDto.Activities>
+			<Dto:PersonDto.Absences>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="99" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Arcu vitae laoreet" Id="96" IsEducator="False" Name="Diam luctus" Surname="Dignissim natoque"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="94" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Interdum sed" Id="50" IsEducator="True" Name="Dis class posuere est" Surname="Curae vestibulum"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="41" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Donec lobortis hac nascetur" Id="95" IsEducator="False" Name="Pharetra placerat eget" Surname="Leo potenti vestibulum"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="56" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Mus nec elementum non" Id="63" IsEducator="True" Name="Etiam fusce elit pretium" Surname="Lorem pulvinar magnis mattis enim"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="85" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Erat mauris sagittis per" Id="11" IsEducator="False" Name="Sed senectus" Surname="Facilisis morbi"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+			</Dto:PersonDto.Absences>
+			<Dto:PersonDto.Days>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="29">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="64" Name="Ultrices vehicula"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="94">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="53" Name="Montes vestibulum nostra"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="17">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="27" Name="Vestibulum nisi"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="76">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="25" Name="Adipiscing volutpat nisl"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="18">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="77" Name="Ornare maecenas praesent"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+			</Dto:PersonDto.Days>
+		</Dto:PersonDto>
+		<Dto:PersonDto GroupNames="Morbi vulputate aenean diam" Id="25" IsEducator="True" Name="Vestibulum mauris sit" Surname="Pulvinar nullam">
+			<Dto:PersonDto.Activities>
+				<Dto:ActivityDto DayOfWeek="Saturday" Id="23" MomentDay="Afternoon" Name="Tempus cras lacus"/>
+				<Dto:ActivityDto DayOfWeek="Wednesday" Id="75" MomentDay="Morning" Name="Non duis parturient interdum"/>
+				<Dto:ActivityDto DayOfWeek="Tuesday" Id="33" MomentDay="Afternoon" Name="Tortor lobortis nascetur per lorem"/>
+				<Dto:ActivityDto DayOfWeek="Thursday" Id="43" MomentDay="Morning" Name="Vestibulum nunc turpis"/>
+				<Dto:ActivityDto DayOfWeek="Thursday" Id="69" MomentDay="AllDay" Name="Pharetra venenatis varius conubia amet"/>
+			</Dto:PersonDto.Activities>
+			<Dto:PersonDto.Absences>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="85" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Accumsan odio primis vestibulum penatibus" Id="95" IsEducator="True" Name="Integer vestibulum dolor" Surname="Fames adipiscing porttitor orci tincidunt"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="41" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Parturient rutrum dis pede vestibulum" Id="28" IsEducator="False" Name="Est bibendum" Surname="Quisque vestibulum dictumst felis eleifend"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="18" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Facilisi sapien adipiscing faucibus parturient" Id="28" IsEducator="True" Name="Quam hac quis" Surname="Vivamus leo ipsum aliquam semper"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="55" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Mus aliquet nec" Id="30" IsEducator="False" Name="Justo tristique" Surname="Sociis vestibulum taciti"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="60" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Ultricies tellus tempor" Id="94" IsEducator="True" Name="Vestibulum blandit habitant adipiscing urna" Surname="Commodo inceptos"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+			</Dto:PersonDto.Absences>
+			<Dto:PersonDto.Days>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="89">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="57" Name="Sed magna"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="86">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="32" Name="Massa ante"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="13">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="97" Name="Vestibulum adipiscing cubilia"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="75">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="37" Name="Placerat metus dapibus arcu"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="11">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="83" Name="Sem parturient"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+			</Dto:PersonDto.Days>
+		</Dto:PersonDto>
+		<Dto:PersonDto GroupNames="Class curae non viverra dictumst" Id="53" IsEducator="False" Name="Eleifend odio facilisi" Surname="Donec ornare faucibus aliquam">
+			<Dto:PersonDto.Activities>
+				<Dto:ActivityDto DayOfWeek="Monday" Id="38" MomentDay="Afternoon" Name="Ultrices vehicula luctus volutpat"/>
+				<Dto:ActivityDto DayOfWeek="Monday" Id="70" MomentDay="AllDay" Name="Fermentum magnis purus fringilla maecenas"/>
+				<Dto:ActivityDto DayOfWeek="Saturday" Id="67" MomentDay="AllDay" Name="Mattis risus est mauris"/>
+				<Dto:ActivityDto DayOfWeek="Friday" Id="49" MomentDay="Afternoon" Name="Hac habitasse leo"/>
+				<Dto:ActivityDto DayOfWeek="Thursday" Id="45" MomentDay="Afternoon" Name="Hendrerit praesent"/>
+			</Dto:PersonDto.Activities>
+			<Dto:PersonDto.Absences>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="60" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Curabitur neque" Id="11" IsEducator="False" Name="Aptent egestas euismod eget" Surname="Feugiat vestibulum phasellus auctor gravida"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="81" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Congue sagittis elit" Id="41" IsEducator="True" Name="Consequat enim erat" Surname="Eros cursus adipiscing"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="72" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Vel nibh dictum parturient" Id="33" IsEducator="False" Name="Netus senectus" Surname="Lectus nam iaculis convallis sed"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="70" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Lacinia laoreet sociosqu libero" Id="86" IsEducator="True" Name="Dis dignissim nulla ligula porta" Surname="Nisi litora suscipit elementum"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="77" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Natoque posuere" Id="46" IsEducator="False" Name="Potenti pretium torquent vestibulum" Surname="Facilisis nisl"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+			</Dto:PersonDto.Absences>
+			<Dto:PersonDto.Days>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="64">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="93" Name="Velit vestibulum"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="50">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="88" Name="Himenaeos nunc imperdiet rhoncus mollis"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="29">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="53" Name="Accumsan montes bibendum mus adipiscing"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="58">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="60" Name="Nostra sodales nec"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="36">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="59" Name="Malesuada penatibus parturient vitae porttitor"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+			</Dto:PersonDto.Days>
+		</Dto:PersonDto>
+		<Dto:PersonDto GroupNames="Nunc ultrices" Id="87" IsEducator="True" Name="Conubia amet cubilia lacus vehicula" Surname="Lorem mus">
+			<Dto:PersonDto.Activities>
+				<Dto:ActivityDto DayOfWeek="Friday" Id="24" MomentDay="Morning" Name="Aliquet pharetra"/>
+				<Dto:ActivityDto DayOfWeek="Friday" Id="23" MomentDay="Afternoon" Name="Nulla elementum"/>
+				<Dto:ActivityDto DayOfWeek="Friday" Id="37" MomentDay="Morning" Name="Facilisis fermentum placerat pulvinar sed"/>
+				<Dto:ActivityDto DayOfWeek="Sunday" Id="50" MomentDay="Morning" Name="Proin dis sagittis tellus"/>
+				<Dto:ActivityDto DayOfWeek="Friday" Id="89" MomentDay="AllDay" Name="Augue senectus est"/>
+			</Dto:PersonDto.Activities>
+			<Dto:PersonDto.Absences>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="20" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Tincidunt vestibulum" Id="90" IsEducator="True" Name="Habitant vestibulum platea" Surname="Integer tristique ultricies orci per"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="67" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Sed quisque venenatis" Id="31" IsEducator="False" Name="Vulputate sem inceptos sit" Surname="Interdum pede adipiscing curabitur parturient"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="44" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Etiam vestibulum phasellus" Id="20" IsEducator="True" Name="Quam vivamus" Surname="Quis primis consequat rutrum"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="12" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Vestibulum vel sapien urna" Id="40" IsEducator="False" Name="Semper adipiscing" Surname="Cras fusce lorem nam sociis"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="70" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Lobortis duis morbi" Id="17" IsEducator="True" Name="Aliquam convallis" Surname="Dignissim nascetur taciti"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+			</Dto:PersonDto.Absences>
+			<Dto:PersonDto.Days>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="97">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="62" Name="Blandit dolor"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="29">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="91" Name="Commodo sociosqu fringilla parturient fames"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="65">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="29" Name="Habitasse hendrerit felis ipsum"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="61">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="46" Name="Hac suscipit justo tempor"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="73">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="19" Name="Torquent tempus leo"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+			</Dto:PersonDto.Days>
+		</Dto:PersonDto>
+		<Dto:PersonDto GroupNames="Faucibus curae aliquam nisl integer" Id="66" IsEducator="False" Name="Donec tincidunt tristique hac" Surname="Ultricies quisque">
+			<Dto:PersonDto.Activities>
+				<Dto:ActivityDto DayOfWeek="Thursday" Id="48" MomentDay="AllDay" Name="Velit vitae"/>
+				<Dto:ActivityDto DayOfWeek="Sunday" Id="78" MomentDay="Morning" Name="Erat adipiscing eros"/>
+				<Dto:ActivityDto DayOfWeek="Tuesday" Id="67" MomentDay="Morning" Name="Rhoncus nibh sodales"/>
+				<Dto:ActivityDto DayOfWeek="Friday" Id="93" MomentDay="Afternoon" Name="Praesent accumsan bibendum parturient nam"/>
+				<Dto:ActivityDto DayOfWeek="Monday" Id="39" MomentDay="Afternoon" Name="Sed porttitor dis vestibulum aptent"/>
+			</Dto:PersonDto.Activities>
+			<Dto:PersonDto.Absences>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="57" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Nec magna massa vestibulum metus" Id="43" IsEducator="False" Name="Dapibus ante non" Surname="Tortor arcu vestibulum"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="50" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Egestas volutpat morbi" Id="96" IsEducator="True" Name="Turpis adipiscing" Surname="Euismod varius feugiat parturient himenaeos"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="81" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Imperdiet neque diam aenean per" Id="12" IsEducator="False" Name="Sed gravida netus" Surname="Maecenas eget vestibulum iaculis malesuada"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="79" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Nulla lacinia laoreet" Id="54" IsEducator="True" Name="Porta sem natoque posuere purus" Surname="Vestibulum mauris"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+				<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="75" Start="12/07/2015 21:06:20">
+					<Dto:AbsenceDto.Person>
+						<Dto:PersonDto GroupNames="Potenti nullam" Id="81" IsEducator="False" Name="Pretium risus" Surname="Sit elit vel penatibus enim"/>
+					</Dto:AbsenceDto.Person>
+				</Dto:AbsenceDto>
+			</Dto:PersonDto.Absences>
+			<Dto:PersonDto.Days>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="42">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="65" Name="Nisi auctor vestibulum"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="78">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="75" Name="Congue cursus adipiscing parturient dictumst"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="60">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="50" Name="Vestibulum viverra"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="64">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="10" Name="Eleifend dictum"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+				<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="62">
+					<Dto:DayDto.Group>
+						<Dto:GroupDto Id="66" Name="Est facilisi class"/>
+					</Dto:DayDto.Group>
+				</Dto:DayDto>
+			</Dto:PersonDto.Days>
+		</Dto:PersonDto>
+	</Controls:DisplayOneDayGroupViewModel.EducatorsMorning>
+	<Controls:DisplayOneDayGroupViewModel.Group>
+		<Dto:GroupDto Id="58" Name="Etiam lectus vivamus fusce habitant">
+			<Dto:GroupDto.People>
+				<Dto:PersonDto GroupNames="Phasellus augue consequat" Id="57" IsEducator="False" Name="Litora non luctus" Surname="Conubia parturient inceptos">
+					<Dto:PersonDto.Activities>
+						<Dto:ActivityDto DayOfWeek="Thursday" Id="21" MomentDay="AllDay" Name="Lorem leo venenatis"/>
+						<Dto:ActivityDto DayOfWeek="Friday" Id="94" MomentDay="Morning" Name="Vestibulum libero nunc vulputate curabitur"/>
+						<Dto:ActivityDto DayOfWeek="Saturday" Id="33" MomentDay="AllDay" Name="Morbi mus ligula"/>
+						<Dto:ActivityDto DayOfWeek="Monday" Id="11" MomentDay="Afternoon" Name="Aliquam aliquet adipiscing nulla blandit"/>
+						<Dto:ActivityDto DayOfWeek="Thursday" Id="82" MomentDay="Morning" Name="Nec commodo proin"/>
+					</Dto:PersonDto.Activities>
+					<Dto:PersonDto.Absences>
+						<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="40" Start="12/07/2015 21:06:20"/>
+						<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="17" Start="12/07/2015 21:06:20"/>
+						<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="88" Start="12/07/2015 21:06:20"/>
+						<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="53" Start="12/07/2015 21:06:20"/>
+						<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="58" Start="12/07/2015 21:06:20"/>
+					</Dto:PersonDto.Absences>
+					<Dto:PersonDto.Days>
+						<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="15"/>
+						<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="66"/>
+						<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="68"/>
+						<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="42"/>
+						<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="69"/>
+					</Dto:PersonDto.Days>
+				</Dto:PersonDto>
+				<Dto:PersonDto GroupNames="Orci ipsum" Id="39" IsEducator="False" Name="Pede euismod per quam elementum" Surname="Quis feugiat justo gravida pharetra">
+					<Dto:PersonDto.Activities>
+						<Dto:ActivityDto DayOfWeek="Friday" Id="35" MomentDay="Morning" Name="Convallis cubilia magnis odio"/>
+						<Dto:ActivityDto DayOfWeek="Thursday" Id="89" MomentDay="Afternoon" Name="Interdum vestibulum dolor fames felis"/>
+						<Dto:ActivityDto DayOfWeek="Thursday" Id="99" MomentDay="AllDay" Name="Lobortis vestibulum dapibus"/>
+						<Dto:ActivityDto DayOfWeek="Thursday" Id="14" MomentDay="AllDay" Name="Mattis nascetur adipiscing"/>
+						<Dto:ActivityDto DayOfWeek="Tuesday" Id="86" MomentDay="Morning" Name="Egestas dignissim"/>
+					</Dto:PersonDto.Activities>
+					<Dto:PersonDto.Absences>
+						<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="68" Start="12/07/2015 21:06:20"/>
+						<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="23" Start="12/07/2015 21:06:20"/>
+						<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="24" Start="12/07/2015 21:06:20"/>
+						<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="28" Start="12/07/2015 21:06:20"/>
+						<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="34" Start="12/07/2015 21:06:20"/>
+					</Dto:PersonDto.Absences>
+					<Dto:PersonDto.Days>
+						<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="41"/>
+						<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="32"/>
+						<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="36"/>
+						<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="42"/>
+						<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="93"/>
+					</Dto:PersonDto.Days>
+				</Dto:PersonDto>
+				<Dto:PersonDto GroupNames="Fringilla metus" Id="45" IsEducator="False" Name="Sagittis vestibulum" Surname="Adipiscing cras morbi">
+					<Dto:PersonDto.Activities>
+						<Dto:ActivityDto DayOfWeek="Tuesday" Id="37" MomentDay="Afternoon" Name="Facilisis iaculis fermentum"/>
+						<Dto:ActivityDto DayOfWeek="Wednesday" Id="27" MomentDay="AllDay" Name="Lacus urna sed"/>
+						<Dto:ActivityDto DayOfWeek="Sunday" Id="36" MomentDay="Morning" Name="Placerat lacinia"/>
+						<Dto:ActivityDto DayOfWeek="Wednesday" Id="84" MomentDay="Morning" Name="Lorem parturient laoreet natoque vestibulum"/>
+						<Dto:ActivityDto DayOfWeek="Wednesday" Id="44" MomentDay="AllDay" Name="Magna massa pulvinar"/>
+					</Dto:PersonDto.Activities>
+					<Dto:PersonDto.Absences>
+						<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="87" Start="12/07/2015 21:06:20"/>
+						<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="45" Start="12/07/2015 21:06:20"/>
+						<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="50" Start="12/07/2015 21:06:20"/>
+						<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="46" Start="12/07/2015 21:06:20"/>
+						<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="90" Start="12/07/2015 21:06:20"/>
+					</Dto:PersonDto.Absences>
+					<Dto:PersonDto.Days>
+						<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="92"/>
+						<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="57"/>
+						<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="59"/>
+						<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="76"/>
+						<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="17"/>
+					</Dto:PersonDto.Days>
+				</Dto:PersonDto>
+				<Dto:PersonDto GroupNames="Ante vestibulum" Id="68" IsEducator="False" Name="Potenti arcu ultrices" Surname="Pretium rhoncus vehicula">
+					<Dto:PersonDto.Activities>
+						<Dto:ActivityDto DayOfWeek="Sunday" Id="44" MomentDay="Morning" Name="Neque habitasse"/>
+						<Dto:ActivityDto DayOfWeek="Monday" Id="42" MomentDay="Morning" Name="Sem hendrerit netus senectus parturient"/>
+						<Dto:ActivityDto DayOfWeek="Saturday" Id="15" MomentDay="Morning" Name="Sit sociosqu himenaeos suscipit posuere"/>
+						<Dto:ActivityDto DayOfWeek="Monday" Id="28" MomentDay="Afternoon" Name="Duis nunc"/>
+						<Dto:ActivityDto DayOfWeek="Thursday" Id="89" MomentDay="Morning" Name="Nulla amet torquent"/>
+					</Dto:PersonDto.Activities>
+					<Dto:PersonDto.Absences>
+						<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="81" Start="12/07/2015 21:06:20"/>
+						<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="12" Start="12/07/2015 21:06:20"/>
+						<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="41" Start="12/07/2015 21:06:20"/>
+						<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="50" Start="12/07/2015 21:06:20"/>
+						<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="52" Start="12/07/2015 21:06:20"/>
+					</Dto:PersonDto.Absences>
+					<Dto:PersonDto.Days>
+						<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="49"/>
+						<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="72"/>
+						<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="80"/>
+						<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="71"/>
+						<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="96"/>
+					</Dto:PersonDto.Days>
+				</Dto:PersonDto>
+				<Dto:PersonDto GroupNames="Purus porttitor erat" Id="38" IsEducator="False" Name="Integer quisque eros nam maecenas" Surname="Vestibulum praesent sed vivamus">
+					<Dto:PersonDto.Activities>
+						<Dto:ActivityDto DayOfWeek="Saturday" Id="32" MomentDay="Afternoon" Name="Imperdiet diam mauris eget volutpat"/>
+						<Dto:ActivityDto DayOfWeek="Wednesday" Id="67" MomentDay="Afternoon" Name="Sodales malesuada viverra elit"/>
+						<Dto:ActivityDto DayOfWeek="Sunday" Id="40" MomentDay="Afternoon" Name="Aliquam mollis vel"/>
+						<Dto:ActivityDto DayOfWeek="Monday" Id="96" MomentDay="Afternoon" Name="Enim porta vestibulum montes"/>
+						<Dto:ActivityDto DayOfWeek="Tuesday" Id="87" MomentDay="Afternoon" Name="Adipiscing parturient penatibus"/>
+					</Dto:PersonDto.Activities>
+					<Dto:PersonDto.Absences>
+						<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="88" Start="12/07/2015 21:06:20"/>
+						<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="76" Start="12/07/2015 21:06:20"/>
+						<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="78" Start="12/07/2015 21:06:20"/>
+						<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="32" Start="12/07/2015 21:06:20"/>
+						<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="92" Start="12/07/2015 21:06:20"/>
+					</Dto:PersonDto.Absences>
+					<Dto:PersonDto.Days>
+						<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="43"/>
+						<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="89"/>
+						<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="42"/>
+						<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="42"/>
+						<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="49"/>
+					</Dto:PersonDto.Days>
+				</Dto:PersonDto>
+				<Dto:PersonDto GroupNames="Bibendum dictumst vitae vulputate" Id="22" IsEducator="False" Name="Eleifend facilisi vestibulum" Surname="Hac faucibus curabitur phasellus">
+					<Dto:PersonDto.Activities>
+						<Dto:ActivityDto DayOfWeek="Thursday" Id="53" MomentDay="AllDay" Name="Risus aliquam nibh nostra"/>
+						<Dto:ActivityDto DayOfWeek="Monday" Id="86" MomentDay="AllDay" Name="Ornare platea tincidunt vestibulum nisi"/>
+						<Dto:ActivityDto DayOfWeek="Monday" Id="53" MomentDay="Morning" Name="Tristique adipiscing parturient accumsan ultricies"/>
+						<Dto:ActivityDto DayOfWeek="Monday" Id="13" MomentDay="AllDay" Name="Nisl primis venenatis"/>
+						<Dto:ActivityDto DayOfWeek="Saturday" Id="45" MomentDay="AllDay" Name="Dis est velit"/>
+					</Dto:PersonDto.Activities>
+					<Dto:PersonDto.Absences>
+						<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="78" Start="12/07/2015 21:06:20"/>
+						<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="95" Start="12/07/2015 21:06:20"/>
+						<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="50" Start="12/07/2015 21:06:20"/>
+						<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="33" Start="12/07/2015 21:06:20"/>
+						<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="11" Start="12/07/2015 21:06:20"/>
+					</Dto:PersonDto.Absences>
+					<Dto:PersonDto.Days>
+						<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="28"/>
+						<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="11"/>
+						<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="88"/>
+						<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="55"/>
+						<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="56"/>
+					</Dto:PersonDto.Days>
+				</Dto:PersonDto>
+				<Dto:PersonDto GroupNames="Odio consequat" Id="86" IsEducator="False" Name="Inceptos parturient blandit" Surname="Vestibulum vestibulum">
+					<Dto:PersonDto.Activities>
+						<Dto:ActivityDto DayOfWeek="Tuesday" Id="85" MomentDay="AllDay" Name="Vestibulum nunc adipiscing"/>
+						<Dto:ActivityDto DayOfWeek="Sunday" Id="53" MomentDay="AllDay" Name="Leo aliquet"/>
+						<Dto:ActivityDto DayOfWeek="Sunday" Id="58" MomentDay="Afternoon" Name="Mus parturient"/>
+						<Dto:ActivityDto DayOfWeek="Saturday" Id="45" MomentDay="AllDay" Name="Rutrum vestibulum nec"/>
+						<Dto:ActivityDto DayOfWeek="Wednesday" Id="10" MomentDay="AllDay" Name="Vestibulum habitant sapien adipiscing"/>
+					</Dto:PersonDto.Activities>
+					<Dto:PersonDto.Absences>
+						<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="47" Start="12/07/2015 21:06:20"/>
+						<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="33" Start="12/07/2015 21:06:20"/>
+						<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="68" Start="12/07/2015 21:06:20"/>
+						<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="83" Start="12/07/2015 21:06:20"/>
+						<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="97" Start="12/07/2015 21:06:20"/>
+					</Dto:PersonDto.Absences>
+					<Dto:PersonDto.Days>
+						<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="53"/>
+						<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="64"/>
+						<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="10"/>
+						<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="52"/>
+						<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="72"/>
+					</Dto:PersonDto.Days>
+				</Dto:PersonDto>
+				<Dto:PersonDto GroupNames="Etiam parturient" Id="51" IsEducator="False" Name="Pulvinar sed pede sagittis sem" Surname="Facilisis vestibulum semper fermentum">
+					<Dto:PersonDto.Activities>
+						<Dto:ActivityDto DayOfWeek="Thursday" Id="72" MomentDay="Morning" Name="Commodo interdum adipiscing lobortis orci"/>
+						<Dto:ActivityDto DayOfWeek="Tuesday" Id="67" MomentDay="Afternoon" Name="Class convallis"/>
+						<Dto:ActivityDto DayOfWeek="Wednesday" Id="45" MomentDay="AllDay" Name="Dignissim conubia nascetur curae donec"/>
+						<Dto:ActivityDto DayOfWeek="Saturday" Id="89" MomentDay="AllDay" Name="Non per elementum"/>
+						<Dto:ActivityDto DayOfWeek="Friday" Id="34" MomentDay="Afternoon" Name="Pharetra placerat cubilia"/>
+					</Dto:PersonDto.Activities>
+					<Dto:PersonDto.Absences>
+						<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="49" Start="12/07/2015 21:06:20"/>
+						<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="21" Start="12/07/2015 21:06:20"/>
+						<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="94" Start="12/07/2015 21:06:20"/>
+						<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="84" Start="12/07/2015 21:06:20"/>
+						<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="31" Start="12/07/2015 21:06:20"/>
+					</Dto:PersonDto.Absences>
+					<Dto:PersonDto.Days>
+						<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="28"/>
+						<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="57"/>
+						<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="14"/>
+						<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="65"/>
+						<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="52"/>
+					</Dto:PersonDto.Days>
+				</Dto:PersonDto>
+				<Dto:PersonDto GroupNames="Fringilla tempus quis" Id="61" IsEducator="False" Name="Parturient tortor urna" Surname="Vestibulum cras">
+					<Dto:PersonDto.Activities>
+						<Dto:ActivityDto DayOfWeek="Saturday" Id="66" MomentDay="AllDay" Name="Quam sit vel vestibulum"/>
+						<Dto:ActivityDto DayOfWeek="Saturday" Id="40" MomentDay="AllDay" Name="Adipiscing fusce"/>
+						<Dto:ActivityDto DayOfWeek="Sunday" Id="92" MomentDay="Morning" Name="Sociis nam taciti lorem"/>
+						<Dto:ActivityDto DayOfWeek="Saturday" Id="52" MomentDay="Afternoon" Name="Senectus sed dapibus"/>
+						<Dto:ActivityDto DayOfWeek="Friday" Id="91" MomentDay="Afternoon" Name="Tellus morbi sociosqu nulla tempor"/>
+					</Dto:PersonDto.Activities>
+					<Dto:PersonDto.Absences>
+						<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="41" Start="12/07/2015 21:06:20"/>
+						<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="31" Start="12/07/2015 21:06:20"/>
+						<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="51" Start="12/07/2015 21:06:20"/>
+						<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="19" Start="12/07/2015 21:06:20"/>
+						<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="73" Start="12/07/2015 21:06:20"/>
+					</Dto:PersonDto.Absences>
+					<Dto:PersonDto.Days>
+						<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="88"/>
+						<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="10"/>
+						<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="99"/>
+						<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="32"/>
+						<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="53"/>
+					</Dto:PersonDto.Days>
+				</Dto:PersonDto>
+				<Dto:PersonDto GroupNames="Felis torquent nunc amet" Id="80" IsEducator="False" Name="Feugiat hendrerit" Surname="Hac ultrices vestibulum leo">
+					<Dto:PersonDto.Activities>
+						<Dto:ActivityDto DayOfWeek="Friday" Id="71" MomentDay="Morning" Name="Egestas turpis duis"/>
+						<Dto:ActivityDto DayOfWeek="Thursday" Id="91" MomentDay="AllDay" Name="Euismod varius aenean"/>
+						<Dto:ActivityDto DayOfWeek="Thursday" Id="74" MomentDay="AllDay" Name="Proin dis augue"/>
+						<Dto:ActivityDto DayOfWeek="Tuesday" Id="65" MomentDay="Afternoon" Name="Suscipit dolor fames"/>
+						<Dto:ActivityDto DayOfWeek="Thursday" Id="32" MomentDay="Afternoon" Name="Est habitasse"/>
+					</Dto:PersonDto.Activities>
+					<Dto:PersonDto.Absences>
+						<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="72" Start="12/07/2015 21:06:20"/>
+						<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="41" Start="12/07/2015 21:06:20"/>
+						<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="62" Start="12/07/2015 21:06:20"/>
+						<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="77" Start="12/07/2015 21:06:20"/>
+						<Dto:AbsenceDto End="12/07/2015 21:06:20" Id="60" Start="12/07/2015 21:06:20"/>
+					</Dto:PersonDto.Absences>
+					<Dto:PersonDto.Days>
+						<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="94"/>
+						<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="72"/>
+						<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="67"/>
+						<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="False" Id="96"/>
+						<Dto:DayDto Date="12/07/2015 21:06:20" IsMorning="True" Id="54"/>
+					</Dto:PersonDto.Days>
+				</Dto:PersonDto>
+			</Dto:GroupDto.People>
+		</Dto:GroupDto>
+	</Controls:DisplayOneDayGroupViewModel.Group>
+</Controls:DisplayOneDayGroupViewModel>

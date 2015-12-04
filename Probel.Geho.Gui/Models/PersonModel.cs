@@ -16,6 +16,7 @@
         private int id;
         private bool isEducator;
         private bool isSelected;
+        private bool isTrainee;
         private string name;
         private string surname;
 
@@ -30,6 +31,7 @@
             this.Name = dto.Name;
             this.Surname = dto.Surname;
             this.Person = dto;
+            this.IsTrainee = dto.IsTrainee;
         }
 
         #endregion Constructors
@@ -63,6 +65,16 @@
             {
                 this.isSelected = value;
                 this.OnPropertyChanged(() => IsSelected);
+            }
+        }
+
+        public bool IsTrainee
+        {
+            get { return this.isTrainee; }
+            set
+            {
+                this.isTrainee = value;
+                this.OnPropertyChanged(() => IsTrainee);
             }
         }
 

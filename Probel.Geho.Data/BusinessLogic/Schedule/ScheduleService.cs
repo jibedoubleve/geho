@@ -13,7 +13,7 @@
     using Probel.Geho.Data.Entities;
     using Probel.Geho.Data.Helpers;
 
-    public class ScheduleService : IScheduleService
+    public class ScheduleService : ServiceBase, IScheduleService
     {
         #region Methods
 
@@ -117,16 +117,26 @@
         public IEnumerable<PersonDto> GetFreeBeneficiaries(GroupDto group, DateTime currentDay, bool isMorning)
         {
             var md = isMorning ? MomentDay.Morning : MomentDay.Afternoon;
+            var d = (isMorning)
+                ? new DateTime(currentDay.Year, currentDay.Month, currentDay.Day, 8, 1, 0)
+                : new DateTime(currentDay.Year, currentDay.Month, currentDay.Day, 12, 1, 0);
+
             using (var db = new DataContext())
             {
                 var b = (from g in db.Groups
                                      .Include(e => e.People)
                          where g.Id == @group.Id
-                         select g.People.Where(e => !e.IsEducator
-                                                  && e.Absences.Where(f => f.Start <= currentDay 
-                                                                        && currentDay <= f.End).Count() == 0
-                                                  && e.Activities.Where(f => f.DayOfWeek == currentDay.DayOfWeek 
-                                                                        && (f.MomentDay & md) != 0).Count() == 0))
+                         select g.People.Where(p => !p.IsEducator
+                                                  && p.Absences.Where(f => f.Start <= d && d <= f.End)
+                                                               .Count() == 0
+                                                  && p.Activities.Where(a => (a.DayOfWeek == d.DayOfWeek && (a.MomentDay & md) != 0)
+                                                                          && (
+                                                                                db.People.Where(pe => pe.IsEducator
+                                                                                             && pe.Activities.Contains(a)
+                                                                                             && pe.Absences.Where(ab => ab.Start <= d && d <= ab.End).Count() != 0)
+                                                                                         .Count()
+                                                                                != db.People.Where(pe => pe.IsEducator && pe.Activities.Contains(a)).Count()
+                                                                              )).Count() == 0))
                                         .SingleOrDefault();
 
                 return (b != null)
@@ -177,6 +187,16 @@
                                     .Include(e => e.People.Select(f => f.Absences))
                                     .Include(e => e.People.Select(f => f.Activities))
                         select g).ToDto();
+            }
+        }
+
+        public IEnumerable<DateTime> GetMondays()
+        {
+            using (var db = new DataContext())
+            {
+                var dates = (from w in db.Weeks
+                             select w.Monday).ToList();
+                return dates;
             }
         }
 

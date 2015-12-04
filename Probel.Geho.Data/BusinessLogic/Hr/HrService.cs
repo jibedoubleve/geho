@@ -7,12 +7,16 @@
 
     using AutoMapper;
 
+    using Helpers;
+
     using Probel.Geho.Data.BusinessLogic.BusinessRules;
     using Probel.Geho.Data.Database;
     using Probel.Geho.Data.Dto;
     using Probel.Geho.Data.Entities;
-    using Helpers;
-    public class HrService : IHrService
+
+    using Schedule;
+
+    public class HrService : ServiceBase, IHrService
     {
         #region Methods
 
@@ -37,11 +41,9 @@
                     Start = start,
                 };
 
-                var validator = new AbsenceValidator(absence);
-                if (!validator.Validate())
-                {
-                    throw new BusinessRuleException(validator.Error);
-                }
+                new AbsenceAdapter(absence)
+                    .Validate()
+                    .ClearOccupations(db);
 
                 db.Absences.Add(absence);
                 db.SaveChanges();
@@ -50,10 +52,10 @@
 
         public void CreateAbsence(AbsenceDto absence)
         {
-            if (absence == null) { throw new ArgumentNullException("absence", "Absence not set"); }
-            else if (absence.Person == null) { throw new ArgumentNullException("absence.Person", "Nobody was set to the absence"); }
-            else if (absence.Start == null) { throw new ArgumentNullException("absence.Start", "No start date"); }
-            else if (absence.End == null) { throw new ArgumentNullException("absence.End", "No end date"); }
+            if (absence == null) { throw new ArgumentNullException("absence"); }
+            else if (absence.Person == null) { throw new ArgumentNullException("absence.Person"); }
+            else if (absence.Start == null) { throw new ArgumentNullException("absence.Start"); }
+            else if (absence.End == null) { throw new ArgumentNullException("absence.End"); }
 
             this.CreateAbsence(absence.Person.Id, absence.Start, absence.End);
         }
@@ -109,8 +111,12 @@
 
         public void CreatePerson(PersonDto person)
         {
+            if (person == null) { throw new ArgumentNullException("person"); }
+
             using (var db = new DataContext())
             {
+                if (person.Surname == null) { person.Surname = string.Empty; }
+
                 var entity = person.ToEntity();
                 db.People.Add(entity);
                 db.SaveChanges();
@@ -135,16 +141,18 @@
             }
         }
 
-        public IEnumerable<ActivityDto> GetActivities()
+        public IEnumerable<ActivityDto> GetAdministrativeActivities()
         {
             using (var db = new DataContext())
             {
-                var entities = (from a in db.Activities
-                                            .Include(e => e.People)
-                                select a)
-                                .OrderBy(e => e.DayOfWeek)
-                                .ToList();
-                return Mapper.Map<IEnumerable<Activity>, IEnumerable<ActivityDto>>(entities);
+                var r = (from a in db.Activities
+                                     .Include(e => e.People)
+                         where a.People.Where(p => !p.IsEducator)
+                                       .Count() == 0
+                         select a).OrderBy(e => e.MomentDay)
+                                 .OrderBy(e => e.DayOfWeek)
+                                 .ToDto();
+                return r;
             }
         }
 
@@ -324,6 +332,16 @@
             }
         }
 
+        public IEnumerable<PersonDto> GetTrainees()
+        {
+            using (var db = new DataContext())
+            {
+                return (from t in db.People
+                        where t.IsTrainee
+                        select t).ToDto();
+            }
+        }
+
         public ValidationStatusDto IsAbsenceValid(AbsenceDto absence)
         {
             var validator = new AbsenceValidator(absence.ToEntity());
@@ -371,7 +389,7 @@
 
         public void RemoveAbsence(AbsenceDto absence)
         {
-            if (absence == null) { throw new ArgumentNullException("absence", "Absence is null"); }
+            if (absence == null) { throw new ArgumentNullException("absence"); }
 
             this.RemoveAbsence(absence.Id);
         }
@@ -446,7 +464,7 @@
 
         public void RemovePerson(PersonDto person)
         {
-            if (person == null) { throw new ArgumentNullException("Person is not set", "person"); }
+            if (person == null) { throw new ArgumentNullException("person"); }
             this.RemovePerson(person.Id);
         }
 
@@ -491,10 +509,28 @@
             }
         }
 
-        private static void NormaliseNameAndSurname(ref string name, ref string surname)
+        public void UpdateLunch(IEnumerable<LunchTimeDto> lunches)
         {
-            surname = (surname == null) ? string.Empty : surname.ToLower();
-            name = name.ToLower() ?? string.Empty;
+            using (var db = new DataContext())
+            {
+                foreach (var lunch in lunches)
+                {
+                    var l = db.LunchTimes.Where(e => e.DayOfWeek == lunch.DayOfWeek)
+                                         .SingleOrDefault();
+                    var p = db.People.Find(lunch.Person.Id);
+                    if (l == null)
+                    {
+                        var entity = new LunchTime()
+                        {
+                            Person = p,
+                            DayOfWeek = lunch.DayOfWeek,
+                        };
+                        db.LunchTimes.Add(entity);
+                    }
+                    else { l.Person = p; }
+                }
+                db.SaveChanges();
+            }
         }
 
         public void UpdatePerson(PersonDto person)
@@ -506,6 +542,12 @@
                 e.Surname = person.Surname;
                 db.SaveChanges();
             }
+        }
+
+        private static void NormaliseNameAndSurname(ref string name, ref string surname)
+        {
+            surname = (surname == null) ? string.Empty : surname.ToLower();
+            name = name.ToLower() ?? string.Empty;
         }
 
         #endregion Methods
