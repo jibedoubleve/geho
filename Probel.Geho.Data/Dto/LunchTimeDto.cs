@@ -1,7 +1,9 @@
 ﻿namespace Probel.Geho.Data.Dto
 {
     using System;
-
+    using System.Collections.Generic;
+    using System.Diagnostics;
+    [DebuggerDisplay("{Id} {DayOfWeek}")]
     public class LunchTimeDto : BaseDto
     {
         #region Properties
@@ -11,7 +13,7 @@
             get; set;
         }
 
-        public PersonDto Person
+        public IEnumerable<PersonDto> People
         {
             get; set;
         }

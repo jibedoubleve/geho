@@ -1,6 +1,7 @@
 ﻿namespace Probel.Geho.Data.Entities
 {
     using System;
+    using System.Collections.Generic;
 
     public class LunchTime : Entity
     {
@@ -11,7 +12,7 @@
             get; set;
         }
 
-        public Person Person
+        public IList<Person> People
         {
             get; set;
         }

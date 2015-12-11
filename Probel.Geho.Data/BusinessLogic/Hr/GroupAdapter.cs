@@ -5,7 +5,7 @@
     using Probel.Geho.Data.Database;
     using Probel.Geho.Data.Entities;
 
-    class GroupAdapter
+   internal class GroupAdapter
     {
         #region Fields
 
@@ -24,7 +24,7 @@
 
         #region Methods
 
-        internal void ClearForeignKeys(DataContext db)
+        public void ClearForeignKeys(DataContext db)
         {
             while (Group.People.Count > 0) { Group.People.RemoveAt(0); }
 

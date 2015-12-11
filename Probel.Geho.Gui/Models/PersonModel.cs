@@ -24,10 +24,11 @@
 
         #region Constructors
 
-        public PersonModel(PersonDto dto)
+        public PersonModel(PersonDto dto, bool isSelected = false)
         {
             this.Id = dto.Id;
             this.IsEducator = dto.IsEducator;
+            this.IsSelected = false;
             this.Name = dto.Name;
             this.Surname = dto.Surname;
             this.Person = dto;
@@ -118,14 +119,36 @@
             return list;
         }
 
-        public static IEnumerable<PersonModel> ToModel(IEnumerable<PersonDto> dtoCollection)
+        public static IEnumerable<PersonModel> ToModel(IEnumerable<PersonDto> dtoCollection, bool isSelected = false)
         {
             var list = new List<PersonModel>();
             foreach (var dto in dtoCollection)
             {
-                list.Add(new PersonModel(dto));
+                list.Add(new PersonModel(dto, isSelected));
             }
             return list;
+        }
+
+        #endregion Methods
+    }
+
+    public static class PersonModelExtension
+    {
+        #region Methods
+
+        public static IEnumerable<PersonDto> ToDto(this IEnumerable<PersonModel> models)
+        {
+            var result = new List<PersonDto>();
+            foreach (var model in models)
+            {
+                result.Add(model.Person);
+            }
+            return result;
+        }
+
+        public static IEnumerable<PersonModel> ToModel(this IEnumerable<PersonDto> dto, bool isSelected = false)
+        {
+            return PersonModel.ToModel(dto);
         }
 
         #endregion Methods

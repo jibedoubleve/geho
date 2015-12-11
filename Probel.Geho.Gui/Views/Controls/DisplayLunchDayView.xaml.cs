@@ -18,11 +18,11 @@
     /// <summary>
     /// Interaction logic for DisplayLunchDay.xaml
     /// </summary>
-    public partial class DisplayLunchDay : UserControl
+    public partial class DisplayLunchDayView : UserControl
     {
         #region Constructors
 
-        public DisplayLunchDay()
+        public DisplayLunchDayView()
         {
             InitializeComponent();
         }

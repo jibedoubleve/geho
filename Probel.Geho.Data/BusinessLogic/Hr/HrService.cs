@@ -451,6 +451,12 @@
                               select g);
                 foreach (var group in groups) { group.People.Remove(person); }
 
+                var lunches = (from g in db.LunchTimes
+                              where g.People.Select(e => e.Id).Contains(id)
+                              select g);
+
+                foreach (var lunch in lunches) { if (lunch.People != null) { lunch.People.Remove(person); } }
+
                 var absences = (from a in db.Absences
                                 where a.Person.Id == id
                                 select a);
@@ -513,23 +519,7 @@
         {
             using (var db = new DataContext())
             {
-                foreach (var lunch in lunches)
-                {
-                    var l = db.LunchTimes.Where(e => e.DayOfWeek == lunch.DayOfWeek)
-                                         .SingleOrDefault();
-                    var p = db.People.Find(lunch.Person.Id);
-                    if (l == null)
-                    {
-                        var entity = new LunchTime()
-                        {
-                            Person = p,
-                            DayOfWeek = lunch.DayOfWeek,
-                        };
-                        db.LunchTimes.Add(entity);
-                    }
-                    else { l.Person = p; }
-                }
-                db.SaveChanges();
+                new UpdateEntity(db).Update(lunches);
             }
         }
 
@@ -540,6 +530,8 @@
                 var e = db.People.Find(person.Id);
                 e.Name = person.Name;
                 e.Surname = person.Surname;
+                e.IsTrainee = person.IsTrainee;
+                e.IsEducator = person.IsEducator;
                 db.SaveChanges();
             }
         }

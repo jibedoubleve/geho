@@ -7,78 +7,90 @@
              
              xmlns:t="clr-namespace:Probel.Geho.Gui.Properties"
              
-             mc:Ignorable="d"  d:DesignWidth="300">
+             mc:Ignorable="d"  d:DesignWidth="300" d:DesignHeight="300">
 
     <HeaderedContentControl DockPanel.Dock="Top"
                                     Header="{x:Static t:Messages.Header_LunchTime}">
-        <StackPanel>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
             <DockPanel>
                 <TextBlock Text="{x:Static t:Messages.Day_Monday}" HorizontalAlignment="Center" VerticalAlignment="Center"
                                Style="{StaticResource TextBoxStyle}"/>
-                <ComboBox SelectedItem="{Binding Monday}"
-                          ItemsSource="{Binding Trainees}"
-                          Margin="5">
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <local:PersonFlatCardView/>
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
-                </ComboBox>
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <ItemsControl ItemsSource="{Binding Monday}" BorderThickness="1" BorderBrush="#FF465A7D"
+                              Margin="5">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <local:PersonFlatBusyView/>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </ScrollViewer>
             </DockPanel>
-            <DockPanel>
+            <DockPanel Grid.Row="1">
                 <TextBlock Text="{x:Static t:Messages.Day_Tuesday}" HorizontalAlignment="Center" VerticalAlignment="Center"
                                Style="{StaticResource TextBoxStyle}"/>
-                <ComboBox SelectedItem="{Binding Tuesday}"
-                          ItemsSource="{Binding Trainees}"
-                          Margin="5">
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <local:PersonFlatCardView/>
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
-                </ComboBox>
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <ItemsControl ItemsSource="{Binding Tuesday}" BorderThickness="1" BorderBrush="#FF465A7D"
+                              Margin="5">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <local:PersonFlatBusyView/>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </ScrollViewer>
             </DockPanel>
-            <DockPanel>
+            <DockPanel Grid.Row="2">
                 <TextBlock Text="{x:Static t:Messages.Day_Wednesday}" HorizontalAlignment="Center" VerticalAlignment="Center"
                                Style="{StaticResource TextBoxStyle}"/>
-                <ComboBox SelectedItem="{Binding Wednesday}"
-                          ItemsSource="{Binding Trainees}"
-                          Margin="5">
+                <ItemsControl ItemsSource="{Binding Wednesday}" BorderThickness="1" BorderBrush="#FF465A7D"
+                              Margin="5">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
-                            <local:PersonFlatCardView/>
+                            <local:PersonFlatBusyView/>
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
-                </ComboBox>
+                </ItemsControl>
             </DockPanel>
-            <DockPanel>
+            <DockPanel Grid.Row="3">
                 <TextBlock Text="{x:Static t:Messages.Day_Thursday}" HorizontalAlignment="Center" VerticalAlignment="Center"
                                Style="{StaticResource TextBoxStyle}"/>
-                <ComboBox SelectedItem="{Binding Thursday}"
-                          ItemsSource="{Binding Trainees}"
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <ItemsControl ItemsSource="{Binding Thursday}" BorderThickness="1" BorderBrush="#FF465A7D"
                           Margin="5">
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <local:PersonFlatCardView/>
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
-                </ComboBox>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <local:PersonFlatBusyView/>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </ScrollViewer>
             </DockPanel>
-            <DockPanel>
+            <DockPanel Grid.Row="4">
                 <TextBlock Text="{x:Static t:Messages.Day_Friday}" HorizontalAlignment="Center" VerticalAlignment="Center"
                                Style="{StaticResource TextBoxStyle}"/>
-                <ComboBox SelectedItem="{Binding Friday}"
-                          ItemsSource="{Binding Trainees}"
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <ItemsControl ItemsSource="{Binding Friday}" BorderThickness="1" BorderBrush="#FF465A7D"
                           Margin="5">
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <local:PersonFlatCardView/>
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
-                </ComboBox>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <local:PersonFlatBusyView/>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </ScrollViewer>
             </DockPanel>
-            <Button DockPanel.Dock="Bottom" Content="{x:Static t:Messages.Btn_Update}"
+            <Button Grid.Row="5"
+                    DockPanel.Dock="Bottom" Content="{x:Static t:Messages.Btn_Update}"
                     Command="{Binding UpdateCommand}"/>
-        </StackPanel>
+        </Grid>
     </HeaderedContentControl>
 </UserControl>

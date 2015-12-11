@@ -10,7 +10,7 @@
         <ItemsControl ItemsSource="{Binding Week}">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
-                    <local:DisplayLunchDay/>
+                    <local:DisplayLunchDayView/>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>

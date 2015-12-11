@@ -51,10 +51,15 @@
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
             <Grid Background="#FFD6DBE9" Grid.Row="3">
-                <TextBlock Text="{x:Static t:Messages.Header_Beneficiary}" Foreground="#FF040404"
+                <TextBlock Foreground="#FF040404"
                            HorizontalAlignment="Center"
                            VerticalAlignment="Center"
-                           Visibility="{s:GuiSettings GroupVisibility}"/>
+                           Visibility="{s:GuiSettings GroupVisibility}">
+                    <Run Text="{x:Static t:Messages.Header_Beneficiary}"/>
+                    <Run Text="(" FontWeight="Bold" />
+                    <Run Text="{Binding BeneficiariesMorning.Count, Mode=OneWay}" FontWeight="Bold"/>
+                    <Run Text=")" FontWeight="Bold"/>
+                </TextBlock>
             </Grid>
             <ItemsControl Grid.Row="4"
                       ItemsSource="{Binding BeneficiariesMorning}" Background="{Binding HasMorningBeneficiaries, Converter={StaticResource btw}}">
@@ -85,9 +90,14 @@
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
             <Grid Background="#FFD6DBE9" Grid.Row="8">
-                <TextBlock Text="{x:Static t:Messages.Header_Beneficiary}" Foreground="#FF040404"
-                       HorizontalAlignment="Center"
-                       VerticalAlignment="Center" Visibility="{s:GuiSettings GroupVisibility}"/>
+                <TextBlock  Foreground="#FF040404"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center" Visibility="{s:GuiSettings GroupVisibility}">
+                    <Run Text="{x:Static t:Messages.Header_Beneficiary}"/>
+                    <Run Text="(" FontWeight="Bold" />
+                    <Run Text="{Binding BeneficiariesAfternoon.Count, Mode=OneWay}" FontWeight="Bold"/>
+                    <Run Text=")" FontWeight="Bold"/>
+                </TextBlock>
             </Grid>
             <ItemsControl Grid.Row="9"
                       ItemsSource="{Binding BeneficiariesAfternoon}" Background="{Binding HasAfternoonBeneficiaries, Converter={StaticResource btw}}">

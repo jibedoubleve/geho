@@ -53,12 +53,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\AssemblyVersion.cs">
+      <Link>Properties\AssemblyVersion.cs</Link>
+    </Compile>
     <Compile Include="BusinessLogic\EntityAlreadyExistException.cs" />
     <Compile Include="BusinessLogic\EntityNotFountException.cs" />
     <Compile Include="BusinessLogic\Hr\AbsenceAdapter.cs" />
     <Compile Include="BusinessLogic\Hr\ActivityAdapter.cs" />
     <Compile Include="BusinessLogic\Hr\GroupAdapter.cs" />
     <Compile Include="BusinessLogic\Hr\HrService.cs" />
+    <Compile Include="BusinessLogic\Hr\UpdateEntity.cs" />
     <Compile Include="BusinessLogic\ServiceBase.cs" />
     <Compile Include="Dto\LunchTimeDto.cs" />
     <Compile Include="Dto\ValidationStatusDto.cs" />

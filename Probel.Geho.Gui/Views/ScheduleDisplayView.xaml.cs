@@ -11,6 +11,7 @@
     using Properties;
 
     using ViewModels;
+
     /// <summary>
     /// Interaction logic for ScheduleDisplayView.xaml
     /// </summary>
@@ -62,7 +63,6 @@
                 if (args.IsFridayPrinted) { list.Add(this.uc_Friday); }
                 if (args.IsLunchPrinted) { list.Add(this.uc_LunchTime); }
                 if (args.IsActivitiesPrinted) { list.Add(this.uc_Activities); }
-
 
                 var printer = new PrintDialog();
                 if (printer.ShowDialog() == true)

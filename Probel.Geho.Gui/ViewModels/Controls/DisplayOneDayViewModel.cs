@@ -54,6 +54,10 @@
             private set;
         }
 
+        #endregion Properties
+
+        #region Methods
+
         public void Load()
         {
             foreach (var group in Groups)
@@ -62,6 +66,6 @@
             }
         }
 
-        #endregion Properties
+        #endregion Methods
     }
 }

@@ -51,6 +51,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\AssemblyVersion.cs">
+      <Link>Properties\AssemblyVersion.cs</Link>
+    </Compile>
     <Compile Include="Core\ArgumentProcessor.cs" />
     <Compile Include="Cfg.cs" />
     <Compile Include="Core\Argument.cs" />

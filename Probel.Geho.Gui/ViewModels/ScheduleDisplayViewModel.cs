@@ -145,7 +145,7 @@
                 this.DisplayLunchViewModel = new DisplayLunchViewModel(this.Service);
                 this.ActivityListViewModel = new ActivityListViewModel(this.Service);
                 this.DisplayLunchViewModel.Load();
-                this.ActivityListViewModel.Load(); 
+                this.ActivityListViewModel.Load();
             }
         }
 

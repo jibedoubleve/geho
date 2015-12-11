@@ -30,7 +30,7 @@
             using (var db = new DataContext())
             {
                 return (from l in db.LunchTimes
-                                    .Include(e => e.Person)
+                                    .Include(e => e.People)
                         select l).ToDto();
             }
         }

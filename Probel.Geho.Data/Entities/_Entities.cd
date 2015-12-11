@@ -18,7 +18,7 @@
       </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAIAAAAAAAAAAAAQAAAAAAAAAAAAEAAAAABA=</HashCode>
+      <HashCode>AAAAQAAAAIAAAAAAAAAAAAQAAAAAAAAAAAAEAAAAAAA=</HashCode>
       <FileName>Entities\Activity.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
@@ -41,7 +41,7 @@
       <Method Name="Person" Hidden="true" />
     </Members>
     <TypeIdentifier>
-      <HashCode>AAAAAEAAAAAAAAAAAAAAAAQABAAAQAAAQAAAAIAAAAQ=</HashCode>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAQABAAAQAAAQAAAAIAEAAQ=</HashCode>
       <FileName>Entities\Person.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -86,6 +86,16 @@
     <ShowAsAssociation>
       <Property Name="Group" />
     </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="People" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Probel.Geho.Data.Entities.LunchTime">
+    <Position X="1.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>Entities\LunchTime.cs</FileName>
+    </TypeIdentifier>
     <ShowAsCollectionAssociation>
       <Property Name="People" />
     </ShowAsCollectionAssociation>

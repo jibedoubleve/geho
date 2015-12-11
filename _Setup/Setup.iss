@@ -49,6 +49,7 @@ Source: "..\Probel.Geho.Gui\bin\Release\System.Reactive.Core.dll"; DestDir: "{ap
 Source: "..\Probel.Geho.Gui\bin\Release\System.Reactive.Interfaces.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\Probel.Geho.Gui\bin\Release\System.Reactive.Linq.dll"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
+Source: "SqlLocalDB.MSI"; DestDir: "{tmp}"
 
 [Icons]
 Name: "{group}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
@@ -56,4 +57,5 @@ Name: "{group}\{cm:UninstallProgram,{#MyAppName}}"; Filename: "{uninstallexe}"
 Name: "{commondesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: desktopicon
 
 [Run]
+Filename: "msiexec"; Parameters: "/i {tmp}\SqlLocalDB.msi /qn IACCEPTSQLLOCALDBLICENSETERMS=YES"
 Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent

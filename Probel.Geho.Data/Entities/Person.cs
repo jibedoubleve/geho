@@ -30,6 +30,8 @@
             get; set;
         }
 
+        public IList<LunchTime> Lunches { get; set; }
+
         public IList<Day> Days
         {
             get; set;

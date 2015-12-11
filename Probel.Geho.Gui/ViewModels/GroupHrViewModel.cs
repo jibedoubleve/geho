@@ -278,10 +278,10 @@
         {
             using (WaitingCursor.While)
             {
-                var persons = (from p in this.BeneficiariesInGroup
+                var people = (from p in this.BeneficiariesInGroup
                                where p.IsSelected
                                select p.Person).ToList();
-                this.SelectedGroup.Group.People = persons;
+                this.SelectedGroup.Group.People = people;
                 this.Service.UpdateGroup(this.SelectedGroup.Group);
                 this.Load();
             }

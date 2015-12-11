@@ -8,6 +8,10 @@
 
     using Data.BusinessLogic;
 
+    using Microsoft.Practices.ObjectBuilder2;
+
+    using Models;
+
     using Mvvm.Gui;
 
     using Probel.Geho.Data.Dto;
@@ -20,11 +24,7 @@
         private readonly IHrService Service;
         private readonly ICommand updateCommand;
 
-        private PersonDto friday;
-        private PersonDto monday;
-        private PersonDto thursday;
-        private PersonDto tuesday;
-        private PersonDto wednesday;
+        private IList<LunchTimeDto> Week;
 
         #endregion Fields
 
@@ -33,8 +33,11 @@
         public LunchManagementViewModel(IHrService service)
         {
             this.Service = service;
-            this.Trainees = new ObservableCollection<PersonDto>();
-            this.Week = new ObservableCollection<LunchTimeDto>();
+            this.Monday = new ObservableCollection<PersonModel>();
+            this.Tuesday = new ObservableCollection<PersonModel>();
+            this.Wednesday = new ObservableCollection<PersonModel>();
+            this.Thursday = new ObservableCollection<PersonModel>();
+            this.Friday = new ObservableCollection<PersonModel>();
             this.updateCommand = new RelayCommand(Update, CanUpdate);
         }
 
@@ -42,50 +45,28 @@
 
         #region Properties
 
-        public PersonDto Friday
-        {
-            get { return this.friday; }
-            set
-            {
-                this.friday = value;
-                this.OnPropertyChanged(() => Friday);
-            }
-        }
-
-        public PersonDto Monday
-        {
-            get { return this.monday; }
-            set
-            {
-                this.monday = value;
-                this.OnPropertyChanged(() => Monday);
-            }
-        }
-
-        public PersonDto Thursday
-        {
-            get { return this.thursday; }
-            set
-            {
-                this.thursday = value;
-                this.OnPropertyChanged(() => Thursday);
-            }
-        }
-
-        public ObservableCollection<PersonDto> Trainees
+        public ObservableCollection<PersonModel> Friday
         {
             get;
             private set;
         }
 
-        public PersonDto Tuesday
+        public ObservableCollection<PersonModel> Monday
         {
-            get { return this.tuesday; }
-            set
-            {
-                this.tuesday = value;
-                this.OnPropertyChanged(() => Tuesday);
-            }
+            get;
+            private set;
+        }
+
+        public ObservableCollection<PersonModel> Thursday
+        {
+            get;
+            private set;
+        }
+
+        public ObservableCollection<PersonModel> Tuesday
+        {
+            get;
+            private set;
         }
 
         public ICommand UpdateCommand
@@ -93,17 +74,7 @@
             get { return this.updateCommand; }
         }
 
-        public PersonDto Wednesday
-        {
-            get { return this.wednesday; }
-            set
-            {
-                this.wednesday = value;
-                this.OnPropertyChanged(() => Wednesday);
-            }
-        }
-
-        public ObservableCollection<LunchTimeDto> Week
+        public ObservableCollection<PersonModel> Wednesday
         {
             get;
             private set;
@@ -116,14 +87,36 @@
         public void Load()
         {
             var trainees = this.Service.GetTrainees();
-            this.Trainees.Refill(trainees);
-            this.Week.Refill(this.Service.GetLunchTimes());
+            Week = this.Service.GetLunchTimes().ToList();
 
-            this.Monday = this.GetLunch(DayOfWeek.Monday);
-            this.Tuesday = this.GetLunch(DayOfWeek.Tuesday);
-            this.Wednesday = this.GetLunch(DayOfWeek.Wednesday);
-            this.Thursday = this.GetLunch(DayOfWeek.Thursday);
-            this.Friday = this.GetLunch(DayOfWeek.Friday);
+            this.Monday.Refill(trainees.ToModel());
+            this.Tuesday.Refill(trainees.ToModel());
+            this.Wednesday.Refill(trainees.ToModel());
+            this.Thursday.Refill(trainees.ToModel());
+            this.Friday.Refill(trainees.ToModel());
+
+            foreach (var day in Week)
+            {
+                switch (day.DayOfWeek)
+                {
+                    case DayOfWeek.Monday:
+                        SetSelected(day.People.ToModel(), this.Monday);
+                        break;
+                    case DayOfWeek.Tuesday:
+                        SetSelected(day.People.ToModel(), this.Tuesday);
+                        break;
+                    case DayOfWeek.Wednesday:
+                        SetSelected(day.People.ToModel(), this.Wednesday);
+                        break;
+                    case DayOfWeek.Thursday:
+                        SetSelected(day.People.ToModel(), this.Thursday);
+                        break;
+                    case DayOfWeek.Friday:
+                        SetSelected(day.People.ToModel(), this.Friday);
+                        break;
+                    default: throw new NotSupportedException("Add lunch in the weekend is not supported.");
+                }
+            }
         }
 
         private bool CanUpdate()
@@ -135,15 +128,15 @@
                 && this.Friday != null;
         }
 
-        private PersonDto GetLunch(DayOfWeek day)
+        private void SetSelected(IEnumerable<PersonModel> people, IEnumerable<PersonModel> @in)
         {
-            var p = (from l in Week
-                     where l.DayOfWeek == day
-                     select l.Person).SingleOrDefault();
-
-            return (from t in Trainees
-                    where t.Id == p.Id
-                    select t).SingleOrDefault();
+            foreach (var item in @in)
+            {
+                foreach (var p in people)
+                {
+                    if (item.Id == p.Id) { item.IsSelected = true; }
+                }
+            }
         }
 
         private void Update()
@@ -161,13 +154,25 @@
             catch (Exception ex) { ViewService.MessageBox.Error(ex.ToString()); }
         }
 
-        private void UpdateLunch(DayOfWeek day, PersonDto person)
+        private void UpdateLunch(DayOfWeek day, IEnumerable<PersonModel> people)
         {
-            //var result = Week.Where(e => e.DayOfWeek == day).Select(f => { f.Person = person; return f; });
             var result = (from l in Week
                           where l.DayOfWeek == day
                           select l).SingleOrDefault();
-            result.Person = person;
+
+            var toAdd = (from p in people
+                         where p.IsSelected
+                         select p).ToDto();
+
+            if (result != null) { result.People = toAdd; }
+            else
+            {
+                Week.Add(new LunchTimeDto()
+                {
+                    DayOfWeek = day,
+                    People = toAdd,
+                });
+            }
         }
 
         #endregion Methods
