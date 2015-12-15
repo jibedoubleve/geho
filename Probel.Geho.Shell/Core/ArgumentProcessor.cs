@@ -73,7 +73,7 @@
             return date;
         }
 
-        public DayOfWeek ParseDayOfWeel(string dowStr)
+        public DayOfWeek ParseDayOfWeek(string dowStr)
         {
             DayOfWeek result ;
             if (!Enum.TryParse(dowStr, out result)) { throw new ArgumentException("The 'DayOfWeek' cannot be parsed", "dowStr"); }

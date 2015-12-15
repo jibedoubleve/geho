@@ -8,6 +8,8 @@
 
     using Controls;
 
+    using Mvvm.DataBinding;
+
     using Properties;
 
     using ViewModels;
@@ -38,7 +40,7 @@
         {
             if (this.DataContext is ILoadeableViewModel)
             {
-                var vm = this.DataContext as ILoadeableViewModel;
+                var vm = this.GetViewModel<ILoadeableViewModel>();
                 vm.Load();
             }
         }
@@ -84,7 +86,7 @@
             && this.cb_Dates.SelectedItem is DateTime
             && this.DataContext is ScheduleDisplayViewModel)
             {
-                var vm = this.DataContext as ScheduleDisplayViewModel;
+                var vm = this.GetViewModel<ScheduleDisplayViewModel>();
                 var dt = (DateTime)this.cb_Dates.SelectedItem;
                 vm.LoadWeek(dt);
             }

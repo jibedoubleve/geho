@@ -3,13 +3,13 @@
     using System;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
+    using System.Threading.Tasks;
     using System.Windows.Input;
 
     using Probel.Geho.Data.BusinessLogic;
     using Probel.Geho.Data.Dto;
     using Probel.Geho.Data.Helpers;
     using Probel.Geho.Gui.Properties;
-    using Probel.Geho.Gui.Tools;
     using Probel.Geho.Gui.ViewModels.Controls;
     using Probel.Mvvm.DataBinding;
     using Probel.Mvvm.Gui;
@@ -112,6 +112,7 @@
                     {
                         var d = currentDay.AddDays(i);
                         var dvm = new DayViewModel(d, groups, Service, this);
+                        dvm.Load();
                         days.Add(dvm);
                     }
                     this.Days.Refill(days);

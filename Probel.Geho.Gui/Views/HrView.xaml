@@ -69,8 +69,51 @@
                     <Grid></Grid>
                 </DockPanel>
             </HeaderedContentControl>
-            <HeaderedContentControl DockPanel.Dock="Top"
-                                    Header="{x:Static t:Messages.Header_ManageAbsence}">
+            <ctrl:LunchManagementView DataContext="{Binding LunchManagementViewModel}"/>
+        </DockPanel>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <HeaderedContentControl Grid.Row="0"
+                                Header="{x:Static t:Messages.Header_Educators}">
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <ItemsControl ItemsSource="{Binding Educators}"
+                              BorderThickness="1" BorderBrush="#FF828790">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <ctrl:PersonView/>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </ScrollViewer>
+            </HeaderedContentControl>
+            <HeaderedContentControl Grid.Row="1"
+                                Header="{x:Static t:Messages.Header_Beneficiary}">
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <ItemsControl ItemsSource="{Binding Beneficiaries}"
+                              BorderThickness="1" BorderBrush="#FF828790">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <ctrl:PersonView/>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </ScrollViewer>
+            </HeaderedContentControl>
+        </Grid>
+        <Grid Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <HeaderedContentControl Grid.Row="0"  Header="{x:Static t:Messages.Header_ManageAbsence}">
                 <DockPanel>
                     <DockPanel DockPanel.Dock="Top">
                         <TextBlock DockPanel.Dock="Left"  
@@ -156,7 +199,7 @@
                     <Grid/>
                 </DockPanel>
             </HeaderedContentControl>
-            <HeaderedContentControl DockPanel.Dock="Top" Header="{x:Static t:Messages.Header_Absences}">
+            <HeaderedContentControl Grid.Row="1" Header="{x:Static t:Messages.Header_Absences}">
                 <ScrollViewer  VerticalScrollBarVisibility="Auto">
                     <ItemsControl ItemsSource="{Binding Absences}"
                                   BorderThickness="1" BorderBrush="#FF828790">
@@ -168,41 +211,8 @@
                     </ItemsControl>
                 </ScrollViewer>
             </HeaderedContentControl>
-        </DockPanel>
-        <Grid Grid.Column="1">
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            <HeaderedContentControl Grid.Row="0"
-                                Header="{x:Static t:Messages.Header_Educators}">
-                <ScrollViewer VerticalScrollBarVisibility="Auto">
-                    <ItemsControl ItemsSource="{Binding Educators}"
-                              BorderThickness="1" BorderBrush="#FF828790">
-                        <ItemsControl.ItemTemplate>
-                            <DataTemplate>
-                                <ctrl:PersonView/>
-                            </DataTemplate>
-                        </ItemsControl.ItemTemplate>
-                    </ItemsControl>
-                </ScrollViewer>
-            </HeaderedContentControl>
-            <HeaderedContentControl Grid.Row="1"
-                                Header="{x:Static t:Messages.Header_Beneficiary}">
-                <ScrollViewer VerticalScrollBarVisibility="Auto">
-                    <ItemsControl ItemsSource="{Binding Beneficiaries}"
-                              BorderThickness="1" BorderBrush="#FF828790">
-                        <ItemsControl.ItemTemplate>
-                            <DataTemplate>
-                                <ctrl:PersonView/>
-                            </DataTemplate>
-                        </ItemsControl.ItemTemplate>
-                    </ItemsControl>
-                </ScrollViewer>
-            </HeaderedContentControl>
-        </Grid>
-        <Grid Grid.Column="2">
-            <ctrl:LunchManagementView DataContext="{Binding LunchManagementViewModel}"/>
+            </Grid>
+            <ctrl:MedicalExamView Grid.Row="1" DataContext="{Binding MedicalExamViewModel}"/>
         </Grid>
     </Grid>
 </Page>

@@ -22,53 +22,5 @@ namespace Probel.Geho.Gui.Properties {
                 return defaultInstance;
             }
         }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Visible")]
-        public global::System.Windows.Visibility IsMenuTextVisible {
-            get {
-                return ((global::System.Windows.Visibility)(this["IsMenuTextVisible"]));
-            }
-            set {
-                this["IsMenuTextVisible"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("C:\\projects\\geho")]
-        public string DataDirectory {
-            get {
-                return ((string)(this["DataDirectory"]));
-            }
-            set {
-                this["DataDirectory"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Visible")]
-        public global::System.Windows.Visibility GroupVisibility {
-            get {
-                return ((global::System.Windows.Visibility)(this["GroupVisibility"]));
-            }
-            set {
-                this["GroupVisibility"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("20")]
-        public int SeparatorHeight {
-            get {
-                return ((int)(this["SeparatorHeight"]));
-            }
-            set {
-                this["SeparatorHeight"] = value;
-            }
-        }
     }
 }

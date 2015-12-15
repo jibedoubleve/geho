@@ -17,7 +17,7 @@
     using Probel.Geho.Data.Dto;
     using Probel.Mvvm.DataBinding;
 
-    public class LunchManagementViewModel : ObservableObject, ILoadeableViewModel
+    public class LunchManagementViewModel : LoadeableViewModel
     {
         #region Fields
 
@@ -84,7 +84,7 @@
 
         #region Methods
 
-        public void Load()
+        public override void Load()
         {
             var trainees = this.Service.GetTrainees();
             Week = this.Service.GetLunchTimes().ToList();

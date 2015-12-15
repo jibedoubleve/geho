@@ -13,6 +13,9 @@
     <UserControl.Resources>
         <conv:DayOfWeekToStringConverter x:Key="dayOfWeekConv"/>
         <conv:StringToNoonConverter x:Key="noonConv"/>
+        <Style TargetType="TextBlock">
+            <Setter Property="Foreground" Value="Black"/>
+        </Style>
     </UserControl.Resources>
     <Border BorderThickness="5"
             CornerRadius="5"

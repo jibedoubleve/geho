@@ -1,0 +1,118 @@
+﻿<UserControl x:Class="Probel.Geho.Gui.Views.Controls.MedicalExamView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Probel.Geho.Gui.Views.Controls"
+             
+             xmlns:t="clr-namespace:Probel.Geho.Gui.Properties"
+             xmlns:System="clr-namespace:System;assembly=mscorlib"
+             
+             mc:Ignorable="d" 
+             d:DesignHeigh="500"  d:DesignWidth="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <HeaderedContentControl DockPanel.Dock="Top"
+                                Header="{x:Static t:Messages.Header_ManageMedicalExams}">
+            <DockPanel>
+                <DockPanel DockPanel.Dock="Top">
+                    <TextBlock DockPanel.Dock="Left"  
+                               Text="{x:Static t:Messages.Cb_IsEducator}"
+                               Style="{StaticResource TextBoxStyle}"/>
+                    <CheckBox DockPanel.Dock="Right" 
+                              IsChecked="{Binding FilterEducator}" 
+                              VerticalAlignment="Center" 
+                              HorizontalAlignment="Center"/>
+                </DockPanel>
+                <DockPanel DockPanel.Dock="Top">
+                    <TextBlock DockPanel.Dock="Left"
+                                   Text="{x:Static t:Messages.Lbl_AbsentPerson}"
+                                   Style="{StaticResource TextBoxStyle}"/>
+                    <ComboBox ItemsSource="{Binding FilteredPersons}"
+                                  SelectedItem="{Binding AbsenceToAdd.Person}"
+                                  Margin="5">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <local:PersonFlatCardView/>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ComboBox>
+                </DockPanel>
+                <DockPanel DockPanel.Dock="Top">
+                    <TextBlock DockPanel.Dock="Left"  
+                               Text="{x:Static t:Messages.Lbl_From}"
+                               Style="{StaticResource TextBoxStyle}"/>
+                    <ComboBox x:Name="cb_Start" DockPanel.Dock="Right" Margin="5" Width="62"
+                                  SelectionChanged="SelectionChanged_cb_End">
+                        <ComboBoxItem Content="8:00" IsSelected="True">
+                            <ComboBoxItem.Tag>
+                                <System:Int32>8</System:Int32>
+                            </ComboBoxItem.Tag>
+                        </ComboBoxItem>
+                        <ComboBoxItem Content="12:00">
+                            <ComboBoxItem.Tag>
+                                <System:Int32>12</System:Int32>
+                            </ComboBoxItem.Tag>
+                        </ComboBoxItem>
+                        <ComboBoxItem Content="18:00">
+                            <ComboBoxItem.Tag>
+                                <System:Int32>18</System:Int32>
+                            </ComboBoxItem.Tag>
+                        </ComboBoxItem>
+                    </ComboBox>
+                    <TextBlock DockPanel.Dock="Right" Text="{x:Static t:Messages.Lbl_At}"
+                                   Margin="5" VerticalAlignment="Center"/>
+                    <DatePicker DockPanel.Dock="Left" SelectedDate="{Binding AbsenceToAdd.Start}" FirstDayOfWeek="Monday"
+                                    Margin="5"/>
+                </DockPanel>
+                <DockPanel DockPanel.Dock="Top">
+                    <TextBlock DockPanel.Dock="Left"  
+                               Text="{x:Static t:Messages.Lbl_ToU}"
+                               Style="{StaticResource TextBoxStyle}"/>
+                    <ComboBox x:Name="cb_End" 
+                                  DockPanel.Dock="Right" Margin="5" Width="62"
+                                  SelectionChanged="SelectionChanged_cb_End">
+                        <ComboBoxItem Content="8:00">
+                            <ComboBoxItem.Tag>
+                                <System:Int32>8</System:Int32>
+                            </ComboBoxItem.Tag>
+                        </ComboBoxItem>
+                        <ComboBoxItem Content="12:00">
+                            <ComboBoxItem.Tag>
+                                <System:Int32>12</System:Int32>
+                            </ComboBoxItem.Tag>
+                        </ComboBoxItem>
+                        <ComboBoxItem Content="18:00" IsSelected="True">
+                            <ComboBoxItem.Tag>
+                                <System:Int32>18</System:Int32>
+                            </ComboBoxItem.Tag>
+                        </ComboBoxItem>
+                    </ComboBox>
+                    <TextBlock DockPanel.Dock="Right" Text="{x:Static t:Messages.Lbl_At}"
+                                   Margin="5" VerticalAlignment="Center"/>
+                    <DatePicker DockPanel.Dock="Left" SelectedDate="{Binding AbsenceToAdd.End}" FirstDayOfWeek="Monday"
+                                    Margin="5"/>
+                </DockPanel>
+                <Button DockPanel.Dock="Top"
+                        Content="{x:Static t:Messages.Btn_Add}"
+                        Command="{Binding AddAbsenceCommand}"/>
+                <Grid/>
+            </DockPanel>
+        </HeaderedContentControl>
+        <HeaderedContentControl DockPanel.Dock="Top"
+                                Grid.Row="1"
+                                Header="{x:Static t:Messages.Header_MedicalExam}">
+            <ItemsControl ItemsSource="{Binding MedicalExams}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <local:AbsenceView/>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </HeaderedContentControl>
+    </Grid>
+</UserControl>

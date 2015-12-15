@@ -1,18 +1,5 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Probel.Geho.Gui.Properties" GeneratedClassName="Settings">
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)">
   <Profiles />
-  <Settings>
-    <Setting Name="IsMenuTextVisible" Type="System.Windows.Visibility" Scope="User">
-      <Value Profile="(Default)">Visible</Value>
-    </Setting>
-    <Setting Name="DataDirectory" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:\projects\geho</Value>
-    </Setting>
-    <Setting Name="GroupVisibility" Type="System.Windows.Visibility" Scope="User">
-      <Value Profile="(Default)">Visible</Value>
-    </Setting>
-    <Setting Name="SeparatorHeight" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">20</Value>
-    </Setting>
-  </Settings>
+  <Settings />
 </SettingsFile>

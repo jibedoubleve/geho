@@ -123,25 +123,40 @@
 
             using (var db = new DataContext())
             {
-                var b = (from g in db.Groups
+                var people = (from g in db.Groups
                                      .Include(e => e.People)
-                         where g.Id == @group.Id
-                         select g.People.Where(p => !p.IsEducator
-                                                  && p.Absences.Where(f => f.Start <= d && d <= f.End)
-                                                               .Count() == 0
-                                                  && p.Activities.Where(a => (a.DayOfWeek == d.DayOfWeek && (a.MomentDay & md) != 0)
-                                                                          && (
-                                                                                db.People.Where(pe => pe.IsEducator
-                                                                                             && pe.Activities.Contains(a)
-                                                                                             && pe.Absences.Where(ab => ab.Start <= d && d <= ab.End).Count() != 0)
-                                                                                         .Count()
-                                                                                != db.People.Where(pe => pe.IsEducator && pe.Activities.Contains(a)).Count()
-                                                                              )).Count() == 0))
+                                     .Include(e => e.People.Select(f => f.Absences))
+                              where g.Id == @group.Id
+                              select g.People.Where(p => !p.IsEducator
+                                                       && p.Absences.Where(f => f.Start <= d && d <= f.End && !f.IsPresent)
+                                                                    .Count() == 0
+                                                       && p.Activities.Where(a => (a.DayOfWeek == d.DayOfWeek && (a.MomentDay & md) != 0)
+                                                                               && (
+                                                                                     db.People.Where(pe => pe.IsEducator
+                                                                                                  && pe.Activities.Contains(a)
+                                                                                                  && pe.Absences.Where(ab => ab.Start <= d && d <= ab.End && !ab.IsPresent).Count() != 0)
+                                                                                              .Count()
+                                                                                     != db.People.Where(pe => pe.IsEducator && pe.Activities.Contains(a)).Count()
+                                                                                   )).Count() == 0))
                                         .SingleOrDefault();
 
-                return (b != null)
-                    ? b.ToDto()
-                    : new List<PersonDto>();
+                var dtoList = (people != null)
+                   ? people.ToDto()
+                   : new List<PersonDto>();
+
+                if (people != null)
+                {
+                    foreach (var dto in dtoList)
+                    {
+                        dto.IsPresent = (from a in db.Absences
+                                         where a.Person.Id == dto.Id
+                                            && a.Start <= d && d <= a.End
+                                            && a.IsPresent
+                                         select a).Count() > 0;
+                    }
+                }
+
+                return dtoList;
             }
         }
 

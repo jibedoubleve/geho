@@ -8,6 +8,7 @@
     {
         #region Properties
 
+        public bool IsPresent { get; set; }
         public IEnumerable<AbsenceDto> Absences
         {
             get; set;

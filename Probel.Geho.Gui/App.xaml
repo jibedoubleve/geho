@@ -177,49 +177,63 @@
         </Style>
 
         <!-- TabItems style -->
-        <SolidColorBrush x:Key="LightBlueBrush" Color="#FFD6DBE9"/>
+        <!--<SolidColorBrush x:Key="NotSelectedBrush" Color="#FFD6DBE9"/>
+        <SolidColorBrush x:Key="SelectedBrush" Color="#FFFFF29D" />-->
+        <SolidColorBrush x:Key="NotSelectedBrush" Color="White"/>
+        <SolidColorBrush x:Key="SelectedBrush" Color="#FF3399FF" />
+
         <SolidColorBrush x:Key="SolidBorderBrush" Color="#888" />
-        <SolidColorBrush x:Key="YellowBrush" Color="#FFFFF29D" />
         <SolidColorBrush x:Key="DisabledBackgroundBrush" Color="#EEE" />
         <SolidColorBrush x:Key="DisabledBorderBrush" Color="#AAA" />
         <SolidColorBrush x:Key="DisabledForegroundBrush" Color="#888" />
-        
+
         <Style TargetType="{x:Type TabItem}">
             <Setter Property="MinWidth" Value="100"/>
-                <Setter Property="Template">
-                    <Setter.Value>
-                        <ControlTemplate TargetType="{x:Type TabItem}">
-                            <Grid>
-                                <Border Name="Border"
-                                        Margin="0,0,-4,0" 
-                                        Background="{StaticResource LightBlueBrush}"
-                                        BorderBrush="{StaticResource  SolidBorderBrush}" 
-                                        BorderThickness="1,1,1,1" 
-                                        CornerRadius="2,12,0,0" >
-                                    <ContentPresenter x:Name="ContentSite"
-                                                      VerticalAlignment="Center"
-                                                      HorizontalAlignment="Center"
-                                                      ContentSource="Header"
-                                                      Margin="12,2,12,2"
-                                                      RecognizesAccessKey="True"/>
-                                </Border>
-                            </Grid>
-                            <ControlTemplate.Triggers>
-                                <Trigger Property="IsSelected" Value="True">
-                                    <Setter Property="Panel.ZIndex" Value="100" />
-                                    <Setter TargetName="Border" Property="Background" Value="{StaticResource YellowBrush}" />
-                                    <Setter TargetName="Border" Property="BorderThickness" Value="1,1,1,0" />
-                                </Trigger>
-                                <Trigger Property="IsEnabled" Value="False">
-                                    <Setter TargetName="Border" Property="Background" Value="{StaticResource DisabledBackgroundBrush}" />
-                                    <Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource DisabledBorderBrush}" />
-                                    <Setter Property="Foreground" Value="{StaticResource DisabledForegroundBrush}" />
-                                </Trigger>
-                            </ControlTemplate.Triggers>
-                        </ControlTemplate>
-                    </Setter.Value>
-                </Setter>
-            </Style>
+            <Setter Property="HeaderTemplate">
+                <Setter.Value>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding}" FontSize="16" FontFamily="Arial"/>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TabItem}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition Height="3"/>
+                            </Grid.RowDefinitions>
+                            <Border Name="Border"
+                                    Margin="0,0,-4,0" 
+                                    Background="{StaticResource NotSelectedBrush}"
+                                    BorderBrush="{StaticResource  SolidBorderBrush}" >
+                                <ContentPresenter x:Name="ContentSite"
+                                                  VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"
+                                                  ContentSource="Header"
+                                                  Margin="12,2,12,2"
+                                                  RecognizesAccessKey="True"/>
+                            </Border>
+                            <Grid x:Name="Underline" Grid.Row="1" Background="{StaticResource NotSelectedBrush}"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter Property="Panel.ZIndex" Value="100" />
+                                <Setter Property="Foreground" Value="{StaticResource SelectedBrush}"/>
+                                <Setter Property="FontWeight" Value="Bold"/>
+                                <Setter TargetName="Underline" Property="Background" Value="{StaticResource SelectedBrush}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Panel.ZIndex" Value="100" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
 
         <SolidColorBrush Color="#003399" x:Key="TaskDialogMainInstructionBrush" PresentationOptions:Freeze="True" />
     </Application.Resources>

@@ -10,7 +10,7 @@
     using Probel.Geho.Data.Dto;
     using Probel.Mvvm.DataBinding;
 
-    public class DisplayOneDayGroupViewModel : ObservableObject, ILoadeableViewModel
+    public class DisplayOneDayGroupViewModel : LoadeableViewModel
     {
         #region Fields
 
@@ -103,7 +103,7 @@
 
         #region Methods
 
-        public void Load()
+        public override void Load()
         {
             var morning = this.Service.GetFreeBeneficiaries(this.Group, this.CurrentDate, isMorning: true);
             this.BeneficiariesMorning.Refill(morning);

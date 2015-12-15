@@ -48,10 +48,7 @@
                 <Grid/>
             </DockPanel>
             <TabControl Background="#FF293955">
-                <TabItem x:Name="tab_week">
-                    <TabItem.Header>
-                        <TextBlock Text="{x:Static t:Messages.Tab_Week}" FontWeight="Bold"/>
-                    </TabItem.Header>
+                <TabItem x:Name="tab_week" Header="{x:Static t:Messages.Tab_Week}">
                     <ScrollViewer ScrollViewer.HorizontalScrollBarVisibility="Auto"
                                   ScrollViewer.VerticalScrollBarVisibility="Auto">
                         <ctrl:DisplayWeekView x:Name="uc_week" DataContext="{Binding DisplayWeekViewModel}"/>
@@ -90,16 +87,10 @@
                         <ctrl:DisplayOneDayView x:Name="uc_Friday" DataContext="{Binding Friday}"/>
                     </ScrollViewer>
                 </TabItem>
-                <TabItem x:Name="tab_activities">
-                    <TabItem.Header>
-                        <TextBlock Text="{x:Static t:Messages.Header_Activities}" FontWeight="Bold"/>
-                    </TabItem.Header>
+                <TabItem x:Name="tab_activities" Header="{x:Static t:Messages.Header_Activities}">
                     <ctrl:ActivityListView x:Name="uc_Activities" DataContext="{Binding ActivityListViewModel}"/>
                 </TabItem>
-                <TabItem x:Name="tab_lunches">
-                    <TabItem.Header>
-                        <TextBlock Text="{x:Static t:Messages.Header_LunchTime}" FontWeight="Bold"/>
-                    </TabItem.Header>
+                <TabItem x:Name="tab_lunches" Header="{x:Static t:Messages.Header_LunchTime}">
                     <ScrollViewer ScrollViewer.HorizontalScrollBarVisibility="Auto"
                                   ScrollViewer.VerticalScrollBarVisibility="Auto">
                         <ctrl:DisplayLunchView x:Name="uc_LunchTime" DataContext="{Binding DisplayLunchViewModel}"/>

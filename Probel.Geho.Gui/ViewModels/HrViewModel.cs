@@ -16,7 +16,7 @@
     using Probel.Mvvm.DataBinding;
     using Probel.Mvvm.Gui;
 
-    public class HrViewModel : ObservableObject, ILoadeableViewModel
+    public class HrViewModel : LoadeableViewModel
     {
         #region Fields
 
@@ -29,6 +29,7 @@
         private int endOffset = 18;
         private bool filterEducator;
         private LunchManagementViewModel lunchManagementViewModel;
+        private MedicalExamViewModel medicalExamViewModel;
         private PersonDto personToAdd;
         private int startOffset = 8;
 
@@ -39,6 +40,7 @@
         public HrViewModel(IHrService service)
         {
             this.Service = service;
+            this.MedicalExamViewModel = new MedicalExamViewModel(service);
             this.Beneficiaries = new ObservableCollection<PersonViewModel>();
             this.Educators = new ObservableCollection<PersonViewModel>();
             this.Absences = new ObservableCollection<AbsenceViewModel>();
@@ -147,6 +149,16 @@
             }
         }
 
+        public MedicalExamViewModel MedicalExamViewModel
+        {
+            get { return this.medicalExamViewModel; }
+            set
+            {
+                this.medicalExamViewModel = value;
+                this.OnPropertyChanged(() => MedicalExamViewModel);
+            }
+        }
+
         public PersonDto PersonToAdd
         {
             get { return this.personToAdd; }
@@ -171,8 +183,9 @@
 
         #region Methods
 
-        public void Load()
+        public override void Load()
         {
+            this.MedicalExamViewModel.Load();
             bufferPersons = this.Service.GetPersons();
 
             var p = bufferPersons;

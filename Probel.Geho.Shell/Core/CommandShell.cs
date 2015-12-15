@@ -24,7 +24,7 @@
                 try
                 {
                     Console.Write("> ");
-                  cmdLine = Console.ReadLine();
+                    cmdLine = Console.ReadLine();
 
                     if (string.IsNullOrEmpty(cmdLine)) { continue; }
                     else if (quitCommands.Contains(cmdLine)) { break; }

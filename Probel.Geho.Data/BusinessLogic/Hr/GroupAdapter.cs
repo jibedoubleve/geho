@@ -5,7 +5,7 @@
     using Probel.Geho.Data.Database;
     using Probel.Geho.Data.Entities;
 
-   internal class GroupAdapter
+    internal class GroupAdapter
     {
         #region Fields
 

@@ -3,6 +3,7 @@
     using System;
     using System.Collections.Generic;
     using System.Diagnostics;
+
     [DebuggerDisplay("{Id} {DayOfWeek}")]
     public class LunchTimeDto : BaseDto
     {

@@ -8,6 +8,8 @@
 
     using Data.Entities;
 
+    using Mvvm.Gui;
+
     using Probel.Geho.Data.BusinessLogic;
     using Probel.Geho.Data.Dto;
     using Probel.Geho.Gui.Models;
@@ -15,7 +17,7 @@
     using Probel.Geho.Gui.ViewModels.Controls;
     using Probel.Mvvm.DataBinding;
 
-    public class GroupHrViewModel : ObservableObject, ILoadeableViewModel
+    public class GroupHrViewModel : LoadeableViewModel
     {
         #region Fields
 
@@ -162,7 +164,7 @@
 
         #region Methods
 
-        public void Load()
+        public override void Load()
         {
             var g = this.Service.GetGroups();
             this.Groups.Refill(GroupViewModel.ToViewModels(g, Service, this));

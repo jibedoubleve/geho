@@ -6,7 +6,7 @@
     using Probel.Geho.Data.Dto;
     using Probel.Mvvm.DataBinding;
 
-    public class DisplayLunchViewModel : ObservableObject, ILoadeableViewModel
+    public class DisplayLunchViewModel : LoadeableViewModel
     {
         #region Fields
 
@@ -36,7 +36,7 @@
 
         #region Methods
 
-        public void Load()
+        public override void Load()
         {
             var week = this.Service.GetLunchTimes();
             this.Week.Refill(week);

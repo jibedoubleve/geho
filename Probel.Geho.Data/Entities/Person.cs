@@ -30,8 +30,6 @@
             get; set;
         }
 
-        public IList<LunchTime> Lunches { get; set; }
-
         public IList<Day> Days
         {
             get; set;
@@ -46,9 +44,13 @@
         {
             get; set;
         }
-
         [DefaultValue(false)]
         public bool IsTrainee
+        {
+            get; set;
+        }
+
+        public IList<LunchTime> Lunches
         {
             get; set;
         }

@@ -33,26 +33,26 @@
 
         #region Methods
 
-        private void Click_GroupManagement(object sender, RoutedEventArgs e)
+        private async void Click_GroupManagement(object sender, RoutedEventArgs e)
         {
             try
             {
                 var vm = Ioc.Resolve<GroupHrViewModel>();
 
-                using (WaitingCursor.While) { vm.Load(); }
+                using (WaitingCursor.While) { await vm.LoadAsync(); }
                 var view = new GroupHrView(vm);
                 this.mainFrame.Navigate(view);
             }
             catch (Exception ex) { ViewService.MessageBox.Error(ex.ToString()); }
         }
 
-        private void Click_HrManagement(object sender, RoutedEventArgs e)
+        private async void Click_HrManagement(object sender, RoutedEventArgs e)
         {
             try
             {
                 var vm = Ioc.Resolve<HrViewModel>();
 
-                using (WaitingCursor.While) { vm.Load(); }
+                using (WaitingCursor.While) { await vm.LoadAsync(); }
                 var view = new HrView(vm);
                 this.mainFrame.Navigate(view);
             }

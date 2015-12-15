@@ -45,17 +45,6 @@
             db.SaveChanges();
         }
 
-        private void CreateLunch(LunchTimeDto lunch, IList<Person> people)
-        {
-            var entity = new LunchTime()
-            {
-                People = people,
-                DayOfWeek = lunch.DayOfWeek,
-            };
-            db.LunchTimes.Add(entity);
-            db.SaveChanges();
-        }
-
         private IList<Person> Attach(IEnumerable<PersonDto> people, DataContext db)
         {
             var result = new List<Person>();
@@ -67,6 +56,17 @@
         private IList<Person> Attach(LunchTimeDto lunch, DataContext db)
         {
             return Attach(lunch.People, db);
+        }
+
+        private void CreateLunch(LunchTimeDto lunch, IList<Person> people)
+        {
+            var entity = new LunchTime()
+            {
+                People = people,
+                DayOfWeek = lunch.DayOfWeek,
+            };
+            db.LunchTimes.Add(entity);
+            db.SaveChanges();
         }
 
         #endregion Methods

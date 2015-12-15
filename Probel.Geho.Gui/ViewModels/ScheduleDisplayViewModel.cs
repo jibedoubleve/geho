@@ -12,12 +12,14 @@
     using Data.Dto;
     using Data.Helpers;
 
+    using Mvvm.Gui;
+
     using Probel.Geho.Data.BusinessLogic;
     using Probel.Mvvm.DataBinding;
 
     using Tools;
 
-    public class ScheduleDisplayViewModel : ObservableObject, ILoadeableViewModel
+    public class ScheduleDisplayViewModel : LoadeableViewModel
     {
         #region Fields
 
@@ -136,7 +138,7 @@
 
         #region Methods
 
-        public void Load()
+        public override void Load()
         {
             using (WaitingCursor.While)
             {

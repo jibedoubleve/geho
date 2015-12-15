@@ -2,6 +2,8 @@
 {
     using System.Windows.Controls;
 
+    using Mvvm.DataBinding;
+
     using ViewModels;
 
     /// <summary>
@@ -22,9 +24,9 @@
 
         private void UserControl_Loaded(object sender, System.Windows.RoutedEventArgs e)
         {
-            if(this.DataContext is ILoadeableViewModel)
+            if (this.DataContext is ILoadeableViewModel)
             {
-                var vm = this.DataContext as ILoadeableViewModel;
+                var vm = this.GetViewModel<ILoadeableViewModel>();
                 //vm.Load();
             }
         }

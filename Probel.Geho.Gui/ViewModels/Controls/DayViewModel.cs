@@ -8,12 +8,13 @@
     using Probel.Geho.Data.Dto;
     using Probel.Mvvm.DataBinding;
 
-    public class DayViewModel : ObservableObject
+    public class DayViewModel : LoadeableViewModel
     {
         #region Fields
 
         public readonly ScheduleViewModel ParentVm;
 
+        private readonly IEnumerable<GroupDto> GroupsDto;
         private readonly IScheduleService Service;
 
         private DateTime currentDay;
@@ -31,7 +32,8 @@
             this.ParentVm = parentVm;
             this.CurrentDay = d;
             this.Service = service;
-            this.Groups = new ObservableCollection<GroupDayViewModel>(GroupDayViewModel.ToViewModel(groups, Service, this));
+            this.GroupsDto = groups;
+            this.Groups = new ObservableCollection<GroupDayViewModel>();
         }
 
         #endregion Constructors
@@ -67,6 +69,15 @@
         #endregion Properties
 
         #region Methods
+
+        public override void Load()
+        {
+            var grps = GroupDayViewModel.ToViewModel(GroupsDto, Service, this);
+
+            foreach (var g in grps) { g.Load(); }
+
+            this.Groups = new ObservableCollection<GroupDayViewModel>(grps);
+        }
 
         public void MarkBusyEducators()
         {

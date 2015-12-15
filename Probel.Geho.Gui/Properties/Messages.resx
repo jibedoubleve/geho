@@ -348,4 +348,13 @@ Vérifiez:
   <data name="Header_Print" xml:space="preserve">
     <value>Impression</value>
   </data>
+  <data name="Lbl_MedicalExam" xml:space="preserve">
+    <value>Visite médicale</value>
+  </data>
+  <data name="Header_MedicalExam" xml:space="preserve">
+    <value>Visites médicales</value>
+  </data>
+  <data name="Header_ManageMedicalExams" xml:space="preserve">
+    <value>Gérer visites médicales</value>
+  </data>
 </root>

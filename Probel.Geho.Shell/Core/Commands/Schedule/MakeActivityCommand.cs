@@ -18,7 +18,7 @@
         protected override void ExecuteCommand(IEnumerable<Argument> args)
         {
             var dayStr = ArgProcessor.Get("day");
-            var day = ArgProcessor.ParseDayOfWeel(dayStr);
+            var day = ArgProcessor.ParseDayOfWeek(dayStr);
 
             var isMorningStr = ArgProcessor.Get("isMorning");
             var isMorning = (isMorningStr.ToLower() == "morning" || isMorningStr.ToLower() == "m");

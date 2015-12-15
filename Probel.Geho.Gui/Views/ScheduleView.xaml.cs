@@ -3,6 +3,8 @@
     using System.Windows;
     using System.Windows.Controls;
 
+    using Mvvm.DataBinding;
+
     using Probel.Geho.Gui.ViewModels;
 
     /// <summary>
@@ -26,7 +28,7 @@
         {
             if (DataContext is ScheduleViewModel)
             {
-                var vm = DataContext as ScheduleViewModel;
+                var vm = this.GetViewModel<ScheduleViewModel>();
                 vm.NextWeek();
             }
         }
@@ -35,7 +37,7 @@
         {
             if (DataContext is ScheduleViewModel)
             {
-                var vm = DataContext as ScheduleViewModel;
+                var vm = this.GetViewModel<ScheduleViewModel>();
                 vm.PreviousWeek();
             }
         }

@@ -25,7 +25,12 @@
         #endregion Constructors
 
         #region Methods
-
+        /// <summary>
+        /// Remove persons from groups in day during the absence. In other words,
+        /// in the time table, the absent person won't appear.
+        /// </summary>
+        /// <param name="db"></param>
+        /// <returns></returns>
         public AbsenceAdapter ClearOccupations(DataContext db)
         {
             var days = (from day in db.Days

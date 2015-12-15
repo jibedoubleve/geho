@@ -66,7 +66,7 @@
 
         private static void CheckDirectory()
         {
-            var path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Geho");
+            var path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), @"Probel\Geho");
             if (!Directory.Exists(path)) { Directory.CreateDirectory(path); }
 
             AppDomain.CurrentDomain.SetData("DataDirectory", path);

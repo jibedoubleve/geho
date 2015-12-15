@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "Geho"
-#define MyAppVersion "0.9"
+#define MyAppVersion GetFileVersion('..\Probel.Geho.Gui\bin\Release\Probel.Geho.Gui.exe')
 #define MyAppPublisher "Jean-Baptiste Wautier"
 #define MyAppURL "https://github.com/jibedoubleve/geho"
 #define MyAppExeName "Probel.Geho.Gui.exe"

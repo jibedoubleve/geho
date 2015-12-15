@@ -5,12 +5,14 @@
     using System.Collections.ObjectModel;
     using System.Linq;
 
+    using Mvvm.Gui;
+
     using Probel.Geho.Data.BusinessLogic;
     using Probel.Geho.Data.Dto;
     using Probel.Geho.Gui.Tools;
     using Probel.Mvvm.DataBinding;
 
-    public class GroupDayViewModel : ObservableObject, ILoadeableViewModel
+    public class GroupDayViewModel : LoadeableViewModel
     {
         #region Fields
 
@@ -136,13 +138,13 @@
             foreach (var item in groups)
             {
                 var vm = new GroupDayViewModel(item, srv, parentVm);
-                vm.Load();
+                //vm.Load();
                 list.Add(vm);
             }
             return list;
         }
 
-        public void Load()
+        public override void Load()
         {
             using (WaitingCursor.While)
             {

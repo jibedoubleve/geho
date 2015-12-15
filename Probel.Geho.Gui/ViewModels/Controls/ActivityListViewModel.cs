@@ -8,7 +8,7 @@
 
     using Probel.Mvvm.DataBinding;
 
-    public class ActivityListViewModel : ObservableObject, ILoadeableViewModel
+    public class ActivityListViewModel : LoadeableViewModel
     {
         #region Fields
 
@@ -38,7 +38,7 @@
 
         #region Methods
 
-        public void Load()
+        public override void Load()
         {
             var activities = this.Service.GetActivities();
             this.Activities.Refill(ActivityCardViewModel.ToActivityCardViewModel(activities));

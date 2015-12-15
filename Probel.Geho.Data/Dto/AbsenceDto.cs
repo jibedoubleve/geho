@@ -22,6 +22,11 @@
             get; set;
         }
 
+        public bool IsPresent
+        {
+            get; set;
+        }
+
         public PersonDto Person
         {
             get; set;

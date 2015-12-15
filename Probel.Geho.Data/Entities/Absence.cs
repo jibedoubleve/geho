@@ -1,6 +1,7 @@
 ﻿namespace Probel.Geho.Data.Entities
 {
     using System;
+    using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
     using System.Diagnostics;
 
@@ -14,6 +15,12 @@
         {
             get;
             set;
+        }
+
+        [DefaultValue(false)]
+        public bool IsPresent
+        {
+            get; set;
         }
 
         [Required]

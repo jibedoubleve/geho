@@ -10,7 +10,7 @@
 
     using Probel.Mvvm.DataBinding;
 
-    public class DisplayOneDayViewModel : ObservableObject, ILoadeableViewModel
+    public class DisplayOneDayViewModel : LoadeableViewModel
     {
         #region Fields
 
@@ -58,7 +58,7 @@
 
         #region Methods
 
-        public void Load()
+        public override void Load()
         {
             foreach (var group in Groups)
             {

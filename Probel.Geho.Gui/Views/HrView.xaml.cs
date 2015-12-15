@@ -6,6 +6,7 @@
 
     using Probel.Geho.Data.BusinessLogic.Hr;
     using Probel.Geho.Gui.ViewModels;
+    using Probel.Mvvm.DataBinding;
 
     /// <summary>
     /// Interaction logic for HrManagerxaml.xaml
@@ -37,8 +38,8 @@
         {
             if (this.DataContext is HrViewModel && cb_End != null && cb_End.SelectedItem != null)
             {
-                var vm = this.DataContext as HrViewModel;
-                vm.EndOffset =  (int)((ComboBoxItem)cb_End.SelectedItem).Tag;
+                var vm = this.GetViewModel<HrViewModel>();
+                vm.EndOffset = (int)((ComboBoxItem)cb_End.SelectedItem).Tag;
             }
         }
 
@@ -46,7 +47,7 @@
         {
             if (this.DataContext is HrViewModel && cb_End != null && cb_Start.SelectedItem != null)
             {
-                var vm = this.DataContext as HrViewModel;
+                var vm = this.GetViewModel<HrViewModel>();
                 vm.StartOffset = (int)((ComboBoxItem)cb_Start.SelectedItem).Tag;
             }
         }

@@ -12,9 +12,9 @@
     {
         #region Methods
 
-        void CreateAbsence(PersonDto person, DateTime start, DateTime end);
+        void CreateAbsence(PersonDto person, DateTime start, DateTime end, bool isPresent = false);
 
-        void CreateAbsence(int personId, DateTime start, DateTime end);
+        void CreateAbsence(int personId, DateTime start, DateTime end, bool isPresent = false);
 
         void CreateAbsence(AbsenceDto absenceDto);
 
@@ -31,7 +31,7 @@
 
         void CreatePerson(PersonDto person);
 
-        IEnumerable<AbsenceDto> GetAbsences();
+        IEnumerable<AbsenceDto> GetAbsences(bool isPresent = false);
 
         IEnumerable<ActivityDto> GetActivities();
 

@@ -8,7 +8,6 @@
              xmlns:t="clr-namespace:Probel.Geho.Gui.Properties"
              xmlns:ctrl="clr-namespace:Probel.Geho.Gui.Views.Controls"
              xmlns:conv="clr-namespace:Probel.Geho.Gui.Converters"
-             xmlns:s="clr-namespace:Probel.Geho.Gui.Tools" 
              
              mc:Ignorable="d" Width="300"
              Loaded="UserControl_Loaded">
@@ -23,21 +22,21 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
-                <RowDefinition MinHeight="100"/>
-                <RowDefinition Height="{s:GuiSettings SeparatorHeight}"/>
-                <RowDefinition MinHeight="100"/>
+                <RowDefinition MinHeight="60"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition MinHeight="120"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
-                <RowDefinition MinHeight="100"/>
-                <RowDefinition Height="{s:GuiSettings SeparatorHeight}"/>
-                <RowDefinition MinHeight="100"/>
+                <RowDefinition MinHeight="60"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition MinHeight="120"/>
             </Grid.RowDefinitions>
-            <Grid Background="#FF8B97B8">
-                <TextBlock Text="{x:Static t:Messages.Day_Morning}" Foreground="White"
+            <Grid Background="#FFFFF29D">
+                <TextBlock Text="{x:Static t:Messages.Day_Morning}" Foreground="#FF0F0505"
                        HorizontalAlignment="Center"
-                       VerticalAlignment="Center"/>
+                       VerticalAlignment="Center" FontWeight="Bold" FontSize="13.333"/>
             </Grid>
-            <Grid Background="#FFD6DBE9" Grid.Row="1"  Visibility="{s:GuiSettings GroupVisibility}">
+            <Grid Background="#FFD6DBE9" Grid.Row="1">
                 <TextBlock Text="{x:Static t:Messages.Header_Educators}" Foreground="#FF040404"
                        HorizontalAlignment="Center"
                        VerticalAlignment="Center"/>
@@ -53,8 +52,7 @@
             <Grid Background="#FFD6DBE9" Grid.Row="3">
                 <TextBlock Foreground="#FF040404"
                            HorizontalAlignment="Center"
-                           VerticalAlignment="Center"
-                           Visibility="{s:GuiSettings GroupVisibility}">
+                           VerticalAlignment="Center">
                     <Run Text="{x:Static t:Messages.Header_Beneficiary}"/>
                     <Run Text="(" FontWeight="Bold" />
                     <Run Text="{Binding BeneficiariesMorning.Count, Mode=OneWay}" FontWeight="Bold"/>
@@ -69,13 +67,12 @@
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
-            <Grid Background="#FF8B97B8" Grid.Row="5">
-                <TextBlock Text="{x:Static t:Messages.Day_Afternoon}" Foreground="White"
+            <Grid Background="#FFFFF29D" Grid.Row="5">
+                <TextBlock Text="{x:Static t:Messages.Day_Afternoon}" Foreground="#FF040303"
                        HorizontalAlignment="Center"
-                       VerticalAlignment="Center"/>
+                       VerticalAlignment="Center" FontWeight="Bold" FontSize="14.667"/>
             </Grid>
-            <Grid Background="#FFD6DBE9" Grid.Row="6" 
-                  Visibility="{s:GuiSettings GroupVisibility}">
+            <Grid Background="#FFD6DBE9" Grid.Row="6">
                 <TextBlock Text="{x:Static t:Messages.Header_Educators}" Foreground="#FF040404"
                            HorizontalAlignment="Center"
                            VerticalAlignment="Center"
@@ -92,7 +89,7 @@
             <Grid Background="#FFD6DBE9" Grid.Row="8">
                 <TextBlock  Foreground="#FF040404"
                             HorizontalAlignment="Center"
-                            VerticalAlignment="Center" Visibility="{s:GuiSettings GroupVisibility}">
+                            VerticalAlignment="Center">
                     <Run Text="{x:Static t:Messages.Header_Beneficiary}"/>
                     <Run Text="(" FontWeight="Bold" />
                     <Run Text="{Binding BeneficiariesAfternoon.Count, Mode=OneWay}" FontWeight="Bold"/>

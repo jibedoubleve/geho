@@ -20,12 +20,12 @@
     {
         #region Methods
 
-        public void CreateAbsence(PersonDto beneficiary, DateTime start, DateTime end)
+        public void CreateAbsence(PersonDto beneficiary, DateTime start, DateTime end, bool isPresent = false)
         {
-            this.CreateAbsence(beneficiary.Id, start, end);
+            this.CreateAbsence(beneficiary.Id, start, end, isPresent);
         }
 
-        public void CreateAbsence(int personId, DateTime start, DateTime end)
+        public void CreateAbsence(int personId, DateTime start, DateTime end, bool isPresent = false)
         {
             using (var db = new DataContext())
             {
@@ -39,6 +39,7 @@
                     Person = person,
                     End = end,
                     Start = start,
+                    IsPresent = isPresent,
                 };
 
                 new AbsenceAdapter(absence)
@@ -57,7 +58,7 @@
             else if (absence.Start == null) { throw new ArgumentNullException("absence.Start"); }
             else if (absence.End == null) { throw new ArgumentNullException("absence.End"); }
 
-            this.CreateAbsence(absence.Person.Id, absence.Start, absence.End);
+            this.CreateAbsence(absence.Person.Id, absence.Start, absence.End, absence.IsPresent);
         }
 
         public void CreateActivity(DayOfWeek day
@@ -128,12 +129,13 @@
         /// </summary>
         /// <returns>A list of absences</returns>
         /// <remarks>http://www.entityframeworktutorial.net/EntityFramework4.3/eager-loading-with-dbcontext.aspx</remarks>
-        public IEnumerable<AbsenceDto> GetAbsences()
+        public IEnumerable<AbsenceDto> GetAbsences(bool isPresent = false)
         {
             using (var db = new DataContext())
             {
                 var entities = (from a in db.Absences
                                             .Include(e => e.Person)
+                                where a.IsPresent == isPresent
                                 select a).ToList();
 
                 var result = Mapper.Map<IEnumerable<Absence>, IEnumerable<AbsenceDto>>(entities);
@@ -452,8 +454,8 @@
                 foreach (var group in groups) { group.People.Remove(person); }
 
                 var lunches = (from g in db.LunchTimes
-                              where g.People.Select(e => e.Id).Contains(id)
-                              select g);
+                               where g.People.Select(e => e.Id).Contains(id)
+                               select g);
 
                 foreach (var lunch in lunches) { if (lunch.People != null) { lunch.People.Remove(person); } }
 

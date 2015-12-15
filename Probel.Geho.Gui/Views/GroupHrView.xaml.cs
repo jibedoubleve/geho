@@ -7,6 +7,8 @@
 
     using Data.Entities;
 
+    using Mvvm.DataBinding;
+
     using Probel.Geho.Gui.ViewModels;
 
     /// <summary>
@@ -35,7 +37,7 @@
         {
             if (this.DataContext is GroupHrViewModel)
             {
-                var vm = this.DataContext as GroupHrViewModel;
+                var vm = this.GetViewModel<GroupHrViewModel>();
 
                 //Select the day
                 foreach (var item in cb_DayUpdate.Items)
@@ -70,7 +72,7 @@
             if (this.DataContext is GroupHrViewModel && cb_Day.SelectedItem is ComboBoxItem)
             {
                 var dow = Int32.Parse((string)cbi.Tag);
-                var vm = this.DataContext as GroupHrViewModel;
+                var vm = this.GetViewModel<GroupHrViewModel>();
                 if (vm.ActivityToAdd != null) { vm.ActivityToAdd.DayOfWeek = (DayOfWeek)dow; }
             }
         }
@@ -81,7 +83,7 @@
             if (this.DataContext is GroupHrViewModel && cb_DayUpdate.SelectedItem is ComboBoxItem)
             {
                 var dow = Int32.Parse((string)cbi.Tag);
-                var vm = this.DataContext as GroupHrViewModel;
+                var vm = this.GetViewModel<GroupHrViewModel>();
                 if (vm.SelectedActivity != null) { vm.SelectedActivity.DayOfWeek = (DayOfWeek)dow; }
             }
         }
@@ -93,7 +95,7 @@
             {
                 var value = int.Parse((string)cbi.Tag);
                 var momentDay = (MomentDay)value;
-                var vm = this.DataContext as GroupHrViewModel;
+                var vm = this.GetViewModel<GroupHrViewModel>();
                 if (vm.SelectedActivity != null) { vm.SelectedActivity.MomentDay = momentDay; }
             }
         }
@@ -105,7 +107,7 @@
             {
                 var integer = int.Parse((string)cbi.Tag);
                 var momentDay = (MomentDay)integer;
-                var vm = this.DataContext as GroupHrViewModel;
+                var vm = this.GetViewModel<GroupHrViewModel>();
                 if (vm.ActivityToAdd != null) { vm.ActivityToAdd.MomentDay = momentDay; }
             }
         }

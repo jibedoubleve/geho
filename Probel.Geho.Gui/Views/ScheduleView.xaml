@@ -27,7 +27,7 @@
             <TabControl ItemsSource="{Binding Days}">
                 <TabControl.ItemTemplate>
                     <DataTemplate>
-                        <TextBlock Text="{Binding CurrentDay.DayOfWeek, Converter={StaticResource dowToText}}"/>
+                        <TextBlock Text="{Binding CurrentDay.DayOfWeek, Converter={StaticResource dowToText}}" FontSize="16"/>
                     </DataTemplate>
                 </TabControl.ItemTemplate>
                 <TabControl.ContentTemplate>

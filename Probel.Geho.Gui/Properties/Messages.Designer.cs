@@ -415,11 +415,29 @@ namespace Probel.Geho.Gui.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Gérer visites médicales.
+        /// </summary>
+        public static string Header_ManageMedicalExams {
+            get {
+                return ResourceManager.GetString("Header_ManageMedicalExams", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Gestion des horaires.
         /// </summary>
         public static string Header_ManageSchedule {
             get {
                 return ResourceManager.GetString("Header_ManageSchedule", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Visites médicales.
+        /// </summary>
+        public static string Header_MedicalExam {
+            get {
+                return ResourceManager.GetString("Header_MedicalExam", resourceCulture);
             }
         }
         
@@ -546,6 +564,15 @@ namespace Probel.Geho.Gui.Properties {
         public static string Lbl_Group {
             get {
                 return ResourceManager.GetString("Lbl_Group", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Visite médicale.
+        /// </summary>
+        public static string Lbl_MedicalExam {
+            get {
+                return ResourceManager.GetString("Lbl_MedicalExam", resourceCulture);
             }
         }
         
