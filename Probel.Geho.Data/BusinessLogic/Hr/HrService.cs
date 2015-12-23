@@ -179,6 +179,7 @@
             {
                 return (from b in db.People
                         where !b.IsEducator
+                        orderby b.Name, b.Surname
                         select b).ToDto();
             }
         }
@@ -243,12 +244,14 @@
         {
             using (var db = new DataContext())
             {
-                var entity = db.People
-                               .Include(e => e.Absences)
-                               .Include(e => e.Activities)
-                               .Include(e => e.Days)
-                               .Include(e => e.Days.Select(f => f.Group))
-                               .ToList();
+                var entity = (from p in db.People
+                                          .Include(e => e.Absences)
+                                          .Include(e => e.Activities)
+                                          .Include(e => e.Days)
+                                          .Include(e => e.Days.Select(f => f.Group))
+                              where p.IsEducator
+                              orderby p.Name, p.Surname
+                              select p).ToList();
                 return entity.ToDto();
             }
         }
@@ -308,6 +311,7 @@
             {
                 var entities = (from g in db.Groups
                                             .Include(e => e.People)
+                                orderby g.Order
                                 select g).ToList();
                 return Mapper.Map<IEnumerable<Group>, IEnumerable<GroupDto>>(entities);
             }
@@ -513,6 +517,7 @@
                     eGroup.People.Add(b);
                 }
                 eGroup.Name = group.Name;
+                eGroup.Order = group.Order;
                 db.SaveChanges();
             }
         }

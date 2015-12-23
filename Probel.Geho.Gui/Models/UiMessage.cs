@@ -1,10 +1,6 @@
 ﻿namespace Probel.Geho.Gui.Models
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
+    using Properties;
 
     #region Enumerations
 
@@ -13,13 +9,29 @@
         Warn,
         Error,
         Info,
+        Empty,
     }
 
     #endregion Enumerations
 
     public class UiMessage
     {
+        #region Constructors
+
+        public UiMessage()
+        {
+            this.Message = Messages.Msg_Ready;
+            this.Status = Status.Info;
+        }
+
+        #endregion Constructors
+
         #region Properties
+
+        public string Message
+        {
+            get; set;
+        }
 
         public Status Status
         {

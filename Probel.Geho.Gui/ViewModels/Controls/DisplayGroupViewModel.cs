@@ -13,14 +13,16 @@
         #region Fields
 
         private string groupName;
+        private int groupOrder;
 
         #endregion Fields
 
         #region Constructors
 
-        public DisplayGroupViewModel(string name, IEnumerable<PersonDto> morning, IEnumerable<PersonDto> afternoon)
+        public DisplayGroupViewModel(GroupDto group, IEnumerable<PersonDto> morning, IEnumerable<PersonDto> afternoon)
         {
-            this.GroupName = name;
+            this.GroupName = group.Name;
+            this.GroupOrder = group.Order;
             this.EducatorsMorning = new ObservableCollection<PersonDto>(morning);
             this.EducatorsAfternoon = new ObservableCollection<PersonDto>(afternoon);
         }
@@ -48,6 +50,16 @@
             {
                 this.groupName = value;
                 this.OnPropertyChanged(() => GroupName);
+            }
+        }
+
+        public int GroupOrder
+        {
+            get { return this.groupOrder; }
+            set
+            {
+                this.groupOrder = value;
+                this.OnPropertyChanged(() => GroupOrder);
             }
         }
 

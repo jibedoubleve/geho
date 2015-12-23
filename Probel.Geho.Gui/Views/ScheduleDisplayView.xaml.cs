@@ -4,13 +4,14 @@
     using System.Collections.Generic;
     using System.Windows;
     using System.Windows.Controls;
-    using System.Windows.Media;
 
     using Controls;
 
     using Mvvm.DataBinding;
 
     using Properties;
+
+    using Runtime;
 
     using ViewModels;
 
@@ -19,12 +20,20 @@
     /// </summary>
     public partial class ScheduleDisplayView : Page
     {
+        #region Fields
+
+        private readonly IContext AppContext;
+
+        #endregion Fields
+
         #region Constructors
 
-        public ScheduleDisplayView(ScheduleDisplayViewModel vm)
+        public ScheduleDisplayView(ScheduleDisplayViewModel vm, IContext ctx)
         {
             InitializeComponent();
             this.DataContext = vm;
+            this.AppContext = ctx;
+            this.SelectTab();
         }
 
         #endregion Constructors
@@ -80,16 +89,28 @@
             else { throw new NotSupportedException("This event args are not in the supported type"); }
         }
 
-        private void SelectionChanged_cb_Dates(object sender, SelectionChangedEventArgs e)
+        private void SelectTab()
         {
-            if (this.cb_Dates.SelectedItem != null
-            && this.cb_Dates.SelectedItem is DateTime
-            && this.DataContext is ScheduleDisplayViewModel)
-            {
-                var vm = this.GetViewModel<ScheduleDisplayViewModel>();
-                var dt = (DateTime)this.cb_Dates.SelectedItem;
-                vm.LoadWeek(dt);
-            }
+            if (AppContext.WeekToDisplayTab == "tab_week") { this.tab_week.IsSelected = true; }
+            else if (AppContext.WeekToDisplayTab == "tab_monday") { this.tab_monday.IsSelected = true; }
+            else if (AppContext.WeekToDisplayTab == "tab_tuesday") { this.tab_tuesday.IsSelected = true; }
+            else if (AppContext.WeekToDisplayTab == "tab_wednesday") { this.tab_wednesday.IsSelected = true; }
+            else if (AppContext.WeekToDisplayTab == "tab_thursday") { this.tab_thursday.IsSelected = true; }
+            else if (AppContext.WeekToDisplayTab == "tab_friday") { this.tab_friday.IsSelected = true; }
+            else if (AppContext.WeekToDisplayTab == "tab_activities") { this.tab_activities.IsSelected = true; }
+            else if (AppContext.WeekToDisplayTab == "tab_lunches") { this.tab_lunches.IsSelected = true; }
+        }
+
+        private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (tab_week.IsSelected) { AppContext.WeekToDisplayTab = "tab_week"; }
+            else if (tab_monday.IsSelected) { AppContext.WeekToDisplayTab = "tab_monday"; }
+            else if (tab_tuesday.IsSelected) { AppContext.WeekToDisplayTab = "tab_tuesday"; }
+            else if (tab_wednesday.IsSelected) { AppContext.WeekToDisplayTab = "tab_wednesday"; }
+            else if (tab_thursday.IsSelected) { AppContext.WeekToDisplayTab = "tab_thursday"; }
+            else if (tab_friday.IsSelected) { AppContext.WeekToDisplayTab = "tab_friday"; }
+            else if (tab_activities.IsSelected) { AppContext.WeekToDisplayTab = "tab_activities"; }
+            else if (tab_lunches.IsSelected) { AppContext.WeekToDisplayTab = "tab_lunches"; }
         }
 
         #endregion Methods

@@ -10,7 +10,7 @@
     using Probel.Mvvm.DataBinding;
     using Probel.Mvvm.Gui;
 
-    public class AbsenceViewModel : ObservableObject
+    public class AbsenceViewModel : BaseViewModel
     {
         #region Fields
 
@@ -24,7 +24,7 @@
 
         #region Constructors
 
-        public AbsenceViewModel( IHrService service, ILoadeableViewModel parentVm)
+        public AbsenceViewModel(IHrService service, ILoadeableViewModel parentVm)
         {
             this.ParentVm = parentVm;
             this.Service = service;
@@ -78,6 +78,7 @@
                 {
                     this.Service.RemoveAbsence(this.Absence);
                     this.ParentVm.Load();
+                    this.StatusBar.Info(Messages.Msg_AbsenceDeleted);
                 }
             }
         }

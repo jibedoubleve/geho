@@ -207,9 +207,11 @@
 
         public IEnumerable<DateTime> GetMondays()
         {
+            var thisMonday = DateTime.Today.GetMonday();
             using (var db = new DataContext())
             {
                 var dates = (from w in db.Weeks
+                             where w.Monday >= thisMonday
                              select w.Monday).ToList();
                 return dates;
             }

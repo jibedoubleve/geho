@@ -1,4 +1,4 @@
-﻿<Page x:Class="Probel.Geho.Gui.Views.ScheduleView"
+﻿<Page x:Class="Probel.Geho.Gui.Views.ScheduleManagerView"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -17,14 +17,12 @@
     <HeaderedContentControl Header="{x:Static t:Messages.Header_ManageSchedule}">
         <DockPanel LastChildFill="True">
             <DockPanel DockPanel.Dock="Top">
-                <Button Content="&lt;&lt;" Click="click_Before"/>
+                <TextBlock Text="{x:Static t:Messages.Lbl_SelectDate}"
+                           Style="{StaticResource TextBoxStyle}"/>
                 <DatePicker Margin="5" SelectedDate="{Binding WeekDate}"/>
-                <Button Content="&gt;&gt;" Click="click_After"/>
-                <Button Content="{x:Static t:Messages.Btn_Display}"
-                            Command="{Binding LoadWeekCommand}"/>
                 <Grid/>
             </DockPanel>
-            <TabControl ItemsSource="{Binding Days}">
+            <TabControl ItemsSource="{Binding Days}" SelectedItem="SelectedDay">
                 <TabControl.ItemTemplate>
                     <DataTemplate>
                         <TextBlock Text="{Binding CurrentDay.DayOfWeek, Converter={StaticResource dowToText}}" FontSize="16"/>
@@ -32,7 +30,7 @@
                 </TabControl.ItemTemplate>
                 <TabControl.ContentTemplate>
                     <DataTemplate>
-                        <ctrl:DayView/>
+                        <ctrl:ManageDayView/>
                     </DataTemplate>
                 </TabControl.ContentTemplate>
             </TabControl>

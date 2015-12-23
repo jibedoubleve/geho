@@ -4,6 +4,7 @@
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
     using System.Linq;
+    using System.Threading.Tasks;
 
     using Data.BusinessLogic;
 
@@ -103,15 +104,22 @@
 
         #region Methods
 
-        public override void Load()
+        public override async void Load()
         {
-            var morning = this.Service.GetFreeBeneficiaries(this.Group, this.CurrentDate, isMorning: true);
-            this.BeneficiariesMorning.Refill(morning);
-            this.HasMorningBeneficiaries = morning.Count() > 0;
+            var r = await Task.Run(() =>
+            {
+                return new
+                {
+                    Morning = this.Service.GetFreeBeneficiaries(this.Group, this.CurrentDate, isMorning: true),
+                    Afternoon = this.Service.GetFreeBeneficiaries(this.Group, this.CurrentDate, isMorning: false),
+                };
+            });
 
-            var afternoon = this.Service.GetFreeBeneficiaries(this.Group, this.CurrentDate, isMorning: false);
-            this.BeneficiariesAfternoon.Refill(afternoon);
-            this.HasAfternoonBeneficiaries = afternoon.Count() > 0;
+            this.BeneficiariesMorning.Refill(r.Morning);
+            this.HasMorningBeneficiaries = r.Morning.Count() > 0;
+
+            this.BeneficiariesAfternoon.Refill(r.Afternoon);
+            this.HasAfternoonBeneficiaries = r.Afternoon.Count() > 0;
         }
 
         #endregion Methods

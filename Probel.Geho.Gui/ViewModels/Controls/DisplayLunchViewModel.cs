@@ -1,6 +1,7 @@
 ﻿namespace Probel.Geho.Gui.ViewModels.Controls
 {
     using System.Collections.ObjectModel;
+    using System.Threading.Tasks;
 
     using Probel.Geho.Data.BusinessLogic;
     using Probel.Geho.Data.Dto;
@@ -36,9 +37,9 @@
 
         #region Methods
 
-        public override void Load()
+        public override async void Load()
         {
-            var week = this.Service.GetLunchTimes();
+            var week = await Task.Run(() => this.Service.GetLunchTimes());
             this.Week.Refill(week);
         }
 

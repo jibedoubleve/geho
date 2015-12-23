@@ -16,6 +16,7 @@
     using System.Windows.Shapes;
 
     using Data.Dto;
+    using Data.Entities;
 
     using Probel.Geho.Gui.ViewModels.Controls;
     using Probel.Mvvm.DataBinding;
@@ -36,21 +37,28 @@
 
         #region Methods
 
-        private void SelectionChanged_cb_End(object sender, SelectionChangedEventArgs e)
-        {
-            if (this.DataContext is MedicalExamViewModel && cb_End != null && cb_End.SelectedItem != null)
-            {
-                var vm = this.GetViewModel<MedicalExamViewModel>();
-                vm.EndOffset = (int)((ComboBoxItem)cb_End.SelectedItem).Tag;
-            }
-        }
-
         private void SelectionChanged_cb_Start(object sender, SelectionChangedEventArgs e)
         {
-            if (this.DataContext is MedicalExamViewModel && cb_End != null && cb_Start.SelectedItem != null)
+            if (this.DataContext is MedicalExamViewModel && cb_Start != null && cb_Start.SelectedItem != null)
             {
                 var vm = this.GetViewModel<MedicalExamViewModel>();
-                vm.StartOffset = (int)((ComboBoxItem)cb_Start.SelectedItem).Tag;
+                var when = (MomentDay)((ComboBoxItem)cb_Start.SelectedItem).Tag;
+                switch (when)
+                {
+                    case MomentDay.Morning:
+                        vm.StartOffset = 8;
+                        vm.EndOffset = 12;
+                        break;
+                    case MomentDay.Afternoon:
+                        vm.StartOffset = 12;
+                        vm.EndOffset = 18;
+                        break;
+                    case MomentDay.AllDay:
+                        vm.StartOffset = 8;
+                        vm.EndOffset = 18;
+                        break;
+                    default:throw new NotSupportedException("This type of enumeration is not supported.");
+                }
             }
         }
 

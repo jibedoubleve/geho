@@ -18,11 +18,11 @@
     /// <summary>
     /// Interaction logic for DayCardView.xaml
     /// </summary>
-    public partial class DayView : UserControl
+    public partial class ManageDayView : UserControl
     {
         #region Constructors
 
-        public DayView()
+        public ManageDayView()
         {
             InitializeComponent();
         }

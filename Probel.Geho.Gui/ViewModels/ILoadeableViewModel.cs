@@ -3,6 +3,8 @@
     using System;
     using System.Threading.Tasks;
 
+    using Controls;
+
     using Mvvm.Gui;
 
     using Probel.Mvvm.DataBinding;
@@ -18,7 +20,7 @@
         #endregion Methods
     }
 
-    public abstract class LoadeableViewModel : ObservableObject, ILoadeableViewModel
+    public abstract class LoadeableViewModel : BaseViewModel, ILoadeableViewModel
     {
         #region Methods
 

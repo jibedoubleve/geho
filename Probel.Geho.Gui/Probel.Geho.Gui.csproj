@@ -91,24 +91,24 @@
       <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Probel.Mvvm, Version=2.0.6.0, Culture=neutral, PublicKeyToken=d511bfe47d53d783, processorArchitecture=MSIL">
-      <HintPath>..\packages\Probel.Mvvm.2.0.6\lib\net45\Probel.Mvvm.dll</HintPath>
+    <Reference Include="Probel.Mvvm, Version=2.1.1.3, Culture=neutral, PublicKeyToken=d511bfe47d53d783, processorArchitecture=MSIL">
+      <HintPath>..\packages\Probel.Mvvm.2.1.1.3\lib\net45\Probel.Mvvm.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="ReachFramework" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Reactive.Core, Version=2.0.20823.0, Culture=neutral, PublicKeyToken=f300afd708cefcd3, processorArchitecture=MSIL">
-      <HintPath>..\packages\Probel.Mvvm.2.0.6\lib\net45\System.Reactive.Core.dll</HintPath>
+    <Reference Include="System.Reactive.Core, Version=2.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rx-Core.2.2.5\lib\net45\System.Reactive.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Reactive.Interfaces, Version=2.0.20823.0, Culture=neutral, PublicKeyToken=f300afd708cefcd3, processorArchitecture=MSIL">
-      <HintPath>..\packages\Probel.Mvvm.2.0.6\lib\net45\System.Reactive.Interfaces.dll</HintPath>
+    <Reference Include="System.Reactive.Interfaces, Version=2.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rx-Interfaces.2.2.5\lib\net45\System.Reactive.Interfaces.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Reactive.Linq, Version=2.0.20823.0, Culture=neutral, PublicKeyToken=f300afd708cefcd3, processorArchitecture=MSIL">
-      <HintPath>..\packages\Probel.Mvvm.2.0.6\lib\net45\System.Reactive.Linq.dll</HintPath>
+    <Reference Include="System.Reactive.Linq, Version=2.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rx-Linq.2.2.5\lib\net45\System.Reactive.Linq.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Xml" />
@@ -122,6 +122,30 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="Xceed.Wpf.AvalonDock, Version=2.5.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.2.5\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Aero, Version=2.5.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.2.5\lib\net40\Xceed.Wpf.AvalonDock.Themes.Aero.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Metro, Version=2.5.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.2.5\lib\net40\Xceed.Wpf.AvalonDock.Themes.Metro.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.VS2010, Version=2.5.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.2.5\lib\net40\Xceed.Wpf.AvalonDock.Themes.VS2010.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.DataGrid, Version=2.5.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.2.5\lib\net40\Xceed.Wpf.DataGrid.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Toolkit, Version=2.5.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.2.5\lib\net40\Xceed.Wpf.Toolkit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -140,7 +164,11 @@
     <Compile Include="Converters\BoolToWhiteOrRedConverter.cs" />
     <Compile Include="Converters\StatusToColourConverter.cs" />
     <Compile Include="Converters\StringToVisibilityConverter.cs" />
+    <Compile Include="Runtime\Context.cs" />
+    <Compile Include="Tools\ErrorHandler.cs" />
+    <Compile Include="Tools\StatusWriter.cs" />
     <Compile Include="ViewModels\Controls\ActivityListViewModel.cs" />
+    <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\Controls\BusyEducatorViewModel.cs" />
     <Compile Include="ViewModels\Controls\DisplayDayViewModel.cs" />
     <Compile Include="ViewModels\Controls\DisplayLunchViewModel.cs" />
@@ -148,13 +176,14 @@
     <Compile Include="ViewModels\Controls\DisplayOneDayViewModel.cs" />
     <Compile Include="ViewModels\Controls\DisplayWeekViewModel.cs" />
     <Compile Include="ViewModels\Controls\DisplayGroupViewModel.cs" />
-    <Compile Include="ViewModels\Controls\DayViewModel.cs" />
-    <Compile Include="ViewModels\Controls\GroupDayViewModel.cs" />
+    <Compile Include="ViewModels\Controls\ManageDayViewModel.cs" />
+    <Compile Include="ViewModels\Controls\ManageGroupDayViewModel.cs" />
     <Compile Include="ViewModels\Controls\LunchManagementViewModel.cs" />
     <Compile Include="ViewModels\Controls\MedicalExamViewModel.cs" />
     <Compile Include="ViewModels\Controls\PersonFlatBusyViewModel.cs" />
+    <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\ScheduleDisplayViewModel.cs" />
-    <Compile Include="ViewModels\ScheduleViewModel.cs" />
+    <Compile Include="ViewModels\ScheduleManagerViewModel.cs" />
     <Compile Include="Views\Controls\ActivityListView.xaml.cs">
       <DependentUpon>ActivityListView.xaml</DependentUpon>
     </Compile>
@@ -176,8 +205,8 @@
     <Compile Include="Views\Controls\DisplayWeekView.xaml.cs">
       <DependentUpon>DisplayWeekView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Controls\GroupDayView.xaml.cs">
-      <DependentUpon>GroupDayView.xaml</DependentUpon>
+    <Compile Include="Views\Controls\ManageGroupDayView.xaml.cs">
+      <DependentUpon>ManageGroupDayView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Controls\GroupListItemView.xaml.cs">
       <DependentUpon>GroupListItemView.xaml</DependentUpon>
@@ -200,14 +229,26 @@
     <Compile Include="Views\ScheduleDisplayView.xaml.cs">
       <DependentUpon>ScheduleDisplayView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\ScheduleView.xaml.cs">
-      <DependentUpon>ScheduleView.xaml</DependentUpon>
+    <Compile Include="Views\ScheduleManagerView.xaml.cs">
+      <DependentUpon>ScheduleManagerView.xaml</DependentUpon>
     </Compile>
     <DesignData Include="SampleData\AbsenceViewModelSampleData.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </DesignData>
     <DesignData Include="SampleData\PersonDtoSampleData1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </DesignData>
+    <DesignData Include="SampleData\DayViewModelSampleData.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </DesignData>
+    <DesignData Include="SampleData\DisplayOneDayViewModelSampleData.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </DesignData>
+    <DesignData Include="SampleData\DisplayGroupViewModelSampleData.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </DesignData>
@@ -231,7 +272,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Controls\DayView.xaml">
+    <Page Include="Views\Controls\ManageDayView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -255,7 +296,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Controls\GroupDayView.xaml">
+    <Page Include="Views\Controls\ManageGroupDayView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -344,8 +385,8 @@
     <Compile Include="Views\Controls\ActivityView.xaml.cs">
       <DependentUpon>ActivityView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Controls\DayView.xaml.cs">
-      <DependentUpon>DayView.xaml</DependentUpon>
+    <Compile Include="Views\Controls\ManageDayView.xaml.cs">
+      <DependentUpon>ManageDayView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Controls\GroupView.xaml.cs">
       <DependentUpon>GroupView.xaml</DependentUpon>
@@ -376,7 +417,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\ScheduleView.xaml">
+    <Page Include="Views\ScheduleManagerView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

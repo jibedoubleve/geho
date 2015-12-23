@@ -25,6 +25,7 @@
         #endregion Constructors
 
         #region Methods
+
         /// <summary>
         /// Remove persons from groups in day during the absence. In other words,
         /// in the time table, the absent person won't appear.

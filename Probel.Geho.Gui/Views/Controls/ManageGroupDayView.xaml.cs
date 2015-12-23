@@ -7,11 +7,11 @@
     /// <summary>
     /// Interaction logic for GroupDayView.xaml
     /// </summary>
-    public partial class GroupDayView : UserControl
+    public partial class ManageGroupDayView : UserControl
     {
         #region Constructors
 
-        public GroupDayView()
+        public ManageGroupDayView()
         {
             InitializeComponent();
         }

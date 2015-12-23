@@ -2,6 +2,7 @@
 {
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
+    using System.Threading.Tasks;
     using System.Windows.Input;
 
     using Data.InMemoryQuery;
@@ -12,6 +13,10 @@
     using Probel.Geho.Data.BusinessLogic;
     using Probel.Geho.Data.Dto;
 
+    using Properties;
+
+    using Tools;
+
     public class MedicalExamViewModel : LoadeableViewModel
     {
         #region Fields
@@ -21,7 +26,7 @@
 
         private AbsenceDto absenceToAdd;
         private IEnumerable<PersonDto> bufferPersons = new List<PersonDto>();
-        private int endOffset = 18;
+        private int endOffset = 12;
         private bool filterEducator;
         private int startOffset = 8;
 
@@ -31,7 +36,7 @@
 
         public MedicalExamViewModel(IHrService service)
         {
-            this.addAbsenceCommand = new RelayCommand(AddAbsence, CanAddPerson);
+            this.addAbsenceCommand = new RelayCommand(AddAbsence, CanAddAbsence);
             this.MedicalExams = new ObservableCollection<AbsenceViewModel>();
             this.FilteredPersons = new ObservableCollection<PersonDto>();
             this.AbsenceToAdd = new AbsenceDto();
@@ -107,16 +112,17 @@
 
         #region Methods
 
-        public override void Load()
+        public override async void Load()
         {
-            this.bufferPersons = this.Service.GetPersons();
+            this.bufferPersons = await Task.Run(() => this.Service.GetPersons());
             this.FilterEducator = false;
-            var me = this.Service.GetAbsences(isPresent: true);
+            var me = await Task.Run(() => this.Service.GetAbsences(isPresent: true));
             this.MedicalExams.Refill(AbsenceViewModel.ToViewModels(me, Service, this));
         }
 
         private void AddAbsence()
         {
+            this.AbsenceToAdd.End = this.AbsenceToAdd.Start;
             this.AbsenceToAdd.Start = this.AbsenceToAdd.Start.Date.AddHours(this.StartOffset);
             this.AbsenceToAdd.End = this.AbsenceToAdd.End.Date.AddHours(this.EndOffset);
             this.AbsenceToAdd.IsPresent = true;
@@ -127,11 +133,12 @@
                 this.Service.CreateAbsence(this.AbsenceToAdd);
                 this.AbsenceToAdd = new AbsenceDto();
                 this.Load();
+                this.StatusBar.Info(Messages.Msg_MedicalExamAdded);
             }
             else { ViewService.MessageBox.Warning(status.Error); }
         }
 
-        private bool CanAddPerson()
+        private bool CanAddAbsence()
         {
             return this.AbsenceToAdd.Person != null
                 && !string.IsNullOrWhiteSpace(this.AbsenceToAdd.Person.Name);

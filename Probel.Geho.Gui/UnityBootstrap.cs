@@ -6,6 +6,8 @@
     using Probel.Geho.Data.BusinessLogic.Hr;
     using Probel.Geho.Data.BusinessLogic.Schedule;
 
+    using Runtime;
+
     class UnityBootstrap
     {
         #region Fields
@@ -29,6 +31,7 @@
         {
             Container.RegisterType<IHrService, HrService>();
             Container.RegisterType<IScheduleService, ScheduleService>();
+            Container.RegisterInstance<IContext>(new Context());
         }
 
         #endregion Methods

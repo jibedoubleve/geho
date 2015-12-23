@@ -6,10 +6,19 @@
              xmlns:local="clr-namespace:Probel.Geho.Gui.Views"
              
              xmlns:ctrl="clr-namespace:Probel.Geho.Gui.Views.Controls"
+             xmlns:conv="clr-namespace:Probel.Geho.Gui.Converters"
              
-             mc:Ignorable="d">
+             mc:Ignorable="d" d:DataContext="{d:DesignData /SampleData/DisplayOneDayViewModelSampleData.xaml}">
+    <UserControl.Resources>
+        <conv:DayOfWeekToStringConverter x:Key="DayOfWeekToStringConverter"/>
+    </UserControl.Resources>
     <Grid>
-        <ItemsControl ItemsSource="{Binding Groups}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="{Binding DayOfWeek, Converter={StaticResource DayOfWeekToStringConverter}}" Foreground="#FF293955" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="26.667" FontWeight="Bold"/>
+        <ItemsControl Grid.Row="1" ItemsSource="{Binding Groups}">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
                     <StackPanel Orientation="Horizontal"/>

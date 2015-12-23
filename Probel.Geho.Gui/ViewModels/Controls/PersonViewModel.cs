@@ -10,7 +10,7 @@
     using Probel.Mvvm.DataBinding;
     using Probel.Mvvm.Gui;
 
-    public class PersonViewModel : ObservableObject
+    public class PersonViewModel : BaseViewModel
     {
         #region Fields
 
@@ -118,6 +118,7 @@
                 {
                     this.Service.RemovePerson(this.Person);
                     this.ParentVm.Load();
+                    this.StatusBar.InfoFormat(Messages.Msg_PersonDeleted, this.Person.Name, this.Person.Surname);
                 }
             }
         }
@@ -125,6 +126,7 @@
         private void Edit()
         {
             this.Service.UpdatePerson(this.Person);
+            StatusBar.Info(Messages.Msg_UpdateDone);
         }
 
         #endregion Methods

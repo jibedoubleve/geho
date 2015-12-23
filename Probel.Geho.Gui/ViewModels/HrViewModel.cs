@@ -3,18 +3,22 @@
     using System;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
-    using System.Linq;
     using System.Windows.Input;
 
+    using Models;
+
+    using Mvvm.Gui.PostOffice;
+
     using Probel.Geho.Data.BusinessLogic;
-    using Probel.Geho.Data.BusinessLogic.BusinessRules;
     using Probel.Geho.Data.Dto;
     using Probel.Geho.Data.InMemoryQuery;
-    using Probel.Geho.Gui.Properties;
-    using Probel.Geho.Gui.Tools;
     using Probel.Geho.Gui.ViewModels.Controls;
     using Probel.Mvvm.DataBinding;
     using Probel.Mvvm.Gui;
+
+    using Properties;
+
+    using Tools;
 
     public class HrViewModel : LoadeableViewModel
     {
@@ -185,6 +189,7 @@
 
         public override void Load()
         {
+            this.StatusBar.Loading();
             this.MedicalExamViewModel.Load();
             bufferPersons = this.Service.GetPersons();
 
@@ -205,6 +210,7 @@
             var vm = new LunchManagementViewModel(this.Service);
             vm.Load();
             this.LunchManagementViewModel = vm;
+            this.StatusBar.Ready();
         }
 
         private void AddAbsence()
@@ -218,8 +224,9 @@
                 this.Service.CreateAbsence(this.AbsenceToAdd);
                 this.AbsenceToAdd = new AbsenceDto();
                 this.Load();
+                this.StatusBar.Info(Messages.Msg_AbsenceCreated);
             }
-            else { ViewService.MessageBox.Warning(status.Error); }
+            else { ErrorHandler.HandleWarning(status.Error); }
         }
 
         private void AddPerson()
@@ -227,8 +234,12 @@
             using (WaitingCursor.While)
             {
                 this.Service.CreatePerson(this.PersonToAdd);
+                var name = this.PersonToAdd.Name;
+                var surname = this.PersonToAdd.Surname;
+
                 this.PersonToAdd = new PersonDto();
                 this.Load();
+                this.StatusBar.InfoFormat(Messages.Msg_PersonAdded, name, surname);
             }
         }
 

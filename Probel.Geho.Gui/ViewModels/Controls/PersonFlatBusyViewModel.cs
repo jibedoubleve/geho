@@ -1,10 +1,13 @@
 ﻿namespace Probel.Geho.Gui.ViewModels.Controls
 {
     using System.Collections.Generic;
+    using System.Linq;
 
     using Probel.Geho.Data.BusinessLogic;
     using Probel.Geho.Data.Dto;
     using Probel.Mvvm.DataBinding;
+
+    using Properties;
 
     #region Enumerations
 
@@ -17,11 +20,11 @@
 
     #endregion Enumerations
 
-    public class PersonFlatBusyViewModel : ObservableObject
+    public class PersonFlatBusyViewModel : BaseViewModel
     {
         #region Fields
 
-        private readonly GroupDayViewModel ParentVm;
+        private readonly ManageGroupDayViewModel ParentVm;
         private readonly IScheduleService Service;
         private readonly PersonDto _person;
 
@@ -33,7 +36,7 @@
 
         #region Constructors
 
-        public PersonFlatBusyViewModel(PersonDto person, IScheduleService service, GroupDayViewModel parentVm)
+        public PersonFlatBusyViewModel(PersonDto person, IScheduleService service, ManageGroupDayViewModel parentVm)
         {
             this.Service = service;
             this._person = person;
@@ -137,10 +140,10 @@
 
         #region Methods
 
-        public static IEnumerable<PersonFlatBusyViewModel> ToViewModels(IEnumerable<PersonDto> people, IScheduleService service, GroupDayViewModel parentVm)
+        public static IEnumerable<PersonFlatBusyViewModel> ToViewModels(IEnumerable<PersonDto> people, IScheduleService service, ManageGroupDayViewModel parentVm)
         {
             var list = new List<PersonFlatBusyViewModel>();
-            foreach (var person in people)
+            foreach (var person in people.OrderBy(e => e.Name).ThenBy(e => e.Surname))
             {
                 list.Add(new PersonFlatBusyViewModel(person, service, parentVm));
             }
@@ -151,6 +154,9 @@
         {
             this.ParentVm.Save();
             this.ParentVm.ParentVm.MarkBusyEducators();
+            this.StatusBar.InfoFormat(IsSelected ? Messages.Msg_AddPersonInGroup : Messages.Msg_RemovePersonFromGroup
+                , this.Name
+                , this.Surname);
         }
 
         public void SetSelected()

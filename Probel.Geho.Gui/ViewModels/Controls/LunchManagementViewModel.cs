@@ -17,6 +17,10 @@
     using Probel.Geho.Data.Dto;
     using Probel.Mvvm.DataBinding;
 
+    using Properties;
+
+    using Tools;
+
     public class LunchManagementViewModel : LoadeableViewModel
     {
         #region Fields
@@ -150,8 +154,12 @@
                 UpdateLunch(DayOfWeek.Friday, Friday);
 
                 this.Service.UpdateLunch(Week);
+                this.StatusBar.Info(Messages.Msg_LunchesUpdated);
             }
-            catch (Exception ex) { ViewService.MessageBox.Error(ex.ToString()); }
+            catch (Exception ex)
+            {
+                ErrorHandler.HandleError(ex);
+            }
         }
 
         private void UpdateLunch(DayOfWeek day, IEnumerable<PersonModel> people)

@@ -67,6 +67,7 @@
                 {
                     this.Service.RemoveActivity(this.Activity);
                     this.ParentVm.Load();
+                    this.StatusBar.InfoFormat(Messages.Msg_ActivityDeleted, this.Activity.Name);
                 }
             }
         }

@@ -17,6 +17,11 @@
             set;
         }
 
+        public int Order
+        {
+            get; set;
+        }
+
         public IList<PersonDto> People
         {
             get;

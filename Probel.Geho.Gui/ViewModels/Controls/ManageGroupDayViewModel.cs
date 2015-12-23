@@ -12,13 +12,13 @@
     using Probel.Geho.Gui.Tools;
     using Probel.Mvvm.DataBinding;
 
-    public class GroupDayViewModel : LoadeableViewModel
+    public class ManageGroupDayViewModel : LoadeableViewModel
     {
         #region Fields
 
-        public readonly DayViewModel ParentVm;
+        public readonly GroupDto Group;
+        public readonly ManageDayViewModel ParentVm;
 
-        private readonly GroupDto Group;
         private readonly IScheduleService Service;
 
         private string errorMessageAfternoon;
@@ -30,7 +30,7 @@
 
         #region Constructors
 
-        public GroupDayViewModel(GroupDto group, IScheduleService service, DayViewModel parentVm)
+        public ManageGroupDayViewModel(GroupDto group, IScheduleService service, ManageDayViewModel parentVm)
         {
             this.Service = service;
             this.ParentVm = parentVm;
@@ -131,13 +131,13 @@
 
         #region Methods
 
-        public static IEnumerable<GroupDayViewModel> ToViewModel(IEnumerable<GroupDto> groups, IScheduleService srv, DayViewModel parentVm)
+        public static IEnumerable<ManageGroupDayViewModel> ToViewModel(IEnumerable<GroupDto> groups, IScheduleService srv, ManageDayViewModel parentVm)
         {
             if (srv == null) { throw new ArgumentNullException("srv"); }
-            var list = new List<GroupDayViewModel>();
+            var list = new List<ManageGroupDayViewModel>();
             foreach (var item in groups)
             {
-                var vm = new GroupDayViewModel(item, srv, parentVm);
+                var vm = new ManageGroupDayViewModel(item, srv, parentVm);
                 //vm.Load();
                 list.Add(vm);
             }

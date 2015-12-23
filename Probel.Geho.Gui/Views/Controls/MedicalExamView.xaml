@@ -7,6 +7,7 @@
              
              xmlns:t="clr-namespace:Probel.Geho.Gui.Properties"
              xmlns:System="clr-namespace:System;assembly=mscorlib"
+             xmlns:data="clr-namespace:Probel.Geho.Data.Entities;assembly=Probel.Geho.Data"
              
              mc:Ignorable="d" 
              d:DesignHeigh="500"  d:DesignWidth="300">
@@ -44,57 +45,22 @@
                 </DockPanel>
                 <DockPanel DockPanel.Dock="Top">
                     <TextBlock DockPanel.Dock="Left"  
-                               Text="{x:Static t:Messages.Lbl_From}"
+                               Text="{x:Static t:Messages.Lbl_Day}"
                                Style="{StaticResource TextBoxStyle}"/>
-                    <ComboBox x:Name="cb_Start" DockPanel.Dock="Right" Margin="5" Width="62"
-                                  SelectionChanged="SelectionChanged_cb_End">
-                        <ComboBoxItem Content="8:00" IsSelected="True">
+                    <ComboBox x:Name="cb_Start" DockPanel.Dock="Right" Margin="5" Width="89"
+                                  SelectionChanged="SelectionChanged_cb_Start">
+                        <ComboBoxItem Content="{x:Static t:Messages.Day_Morning}" IsSelected="True">
                             <ComboBoxItem.Tag>
-                                <System:Int32>8</System:Int32>
+                                <data:MomentDay>Morning</data:MomentDay>
                             </ComboBoxItem.Tag>
                         </ComboBoxItem>
-                        <ComboBoxItem Content="12:00">
+                        <ComboBoxItem Content="{x:Static t:Messages.Day_Afternoon}" >
                             <ComboBoxItem.Tag>
-                                <System:Int32>12</System:Int32>
-                            </ComboBoxItem.Tag>
-                        </ComboBoxItem>
-                        <ComboBoxItem Content="18:00">
-                            <ComboBoxItem.Tag>
-                                <System:Int32>18</System:Int32>
+                                <data:MomentDay>Afternoon</data:MomentDay>
                             </ComboBoxItem.Tag>
                         </ComboBoxItem>
                     </ComboBox>
-                    <TextBlock DockPanel.Dock="Right" Text="{x:Static t:Messages.Lbl_At}"
-                                   Margin="5" VerticalAlignment="Center"/>
                     <DatePicker DockPanel.Dock="Left" SelectedDate="{Binding AbsenceToAdd.Start}" FirstDayOfWeek="Monday"
-                                    Margin="5"/>
-                </DockPanel>
-                <DockPanel DockPanel.Dock="Top">
-                    <TextBlock DockPanel.Dock="Left"  
-                               Text="{x:Static t:Messages.Lbl_ToU}"
-                               Style="{StaticResource TextBoxStyle}"/>
-                    <ComboBox x:Name="cb_End" 
-                                  DockPanel.Dock="Right" Margin="5" Width="62"
-                                  SelectionChanged="SelectionChanged_cb_End">
-                        <ComboBoxItem Content="8:00">
-                            <ComboBoxItem.Tag>
-                                <System:Int32>8</System:Int32>
-                            </ComboBoxItem.Tag>
-                        </ComboBoxItem>
-                        <ComboBoxItem Content="12:00">
-                            <ComboBoxItem.Tag>
-                                <System:Int32>12</System:Int32>
-                            </ComboBoxItem.Tag>
-                        </ComboBoxItem>
-                        <ComboBoxItem Content="18:00" IsSelected="True">
-                            <ComboBoxItem.Tag>
-                                <System:Int32>18</System:Int32>
-                            </ComboBoxItem.Tag>
-                        </ComboBoxItem>
-                    </ComboBox>
-                    <TextBlock DockPanel.Dock="Right" Text="{x:Static t:Messages.Lbl_At}"
-                                   Margin="5" VerticalAlignment="Center"/>
-                    <DatePicker DockPanel.Dock="Left" SelectedDate="{Binding AbsenceToAdd.End}" FirstDayOfWeek="Monday"
                                     Margin="5"/>
                 </DockPanel>
                 <Button DockPanel.Dock="Top"

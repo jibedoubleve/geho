@@ -6,6 +6,7 @@
       
       xmlns:t="clr-namespace:Probel.Geho.Gui.Properties"
       xmlns:ctrl="clr-namespace:Probel.Geho.Gui.Views.Controls"
+      xmlns:tk="http://schemas.xceed.com/wpf/xaml/toolkit" 
       
       mc:Ignorable="d" 
       d:DesignHeight="720" d:DesignWidth="1280">
@@ -60,6 +61,14 @@
                         <TextBox DockPanel.Dock="Right" 
                                  Text="{Binding SelectedGroup.Group.Name, UpdateSourceTrigger=PropertyChanged}"/>
                     </DockPanel>
+                    <DockPanel DockPanel.Dock="Top">
+                        <TextBlock DockPanel.Dock="Left"
+                                   Text="{x:Static t:Messages.Lbl_Order}"
+                               Style="{StaticResource TextBoxStyle}"/>
+                        <tk:IntegerUpDown DockPanel.Dock="Right" 
+                                          Text="{Binding SelectedGroup.Group.Order, UpdateSourceTrigger=PropertyChanged}"
+                                          Margin="5"/>
+                    </DockPanel>                               
                     <Button DockPanel.Dock="Bottom"
                         Content="{x:Static t:Messages.Btn_Update}"
                         Command="{Binding UpdateGroupCommand}"/>

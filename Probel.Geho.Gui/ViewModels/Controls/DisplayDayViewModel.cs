@@ -24,11 +24,11 @@
             var groups = from d in days
                          group d by d.Group into g
                          select new DisplayGroupViewModel(
-                             g.Key.Name
+                             g.Key
                              , g.Where(e => e.IsMorning).Select(f => f.People).FirstOrDefault()
                              , g.Where(e => !e.IsMorning).Select(f => f.People).FirstOrDefault());
 
-            this.Groups = new ObservableCollection<DisplayGroupViewModel>(groups);
+            this.Groups = new ObservableCollection<DisplayGroupViewModel>(groups.OrderBy(e => e.GroupOrder));
             this.DayOfWeek = dayOfWeek;
         }
 

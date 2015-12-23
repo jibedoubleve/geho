@@ -4,10 +4,18 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         
         xmlns:t="clr-namespace:Probel.Geho.Gui.Properties"
-        xmlns:s="clr-namespace:Probel.Geho.Gui.Tools"        
-        Icon="/Probel.Geho.Gui;component/App.ico"
+        xmlns:s="clr-namespace:Probel.Geho.Gui.Tools"   
+        xmlns:conv="clr-namespace:Probel.Geho.Gui.Converters"
+        xmlns:vm="clr-namespace:Probel.Geho.Gui.ViewModels"
         
+        Icon="/Probel.Geho.Gui;component/App.ico"
         Title="{x:Static t:Messages.MainView}">
+    <Window.DataContext>
+        <vm:MainViewModel/>
+    </Window.DataContext>
+    <Window.Resources>
+        <conv:StatusToImageConverter x:Key="StatusToImageConverter"/>
+    </Window.Resources>
     <Window.Background>
         <ImageBrush ImageSource="/Probel.Geho.Gui;component/Images/background.PNG"
                     Viewport="0,0,24,24"
@@ -16,9 +24,9 @@
                     TileMode="Tile"/>
     </Window.Background>
 
-    <DockPanel x:Name="toolboxTray"
+    <Grid x:Name="toolboxTray"
                        DockPanel.Dock="Top">
-        <DockPanel.Resources>
+        <Grid.Resources>
             <Style TargetType="Button">
                 <Setter Property="Background" Value="{x:Null}"/>
                 <Setter Property="BorderBrush" Value="{x:Null}"/>
@@ -27,9 +35,13 @@
                 <Setter Property="Width" Value="25"/>
                 <Setter Property="Width" Value="25"/>
             </Style>
-        </DockPanel.Resources>
-        <Border DockPanel.Dock="Top"
-                   Background="{StaticResource ToolBarTrayBackground}">
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Border Background="{StaticResource ToolBarTrayBackground}">
             <ToolBar x:Name="mainToolbar"
                          ToolBarTray.IsLocked="True"
                          Background="{StaticResource ToolBarTrayBackground}">
@@ -75,7 +87,17 @@
                 </Button>
             </ToolBar>
         </Border>
-        <Frame x:Name="mainFrame"
-             NavigationUIVisibility="Hidden"/>
-    </DockPanel>
+        <Frame Grid.Row="1"
+               x:Name="mainFrame"
+               NavigationUIVisibility="Hidden"/>
+        <StatusBar x:Name="statusBar" Grid.Row="2"
+                   Background="#FF007ACC">
+            <StatusBarItem HorizontalAlignment="Left" Background="#FF007ACC">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="{Binding UiMessage, Converter={StaticResource StatusToImageConverter}}" Height="15" Width="15" Margin="0,0,10,0"/>
+                    <TextBlock Text="{Binding UiMessage.Message}" Foreground="White"/>
+                </StackPanel>
+            </StatusBarItem>
+        </StatusBar>
+    </Grid>
 </Window>

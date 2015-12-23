@@ -17,6 +17,8 @@
     using Probel.Geho.Gui.ViewModels.Controls;
     using Probel.Mvvm.DataBinding;
 
+    using Properties;
+
     public class GroupHrViewModel : LoadeableViewModel
     {
         #region Fields
@@ -166,6 +168,7 @@
 
         public override void Load()
         {
+            this.StatusBar.Loading();
             var g = this.Service.GetGroups();
             this.Groups.Refill(GroupViewModel.ToViewModels(g, Service, this));
 
@@ -182,6 +185,7 @@
             this.BeneficiariesInActivity.Clear();
             this.EducatorsInActivity.Clear();
             this.BeneficiariesInGroup.Clear();
+            this.StatusBar.Ready();
         }
 
         private void AddActivity()
@@ -189,15 +193,24 @@
             using (WaitingCursor.While)
             {
                 this.Service.CreateActivity(this.ActivityToAdd);
+                var name = this.ActivityToAdd.Name;
+                this.ActivityToAdd = new ActivityDto()
+                {
+                    DayOfWeek = ActivityToAdd.DayOfWeek,
+                    MomentDay = ActivityToAdd.MomentDay
+                };
                 this.Load();
+                this.StatusBar.InfoFormat(Messages.Msg_ActivityCreated, name);
             }
         }
 
         private void AddGroup()
         {
             this.Service.CreateGroup(GroupToAdd);
+            var name = GroupToAdd.Name;
             this.GroupToAdd = new GroupDto();
             this.Load();
+            this.StatusBar.InfoFormat(Messages.Msg_GroupCreated, name);
         }
 
         private bool CanAddActivity()
@@ -273,6 +286,7 @@
                 this.EducatorsInActivity.Clear();
                 this.BeneficiariesInActivity.Clear();
                 this.Load();
+                this.StatusBar.Info(Messages.Msg_UpdateDone);
             }
         }
 
@@ -281,11 +295,12 @@
             using (WaitingCursor.While)
             {
                 var people = (from p in this.BeneficiariesInGroup
-                               where p.IsSelected
-                               select p.Person).ToList();
+                              where p.IsSelected
+                              select p.Person).ToList();
                 this.SelectedGroup.Group.People = people;
                 this.Service.UpdateGroup(this.SelectedGroup.Group);
                 this.Load();
+                this.StatusBar.Info(Messages.Msg_UpdateDone);
             }
         }
 

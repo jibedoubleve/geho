@@ -13,6 +13,7 @@
         {
             return (from i in list
                     where !i.IsEducator
+                    orderby i.Name, i.Surname
                     select i).ToList();
         }
 
@@ -27,6 +28,7 @@
         {
             return (from i in list
                     where i.IsEducator
+                    orderby i.Name, i.Surname
                     select i).ToList();
         }
 

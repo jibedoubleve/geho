@@ -22,7 +22,8 @@
                           ItemsSource="{Binding Mondays}"
                           ItemStringFormat="D"
                           Margin="5"
-                          MinWidth="200" SelectionChanged="SelectionChanged_cb_Dates"/>
+                          MinWidth="200"
+                          SelectedItem="{Binding SelectedDate}"/>
                 <DockPanel DockPanel.Dock="Right">
                     <Button DockPanel.Dock="Right" Click="Click_Print">
                         <Button.Content>
@@ -47,15 +48,15 @@
                 </DockPanel>
                 <Grid/>
             </DockPanel>
-            <TabControl Background="#FF293955">
+            <TabControl Background="#FF293955" SelectionChanged="TabControl_SelectionChanged">
                 <TabItem x:Name="tab_week" Header="{x:Static t:Messages.Tab_Week}">
                     <ScrollViewer ScrollViewer.HorizontalScrollBarVisibility="Auto"
                                   ScrollViewer.VerticalScrollBarVisibility="Auto">
                         <ctrl:DisplayWeekView x:Name="uc_week" DataContext="{Binding DisplayWeekViewModel}"/>
                     </ScrollViewer>
                 </TabItem>
-                <TabItem  x:Name="tab_monday"
-                          Header="{x:Static t:Messages.Tab_Monday}">
+                <TabItem x:Name="tab_monday"
+                         Header="{x:Static t:Messages.Tab_Monday}">
                     <ScrollViewer ScrollViewer.HorizontalScrollBarVisibility="Auto"
                                   ScrollViewer.VerticalScrollBarVisibility="Auto">
                         <ctrl:DisplayOneDayView x:Name="uc_Monday" DataContext="{Binding Monday}"/>

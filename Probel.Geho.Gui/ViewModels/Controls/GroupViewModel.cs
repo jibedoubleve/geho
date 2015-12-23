@@ -14,7 +14,7 @@
     using Probel.Mvvm.DataBinding;
     using Probel.Mvvm.Gui;
 
-    public class GroupViewModel : ObservableObject
+    public class GroupViewModel : BaseViewModel
     {
         #region Fields
 
@@ -63,7 +63,7 @@
         public static IEnumerable<GroupViewModel> ToViewModels(IEnumerable<GroupDto> g, IHrService srv, ILoadeableViewModel parentVm)
         {
             var list = new List<GroupViewModel>();
-            foreach (var item in g)
+            foreach (var item in g.OrderBy(e => e.Order))
             {
                 list.Add(new GroupViewModel(srv, parentVm) { Group = item, });
             }
@@ -85,6 +85,7 @@
                 {
                     this.Service.RemoveGroup(this.Group);
                     this.ParentVm.Load();
+                    this.StatusBar.InfoFormat(Messages.Msg_GroupDeleted, this.Group.Name);
                 }
             }
         }

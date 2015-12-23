@@ -3,28 +3,32 @@
     using System;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
+    using System.Linq;
 
     using Probel.Geho.Data.BusinessLogic;
     using Probel.Geho.Data.Dto;
     using Probel.Mvvm.DataBinding;
 
-    public class DayViewModel : LoadeableViewModel
+    using Runtime;
+
+    public class ManageDayViewModel : LoadeableViewModel
     {
         #region Fields
 
-        public readonly ScheduleViewModel ParentVm;
+        public readonly ScheduleManagerViewModel ParentVm;
 
         private readonly IEnumerable<GroupDto> GroupsDto;
         private readonly IScheduleService Service;
 
         private DateTime currentDay;
         private int numberOfEducToShow;
+        private ManageGroupDayViewModel selectedGroup;
 
         #endregion Fields
 
         #region Constructors
 
-        public DayViewModel(DateTime d, IEnumerable<GroupDto> groups, IScheduleService service, ScheduleViewModel parentVm)
+        public ManageDayViewModel(DateTime d, IEnumerable<GroupDto> groups, IScheduleService service, ScheduleManagerViewModel parentVm)
         {
             if (parentVm == null) { throw new ArgumentNullException("parentVm"); }
             if (service == null) { throw new ArgumentNullException("service"); }
@@ -33,7 +37,7 @@
             this.CurrentDay = d;
             this.Service = service;
             this.GroupsDto = groups;
-            this.Groups = new ObservableCollection<GroupDayViewModel>();
+            this.Groups = new ObservableCollection<ManageGroupDayViewModel>();
         }
 
         #endregion Constructors
@@ -50,7 +54,7 @@
             }
         }
 
-        public ObservableCollection<GroupDayViewModel> Groups
+        public ObservableCollection<ManageGroupDayViewModel> Groups
         {
             get;
             private set;
@@ -66,22 +70,44 @@
             }
         }
 
+        public ManageGroupDayViewModel SelectedGroup
+        {
+            get { return this.selectedGroup; }
+            set
+            {
+                this.selectedGroup = value;
+                this.ParentVm.AppContext.WeekToManageSelectedGroup = value.Group.Id;
+                this.OnPropertyChanged(() => SelectedGroup);
+            }
+        }
+
         #endregion Properties
 
         #region Methods
 
         public override void Load()
         {
-            var grps = GroupDayViewModel.ToViewModel(GroupsDto, Service, this);
+            var grps = ManageGroupDayViewModel.ToViewModel(GroupsDto, Service, this);
 
             foreach (var g in grps) { g.Load(); }
 
-            this.Groups = new ObservableCollection<GroupDayViewModel>(grps);
+            this.Groups = new ObservableCollection<ManageGroupDayViewModel>(grps);
+            this.SelectGroup();
         }
 
         public void MarkBusyEducators()
         {
             foreach (var item in Groups) { item.MarkEducatorsBusyInOtherGroups(); }
+        }
+
+        private void SelectGroup()
+        {
+            if (this.Groups.Count == 0) { return; }
+            var sg = (from g in this.Groups
+                      where g.Group.Id == ParentVm.AppContext.WeekToManageSelectedGroup
+                      select g).FirstOrDefault();
+
+            if (sg != null) { this.SelectedGroup = sg; }
         }
 
         #endregion Methods

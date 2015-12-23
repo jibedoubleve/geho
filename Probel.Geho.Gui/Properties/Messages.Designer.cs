@@ -595,6 +595,24 @@ namespace Probel.Geho.Gui.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ordre:.
+        /// </summary>
+        public static string Lbl_Order {
+            get {
+                return ResourceManager.GetString("Lbl_Order", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Semaine à afficher:.
+        /// </summary>
+        public static string Lbl_SelectDate {
+            get {
+                return ResourceManager.GetString("Lbl_SelectDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Moment:.
         /// </summary>
         public static string Lbl_Span {
@@ -636,6 +654,51 @@ namespace Probel.Geho.Gui.Properties {
         public static string MainView {
             get {
                 return ResourceManager.GetString("MainView", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Absence créée..
+        /// </summary>
+        public static string Msg_AbsenceCreated {
+            get {
+                return ResourceManager.GetString("Msg_AbsenceCreated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Absence/ visite médicale supprimée..
+        /// </summary>
+        public static string Msg_AbsenceDeleted {
+            get {
+                return ResourceManager.GetString("Msg_AbsenceDeleted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Activité &apos;{0}&apos; créée..
+        /// </summary>
+        public static string Msg_ActivityCreated {
+            get {
+                return ResourceManager.GetString("Msg_ActivityCreated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Activité &apos;{0}&apos; supprimé..
+        /// </summary>
+        public static string Msg_ActivityDeleted {
+            get {
+                return ResourceManager.GetString("Msg_ActivityDeleted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} {1} a été ajouté au groupe.
+        /// </summary>
+        public static string Msg_AddPersonInGroup {
+            get {
+                return ResourceManager.GetString("Msg_AddPersonInGroup", resourceCulture);
             }
         }
         
@@ -694,11 +757,74 @@ namespace Probel.Geho.Gui.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Groupe &apos;{0}&apos; créé..
+        /// </summary>
+        public static string Msg_GroupCreated {
+            get {
+                return ResourceManager.GetString("Msg_GroupCreated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Groupe &apos;{0}&apos; supprimé..
+        /// </summary>
+        public static string Msg_GroupDeleted {
+            get {
+                return ResourceManager.GetString("Msg_GroupDeleted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Chargement....
+        /// </summary>
+        public static string Msg_Loading {
+            get {
+                return ResourceManager.GetString("Msg_Loading", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Temps de midi mis à jour..
+        /// </summary>
+        public static string Msg_LunchesUpdated {
+            get {
+                return ResourceManager.GetString("Msg_LunchesUpdated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Visite médicale créée..
+        /// </summary>
+        public static string Msg_MedicalExamAdded {
+            get {
+                return ResourceManager.GetString("Msg_MedicalExamAdded", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Prêt..
         /// </summary>
         public static string Msg_NoMessage {
             get {
                 return ResourceManager.GetString("Msg_NoMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} {1} a été créé..
+        /// </summary>
+        public static string Msg_PersonAdded {
+            get {
+                return ResourceManager.GetString("Msg_PersonAdded", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} {1} a été suprimé..
+        /// </summary>
+        public static string Msg_PersonDeleted {
+            get {
+                return ResourceManager.GetString("Msg_PersonDeleted", resourceCulture);
             }
         }
         
@@ -712,11 +838,38 @@ namespace Probel.Geho.Gui.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Prêt..
+        /// </summary>
+        public static string Msg_Ready {
+            get {
+                return ResourceManager.GetString("Msg_Ready", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} {1} a été supprimé du groupe.
+        /// </summary>
+        public static string Msg_RemovePersonFromGroup {
+            get {
+                return ResourceManager.GetString("Msg_RemovePersonFromGroup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to C&apos;est un stagiaire.
         /// </summary>
         public static string Msg_ThisIsATrainee {
             get {
                 return ResourceManager.GetString("Msg_ThisIsATrainee", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mise à jour effectuée..
+        /// </summary>
+        public static string Msg_UpdateDone {
+            get {
+                return ResourceManager.GetString("Msg_UpdateDone", resourceCulture);
             }
         }
         

@@ -357,4 +357,55 @@ Vérifiez:
   <data name="Header_ManageMedicalExams" xml:space="preserve">
     <value>Gérer visites médicales</value>
   </data>
+  <data name="Msg_Ready" xml:space="preserve">
+    <value>Prêt.</value>
+  </data>
+  <data name="Msg_AbsenceCreated" xml:space="preserve">
+    <value>Absence créée.</value>
+  </data>
+  <data name="Msg_PersonAdded" xml:space="preserve">
+    <value>{0} {1} a été créé.</value>
+  </data>
+  <data name="Msg_Loading" xml:space="preserve">
+    <value>Chargement...</value>
+  </data>
+  <data name="Msg_LunchesUpdated" xml:space="preserve">
+    <value>Temps de midi mis à jour.</value>
+  </data>
+  <data name="Msg_MedicalExamAdded" xml:space="preserve">
+    <value>Visite médicale créée.</value>
+  </data>
+  <data name="Msg_AbsenceDeleted" xml:space="preserve">
+    <value>Absence/ visite médicale supprimée.</value>
+  </data>
+  <data name="Msg_ActivityCreated" xml:space="preserve">
+    <value>Activité '{0}' créée.</value>
+  </data>
+  <data name="Msg_ActivityDeleted" xml:space="preserve">
+    <value>Activité '{0}' supprimé.</value>
+  </data>
+  <data name="Msg_GroupCreated" xml:space="preserve">
+    <value>Groupe '{0}' créé.</value>
+  </data>
+  <data name="Msg_GroupDeleted" xml:space="preserve">
+    <value>Groupe '{0}' supprimé.</value>
+  </data>
+  <data name="Msg_PersonDeleted" xml:space="preserve">
+    <value>{0} {1} a été suprimé.</value>
+  </data>
+  <data name="Msg_UpdateDone" xml:space="preserve">
+    <value>Mise à jour effectuée.</value>
+  </data>
+  <data name="Msg_AddPersonInGroup" xml:space="preserve">
+    <value>{0} {1} a été ajouté au groupe</value>
+  </data>
+  <data name="Msg_RemovePersonFromGroup" xml:space="preserve">
+    <value>{0} {1} a été supprimé du groupe</value>
+  </data>
+  <data name="Lbl_Order" xml:space="preserve">
+    <value>Ordre:</value>
+  </data>
+  <data name="Lbl_SelectDate" xml:space="preserve">
+    <value>Semaine à afficher:</value>
+  </data>
 </root>

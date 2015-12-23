@@ -11,7 +11,7 @@
     using Probel.Geho.Data.InMemoryQuery;
     using Probel.Mvvm.DataBinding;
 
-    public class ActivityCardViewModel : ObservableObject
+    public class ActivityCardViewModel : BaseViewModel
     {
         #region Fields
 

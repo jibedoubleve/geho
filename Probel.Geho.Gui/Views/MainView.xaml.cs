@@ -10,6 +10,8 @@
     using Probel.Geho.Gui.Views;
     using Probel.Mvvm.Gui;
 
+    using Runtime;
+
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
@@ -43,7 +45,7 @@
                 var view = new GroupHrView(vm);
                 this.mainFrame.Navigate(view);
             }
-            catch (Exception ex) { ViewService.MessageBox.Error(ex.ToString()); }
+            catch (Exception ex) { new ErrorHandler().HandleError(ex); }
         }
 
         private async void Click_HrManagement(object sender, RoutedEventArgs e)
@@ -56,7 +58,7 @@
                 var view = new HrView(vm);
                 this.mainFrame.Navigate(view);
             }
-            catch (Exception ex) { ViewService.MessageBox.Error(ex.ToString()); }
+            catch (Exception ex) { new ErrorHandler().HandleError(ex); }
         }
 
         private void Click_ScheduleDisplay(object sender, RoutedEventArgs e)
@@ -64,22 +66,25 @@
             try
             {
                 var vm = Ioc.Resolve<ScheduleDisplayViewModel>();
-                var view = new ScheduleDisplayView(vm);
+                var ctx = Ioc.Resolve<IContext>();
+                var view = new ScheduleDisplayView(vm, ctx);
                 this.mainFrame.Navigate(view);
+                new StatusWriter().Ready();
             }
-            catch (Exception ex) { ViewService.MessageBox.Error(ex.ToString()); }
+            catch (Exception ex) { new ErrorHandler().HandleError(ex); }
         }
 
         private void Click_ScheduleManagement(object sender, RoutedEventArgs e)
         {
             try
             {
-                var vm = Ioc.Resolve<ScheduleViewModel>();
+                var vm = Ioc.Resolve<ScheduleManagerViewModel>();
 
-                var view = new ScheduleView(vm);
+                var view = new ScheduleManagerView(vm);
+                vm.Load();
                 this.mainFrame.Navigate(view);
             }
-            catch (Exception ex) { ViewService.MessageBox.Error(ex.ToString()); }
+            catch (Exception ex) { new ErrorHandler().HandleError(ex); }
         }
 
         #endregion Methods

@@ -122,7 +122,7 @@
         public static IEnumerable<PersonModel> ToModel(IEnumerable<PersonDto> dtoCollection, bool isSelected = false)
         {
             var list = new List<PersonModel>();
-            foreach (var dto in dtoCollection)
+            foreach (var dto in dtoCollection.OrderBy(e => e.Name).ThenBy(e => e.Surname))
             {
                 list.Add(new PersonModel(dto, isSelected));
             }

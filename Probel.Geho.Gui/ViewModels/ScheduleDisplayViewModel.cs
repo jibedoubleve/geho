@@ -17,12 +17,15 @@
     using Probel.Geho.Data.BusinessLogic;
     using Probel.Mvvm.DataBinding;
 
+    using Runtime;
+
     using Tools;
 
     public class ScheduleDisplayViewModel : LoadeableViewModel
     {
         #region Fields
 
+        private readonly IContext AppContext;
         private readonly IScheduleService Service;
 
         private ActivityListViewModel activityListViewModel;
@@ -30,6 +33,7 @@
         private DisplayWeekViewModel displayWeekViewModel;
         private DisplayOneDayViewModel friday;
         private DisplayOneDayViewModel monday;
+        private DateTime selectedDate;
         private DisplayOneDayViewModel thursday;
         private DisplayOneDayViewModel tuesday;
         private DisplayOneDayViewModel wednesday;
@@ -38,8 +42,9 @@
 
         #region Constructors
 
-        public ScheduleDisplayViewModel(IScheduleService service)
+        public ScheduleDisplayViewModel(IScheduleService service, IContext appContext)
         {
+            this.AppContext = appContext;
             this.Mondays = new ObservableCollection<DateTime>();
             this.Service = service;
         }
@@ -104,6 +109,19 @@
             private set;
         }
 
+        public DateTime SelectedDate
+        {
+            get { return this.selectedDate; }
+            set
+            {
+                this.selectedDate
+                    = AppContext.WeekToDisplay
+                    = value;
+                this.OnPropertyChanged(() => SelectedDate);
+                this.LoadWeek();
+            }
+        }
+
         public DisplayOneDayViewModel Thursday
         {
             get { return this.thursday; }
@@ -138,25 +156,30 @@
 
         #region Methods
 
-        public override void Load()
+        public override async void Load()
         {
             using (WaitingCursor.While)
             {
-                var mondays = this.Service.GetMondays();
+                this.StatusBar.Loading();
+
+                var mondays = await Task.Run(() => this.Service.GetMondays());
                 this.Mondays.Refill(mondays);
+                SelectedFirstMonday();
                 this.DisplayLunchViewModel = new DisplayLunchViewModel(this.Service);
                 this.ActivityListViewModel = new ActivityListViewModel(this.Service);
                 this.DisplayLunchViewModel.Load();
                 this.ActivityListViewModel.Load();
+                this.StatusBar.Ready();
             }
         }
 
-        public void LoadWeek(DateTime dt)
+        public async void LoadWeek()
         {
             using (WaitingCursor.While)
             {
-                var week = this.Service.GetWeek(dt);
-                var monday = dt.GetMonday();
+                this.StatusBar.Loading();
+                var week = await Task.Run(() => this.Service.GetWeek(this.SelectedDate));
+                var monday = this.SelectedDate.GetMonday();
 
                 this.DisplayFullWeek(week);
 
@@ -165,6 +188,7 @@
                 Wednesday = this.FillDay(week, monday.AddDays(2));
                 Thursday = this.FillDay(week, monday.AddDays(3));
                 Friday = this.FillDay(week, monday.AddDays(4));
+                this.StatusBar.Ready();
             }
         }
 
@@ -184,9 +208,22 @@
             var days = (from d in week.Days
                         where d.Date.DayOfWeek == date.DayOfWeek
                         select d).ToList();
-            var vm= new DisplayOneDayViewModel(this.Service, date, days);
+            var vm = new DisplayOneDayViewModel(this.Service, date, days);
             vm.Load();
             return vm;
+        }
+
+        private void SelectedFirstMonday()
+        {
+            var date = (from d in Mondays
+                        where d == AppContext.WeekToDisplay
+                        select d).FirstOrDefault();
+
+            if (date != null) { this.SelectedDate = date; }
+            else if (this.Mondays.Count > 0)
+            {
+                this.SelectedDate = this.Mondays[0];
+            }
         }
 
         #endregion Methods

@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.ObjectModel;
+    using System.Threading.Tasks;
 
     using Data.BusinessLogic;
     using Data.Dto;
@@ -38,9 +39,9 @@
 
         #region Methods
 
-        public override void Load()
+        public override async void Load()
         {
-            var activities = this.Service.GetActivities();
+            var activities = await Task.Run(() => this.Service.GetActivities());
             this.Activities.Refill(ActivityCardViewModel.ToActivityCardViewModel(activities));
         }
 

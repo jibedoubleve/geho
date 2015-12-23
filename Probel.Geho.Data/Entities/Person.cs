@@ -44,6 +44,7 @@
         {
             get; set;
         }
+
         [DefaultValue(false)]
         public bool IsTrainee
         {
