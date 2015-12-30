@@ -6,18 +6,15 @@
     using System.Linq;
     using System.Windows.Input;
 
-    using Data.BusinessLogic;
-
-    using Microsoft.Practices.ObjectBuilder2;
-
     using Models;
 
-    using Mvvm.Gui;
+    using Mvvm.Toolkit.DataBinding;
 
-    using Probel.Geho.Data.Dto;
-    using Probel.Mvvm.DataBinding;
+    using Probel.Geho.Services.Dto;
 
     using Properties;
+
+    using Services.BusinessLogic;
 
     using Tools;
 
@@ -154,7 +151,7 @@
                 UpdateLunch(DayOfWeek.Friday, Friday);
 
                 this.Service.UpdateLunch(Week);
-                this.StatusBar.Info(Messages.Msg_LunchesUpdated);
+                this.Status.Info(Messages.Msg_LunchesUpdated);
             }
             catch (Exception ex)
             {

@@ -1,0 +1,39 @@
+﻿<UserControl x:Class="Probel.Geho.Gui.Views.PrintDocument.PrintDayView"
+             
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Probel.Geho.Gui.Views.PrintDocument"
+             xmlns:ctrl="clr-namespace:Probel.Geho.Gui.Views.Controls"
+             xmlns:conv="clr-namespace:Probel.Geho.Gui.Converters"
+             
+             mc:Ignorable="d" 
+             Height="21cm" 
+             Width="29.7cm" 
+             d:DataContext="{d:DesignData /SampleData/PrintDayViewModelSampleData.xaml}">
+    <UserControl.Resources>
+        <conv:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+        <conv:DayOfWeekToStringConverter x:Key="DayOfWeekToStringConverter"/>
+        <Style TargetType="{x:Type ctrl:DisplayOneDayGroupView}" x:Key="GroupStyle">
+            <Setter Property="Width" Value="160"/>
+        </Style>
+    </UserControl.Resources>
+    <DockPanel LastChildFill="True">
+        <TextBlock DockPanel.Dock="Top" 
+                   HorizontalAlignment="Center"
+                   Text="{Binding Day, Converter={StaticResource DayOfWeekToStringConverter}}" FontSize="26.667" FontWeight="Bold"/>
+        <ItemsControl ItemsSource="{Binding Groups}">
+        <ItemsControl.ItemsPanel>
+            <ItemsPanelTemplate>
+                <StackPanel Orientation="Horizontal"/>
+            </ItemsPanelTemplate>
+        </ItemsControl.ItemsPanel>
+        <ItemsControl.ItemTemplate>
+            <DataTemplate>
+                <ctrl:DisplayOneDayGroupView Style="{StaticResource GroupStyle}"/>
+            </DataTemplate>
+        </ItemsControl.ItemTemplate>
+    </ItemsControl>
+    </DockPanel>
+</UserControl>

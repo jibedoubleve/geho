@@ -7,6 +7,8 @@
         xmlns:s="clr-namespace:Probel.Geho.Gui.Tools"   
         xmlns:conv="clr-namespace:Probel.Geho.Gui.Converters"
         xmlns:vm="clr-namespace:Probel.Geho.Gui.ViewModels"
+        xmlns:ctrl="clr-namespace:Probel.Geho.Gui.Views.Controls"
+        xmlns:mtk="clr-namespace:Probel.Mvvm.Toolkit.Converters;assembly=Probel.Mvvm.Toolkit"
         
         Icon="/Probel.Geho.Gui;component/App.ico"
         Title="{x:Static t:Messages.MainView}">
@@ -15,6 +17,7 @@
     </Window.DataContext>
     <Window.Resources>
         <conv:StatusToImageConverter x:Key="StatusToImageConverter"/>
+        <mtk:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
     </Window.Resources>
     <Window.Background>
         <ImageBrush ImageSource="/Probel.Geho.Gui;component/Images/background.PNG"
@@ -96,7 +99,35 @@
                 <StackPanel Orientation="Horizontal">
                     <Image Source="{Binding UiMessage, Converter={StaticResource StatusToImageConverter}}" Height="15" Width="15" Margin="0,0,10,0"/>
                     <TextBlock Text="{Binding UiMessage.Message}" Foreground="White"/>
+                    <Button Click="Click_ShowError" Margin="10,0,0,0" x:Name="btn_ShowError" Visibility="{Binding IsError, Converter={StaticResource BoolToVisibilityConverter}}">
+                        <Image Source="/Probel.Geho.Gui;component/Images/Open.png" 
+                               Height="15"
+                               Width="15"/>
+                    </Button>
+                    <Popup DockPanel.Dock="Bottom"
+                           x:Name="errorPopup"
+                           Placement="Bottom"
+                           StaysOpen="False"
+                           MinWidth="400"
+                           MaxWidth="800"
+                           Height="400">
+                        <Border BorderThickness="5"
+                                CornerRadius="5"
+                                Background="#FF465A7D">
+                            <Border.Effect>
+                                <DropShadowEffect Color="#FFB6B6B6"/>
+                            </Border.Effect>
+                            <HeaderedContentControl Header="{x:Static t:Messages.Header_ShowError}">
+                                <DockPanel DockPanel.Dock="Bottom">
+                                    <ctrl:ExceptionHandlerView x:Name="errorHandler"/>
+                                </DockPanel>
+                            </HeaderedContentControl>
+                        </Border>
+                    </Popup>
                 </StackPanel>
+            </StatusBarItem>
+            <StatusBarItem HorizontalAlignment="Right" Background="#FF007ACC">
+                <TextBlock Text="{Binding AppVersion}"/>
             </StatusBarItem>
         </StatusBar>
     </Grid>

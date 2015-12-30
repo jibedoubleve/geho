@@ -1,9 +1,9 @@
-﻿namespace Probel.Geho.Data
+﻿namespace Probel.Geho.Services
 {
     using AutoMapper;
 
-    using Probel.Geho.Data.Dto;
-    using Probel.Geho.Data.Entities;
+    using Probel.Geho.Services.Dto;
+    using Probel.Geho.Services.Entities;
 
     public static class DataBootstrap
     {

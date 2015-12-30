@@ -12,7 +12,7 @@
         <ItemsControl ItemsSource="{Binding Days}">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
-                    <ctrl:DisplayDayView/>
+                    <ctrl:DisplayDayView MinHeight="150"/>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>

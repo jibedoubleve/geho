@@ -6,10 +6,11 @@
     using System.Linq;
     using System.Threading.Tasks;
 
-    using Data.BusinessLogic;
+    using Mvvm.Toolkit.DataBinding;
 
-    using Probel.Geho.Data.Dto;
-    using Probel.Mvvm.DataBinding;
+    using Probel.Geho.Services.Dto;
+
+    using Services.BusinessLogic;
 
     public class DisplayOneDayGroupViewModel : LoadeableViewModel
     {

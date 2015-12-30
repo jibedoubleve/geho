@@ -16,13 +16,13 @@
     using System.Windows.Shapes;
 
     /// <summary>
-    /// Interaction logic for ActivityListView.xaml
+    /// Interaction logic for ActivityGridView.xaml
     /// </summary>
-    public partial class ActivityListView : UserControl
+    public partial class ActivityGridView : UserControl
     {
         #region Constructors
 
-        public ActivityListView()
+        public ActivityGridView()
         {
             InitializeComponent();
         }

@@ -7,10 +7,21 @@
              
              xmlns:ctrl="clr-namespace:Probel.Geho.Gui.Views.Controls"
              xmlns:t="clr-namespace:Probel.Geho.Gui.Properties"
+             xmlns:conv="clr-namespace:Probel.Geho.Gui.Converters"
              
-             mc:Ignorable="d" 
-             Width="300"
-             Margin="5,0,5,0" d:DataContext="{d:DesignData /SampleData/DisplayGroupViewModelSampleData.xaml}">
+             mc:Ignorable="d"
+             Margin="5,0,5,0" 
+             d:DataContext="{d:DesignData /SampleData/DisplayGroupViewModelSampleData.xaml}">
+    <UserControl.Resources>
+        <Style TargetType="ItemsControl">
+            <Setter Property="Background" Value="White"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding HasItems, RelativeSource={RelativeSource Self}}" Value="False">
+                    <Setter Property="Background" Value="#FFFDBAB7"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
     <HeaderedContentControl Style="{StaticResource LightHeaderedContent}"
                             Header="{Binding GroupName}"
                             Background="#FFD6DBE9">
@@ -20,15 +31,16 @@
                 <RowDefinition Height="5"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <ItemsControl ItemsSource="{Binding EducatorsMorning}" Background="White">
+            <ItemsControl Name="icMorning" ItemsSource="{Binding EducatorsMorning}">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
                         <ctrl:PersonFlatCardView/>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
-            <ItemsControl Grid.Row="2"
-				ItemsSource="{Binding EducatorsAfternoon}" Background="White">
+            <ItemsControl Name="icAfternoon"
+                          Grid.Row="2"
+                          ItemsSource="{Binding EducatorsAfternoon}">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
                         <ctrl:PersonFlatCardView/>

@@ -14,9 +14,6 @@
         <conv:BoolToVisibilityConverter x:Key="VisToBool"/>
     </UserControl.Resources>
     <DockPanel Margin="5" >
-        <TextBlock DockPanel.Dock="Top">
-            <Run Text="{Binding GroupName}" FontSize="13.333" FontWeight="Bold" TextDecorations="Underline"/>
-        </TextBlock>
         <ScrollViewer>
             <StackPanel>
                 <GroupBox DockPanel.Dock="Top"

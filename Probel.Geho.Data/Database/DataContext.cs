@@ -1,10 +1,10 @@
-﻿namespace Probel.Geho.Data.Database
+﻿namespace Probel.Geho.Services.Database
 {
     using System;
     using System.Data.Entity;
     using System.IO;
 
-    using Probel.Geho.Data.Entities;
+    using Probel.Geho.Services.Entities;
 
     internal class DataContext : DbContext
     {

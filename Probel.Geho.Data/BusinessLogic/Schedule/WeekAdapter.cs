@@ -1,10 +1,10 @@
-﻿namespace Probel.Geho.Data.Business_Logic.Schedule
+﻿namespace Probel.Geho.Services.Business_Logic.Schedule
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
 
-    using Probel.Geho.Data.Dto;
+    using Probel.Geho.Services.Dto;
 
     public class WeekAdapter
     {

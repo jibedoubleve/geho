@@ -6,18 +6,18 @@
     using System.Linq;
     using System.Windows.Input;
 
-    using Data.Entities;
-
     using Mvvm.Gui;
+    using Mvvm.Toolkit.DataBinding;
 
-    using Probel.Geho.Data.BusinessLogic;
-    using Probel.Geho.Data.Dto;
     using Probel.Geho.Gui.Models;
     using Probel.Geho.Gui.Tools;
     using Probel.Geho.Gui.ViewModels.Controls;
-    using Probel.Mvvm.DataBinding;
+    using Probel.Geho.Services.BusinessLogic;
+    using Probel.Geho.Services.Dto;
 
     using Properties;
+
+    using Services.Entities;
 
     public class GroupHrViewModel : LoadeableViewModel
     {
@@ -168,15 +168,15 @@
 
         public override void Load()
         {
-            this.StatusBar.Loading();
+            this.Status.Loading();
             var g = this.Service.GetGroups();
-            this.Groups.Refill(GroupViewModel.ToViewModels(g, Service, this));
+            this.Groups.Refill(g.ToViewModels(Service, this));
 
             var a = this.Service.GetActivities();
-            this.Activities.Refill(ActivityViewModel.ToActivityViewModel(a, Service, this));
+            this.Activities.Refill(a.ToViewModels(Service, this));
 
             var aa = this.Service.GetAdministrativeActivities();
-            this.AdministrativeActivities.Refill(ActivityViewModel.ToActivityViewModel(aa, Service, this));
+            this.AdministrativeActivities.Refill(aa.ToViewModels(Service, this));
 
             this.PeopleWithoutGroup = PersonModel.ToModel(this.Service.GetBeneficiariesWithoutGroup());
 
@@ -185,7 +185,7 @@
             this.BeneficiariesInActivity.Clear();
             this.EducatorsInActivity.Clear();
             this.BeneficiariesInGroup.Clear();
-            this.StatusBar.Ready();
+            this.Status.Ready();
         }
 
         private void AddActivity()
@@ -200,7 +200,7 @@
                     MomentDay = ActivityToAdd.MomentDay
                 };
                 this.Load();
-                this.StatusBar.InfoFormat(Messages.Msg_ActivityCreated, name);
+                this.Status.InfoFormat(Messages.Msg_ActivityCreated, name);
             }
         }
 
@@ -210,7 +210,7 @@
             var name = GroupToAdd.Name;
             this.GroupToAdd = new GroupDto();
             this.Load();
-            this.StatusBar.InfoFormat(Messages.Msg_GroupCreated, name);
+            this.Status.InfoFormat(Messages.Msg_GroupCreated, name);
         }
 
         private bool CanAddActivity()
@@ -286,7 +286,7 @@
                 this.EducatorsInActivity.Clear();
                 this.BeneficiariesInActivity.Clear();
                 this.Load();
-                this.StatusBar.Info(Messages.Msg_UpdateDone);
+                this.Status.Info(Messages.Msg_UpdateDone);
             }
         }
 
@@ -300,7 +300,7 @@
                 this.SelectedGroup.Group.People = people;
                 this.Service.UpdateGroup(this.SelectedGroup.Group);
                 this.Load();
-                this.StatusBar.Info(Messages.Msg_UpdateDone);
+                this.Status.Info(Messages.Msg_UpdateDone);
             }
         }
 

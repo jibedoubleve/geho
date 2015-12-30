@@ -1,4 +1,4 @@
-﻿namespace Probel.Geho.Data.Entities
+﻿namespace Probel.Geho.Services.Entities
 {
     #region Enumerations
 

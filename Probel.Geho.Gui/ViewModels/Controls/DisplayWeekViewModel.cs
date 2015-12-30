@@ -3,13 +3,13 @@
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
 
-    using Probel.Mvvm.DataBinding;
+    using Mvvm.Toolkit.DataBinding;
 
     public class DisplayWeekViewModel : ObservableObject
     {
         #region Constructors
 
-        public DisplayWeekViewModel(List<DisplayDayViewModel> days)
+        public DisplayWeekViewModel(IEnumerable<DisplayDayViewModel> days)
         {
             this.Days = new ObservableCollection<DisplayDayViewModel>(days);
         }

@@ -5,15 +5,14 @@
     using System.Threading.Tasks;
     using System.Windows.Input;
 
-    using Data.InMemoryQuery;
+    using Mvvm.Toolkit.DataBinding;
 
-    using Mvvm.DataBinding;
-    using Mvvm.Gui;
-
-    using Probel.Geho.Data.BusinessLogic;
-    using Probel.Geho.Data.Dto;
+    using Probel.Geho.Services.BusinessLogic;
+    using Probel.Geho.Services.Dto;
 
     using Properties;
+
+    using Services.InMemoryQuery;
 
     using Tools;
 
@@ -117,7 +116,7 @@
             this.bufferPersons = await Task.Run(() => this.Service.GetPersons());
             this.FilterEducator = false;
             var me = await Task.Run(() => this.Service.GetAbsences(isPresent: true));
-            this.MedicalExams.Refill(AbsenceViewModel.ToViewModels(me, Service, this));
+            this.MedicalExams.Refill(me.ToViewModels(Service, this));
         }
 
         private void AddAbsence()
@@ -133,9 +132,9 @@
                 this.Service.CreateAbsence(this.AbsenceToAdd);
                 this.AbsenceToAdd = new AbsenceDto();
                 this.Load();
-                this.StatusBar.Info(Messages.Msg_MedicalExamAdded);
+                this.Status.Info(Messages.Msg_MedicalExamAdded);
             }
-            else { ViewService.MessageBox.Warning(status.Error); }
+            else { Notifyer.Warning(status.Error); }
         }
 
         private bool CanAddAbsence()

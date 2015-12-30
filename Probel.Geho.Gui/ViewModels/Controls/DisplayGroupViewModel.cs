@@ -1,12 +1,11 @@
 ﻿namespace Probel.Geho.Gui.ViewModels.Controls
 {
-    using System;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
-    using System.Linq;
 
-    using Probel.Geho.Data.Dto;
-    using Probel.Mvvm.DataBinding;
+    using Mvvm.Toolkit.DataBinding;
+
+    using Probel.Geho.Services.Dto;
 
     public class DisplayGroupViewModel : ObservableObject
     {

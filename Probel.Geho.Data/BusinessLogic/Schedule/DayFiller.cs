@@ -1,6 +1,6 @@
-﻿namespace Probel.Geho.Data.Business_Logic.Schedule
+﻿namespace Probel.Geho.Services.Business_Logic.Schedule
 {
-    using Probel.Geho.Data.Entities;
+    using Probel.Geho.Services.Entities;
 
     internal class DayFiller
     {

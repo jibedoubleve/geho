@@ -1,11 +1,11 @@
-﻿namespace Probel.Geho.Data.BusinessLogic
+﻿namespace Probel.Geho.Services.BusinessLogic
 {
     using System.Collections.Generic;
     using System.Data.Entity;
     using System.Linq;
 
-    using Probel.Geho.Data.Database;
-    using Probel.Geho.Data.Dto;
+    using Probel.Geho.Services.Database;
+    using Probel.Geho.Services.Dto;
 
     public abstract class ServiceBase
     {
@@ -31,6 +31,8 @@
             {
                 return (from l in db.LunchTimes
                                     .Include(e => e.People)
+                        where l.People.Count > 0
+                        orderby l.DayOfWeek ascending
                         select l).ToDto();
             }
         }

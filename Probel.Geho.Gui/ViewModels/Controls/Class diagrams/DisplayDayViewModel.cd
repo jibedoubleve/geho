@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Probel.Geho.Gui.ViewModels.Controls.DisplayDayViewModel">
+    <Position X="4.5" Y="1.75" Width="2" />
+    <Members>
+      <Field Name="dayOfWeek" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAEAABAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>ViewModels\Controls\DisplayDayViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Groups" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Probel.Geho.Gui.ViewModels.Controls.DisplayGroupViewModel">
+    <Position X="4.5" Y="4" Width="2" />
+    <Members>
+      <Field Name="groupName" Hidden="true" />
+      <Field Name="groupOrder" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAAAEAAAQBAAAAAAAAAAAAAAAAAAQAAE=</HashCode>
+      <FileName>ViewModels\Controls\DisplayGroupViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Probel.Geho.Gui.ViewModels.Controls.DisplayWeekViewModel">
+    <Position X="1" Y="1.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\Controls\DisplayWeekViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Days" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

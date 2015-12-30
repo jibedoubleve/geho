@@ -1,4 +1,4 @@
-﻿<Dto:PersonDto xmlns:Dto="clr-namespace:Probel.Geho.Data.Dto;assembly=Probel.Geho.Data" GroupNames="Pulvinar dictum himenaeos" Id="78" IsTrainee="False" IsEducator="True" Name="Aliquam" Surname="Class">
+﻿<Dto:PersonDto xmlns:Dto="clr-namespace:Probel.Geho.Services.Dto;assembly=Probel.Geho.Data" GroupNames="Pulvinar dictum himenaeos" Id="78" IsTrainee="False" IsEducator="True" Name="Aliquam" Surname="Class">
     <Dto:PersonDto.Activities>
         <Dto:ActivityDto DayOfWeek="Thursday" Id="54" MomentDay="Afternoon" Name="Nibh fermentum curae aptent">
             <Dto:ActivityDto.People>

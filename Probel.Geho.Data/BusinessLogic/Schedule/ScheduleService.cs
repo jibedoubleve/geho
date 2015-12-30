@@ -1,4 +1,4 @@
-﻿namespace Probel.Geho.Data.BusinessLogic.Schedule
+﻿namespace Probel.Geho.Services.BusinessLogic.Schedule
 {
     using System;
     using System.Collections.Generic;
@@ -7,11 +7,11 @@
 
     using AutoMapper;
 
-    using Probel.Geho.Data.Business_Logic.Schedule;
-    using Probel.Geho.Data.Database;
-    using Probel.Geho.Data.Dto;
-    using Probel.Geho.Data.Entities;
-    using Probel.Geho.Data.Helpers;
+    using Probel.Geho.Services.Business_Logic.Schedule;
+    using Probel.Geho.Services.Database;
+    using Probel.Geho.Services.Dto;
+    using Probel.Geho.Services.Entities;
+    using Probel.Geho.Services.Helpers;
 
     public class ScheduleService : ServiceBase, IScheduleService
     {
@@ -144,6 +144,7 @@
                    ? people.ToDto()
                    : new List<PersonDto>();
 
+                /* Person is present if it has an "present absence" otherwise, he's absent */
                 if (people != null)
                 {
                     foreach (var dto in dtoList)
@@ -163,6 +164,10 @@
         public IEnumerable<PersonDto> GetFreeEducators(DateTime currentDay, bool isMorning)
         {
             var md = isMorning ? MomentDay.Morning : MomentDay.Afternoon;
+            var d = (isMorning)
+                ? new DateTime(currentDay.Year, currentDay.Month, currentDay.Day, 8, 1, 0)
+                : new DateTime(currentDay.Year, currentDay.Month, currentDay.Day, 12, 1, 0);
+
             currentDay = currentDay.Date;
             using (var db = new DataContext())
             {
@@ -171,7 +176,7 @@
                                           .Include(e => e.Absences)
                                           .Include(e => e.Days.Select(g => g.Group))
                               where p.IsEducator
-                                 && p.Absences.Where(e => e.Start <= currentDay && currentDay <= e.End).Count() == 0
+                                 && p.Absences.Where(e => e.Start <= d && d <= e.End).Count() == 0
                                  && p.Activities.Where(e => e.DayOfWeek == currentDay.DayOfWeek && (e.MomentDay & md) != 0).Count() == 0
                               select p);
 
@@ -222,7 +227,7 @@
             using (var db = new DataContext())
             {
                 var entity = GetWeekEntity(db, dateInWeek);
-                return Mapper.Map<Week, WeekDto>(entity);
+                return entity.ToDto();
             }
         }
 

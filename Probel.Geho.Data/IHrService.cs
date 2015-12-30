@@ -1,4 +1,4 @@
-﻿namespace Probel.Geho.Data.BusinessLogic
+﻿namespace Probel.Geho.Services.BusinessLogic
 {
     using System;
     using System.Collections.Generic;
@@ -6,7 +6,7 @@
 
     using Entities;
 
-    using Probel.Geho.Data.Dto;
+    using Probel.Geho.Services.Dto;
 
     public interface IHrService
     {

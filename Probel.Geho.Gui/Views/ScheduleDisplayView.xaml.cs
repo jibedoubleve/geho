@@ -7,13 +7,18 @@
 
     using Controls;
 
-    using Mvvm.DataBinding;
+    using Mvvm.Toolkit.DataBinding;
+
+    using PrintDocument;
 
     using Properties;
 
     using Runtime;
 
     using ViewModels;
+    using ViewModels.Controls;
+    using ViewModels.Helpers;
+    using ViewModels.PrintDocument;
 
     /// <summary>
     /// Interaction logic for ScheduleDisplayView.xaml
@@ -65,15 +70,49 @@
             if (e is PrintEventArgs)
             {
                 var args = (PrintEventArgs)e;
-                var list = new List<UIElement>();
-                if (args.IsWeekPrinted) { list.Add(this.uc_week); }
-                if (args.IsMondayPrinted) { list.Add(this.uc_Monday); }
-                if (args.IsTuesdayPrinted) { list.Add(this.uc_Tuesday); }
-                if (args.IsWednesdayPrinted) { list.Add(this.uc_Wednesday); }
-                if (args.IsThursdayPrinted) { list.Add(this.uc_Thursday); }
-                if (args.IsFridayPrinted) { list.Add(this.uc_Friday); }
-                if (args.IsLunchPrinted) { list.Add(this.uc_LunchTime); }
-                if (args.IsActivitiesPrinted) { list.Add(this.uc_Activities); }
+                var list = new List<UserControl>();
+                if (args.IsWeekPrinted)
+                {
+                    var builder = new PrintWeekViewModelBuilder(this.uc_week.DataContext as DisplayWeekViewModel);
+                    list.AddRange(builder.Build());
+
+                }
+                if (args.IsLunchPrinted)
+                {
+                    var vm = uc_LunchTime.DataContext as DisplayLunchViewModel;
+                    list.Add(new PrintLunchesView(vm));
+                }
+                if (args.IsActivitiesPrinted)
+                {
+                    var vm = uc_Activities.DataContext as ActivityGridViewModel;
+                    list.Add(new PrintActivitiesView(vm));
+                }
+
+                if (args.IsMondayPrinted)
+                {
+                    var builder = new PrintDayViewModelBuilder(this.uc_Monday.DataContext as DisplayOneDayViewModel);
+                    list.AddRange(builder.Build());
+                }
+                if (args.IsTuesdayPrinted)
+                {
+                    var builder = new PrintDayViewModelBuilder(this.uc_Tuesday.DataContext as DisplayOneDayViewModel);
+                    list.AddRange(builder.Build());
+                }
+                if (args.IsWednesdayPrinted)
+                {
+                    var builder = new PrintDayViewModelBuilder(this.uc_Wednesday.DataContext as DisplayOneDayViewModel);
+                    list.AddRange(builder.Build());
+                }
+                if (args.IsThursdayPrinted)
+                {
+                    var builder = new PrintDayViewModelBuilder(this.uc_Thursday.DataContext as DisplayOneDayViewModel);
+                    list.AddRange(builder.Build());
+                }
+                if (args.IsFridayPrinted)
+                {
+                    var builder = new PrintDayViewModelBuilder(this.uc_Friday.DataContext as DisplayOneDayViewModel);
+                    list.AddRange(builder.Build());
+                }
 
                 var printer = new PrintDialog();
                 if (printer.ShowDialog() == true)

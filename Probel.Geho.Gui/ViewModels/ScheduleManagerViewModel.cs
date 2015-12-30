@@ -5,15 +5,15 @@
     using System.Collections.ObjectModel;
     using System.Linq;
     using System.Threading.Tasks;
-    using System.Windows.Input;
 
-    using Probel.Geho.Data.BusinessLogic;
-    using Probel.Geho.Data.Dto;
-    using Probel.Geho.Data.Helpers;
+    using Mvvm.Gui;
+    using Mvvm.Toolkit.DataBinding;
+
     using Probel.Geho.Gui.Properties;
     using Probel.Geho.Gui.ViewModels.Controls;
-    using Probel.Mvvm.DataBinding;
-    using Probel.Mvvm.Gui;
+    using Probel.Geho.Services.BusinessLogic;
+    using Probel.Geho.Services.Dto;
+    using Probel.Geho.Services.Helpers;
 
     using Runtime;
 
@@ -80,6 +80,7 @@
                 this.weekDate
                     = AppContext.WeekToManage
                     = value;
+                //TODO: fix this!!!
                 this.LoadWeek();
                 this.OnPropertyChanged(() => WeekDate);
             }
@@ -99,16 +100,16 @@
             throw new NotImplementedException();
         }
 
-        private async void LoadWeek()
+        private async Task LoadWeek()
         {
             try
             {
-                this.StatusBar.Loading();
+                this.Status.Loading();
                 using (WaitingCursor.While)
                 {
                     if (!this.Service.WeekExists(this.WeekDate))
                     {
-                        var yes = ViewService.MessageBox.Question(Messages.Msg_AskCreateNewWeek);
+                        var yes = Notifyer.Question(Messages.Msg_AskCreateNewWeek);
                         if (yes) { this.Service.CreateWeek(this.WeekDate); }
                         else { return; }
                     }
@@ -132,20 +133,19 @@
                         dvm.Load();
                         r.Days.Add(dvm);
                     }
+                    var wsd = AppContext.WeekToManageSelectedDay;
                     this.Days.Refill(r.Days);
 
                     var sd = (from d in this.Days
-                              where d.CurrentDay.Date == AppContext.WeekToManageSelectedDay
+                              where d.CurrentDay.Date == wsd
                               select d).FirstOrDefault();
                     if (sd != null) { this.SelectedDay = sd; }
 
-                    this.StatusBar.Ready();
+                    AppContext.WeekToManageSelectedDay = wsd;
+                    this.Status.Ready();
                 }
             }
-            catch (Exception ex)
-            {
-                ViewService.MessageBox.Error(ex.ToString());
-            }
+            catch (Exception ex) { this.ErrorHandler.HandleError(ex); }
         }
 
         #endregion Methods

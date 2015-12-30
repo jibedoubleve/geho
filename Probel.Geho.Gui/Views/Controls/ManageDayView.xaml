@@ -25,7 +25,7 @@
         </Grid.ColumnDefinitions>
         <TextBlock DockPanel.Dock="Top"
                    Grid.Column="1">
-                <Run Text="{Binding CurrentDay, StringFormat={}{0:dddd d MMMM}}" FontSize="16" FontWeight="Bold" FontFamily="Segoe UI Black"/>
+                <Run Text="{Binding CurrentDay, StringFormat=D}" FontSize="16" FontWeight="Bold" FontFamily="Segoe UI Black"/>
         </TextBlock>
         <ListView Grid.Row="1"
                   Width="250"

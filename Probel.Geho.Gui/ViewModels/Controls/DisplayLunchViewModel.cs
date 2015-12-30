@@ -1,11 +1,14 @@
 ﻿namespace Probel.Geho.Gui.ViewModels.Controls
 {
     using System.Collections.ObjectModel;
+    using System.ComponentModel;
     using System.Threading.Tasks;
+    using System.Windows.Data;
 
-    using Probel.Geho.Data.BusinessLogic;
-    using Probel.Geho.Data.Dto;
-    using Probel.Mvvm.DataBinding;
+    using Mvvm.Toolkit.DataBinding;
+
+    using Probel.Geho.Services.BusinessLogic;
+    using Probel.Geho.Services.Dto;
 
     public class DisplayLunchViewModel : LoadeableViewModel
     {
@@ -21,6 +24,8 @@
         {
             this.Service = service;
             this.Week = new ObservableCollection<LunchTimeDto>();
+            this.WeekView = CollectionViewSource.GetDefaultView(Week);
+            this.WeekView.GroupDescriptions.Add(new PropertyGroupDescription("DayOfWeek"));
         }
 
         #endregion Constructors
@@ -31,6 +36,11 @@
         {
             get;
             private set;
+        }
+
+        public ICollectionView WeekView
+        {
+            get; private set;
         }
 
         #endregion Properties

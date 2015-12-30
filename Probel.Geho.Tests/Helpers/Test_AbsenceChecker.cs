@@ -8,8 +8,8 @@
 
     using NUnit.Framework;
 
-    using Probel.Geho.Data.Business_Logic.Schedule;
-    using Probel.Geho.Data.Entities;
+    using Probel.Geho.Services.Business_Logic.Schedule;
+    using Probel.Geho.Services.Entities;
 
     public class Test_AbsenceChecker
     {

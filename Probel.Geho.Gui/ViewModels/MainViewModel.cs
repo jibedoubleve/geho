@@ -1,16 +1,19 @@
 ﻿namespace Probel.Geho.Gui.ViewModels
 {
-    using Mvvm.Gui.PostOffice;
+    using System;
+    using System.Reflection;
+
+    using Controls;
+
+    using Mvvm.Toolkit.DataBinding;
+    using Mvvm.Toolkit.Events;
 
     using Probel.Geho.Gui.Models;
-    using Probel.Mvvm.DataBinding;
 
-    public class MainViewModel : ObservableObject
+    public class MainViewModel : BaseViewModel, IEventHandler<UiMessage>
     {
         #region Fields
-
-        private readonly Messenger Messenger = new Messenger();
-
+        private string appVersion;
         private UiMessage uiMessage;
 
         #endregion Fields
@@ -19,12 +22,24 @@
 
         public MainViewModel()
         {
-            this.Messenger.Subscribe<UiMessage>(e => this.UiMessage = e);
+            this.Messenger.Subscribe(this);
+            var v = Assembly.GetExecutingAssembly().GetName().Version;
+            this.AppVersion = string.Format("V.{0}.{1}.{2}", v.Major, v.Minor, v.Build);
         }
 
         #endregion Constructors
 
         #region Properties
+
+        public string AppVersion
+        {
+            get { return this.appVersion; }
+            set
+            {
+                this.appVersion = value;
+                this.OnPropertyChanged(() => AppVersion);
+            }
+        }
 
         public UiMessage UiMessage
         {
@@ -37,5 +52,25 @@
         }
 
         #endregion Properties
+
+        #region Methods
+
+        public void HandleEvent(UiMessage context)
+        {
+            this.UiMessage = context;
+            this.IsError = (context.Exception != null);
+        }
+
+        private bool isError;
+        public bool IsError
+        {
+            get { return this.isError; }
+            set
+            {
+                this.isError = value;
+                this.OnPropertyChanged(() => IsError);
+            }
+        }
+        #endregion Methods
     }
 }

@@ -1,25 +1,23 @@
 ﻿namespace Probel.Geho.Gui.ViewModels
 {
     using System;
-    using System.Collections.Generic;
     using System.Collections.ObjectModel;
     using System.Linq;
-    using System.Text;
     using System.Threading.Tasks;
 
     using Controls;
 
-    using Data.Dto;
-    using Data.Helpers;
-
     using Mvvm.Gui;
+    using Mvvm.Toolkit.DataBinding;
 
-    using Probel.Geho.Data.BusinessLogic;
-    using Probel.Mvvm.DataBinding;
+    using Probel.Geho.Services.BusinessLogic;
+
+    using Properties;
 
     using Runtime;
 
-    using Tools;
+    using Services.Dto;
+    using Services.Helpers;
 
     public class ScheduleDisplayViewModel : LoadeableViewModel
     {
@@ -28,7 +26,7 @@
         private readonly IContext AppContext;
         private readonly IScheduleService Service;
 
-        private ActivityListViewModel activityListViewModel;
+        private ActivityGridViewModel activityGirdViewModel;
         private DisplayLunchViewModel displayLunchViewModel;
         private DisplayWeekViewModel displayWeekViewModel;
         private DisplayOneDayViewModel friday;
@@ -53,13 +51,13 @@
 
         #region Properties
 
-        public ActivityListViewModel ActivityListViewModel
+        public ActivityGridViewModel ActivityGridViewModel
         {
-            get { return this.activityListViewModel; }
+            get { return this.activityGirdViewModel; }
             set
             {
-                this.activityListViewModel = value;
-                this.OnPropertyChanged(() => ActivityListViewModel);
+                this.activityGirdViewModel = value;
+                this.OnPropertyChanged(() => ActivityGridViewModel);
             }
         }
 
@@ -160,16 +158,19 @@
         {
             using (WaitingCursor.While)
             {
-                this.StatusBar.Loading();
+                this.Status.Loading();
 
                 var mondays = await Task.Run(() => this.Service.GetMondays());
                 this.Mondays.Refill(mondays);
                 SelectedFirstMonday();
+
                 this.DisplayLunchViewModel = new DisplayLunchViewModel(this.Service);
-                this.ActivityListViewModel = new ActivityListViewModel(this.Service);
+                this.ActivityGridViewModel = new ActivityGridViewModel(this.Service);
+
                 this.DisplayLunchViewModel.Load();
-                this.ActivityListViewModel.Load();
-                this.StatusBar.Ready();
+                this.ActivityGridViewModel.Load();
+
+                this.Status.Ready();
             }
         }
 
@@ -177,34 +178,45 @@
         {
             using (WaitingCursor.While)
             {
-                this.StatusBar.Loading();
+                this.Status.Loading();
                 var week = await Task.Run(() => this.Service.GetWeek(this.SelectedDate));
                 var monday = this.SelectedDate.GetMonday();
 
-                this.DisplayFullWeek(week);
+                if (week == null)
+                {
+                    this.DisplayFullWeek(week);
 
-                Monday = this.FillDay(week, monday);
-                Tuesday = this.FillDay(week, monday.AddDays(1));
-                Wednesday = this.FillDay(week, monday.AddDays(2));
-                Thursday = this.FillDay(week, monday.AddDays(3));
-                Friday = this.FillDay(week, monday.AddDays(4));
-                this.StatusBar.Ready();
+                    Monday = this.FillDay(week, monday);
+                    Tuesday = this.FillDay(week, monday.AddDays(1));
+                    Wednesday = this.FillDay(week, monday.AddDays(2));
+                    Thursday = this.FillDay(week, monday.AddDays(3));
+                    Friday = this.FillDay(week, monday.AddDays(4));
+                    this.Status.Ready();
+                }
+                else
+                {
+                    this.Status.Warn(Messages.Msg_NoWeekToDisplay);
+                    return;
+                }
             }
         }
 
         private void DisplayFullWeek(WeekDto week)
         {
+            if (week == null) { throw new ArgumentNullException(nameof(week)); }
+
             var days = (from d in week.Days
                         group d by d.Date.DayOfWeek into g
-                        select new DisplayDayViewModel(g.Key, g.ToList())
-                      )
-                      .OrderBy(e => e.DayOfWeek)
-                      .ToList();
+                        select new DisplayDayViewModel(g.Key, g.ToList()))
+                        .OrderBy(e => e.DayOfWeek)
+                        .ToList();
             this.DisplayWeekViewModel = new DisplayWeekViewModel(days);
         }
 
         private DisplayOneDayViewModel FillDay(WeekDto week, DateTime date)
         {
+            if (week == null) { throw new ArgumentNullException(nameof(week)); }
+
             var days = (from d in week.Days
                         where d.Date.DayOfWeek == date.DayOfWeek
                         select d).ToList();

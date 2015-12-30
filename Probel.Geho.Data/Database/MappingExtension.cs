@@ -1,15 +1,20 @@
-﻿namespace Probel.Geho.Data.Database
+﻿namespace Probel.Geho.Services.Database
 {
     using System.Collections.Generic;
 
     using AutoMapper;
 
-    using Probel.Geho.Data.Dto;
-    using Probel.Geho.Data.Entities;
+    using Probel.Geho.Services.Dto;
+    using Probel.Geho.Services.Entities;
 
     internal static class MappingExtension
     {
         #region Methods
+
+        public static WeekDto ToDto(this Week entity)
+        {
+            return Mapper.Map<Week, WeekDto>(entity);
+        }
 
         public static Activity ToDto(this ActivityDto activity)
         {

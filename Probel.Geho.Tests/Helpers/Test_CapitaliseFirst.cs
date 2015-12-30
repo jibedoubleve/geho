@@ -2,7 +2,7 @@
 {
     using NUnit.Framework;
 
-    using Probel.Geho.Data.Helpers;
+    using Probel.Geho.Services.Helpers;
 
     [TestFixture]
     public class Test_CapitaliseFirst

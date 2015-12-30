@@ -349,7 +349,7 @@ Vérifiez:
     <value>Impression</value>
   </data>
   <data name="Lbl_MedicalExam" xml:space="preserve">
-    <value>Visite médicale</value>
+    <value>VM</value>
   </data>
   <data name="Header_MedicalExam" xml:space="preserve">
     <value>Visites médicales</value>
@@ -407,5 +407,26 @@ Vérifiez:
   </data>
   <data name="Lbl_SelectDate" xml:space="preserve">
     <value>Semaine à afficher:</value>
+  </data>
+  <data name="Header_Day" xml:space="preserve">
+    <value>Jour</value>
+  </data>
+  <data name="Header_Activity" xml:space="preserve">
+    <value>Activité</value>
+  </data>
+  <data name="Header_Moment" xml:space="preserve">
+    <value>Moment</value>
+  </data>
+  <data name="Msg_NoWeekToDisplay" xml:space="preserve">
+    <value>Il n'y a pas de semaine à afficher.</value>
+  </data>
+  <data name="Header_ShowError" xml:space="preserve">
+    <value>Affichage de l'erreur</value>
+  </data>
+  <data name="Header_ErrorMsg" xml:space="preserve">
+    <value>Message</value>
+  </data>
+  <data name="Header_StackTrace" xml:space="preserve">
+    <value>Stack trace</value>
   </data>
 </root>

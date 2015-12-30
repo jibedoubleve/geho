@@ -1,14 +1,13 @@
 ﻿namespace Probel.Geho.Gui.ViewModels.Controls
 {
-    using System.Collections.Generic;
     using System.Windows.Input;
 
-    using Probel.Geho.Data.BusinessLogic;
-    using Probel.Geho.Data.Dto;
+    using Mvvm.Gui;
+    using Mvvm.Toolkit.DataBinding;
+
     using Probel.Geho.Gui.Properties;
-    using Probel.Geho.Gui.Tools;
-    using Probel.Mvvm.DataBinding;
-    using Probel.Mvvm.Gui;
+    using Probel.Geho.Services.BusinessLogic;
+    using Probel.Geho.Services.Dto;
 
     public class PersonViewModel : BaseViewModel
     {
@@ -79,16 +78,6 @@
 
         #region Methods
 
-        public static IEnumerable<PersonViewModel> ToViewModels(IEnumerable<PersonDto> absences, IHrService service, ILoadeableViewModel vm)
-        {
-            var result = new List<PersonViewModel>();
-            foreach (var person in absences)
-            {
-                result.Add(new PersonViewModel(vm, service) { Person = person, });
-            }
-            return result;
-        }
-
         private bool CanCancel()
         {
             return this.Person != null; ;
@@ -111,14 +100,14 @@
 
         private void DeletePerson()
         {
-            var yes = ViewService.MessageBox.Question(string.Format(Messages.Msg_AskDeletePerson, this.Person.Name, this.Person.Surname));
+            var yes = Notifyer.Question(string.Format(Messages.Msg_AskDeletePerson, this.Person.Name, this.Person.Surname));
             if (yes)
             {
                 using (WaitingCursor.While)
                 {
                     this.Service.RemovePerson(this.Person);
                     this.ParentVm.Load();
-                    this.StatusBar.InfoFormat(Messages.Msg_PersonDeleted, this.Person.Name, this.Person.Surname);
+                    this.Status.InfoFormat(Messages.Msg_PersonDeleted, this.Person.Name, this.Person.Surname);
                 }
             }
         }
@@ -126,7 +115,7 @@
         private void Edit()
         {
             this.Service.UpdatePerson(this.Person);
-            StatusBar.Info(Messages.Msg_UpdateDone);
+            Status.Info(Messages.Msg_UpdateDone);
         }
 
         #endregion Methods

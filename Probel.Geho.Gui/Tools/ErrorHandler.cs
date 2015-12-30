@@ -2,21 +2,27 @@
 {
     using System;
 
-    using Probel.Mvvm.Gui;
+    using Mvvm.Gui;
 
     public class ErrorHandler
     {
+        #region Fields
+
+        private INotifyUser Notifyer = AppContext.Notifyer;
+
+        #endregion Fields
+
         #region Methods
 
         public void HandleError(Exception ex)
         {
-            ViewService.MessageBox.Error(ex);
-            new StatusWriter().Error(ex.Message);
+            Notifyer.Error(ex.Message);
+            new StatusWriter().Error(ex);
         }
 
         public void HandleWarning(string message)
         {
-            ViewService.MessageBox.Warning(message);
+            Notifyer.Warning(message);
             new StatusWriter().Warn(message);
         }
 

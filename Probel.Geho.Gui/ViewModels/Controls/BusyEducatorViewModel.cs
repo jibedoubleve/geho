@@ -1,14 +1,9 @@
 ﻿namespace Probel.Geho.Gui.ViewModels.Controls
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
+    using Mvvm.Toolkit.DataBinding;
 
-    using Probel.Geho.Data.BusinessLogic;
-    using Probel.Geho.Data.Dto;
-    using Probel.Mvvm.DataBinding;
+    using Probel.Geho.Services.BusinessLogic;
+    using Probel.Geho.Services.Dto;
 
     public class BusyEducatorViewModel : ObservableObject
     {
@@ -54,19 +49,5 @@
         }
 
         #endregion Properties
-
-        #region Methods
-
-        public static IEnumerable<BusyEducatorViewModel> ToViewModels(IEnumerable<PersonDto> people, IScheduleService srv)
-        {
-            var list = new List<BusyEducatorViewModel>();
-            foreach (var person in people)
-            {
-                list.Add(new BusyEducatorViewModel(person, srv));
-            }
-            return list;
-        }
-
-        #endregion Methods
     }
 }

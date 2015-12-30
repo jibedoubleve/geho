@@ -3,9 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Probel.Geho.Data", "Probel.Geho.Data\Probel.Geho.Data.csproj", "{0FEE0206-AED7-49CE-9603-521A534C2A59}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Probel.Geho.Shell", "Probel.Geho.Shell\Probel.Geho.Shell.csproj", "{C31E77B0-C7BE-449A-92E0-04B6B22AA5A9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Probel.Geho.Services", "Probel.Geho.Data\Probel.Geho.Services.csproj", "{0FEE0206-AED7-49CE-9603-521A534C2A59}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Probel.Geho.Tests", "Probel.Geho.Tests\Probel.Geho.Tests.csproj", "{DD1D5175-BEC5-4653-8AFF-A59E47ADC75B}"
 EndProject
@@ -37,10 +35,6 @@ Global
 		{0FEE0206-AED7-49CE-9603-521A534C2A59}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0FEE0206-AED7-49CE-9603-521A534C2A59}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0FEE0206-AED7-49CE-9603-521A534C2A59}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C31E77B0-C7BE-449A-92E0-04B6B22AA5A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C31E77B0-C7BE-449A-92E0-04B6B22AA5A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C31E77B0-C7BE-449A-92E0-04B6B22AA5A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C31E77B0-C7BE-449A-92E0-04B6B22AA5A9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DD1D5175-BEC5-4653-8AFF-A59E47ADC75B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DD1D5175-BEC5-4653-8AFF-A59E47ADC75B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DD1D5175-BEC5-4653-8AFF-A59E47ADC75B}.Release|Any CPU.ActiveCfg = Release|Any CPU

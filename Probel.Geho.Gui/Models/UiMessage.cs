@@ -1,5 +1,7 @@
 ﻿namespace Probel.Geho.Gui.Models
 {
+    using System;
+
     using Properties;
 
     #region Enumerations
@@ -27,6 +29,11 @@
         #endregion Constructors
 
         #region Properties
+
+        public Exception Exception
+        {
+            get; set;
+        }
 
         public string Message
         {

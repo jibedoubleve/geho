@@ -1,12 +1,12 @@
-﻿namespace Probel.Geho.Data.BusinessLogic.Hr
+﻿namespace Probel.Geho.Services.BusinessLogic.Hr
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
 
-    using Probel.Geho.Data.Database;
-    using Probel.Geho.Data.Entities;
+    using Probel.Geho.Services.Database;
+    using Probel.Geho.Services.Entities;
 
     internal class ActivityAdapter
     {

@@ -1,4 +1,4 @@
-﻿namespace Probel.Geho.Data.InMemoryQuery
+﻿namespace Probel.Geho.Services.InMemoryQuery
 {
     using System;
     using System.Collections.Generic;
@@ -6,7 +6,7 @@
     using System.Text;
     using System.Threading.Tasks;
 
-    using Probel.Geho.Data.Dto;
+    using Probel.Geho.Services.Dto;
 
     public class QueryWeek
     {

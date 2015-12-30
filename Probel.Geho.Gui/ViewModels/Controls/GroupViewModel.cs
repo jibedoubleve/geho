@@ -1,18 +1,13 @@
 ﻿namespace Probel.Geho.Gui.ViewModels.Controls
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
     using System.Windows.Input;
 
-    using Probel.Geho.Data.BusinessLogic;
-    using Probel.Geho.Data.Dto;
+    using Mvvm.Gui;
+    using Mvvm.Toolkit.DataBinding;
+
     using Probel.Geho.Gui.Properties;
-    using Probel.Geho.Gui.Tools;
-    using Probel.Mvvm.DataBinding;
-    using Probel.Mvvm.Gui;
+    using Probel.Geho.Services.BusinessLogic;
+    using Probel.Geho.Services.Dto;
 
     public class GroupViewModel : BaseViewModel
     {
@@ -60,16 +55,6 @@
 
         #region Methods
 
-        public static IEnumerable<GroupViewModel> ToViewModels(IEnumerable<GroupDto> g, IHrService srv, ILoadeableViewModel parentVm)
-        {
-            var list = new List<GroupViewModel>();
-            foreach (var item in g.OrderBy(e => e.Order))
-            {
-                list.Add(new GroupViewModel(srv, parentVm) { Group = item, });
-            }
-            return list;
-        }
-
         private bool CanDeleteGroup()
         {
             return this.Group != null;
@@ -77,7 +62,7 @@
 
         private void DeleteGroup()
         {
-            var yes = ViewService.MessageBox.Question(
+            var yes = Notifyer.Question(
                 string.Format(Messages.Msg_AskDeleteGroup, this.Group.Name));
             if (yes)
             {
@@ -85,7 +70,7 @@
                 {
                     this.Service.RemoveGroup(this.Group);
                     this.ParentVm.Load();
-                    this.StatusBar.InfoFormat(Messages.Msg_GroupDeleted, this.Group.Name);
+                    this.Status.InfoFormat(Messages.Msg_GroupDeleted, this.Group.Name);
                 }
             }
         }

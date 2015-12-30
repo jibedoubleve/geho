@@ -9,14 +9,14 @@
              xmlns:ctrl="clr-namespace:Probel.Geho.Gui.Views.Controls"
              xmlns:conv="clr-namespace:Probel.Geho.Gui.Converters"
              
-             mc:Ignorable="d" Width="300"
+             mc:Ignorable="d"              
              Loaded="UserControl_Loaded">
     <UserControl.Resources>
         <conv:BoolToWhiteOrRedConverter x:Key="btw"/>
         <conv:BoolToVisibilityConverter x:Key="btv"/>
     </UserControl.Resources>
     <HeaderedContentControl Header="{Binding Group.Name}"
-                            BorderBrush="#FF293955" Background="#FF465A7D"
+                            BorderBrush="#FF293955" Background="#FFD6DBE9"
                             Style="{StaticResource LightHeaderedContent}">
         <Grid>
             <Grid.RowDefinitions>

@@ -289,6 +289,15 @@ namespace Probel.Geho.Gui.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Activité.
+        /// </summary>
+        public static string Header_Activity {
+            get {
+                return ResourceManager.GetString("Header_Activity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Créer activité.
         /// </summary>
         public static string Header_AddActivity {
@@ -334,6 +343,15 @@ namespace Probel.Geho.Gui.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Jour.
+        /// </summary>
+        public static string Header_Day {
+            get {
+                return ResourceManager.GetString("Header_Day", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Jours.
         /// </summary>
         public static string Header_Days {
@@ -366,6 +384,15 @@ namespace Probel.Geho.Gui.Properties {
         public static string Header_Educators {
             get {
                 return ResourceManager.GetString("Header_Educators", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Message.
+        /// </summary>
+        public static string Header_ErrorMsg {
+            get {
+                return ResourceManager.GetString("Header_ErrorMsg", resourceCulture);
             }
         }
         
@@ -442,6 +469,15 @@ namespace Probel.Geho.Gui.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Moment.
+        /// </summary>
+        public static string Header_Moment {
+            get {
+                return ResourceManager.GetString("Header_Moment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bénéficiaires présents.
         /// </summary>
         public static string Header_PresentBeneficiary {
@@ -456,6 +492,24 @@ namespace Probel.Geho.Gui.Properties {
         public static string Header_Print {
             get {
                 return ResourceManager.GetString("Header_Print", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Affichage de l&apos;erreur.
+        /// </summary>
+        public static string Header_ShowError {
+            get {
+                return ResourceManager.GetString("Header_ShowError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stack trace.
+        /// </summary>
+        public static string Header_StackTrace {
+            get {
+                return ResourceManager.GetString("Header_StackTrace", resourceCulture);
             }
         }
         
@@ -568,7 +622,7 @@ namespace Probel.Geho.Gui.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Visite médicale.
+        ///   Looks up a localized string similar to VM.
         /// </summary>
         public static string Lbl_MedicalExam {
             get {
@@ -807,6 +861,15 @@ namespace Probel.Geho.Gui.Properties {
         public static string Msg_NoMessage {
             get {
                 return ResourceManager.GetString("Msg_NoMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Il n&apos;y a pas de semaine à afficher..
+        /// </summary>
+        public static string Msg_NoWeekToDisplay {
+            get {
+                return ResourceManager.GetString("Msg_NoWeekToDisplay", resourceCulture);
             }
         }
         

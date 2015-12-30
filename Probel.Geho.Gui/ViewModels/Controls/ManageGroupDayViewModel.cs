@@ -1,16 +1,15 @@
 ﻿namespace Probel.Geho.Gui.ViewModels.Controls
 {
-    using System;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
     using System.Linq;
 
     using Mvvm.Gui;
+    using Mvvm.Toolkit.DataBinding;
 
-    using Probel.Geho.Data.BusinessLogic;
-    using Probel.Geho.Data.Dto;
     using Probel.Geho.Gui.Tools;
-    using Probel.Mvvm.DataBinding;
+    using Probel.Geho.Services.BusinessLogic;
+    using Probel.Geho.Services.Dto;
 
     public class ManageGroupDayViewModel : LoadeableViewModel
     {
@@ -131,19 +130,6 @@
 
         #region Methods
 
-        public static IEnumerable<ManageGroupDayViewModel> ToViewModel(IEnumerable<GroupDto> groups, IScheduleService srv, ManageDayViewModel parentVm)
-        {
-            if (srv == null) { throw new ArgumentNullException("srv"); }
-            var list = new List<ManageGroupDayViewModel>();
-            foreach (var item in groups)
-            {
-                var vm = new ManageGroupDayViewModel(item, srv, parentVm);
-                //vm.Load();
-                list.Add(vm);
-            }
-            return list;
-        }
-
         public override void Load()
         {
             using (WaitingCursor.While)
@@ -151,8 +137,8 @@
                 var freeInMorning = this.Service.GetFreeEducators(this.ParentVm.CurrentDay, isMorning: true);
                 var freeInAfternoon = this.Service.GetFreeEducators(this.ParentVm.CurrentDay, isMorning: false);
 
-                this.EducatorsMorning.Refill(PersonFlatBusyViewModel.ToViewModels(freeInMorning, Service, this));
-                this.EducatorsAfternoon.Refill(PersonFlatBusyViewModel.ToViewModels(freeInAfternoon, Service, this));
+                this.EducatorsMorning.Refill(freeInMorning.ToViewModels(Service, this));
+                this.EducatorsAfternoon.Refill(freeInAfternoon.ToViewModels(Service, this));
 
                 //TODO: send it to the service layer
                 var days = (from d in ParentVm.ParentVm.CurrentWeek.Days

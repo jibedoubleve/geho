@@ -5,16 +5,17 @@
 
     using Microsoft.Practices.Unity;
 
+    using Mvvm.Gui;
+
     using Probel.Geho.Gui.Tools;
     using Probel.Geho.Gui.ViewModels;
     using Probel.Geho.Gui.Views;
-    using Probel.Mvvm.Gui;
 
     using Runtime;
-
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+    using Mvvm.Toolkit.Events;
+    using Models;    /// <summary>
+                     /// Interaction logic for MainWindow.xaml
+                     /// </summary>
     public partial class MainView : Window
     {
         #region Fields
@@ -27,6 +28,7 @@
 
         public MainView(IUnityContainer ioc)
         {
+            AppContext.Messenger.Subscribe(this);
             Ioc = ioc;
             InitializeComponent();
         }
@@ -85,6 +87,11 @@
                 this.mainFrame.Navigate(view);
             }
             catch (Exception ex) { new ErrorHandler().HandleError(ex); }
+        }
+
+        private void Click_ShowError(object sender, RoutedEventArgs e)
+        {
+            this.errorPopup.IsOpen = true;
         }
 
         #endregion Methods

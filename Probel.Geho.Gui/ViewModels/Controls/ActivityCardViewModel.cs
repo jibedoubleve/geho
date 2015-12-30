@@ -1,15 +1,12 @@
 ﻿namespace Probel.Geho.Gui.ViewModels.Controls
 {
     using System;
-    using System.Collections.Generic;
     using System.Collections.ObjectModel;
 
-    using Data.Entities;
+    using Probel.Geho.Services.Dto;
+    using Probel.Geho.Services.InMemoryQuery;
 
-    using Probel.Geho.Data.BusinessLogic;
-    using Probel.Geho.Data.Dto;
-    using Probel.Geho.Data.InMemoryQuery;
-    using Probel.Mvvm.DataBinding;
+    using Services.Entities;
 
     public class ActivityCardViewModel : BaseViewModel
     {
@@ -104,19 +101,5 @@
         }
 
         #endregion Properties
-
-        #region Methods
-
-        public static IEnumerable<ActivityCardViewModel> ToActivityCardViewModel(IEnumerable<ActivityDto> activities)
-        {
-            var list = new List<ActivityCardViewModel>();
-            foreach (var a in activities)
-            {
-                list.Add(new ActivityCardViewModel(a));
-            }
-            return list;
-        }
-
-        #endregion Methods
     }
 }

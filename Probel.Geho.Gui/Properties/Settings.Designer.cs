@@ -22,5 +22,101 @@ namespace Probel.Geho.Gui.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool IsActivitiesSelected {
+            get {
+                return ((bool)(this["IsActivitiesSelected"]));
+            }
+            set {
+                this["IsActivitiesSelected"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool IsFridaySelected {
+            get {
+                return ((bool)(this["IsFridaySelected"]));
+            }
+            set {
+                this["IsFridaySelected"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool IsLunchSelected {
+            get {
+                return ((bool)(this["IsLunchSelected"]));
+            }
+            set {
+                this["IsLunchSelected"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool IsMondaySelected {
+            get {
+                return ((bool)(this["IsMondaySelected"]));
+            }
+            set {
+                this["IsMondaySelected"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool IsThursdaySelected {
+            get {
+                return ((bool)(this["IsThursdaySelected"]));
+            }
+            set {
+                this["IsThursdaySelected"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool IsTuesdaySelected {
+            get {
+                return ((bool)(this["IsTuesdaySelected"]));
+            }
+            set {
+                this["IsTuesdaySelected"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool IsWednesdaySelected {
+            get {
+                return ((bool)(this["IsWednesdaySelected"]));
+            }
+            set {
+                this["IsWednesdaySelected"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool IsWeekSelected {
+            get {
+                return ((bool)(this["IsWeekSelected"]));
+            }
+            set {
+                this["IsWeekSelected"] = value;
+            }
+        }
     }
 }

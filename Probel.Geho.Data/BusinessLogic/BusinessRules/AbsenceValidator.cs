@@ -1,12 +1,13 @@
-﻿namespace Probel.Geho.Data.BusinessLogic.BusinessRules
+﻿namespace Probel.Geho.Services.BusinessLogic.BusinessRules
 {
     using System;
     using System.Linq;
     using System.Text;
 
-    using Probel.Geho.Data.Database;
-    using Probel.Geho.Data.Entities;
-    using Probel.Geho.Data.Properties;
+    using Data.Properties;
+
+    using Probel.Geho.Services.Database;
+    using Probel.Geho.Services.Entities;
 
     internal class AbsenceValidator : IValidator
     {

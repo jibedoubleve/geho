@@ -5,16 +5,13 @@
     using System.Collections.ObjectModel;
     using System.Windows.Input;
 
-    using Models;
+    using Mvvm.Gui;
+    using Mvvm.Toolkit.DataBinding;
 
-    using Mvvm.Gui.PostOffice;
-
-    using Probel.Geho.Data.BusinessLogic;
-    using Probel.Geho.Data.Dto;
-    using Probel.Geho.Data.InMemoryQuery;
     using Probel.Geho.Gui.ViewModels.Controls;
-    using Probel.Mvvm.DataBinding;
-    using Probel.Mvvm.Gui;
+    using Probel.Geho.Services.BusinessLogic;
+    using Probel.Geho.Services.Dto;
+    using Probel.Geho.Services.InMemoryQuery;
 
     using Properties;
 
@@ -189,7 +186,7 @@
 
         public override void Load()
         {
-            this.StatusBar.Loading();
+            this.Status.Loading();
             this.MedicalExamViewModel.Load();
             bufferPersons = this.Service.GetPersons();
 
@@ -201,16 +198,16 @@
             if (FilterEducator) { this.FilteredPersons.Refill(this.bufferPersons.GetEducators()); }
             else { this.FilteredPersons.Refill(this.bufferPersons.GetBeneficiaries()); }
 
-            this.Beneficiaries.Refill(PersonViewModel.ToViewModels(p.GetBeneficiaries(), Service, this));
-            this.Educators.Refill(PersonViewModel.ToViewModels(p.GetEducators(), Service, this));
-            this.Absences.Refill(AbsenceViewModel.ToViewModels(a, Service, this));
-            this.Groups.Refill(GroupViewModel.ToViewModels(g, Service, this));
-            this.Activities.Refill(ActivityCardViewModel.ToActivityCardViewModel(ac));
+            this.Beneficiaries.Refill(p.GetBeneficiaries().ToViewModels(Service, this));
+            this.Educators.Refill(p.GetEducators().ToViewModels(Service, this));
+            this.Absences.Refill(a.ToViewModels(Service, this));
+            this.Groups.Refill(g.ToViewModels(Service, this));
+            this.Activities.Refill(ac.ToViewModels());
 
             var vm = new LunchManagementViewModel(this.Service);
             vm.Load();
             this.LunchManagementViewModel = vm;
-            this.StatusBar.Ready();
+            this.Status.Ready();
         }
 
         private void AddAbsence()
@@ -224,7 +221,7 @@
                 this.Service.CreateAbsence(this.AbsenceToAdd);
                 this.AbsenceToAdd = new AbsenceDto();
                 this.Load();
-                this.StatusBar.Info(Messages.Msg_AbsenceCreated);
+                this.Status.Info(Messages.Msg_AbsenceCreated);
             }
             else { ErrorHandler.HandleWarning(status.Error); }
         }
@@ -239,7 +236,7 @@
 
                 this.PersonToAdd = new PersonDto();
                 this.Load();
-                this.StatusBar.InfoFormat(Messages.Msg_PersonAdded, name, surname);
+                this.Status.InfoFormat(Messages.Msg_PersonAdded, name, surname);
             }
         }
 

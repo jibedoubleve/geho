@@ -1,4 +1,4 @@
-﻿namespace Probel.Geho.Data.Helpers
+﻿namespace Probel.Geho.Services.Helpers
 {
     using System;
     using System.Collections.Generic;
@@ -6,7 +6,7 @@
     using System.Text;
     using System.Threading.Tasks;
 
-    using Probel.Geho.Data.Entities;
+    using Probel.Geho.Services.Entities;
 
     /// <summary>
     /// Indicates whether the Moment in day is the morning or afternoon

@@ -1,4 +1,4 @@
-﻿namespace Probel.Geho.Data.BusinessLogic.BusinessRules
+﻿namespace Probel.Geho.Services.BusinessLogic.BusinessRules
 {
     using System;
     using System.Collections.Generic;

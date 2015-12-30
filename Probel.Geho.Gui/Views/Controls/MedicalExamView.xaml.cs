@@ -1,25 +1,13 @@
 ﻿namespace Probel.Geho.Gui.Views.Controls
 {
     using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-    using System.Windows;
     using System.Windows.Controls;
-    using System.Windows.Data;
-    using System.Windows.Documents;
-    using System.Windows.Input;
-    using System.Windows.Media;
-    using System.Windows.Media.Imaging;
-    using System.Windows.Navigation;
-    using System.Windows.Shapes;
 
-    using Data.Dto;
-    using Data.Entities;
+    using Mvvm.Toolkit.DataBinding;
 
     using Probel.Geho.Gui.ViewModels.Controls;
-    using Probel.Mvvm.DataBinding;
+
+    using Services.Entities;
 
     /// <summary>
     /// Interaction logic for MedicalExamView.xaml

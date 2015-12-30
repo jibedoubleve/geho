@@ -1,14 +1,13 @@
 ﻿namespace Probel.Geho.Gui.ViewModels.Controls
 {
-    using System.Collections.Generic;
     using System.Windows.Input;
 
-    using Probel.Geho.Data.BusinessLogic;
-    using Probel.Geho.Data.Dto;
+    using Mvvm.Gui;
+    using Mvvm.Toolkit.DataBinding;
+
     using Probel.Geho.Gui.Properties;
-    using Probel.Geho.Gui.Tools;
-    using Probel.Mvvm.DataBinding;
-    using Probel.Mvvm.Gui;
+    using Probel.Geho.Services.BusinessLogic;
+    using Probel.Geho.Services.Dto;
 
     public class ActivityViewModel : ActivityCardViewModel
     {
@@ -43,16 +42,6 @@
 
         #region Methods
 
-        public static IEnumerable<ActivityViewModel> ToActivityViewModel(IEnumerable<ActivityDto> activities, IHrService service, ILoadeableViewModel parentVm)
-        {
-            var list = new List<ActivityViewModel>();
-            foreach (var a in activities)
-            {
-                list.Add(new ActivityViewModel(a, service, parentVm));
-            }
-            return list;
-        }
-
         private bool CanDeleteActivity()
         {
             return true;
@@ -60,14 +49,14 @@
 
         private void DeleteActivity()
         {
-            var yes = ViewService.MessageBox.Question(string.Format(Messages.Msg_AskDeleteActivity, this.Name));
+            var yes = Notifyer.Question(string.Format(Messages.Msg_AskDeleteActivity, this.Name));
             if (yes)
             {
                 using (WaitingCursor.While)
                 {
                     this.Service.RemoveActivity(this.Activity);
                     this.ParentVm.Load();
-                    this.StatusBar.InfoFormat(Messages.Msg_ActivityDeleted, this.Activity.Name);
+                    this.Status.InfoFormat(Messages.Msg_ActivityDeleted, this.Activity.Name);
                 }
             }
         }

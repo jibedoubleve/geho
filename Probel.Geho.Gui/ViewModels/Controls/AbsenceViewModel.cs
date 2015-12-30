@@ -1,14 +1,13 @@
 ﻿namespace Probel.Geho.Gui.ViewModels.Controls
 {
-    using System.Collections.Generic;
     using System.Windows.Input;
 
-    using Probel.Geho.Data.BusinessLogic;
-    using Probel.Geho.Data.Dto;
+    using Mvvm.Gui;
+    using Mvvm.Toolkit.DataBinding;
+
     using Probel.Geho.Gui.Properties;
-    using Probel.Geho.Gui.Tools;
-    using Probel.Mvvm.DataBinding;
-    using Probel.Mvvm.Gui;
+    using Probel.Geho.Services.BusinessLogic;
+    using Probel.Geho.Services.Dto;
 
     public class AbsenceViewModel : BaseViewModel
     {
@@ -54,16 +53,6 @@
 
         #region Methods
 
-        public static IEnumerable<AbsenceViewModel> ToViewModels(IEnumerable<AbsenceDto> absences, IHrService service, ILoadeableViewModel vm)
-        {
-            var result = new List<AbsenceViewModel>();
-            foreach (var absence in absences)
-            {
-                result.Add(new AbsenceViewModel(service, vm) { Absence = absence });
-            }
-            return result;
-        }
-
         private bool CanDeleteAbsence()
         {
             return this.Absence != null;
@@ -71,14 +60,14 @@
 
         private void DeleteAbsence()
         {
-            var yes = ViewService.MessageBox.Question(Messages.Msg_AskDeleteAbsence);
+            var yes = Notifyer.Question(Messages.Msg_AskDeleteAbsence);
             if (yes)
             {
                 using (WaitingCursor.While)
                 {
                     this.Service.RemoveAbsence(this.Absence);
                     this.ParentVm.Load();
-                    this.StatusBar.Info(Messages.Msg_AbsenceDeleted);
+                    this.Status.Info(Messages.Msg_AbsenceDeleted);
                 }
             }
         }

@@ -16,13 +16,13 @@
     using System.Windows.Shapes;
 
     /// <summary>
-    /// Interaction logic for DisplayLunchDay.xaml
+    /// Interaction logic for ExceptionHandlerView.xaml
     /// </summary>
-    public partial class DisplayLunchDayView : UserControl
+    public partial class ExceptionHandlerView : UserControl
     {
         #region Constructors
 
-        public DisplayLunchDayView()
+        public ExceptionHandlerView()
         {
             InitializeComponent();
         }

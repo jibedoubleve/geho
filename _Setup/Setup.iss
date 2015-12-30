@@ -26,6 +26,9 @@ OutputDir=.
 OutputBaseFilename=geho.{#MyAppVersion}.setup
 Compression=lzma
 SolidCompression=yes
+;Allow easy update
+DisableDirPage=auto
+DisableProgramGroupPage=auto
 
 [Languages]
 Name: "french"; MessagesFile: "compiler:Languages\French.isl"
@@ -44,12 +47,16 @@ Source: "..\Probel.Geho.Gui\bin\Release\Microsoft.Practices.Unity.dll"; DestDir:
 Source: "..\Probel.Geho.Gui\bin\Release\Microsoft.Practices.Unity.RegistrationByConvention.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\Probel.Geho.Gui\bin\Release\Probel.Geho.Data.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\Probel.Geho.Gui\bin\Release\Probel.Geho.Gui.exe.config"; DestDir: "{app}"; Flags: ignoreversion
-Source: "..\Probel.Geho.Gui\bin\Release\Probel.Mvvm.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "..\Probel.Geho.Gui\bin\Release\System.Reactive.Core.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "..\Probel.Geho.Gui\bin\Release\System.Reactive.Interfaces.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "..\Probel.Geho.Gui\bin\Release\System.Reactive.Linq.dll"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 Source: "SqlLocalDB.MSI"; DestDir: "{tmp}"
+Source: "..\Probel.Geho.Gui\bin\Release\Xceed.Wpf.AvalonDock.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\Probel.Geho.Gui\bin\Release\Xceed.Wpf.AvalonDock.Themes.Aero.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\Probel.Geho.Gui\bin\Release\Xceed.Wpf.AvalonDock.Themes.Metro.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\Probel.Geho.Gui\bin\Release\Xceed.Wpf.AvalonDock.Themes.VS2010.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\Probel.Geho.Gui\bin\Release\Xceed.Wpf.DataGrid.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\Probel.Geho.Gui\bin\Release\Xceed.Wpf.Toolkit.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\Probel.Geho.Gui\bin\Release\Probel.Mvvm.Gui.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\Probel.Geho.Gui\bin\Release\Probel.Mvvm.Toolkit.dll"; DestDir: "{app}"; Flags: ignoreversion
 
 [Icons]
 Name: "{group}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"

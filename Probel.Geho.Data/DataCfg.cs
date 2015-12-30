@@ -1,4 +1,4 @@
-﻿namespace Probel.Geho.Data
+﻿namespace Probel.Geho.Services
 {
     using System;
     using System.Collections.Generic;

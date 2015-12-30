@@ -7,9 +7,9 @@
     using System.Threading.Tasks;
     using System.Windows.Data;
 
-    using Data.Entities;
-
     using Probel.Geho.Gui.Properties;
+
+    using Services.Entities;
 
     public class StringToNoonConverter : IValueConverter
     {

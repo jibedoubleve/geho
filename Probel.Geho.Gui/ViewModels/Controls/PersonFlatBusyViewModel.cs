@@ -1,11 +1,7 @@
 ﻿namespace Probel.Geho.Gui.ViewModels.Controls
 {
-    using System.Collections.Generic;
-    using System.Linq;
-
-    using Probel.Geho.Data.BusinessLogic;
-    using Probel.Geho.Data.Dto;
-    using Probel.Mvvm.DataBinding;
+    using Probel.Geho.Services.BusinessLogic;
+    using Probel.Geho.Services.Dto;
 
     using Properties;
 
@@ -140,21 +136,11 @@
 
         #region Methods
 
-        public static IEnumerable<PersonFlatBusyViewModel> ToViewModels(IEnumerable<PersonDto> people, IScheduleService service, ManageGroupDayViewModel parentVm)
-        {
-            var list = new List<PersonFlatBusyViewModel>();
-            foreach (var person in people.OrderBy(e => e.Name).ThenBy(e => e.Surname))
-            {
-                list.Add(new PersonFlatBusyViewModel(person, service, parentVm));
-            }
-            return list;
-        }
-
         public void Save()
         {
             this.ParentVm.Save();
             this.ParentVm.ParentVm.MarkBusyEducators();
-            this.StatusBar.InfoFormat(IsSelected ? Messages.Msg_AddPersonInGroup : Messages.Msg_RemovePersonFromGroup
+            this.Status.InfoFormat(IsSelected ? Messages.Msg_AddPersonInGroup : Messages.Msg_RemovePersonFromGroup
                 , this.Name
                 , this.Surname);
         }

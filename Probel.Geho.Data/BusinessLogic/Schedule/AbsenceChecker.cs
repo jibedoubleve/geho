@@ -1,11 +1,11 @@
-﻿namespace Probel.Geho.Data.Business_Logic.Schedule
+﻿namespace Probel.Geho.Services.Business_Logic.Schedule
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
 
-    using Probel.Geho.Data.Entities;
+    using Probel.Geho.Services.Entities;
 
     internal class AbsenceChecker
     {

@@ -2,7 +2,9 @@
 {
     using System.Windows;
 
-    using Probel.Geho.Data;
+    using Probel.Geho.Services;
+
+    using Tools;
 
     /// <summary>
     /// Interaction logic for App.xaml
@@ -20,6 +22,12 @@
             view.Show();
 
             base.OnStartup(e);
+        }
+
+        private void Application_DispatcherUnhandledException(object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e)
+        {
+            e.Handled = true;
+            new ErrorHandler().HandleError(e.Exception);
         }
 
         #endregion Methods

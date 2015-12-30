@@ -4,9 +4,9 @@
     using System.Windows;
     using System.Windows.Controls;
 
-    using Probel.Geho.Data.BusinessLogic.Hr;
+    using Mvvm.Toolkit.DataBinding;
+
     using Probel.Geho.Gui.ViewModels;
-    using Probel.Mvvm.DataBinding;
 
     /// <summary>
     /// Interaction logic for HrManagerxaml.xaml

@@ -1,13 +1,11 @@
 ﻿namespace Probel.Geho.Gui.Models
 {
-    using System;
     using System.Collections.Generic;
     using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
 
-    using Probel.Geho.Data.Dto;
-    using Probel.Mvvm.DataBinding;
+    using Mvvm.Toolkit.DataBinding;
+
+    using Probel.Geho.Services.Dto;
 
     public class PersonModel : ObservableObject
     {

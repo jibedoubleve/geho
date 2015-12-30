@@ -5,9 +5,9 @@
     using System.Collections.ObjectModel;
     using System.Linq;
 
-    using Data.Dto;
+    using Mvvm.Toolkit.DataBinding;
 
-    using Probel.Mvvm.DataBinding;
+    using Services.Dto;
 
     public class DisplayDayViewModel : ObservableObject
     {
@@ -18,6 +18,12 @@
         #endregion Fields
 
         #region Constructors
+
+        public DisplayDayViewModel(DayOfWeek dayOfWeek, IEnumerable<DisplayGroupViewModel> groups)
+        {
+            this.Groups = new ObservableCollection<DisplayGroupViewModel>(groups.OrderBy(e => e.GroupOrder));
+            this.DayOfWeek = dayOfWeek;
+        }
 
         public DisplayDayViewModel(DayOfWeek dayOfWeek, IEnumerable<DayDto> days)
         {

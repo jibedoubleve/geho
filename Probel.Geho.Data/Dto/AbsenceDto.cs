@@ -1,4 +1,4 @@
-﻿namespace Probel.Geho.Data.Dto
+﻿namespace Probel.Geho.Services.Dto
 {
     using System;
 

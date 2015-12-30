@@ -2,8 +2,9 @@
 {
     using System;
 
+    using Mvvm.Toolkit.Events;
+
     using Probel.Geho.Gui.Models;
-    using Probel.Mvvm.Gui.PostOffice;
 
     using Properties;
 
@@ -11,15 +12,15 @@
     {
         #region Fields
 
-        private readonly Messenger Messenger = new Messenger();
+        private readonly EventAggregator Messenger = AppContext.Messenger;
 
         #endregion Fields
 
         #region Methods
 
-        public void Error(string message)
+        public void Error(Exception ex)
         {
-            this.Write(Status.Error, message);
+            this.Write(Status.Error, ex.Message, ex);
         }
 
         public void Info(string message)
@@ -52,18 +53,19 @@
             this.Write(Status.Warn, format, args);
         }
 
-        private void Write(Status status, string msg)
+        private void Write(Status status, string msg, Exception ex = null)
         {
-            this.Messenger.Post<UiMessage>(new UiMessage()
+            this.Messenger.Publish(new UiMessage()
             {
-                Message = msg,
+                Message = msg.Replace(Environment.NewLine, " "),
                 Status = status,
+                Exception = ex,
             });
         }
 
         private void Write(Status status, string format, params object[] args)
         {
-            this.Messenger.Post<UiMessage>(new UiMessage()
+            this.Messenger.Publish(new UiMessage()
             {
                 Message = string.Format(format, args),
                 Status = status,

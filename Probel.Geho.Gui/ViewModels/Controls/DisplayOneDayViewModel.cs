@@ -5,10 +5,8 @@
     using System.Collections.ObjectModel;
     using System.Linq;
 
-    using Data.BusinessLogic;
-    using Data.Dto;
-
-    using Probel.Mvvm.DataBinding;
+    using Services.BusinessLogic;
+    using Services.Dto;
 
     public class DisplayOneDayViewModel : LoadeableViewModel
     {
@@ -30,7 +28,7 @@
                              , g.Where(e => e.IsMorning).Select(f => f.People).FirstOrDefault()
                              , g.Where(e => !e.IsMorning).Select(f => f.People).FirstOrDefault());
 
-            this.Groups = new ObservableCollection<DisplayOneDayGroupViewModel>(groups);
+            this.Groups = new ObservableCollection<DisplayOneDayGroupViewModel>(groups.OrderBy(e=>e.Group.Order));
             this.DayOfWeek = day.DayOfWeek;
         }
 

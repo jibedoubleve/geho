@@ -22,7 +22,7 @@
                 <DatePicker Margin="5" SelectedDate="{Binding WeekDate}"/>
                 <Grid/>
             </DockPanel>
-            <TabControl ItemsSource="{Binding Days}" SelectedItem="SelectedDay">
+            <TabControl ItemsSource="{Binding Days}" SelectedItem="{Binding SelectedDay}">
                 <TabControl.ItemTemplate>
                     <DataTemplate>
                         <TextBlock Text="{Binding CurrentDay.DayOfWeek, Converter={StaticResource dowToText}}" FontSize="16"/>

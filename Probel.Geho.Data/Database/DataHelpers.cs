@@ -1,4 +1,4 @@
-﻿namespace Probel.Geho.Data.Database
+﻿namespace Probel.Geho.Services.Database
 {
     using System;
     using System.Collections.Generic;
@@ -6,7 +6,7 @@
     using System.Text;
     using System.Threading.Tasks;
 
-    using Probel.Geho.Data.Database;
+    using Probel.Geho.Services.Database;
 
     public class DataHelpers
     {

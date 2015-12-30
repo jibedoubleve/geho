@@ -89,7 +89,7 @@
                     </ScrollViewer>
                 </TabItem>
                 <TabItem x:Name="tab_activities" Header="{x:Static t:Messages.Header_Activities}">
-                    <ctrl:ActivityListView x:Name="uc_Activities" DataContext="{Binding ActivityListViewModel}"/>
+                    <ctrl:ActivityGridView x:Name="uc_Activities" DataContext="{Binding ActivityGridViewModel}"/>
                 </TabItem>
                 <TabItem x:Name="tab_lunches" Header="{x:Static t:Messages.Header_LunchTime}">
                     <ScrollViewer ScrollViewer.HorizontalScrollBarVisibility="Auto"

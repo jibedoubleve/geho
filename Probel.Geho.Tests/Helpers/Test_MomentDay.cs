@@ -2,8 +2,8 @@
 {
     using NUnit.Framework;
 
-    using Probel.Geho.Data.Entities;
-    using Probel.Geho.Data.Helpers;
+    using Probel.Geho.Services.Entities;
+    using Probel.Geho.Services.Helpers;
 
     [TestFixture]
     public class Test_MomentDay

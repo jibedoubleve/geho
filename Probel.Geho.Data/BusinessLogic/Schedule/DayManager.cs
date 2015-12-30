@@ -1,4 +1,4 @@
-﻿namespace Probel.Geho.Data.Business_Logic.Schedule
+﻿namespace Probel.Geho.Services.Business_Logic.Schedule
 {
     using System;
     using System.Collections.Generic;
@@ -6,9 +6,9 @@
     using System.Text;
     using System.Threading.Tasks;
 
-    using Probel.Geho.Data.Database;
-    using Probel.Geho.Data.Dto;
-    using Probel.Geho.Data.Entities;
+    using Probel.Geho.Services.Database;
+    using Probel.Geho.Services.Dto;
+    using Probel.Geho.Services.Entities;
 
     internal class DayManager
     {

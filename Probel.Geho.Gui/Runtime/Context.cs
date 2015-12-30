@@ -2,7 +2,7 @@
 {
     using System;
 
-    using Probel.Geho.Data.Helpers;
+    using Probel.Geho.Services.Helpers;
 
     public interface IContext
     {

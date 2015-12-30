@@ -5,11 +5,9 @@
     using System.Collections.ObjectModel;
     using System.Linq;
 
-    using Probel.Geho.Data.BusinessLogic;
-    using Probel.Geho.Data.Dto;
-    using Probel.Mvvm.DataBinding;
-
-    using Runtime;
+    using Probel.Geho.Gui.Tools;
+    using Probel.Geho.Services.BusinessLogic;
+    using Probel.Geho.Services.Dto;
 
     public class ManageDayViewModel : LoadeableViewModel
     {
@@ -87,11 +85,11 @@
 
         public override void Load()
         {
-            var grps = ManageGroupDayViewModel.ToViewModel(GroupsDto, Service, this);
+            var groups = GroupsDto.ToViewModels(Service, this);
 
-            foreach (var g in grps) { g.Load(); }
+            foreach (var group in groups) { group.Load(); }
 
-            this.Groups = new ObservableCollection<ManageGroupDayViewModel>(grps);
+            this.Groups = new ObservableCollection<ManageGroupDayViewModel>(groups);
             this.SelectGroup();
         }
 

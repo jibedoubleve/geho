@@ -2,7 +2,7 @@
 {
     using System.Windows.Controls;
 
-    using Mvvm.DataBinding;
+    using Mvvm.Toolkit.DataBinding;
 
     using ViewModels;
 

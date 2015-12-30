@@ -1,9 +1,9 @@
-﻿namespace Probel.Geho.Data.InMemoryQuery
+﻿namespace Probel.Geho.Services.InMemoryQuery
 {
     using System.Collections.Generic;
     using System.Linq;
 
-    using Probel.Geho.Data.Dto;
+    using Probel.Geho.Services.Dto;
 
     public static class QueryPersons
     {

@@ -17,7 +17,6 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBlock Text="{Binding DayOfWeek, Converter={StaticResource DayOfWeekToStringConverter}}" Foreground="#FF293955" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="26.667" FontWeight="Bold"/>
         <ItemsControl Grid.Row="1" ItemsSource="{Binding Groups}">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>

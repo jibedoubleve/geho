@@ -1,4 +1,4 @@
-namespace Probel.Geho.Data.Migrations
+namespace Probel.Geho.Services.Migrations
 {
     using System.Data.Entity.Migrations;
 

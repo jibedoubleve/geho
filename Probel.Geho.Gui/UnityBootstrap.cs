@@ -2,9 +2,9 @@
 {
     using Microsoft.Practices.Unity;
 
-    using Probel.Geho.Data.BusinessLogic;
-    using Probel.Geho.Data.BusinessLogic.Hr;
-    using Probel.Geho.Data.BusinessLogic.Schedule;
+    using Probel.Geho.Services.BusinessLogic;
+    using Probel.Geho.Services.BusinessLogic.Hr;
+    using Probel.Geho.Services.BusinessLogic.Schedule;
 
     using Runtime;
 

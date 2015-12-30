@@ -1,15 +1,14 @@
 ﻿namespace Probel.Geho.Gui.Views
 {
     using System;
-    using System.Collections.Generic;
     using System.Windows;
     using System.Windows.Controls;
 
-    using Data.Entities;
-
-    using Mvvm.DataBinding;
+    using Mvvm.Toolkit.DataBinding;
 
     using Probel.Geho.Gui.ViewModels;
+
+    using Services.Entities;
 
     /// <summary>
     /// Interaction logic for GroupView.xaml

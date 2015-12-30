@@ -1,13 +1,6 @@
 ﻿namespace Probel.Geho.Gui.ViewModels
 {
-    using System;
     using System.Threading.Tasks;
-
-    using Controls;
-
-    using Mvvm.Gui;
-
-    using Probel.Mvvm.DataBinding;
 
     public interface ILoadeableViewModel
     {
