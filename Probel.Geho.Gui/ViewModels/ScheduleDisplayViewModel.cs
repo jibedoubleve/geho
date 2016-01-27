@@ -182,7 +182,7 @@
                 var week = await Task.Run(() => this.Service.GetWeek(this.SelectedDate));
                 var monday = this.SelectedDate.GetMonday();
 
-                if (week == null)
+                if (week != null)
                 {
                     this.DisplayFullWeek(week);
 
