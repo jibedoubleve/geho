@@ -52,6 +52,8 @@
             this.updateGroupCommand = new RelayCommand(UpdateGroup, CanUpdateGroup);
             this.addActivityCommand = new RelayCommand(AddActivity, CanAddActivity);
             this.updateActivityCommand = new RelayCommand(UpdateActivity, CanUpdateActivity);
+            this.ShowUpdateGroupCommand = new RelayCommand(ShowUpdateGroup, CanShowUpdateGroup);
+            this.ShowUpdateActivityCommand = new RelayCommand(ShowUpdateActivity, CanShowUpdateActivity);
         }
 
         #endregion Constructors
@@ -146,6 +148,18 @@
             }
         }
 
+        public ICommand ShowUpdateActivityCommand
+        {
+            get;
+            private set;
+        }
+
+        public ICommand ShowUpdateGroupCommand
+        {
+            get;
+            private set;
+        }
+
         public ICommand UpdateActivityCommand
         {
             get { return this.updateActivityCommand; }
@@ -227,6 +241,16 @@
                && !string.IsNullOrWhiteSpace(this.GroupToAdd.Name);
         }
 
+        private bool CanShowUpdateActivity()
+        {
+            return this.SelectedActivity != null; ;
+        }
+
+        private bool CanShowUpdateGroup()
+        {
+            return this.SelectedGroup != null; ;
+        }
+
         private bool CanUpdateActivity()
         {
             return this.SelectedActivity != null;
@@ -271,6 +295,16 @@
                           select b).SingleOrDefault();
                 sp.IsSelected = true;
             }
+        }
+
+        private void ShowUpdateActivity()
+        {
+            /* Nothing to do */
+        }
+
+        private void ShowUpdateGroup()
+        {
+            /* Nothing to do */
         }
 
         private void UpdateActivity()

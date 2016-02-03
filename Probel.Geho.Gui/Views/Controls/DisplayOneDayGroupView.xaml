@@ -15,95 +15,97 @@
         <conv:BoolToWhiteOrRedConverter x:Key="btw"/>
         <conv:BoolToVisibilityConverter x:Key="btv"/>
     </UserControl.Resources>
-    <HeaderedContentControl Header="{Binding Group.Name}"
-                            BorderBrush="#FF293955" Background="#FFD6DBE9"
-                            Style="{StaticResource LightHeaderedContent}">
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition MinHeight="60"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition MinHeight="120"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition MinHeight="60"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition MinHeight="120"/>
-            </Grid.RowDefinitions>
-            <Grid Background="#FFFFF29D">
-                <TextBlock Text="{x:Static t:Messages.Day_Morning}" Foreground="#FF0F0505"
-                       HorizontalAlignment="Center"
-                       VerticalAlignment="Center" FontWeight="Bold" FontSize="13.333"/>
-            </Grid>
-            <Grid Background="#FFD6DBE9" Grid.Row="1">
-                <TextBlock Text="{x:Static t:Messages.Header_Educators}" Foreground="#FF040404"
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <HeaderedContentControl Header="{Binding Group.Name}" 
+                                BorderBrush="#FF293955" Background="#FF465A7D">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition MinHeight="60"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition MinHeight="120"/>
+                </Grid.RowDefinitions>
+ 
+                <Grid Background="#FFD6DBE9">
+                    <TextBlock Text="{x:Static t:Messages.Header_Educators}" Foreground="#FF040404"
                        HorizontalAlignment="Center"
                        VerticalAlignment="Center"/>
-            </Grid>
-            <ItemsControl Grid.Row="2"
+                </Grid>
+                <ItemsControl Grid.Row="1"
                           ItemsSource="{Binding EducatorsMorning}" Background="{Binding HasMorningBeneficiaries, Converter={StaticResource btw}}">
-                <ItemsControl.ItemTemplate>
-                    <DataTemplate>
-                        <ctrl:PersonFlatCardView/>
-                    </DataTemplate>
-                </ItemsControl.ItemTemplate>
-            </ItemsControl>
-            <Grid Background="#FFD6DBE9" Grid.Row="3">
-                <TextBlock Foreground="#FF040404"
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <ctrl:PersonFlatCardView/>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+                <Grid Background="#FFD6DBE9" Grid.Row="2">
+                    <TextBlock Foreground="#FF040404"
                            HorizontalAlignment="Center"
                            VerticalAlignment="Center">
                     <Run Text="{x:Static t:Messages.Header_Beneficiary}"/>
                     <Run Text="(" FontWeight="Bold" />
                     <Run Text="{Binding BeneficiariesMorning.Count, Mode=OneWay}" FontWeight="Bold"/>
                     <Run Text=")" FontWeight="Bold"/>
-                </TextBlock>
-            </Grid>
-            <ItemsControl Grid.Row="4"
+                    </TextBlock>
+                </Grid>
+                <ItemsControl Grid.Row="3"
                       ItemsSource="{Binding BeneficiariesMorning}" Background="{Binding HasMorningBeneficiaries, Converter={StaticResource btw}}">
-                <ItemsControl.ItemTemplate>
-                    <DataTemplate>
-                        <ctrl:PersonFlatCardView/>
-                    </DataTemplate>
-                </ItemsControl.ItemTemplate>
-            </ItemsControl>
-            <Grid Background="#FFFFF29D" Grid.Row="5">
-                <TextBlock Text="{x:Static t:Messages.Day_Afternoon}" Foreground="#FF040303"
-                       HorizontalAlignment="Center"
-                       VerticalAlignment="Center" FontWeight="Bold" FontSize="14.667"/>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <ctrl:PersonFlatCardView/>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
             </Grid>
-            <Grid Background="#FFD6DBE9" Grid.Row="6">
-                <TextBlock Text="{x:Static t:Messages.Header_Educators}" Foreground="#FF040404"
+        </HeaderedContentControl>
+        <HeaderedContentControl Grid.Row="1" 
+                                Header="{Binding Group.Name}" 
+                                BorderBrush="#FF293955" Background="#FF465A7D">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition MinHeight="60"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition MinHeight="120"/>
+                </Grid.RowDefinitions>
+                <Grid Background="#FFD6DBE9" Grid.Row="0">
+                    <TextBlock Text="{x:Static t:Messages.Header_Educators}" Foreground="#FF040404"
                            HorizontalAlignment="Center"
                            VerticalAlignment="Center"
                           />
-            </Grid>
-            <ItemsControl Grid.Row="7"
+                </Grid>
+                <ItemsControl Grid.Row="1"
                       ItemsSource="{Binding EducatorsAfternoon}" Background="{Binding HasAfternoonBeneficiaries, Converter={StaticResource btw}}">
-                <ItemsControl.ItemTemplate>
-                    <DataTemplate>
-                        <ctrl:PersonFlatCardView/>
-                    </DataTemplate>
-                </ItemsControl.ItemTemplate>
-            </ItemsControl>
-            <Grid Background="#FFD6DBE9" Grid.Row="8">
-                <TextBlock  Foreground="#FF040404"
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <ctrl:PersonFlatCardView/>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+                <Grid Background="#FFD6DBE9" Grid.Row="2">
+                    <TextBlock  Foreground="#FF040404"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center">
                     <Run Text="{x:Static t:Messages.Header_Beneficiary}"/>
                     <Run Text="(" FontWeight="Bold" />
                     <Run Text="{Binding BeneficiariesAfternoon.Count, Mode=OneWay}" FontWeight="Bold"/>
                     <Run Text=")" FontWeight="Bold"/>
-                </TextBlock>
-            </Grid>
-            <ItemsControl Grid.Row="9"
+                    </TextBlock>
+                </Grid>
+                <ItemsControl Grid.Row="3"
                       ItemsSource="{Binding BeneficiariesAfternoon}" Background="{Binding HasAfternoonBeneficiaries, Converter={StaticResource btw}}">
-                <ItemsControl.ItemTemplate>
-                    <DataTemplate>
-                        <ctrl:PersonFlatCardView/>
-                    </DataTemplate>
-                </ItemsControl.ItemTemplate>
-            </ItemsControl>
-        </Grid>
-    </HeaderedContentControl>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <ctrl:PersonFlatCardView/>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </Grid>
+        </HeaderedContentControl>
+    </Grid>
 </UserControl>

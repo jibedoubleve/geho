@@ -9,8 +9,8 @@
              xmlns:System="clr-namespace:System;assembly=mscorlib"
              xmlns:data="clr-namespace:Probel.Geho.Services.Entities;assembly=Probel.Geho.Data"
              
-             mc:Ignorable="d" 
-             d:DesignHeigh="500"  d:DesignWidth="300">
+             mc:Ignorable="d"
+             Width="450">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -63,22 +63,18 @@
                     <DatePicker DockPanel.Dock="Left" SelectedDate="{Binding AbsenceToAdd.Start}" FirstDayOfWeek="Monday"
                                     Margin="5"/>
                 </DockPanel>
-                <Button DockPanel.Dock="Top"
-                        Content="{x:Static t:Messages.Btn_Add}"
-                        Command="{Binding AddAbsenceCommand}"/>
-                <Grid/>
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Right">
+                    <Button DockPanel.Dock="Top"
+                            Style="{StaticResource ButtonToolBoxStyle}"
+                            Content="{x:Static t:Messages.Btn_Add}"
+                            Command="{Binding AddMedicalExamCommand}"
+                            Click="Click_CloseControl"/>
+                    <Button Content="{x:Static t:Messages.Btn_Cancel}"
+                            Style="{StaticResource ButtonToolBoxStyle}"
+                            Click="Click_CloseControl"/>
+                </StackPanel>
             </DockPanel>
-        </HeaderedContentControl>
-        <HeaderedContentControl DockPanel.Dock="Top"
-                                Grid.Row="1"
-                                Header="{x:Static t:Messages.Header_MedicalExam}">
-            <ItemsControl ItemsSource="{Binding MedicalExams}">
-                <ItemsControl.ItemTemplate>
-                    <DataTemplate>
-                        <local:AbsenceView/>
-                    </DataTemplate>
-                </ItemsControl.ItemTemplate>
-            </ItemsControl>
         </HeaderedContentControl>
     </Grid>
 </UserControl>

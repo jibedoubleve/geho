@@ -6,6 +6,7 @@
     using System.Windows.Input;
 
     using Mvvm.Toolkit.DataBinding;
+    using Mvvm.Toolkit.Events;
 
     using Probel.Geho.Services.BusinessLogic;
     using Probel.Geho.Services.Dto;
@@ -20,7 +21,6 @@
     {
         #region Fields
 
-        private readonly ICommand addAbsenceCommand;
         private readonly IHrService Service;
 
         private AbsenceDto absenceToAdd;
@@ -35,7 +35,7 @@
 
         public MedicalExamViewModel(IHrService service)
         {
-            this.addAbsenceCommand = new RelayCommand(AddAbsence, CanAddAbsence);
+            this.AddMedicalExamCommand = new RelayCommand(AddMedicalExam, CanAddMedicalExam);
             this.MedicalExams = new ObservableCollection<AbsenceViewModel>();
             this.FilteredPersons = new ObservableCollection<PersonDto>();
             this.AbsenceToAdd = new AbsenceDto();
@@ -56,9 +56,10 @@
             }
         }
 
-        public ICommand AddAbsenceCommand
+        public ICommand AddMedicalExamCommand
         {
-            get { return this.addAbsenceCommand; }
+            get;
+            private set;
         }
 
         public int EndOffset
@@ -119,7 +120,7 @@
             this.MedicalExams.Refill(me.ToViewModels(Service, this));
         }
 
-        private void AddAbsence()
+        private void AddMedicalExam()
         {
             this.AbsenceToAdd.End = this.AbsenceToAdd.Start;
             this.AbsenceToAdd.Start = this.AbsenceToAdd.Start.Date.AddHours(this.StartOffset);
@@ -133,11 +134,12 @@
                 this.AbsenceToAdd = new AbsenceDto();
                 this.Load();
                 this.Status.Info(Messages.Msg_MedicalExamAdded);
+                AppContext.Messenger.Publish(this);
             }
             else { Notifyer.Warning(status.Error); }
         }
 
-        private bool CanAddAbsence()
+        private bool CanAddMedicalExam()
         {
             return this.AbsenceToAdd.Person != null
                 && !string.IsNullOrWhiteSpace(this.AbsenceToAdd.Person.Name);

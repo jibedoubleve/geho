@@ -10,12 +10,20 @@
              mc:Ignorable="d" d:DesignWidth="300"
              MouseUp="UserControl_MouseUp">
     <UserControl.Resources>
-        <conv:BoolToGreenOrBlueConverter x:Key="btr"/>
         <Converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
     </UserControl.Resources>
     <Border BorderThickness="5"
-            CornerRadius="5"
-            Background="{Binding ElementName=cb_IsChecked, Path=IsChecked, Converter={StaticResource btr}}">
+            CornerRadius="5">
+        <Border.Resources>
+            <Style TargetType="Border">
+                <Setter Property="Background" Value="#FFD6DBE9"/>
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding ElementName=cb_IsChecked, Path=IsChecked}" Value="True">
+                        <Setter Property="Background" Value="#FFC8F3B8"/>
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style> 
+        </Border.Resources>
         <Border.Effect>
             <DropShadowEffect Color="#FFB6B6B6"/>
         </Border.Effect>

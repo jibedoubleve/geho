@@ -34,6 +34,36 @@
             }
         }
 
+        private void Click_CloselAddPersonnel(object sender, RoutedEventArgs e)
+        {
+            addPersonnelPopup.IsOpen = false;
+        }
+
+        private void Click_CloseManageAbsence(object sender, RoutedEventArgs e)
+        {
+            addAbsencePopup.IsOpen = false;
+        }
+
+        private void Click_ShowAddPersonnel(object sender, RoutedEventArgs e)
+        {
+            addPersonnelPopup.IsOpen = true;
+        }
+
+        private void Click_ShowManageAbsence(object sender, RoutedEventArgs e)
+        {
+            addAbsencePopup.IsOpen = true;
+        }
+
+        private void Click_ShowManageMedicalExams(object sender, RoutedEventArgs e)
+        {
+            this.addMedicalVisitPopup.IsOpen = true;
+        }
+
+        private void MedicalExamView_ControlClosing(object sender, EventArgs e)
+        {
+            this.addMedicalVisitPopup.IsOpen = false;
+        }
+
         private void SelectionChanged_cb_End(object sender, SelectionChangedEventArgs e)
         {
             if (this.DataContext is HrViewModel && cb_End != null && cb_End.SelectedItem != null)

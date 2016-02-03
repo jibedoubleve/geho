@@ -3,6 +3,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:data="clr-namespace:Probel.Geho.Services.Entities;assembly=Probel.Geho.Data"
       
       xmlns:t="clr-namespace:Probel.Geho.Gui.Properties"
       xmlns:ctrl="clr-namespace:Probel.Geho.Gui.Views.Controls"
@@ -10,209 +11,305 @@
       
       mc:Ignorable="d" 
       d:DesignHeight="720" d:DesignWidth="1280"
-      Title="HrView">
-
+      Title="HrView"
+      x:Name="mainPage">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <DockPanel>
-            <HeaderedContentControl DockPanel.Dock="Top" 
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Popup DockPanel.Dock="Right"
+               x:Name="addPersonnelPopup"
+               PlacementTarget="{Binding ElementName=mainPage}"
+               Placement="Center"
+               StaysOpen="True"
+               Width="450">
+            <Border BorderThickness="5"
+                    CornerRadius="5"
+                    Background="#FF465A7D">
+                <Border.Effect>
+                    <DropShadowEffect Color="#FFB6B6B6"/>
+                </Border.Effect>
+                <HeaderedContentControl DockPanel.Dock="Top" 
                                     Header="{x:Static t:Messages.Header_AddPerson}">
-                <DockPanel LastChildFill="True">
-                    <DockPanel DockPanel.Dock="Top">
-                        <TextBlock DockPanel.Dock="Left"  
+                    <DockPanel LastChildFill="True">
+                        <DockPanel DockPanel.Dock="Top">
+                            <TextBlock DockPanel.Dock="Left"  
                                Text="{x:Static t:Messages.Lbl_Name}"
                                Style="{StaticResource TextBoxStyle}"/>
-                        <TextBox DockPanel.Dock="Right" Text="{Binding PersonToAdd.Name, UpdateSourceTrigger=PropertyChanged}"/>
-                    </DockPanel>
-                    <DockPanel DockPanel.Dock="Top">
-                        <TextBlock DockPanel.Dock="Left"  
+                            <TextBox DockPanel.Dock="Right" Text="{Binding PersonToAdd.Name, UpdateSourceTrigger=PropertyChanged}"/>
+                        </DockPanel>
+                        <DockPanel DockPanel.Dock="Top">
+                            <TextBlock DockPanel.Dock="Left"  
                                Text="{x:Static t:Messages.Lbl_Surname}"
                                Style="{StaticResource TextBoxStyle}"/>
-                        <TextBox DockPanel.Dock="Right" Text="{Binding PersonToAdd.Surname, UpdateSourceTrigger=PropertyChanged}"/>
-                    </DockPanel>
-                    <Grid DockPanel.Dock="Top">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                        </Grid.ColumnDefinitions>
-                        <DockPanel>
-                            <TextBlock DockPanel.Dock="Left"  
+                            <TextBox DockPanel.Dock="Right" Text="{Binding PersonToAdd.Surname, UpdateSourceTrigger=PropertyChanged}"/>
+                        </DockPanel>
+                        <Grid DockPanel.Dock="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <DockPanel>
+                                <TextBlock DockPanel.Dock="Left"  
                                        Text="{x:Static t:Messages.Cb_IsEducator}"
                                        Style="{StaticResource TextBoxStyle}"/>
-                            <CheckBox DockPanel.Dock="Right" 
+                                <CheckBox DockPanel.Dock="Right" 
                                       IsChecked="{Binding PersonToAdd.IsEducator}" 
                                       VerticalAlignment="Center" 
                                       HorizontalAlignment="Center"
                                       x:Name="cb_IsEducator"
                                       Checked="cb_IsEducator_Checked"
                                       Unchecked="cb_IsEducator_Checked"/>
-                        </DockPanel>
-                        <DockPanel Grid.Column="1"
+                            </DockPanel>
+                            <DockPanel Grid.Column="1"
                                    IsEnabled="{Binding PersonToAdd.IsEducator}">
-                            <TextBlock DockPanel.Dock="Left"  
+                                <TextBlock DockPanel.Dock="Left"  
                                        Text="{x:Static t:Messages.Cb_IsTrainee}"
                                        Style="{StaticResource TextBoxStyle}"/>
-                            <CheckBox DockPanel.Dock="Right" 
+                                <CheckBox DockPanel.Dock="Right" 
                                       IsChecked="{Binding PersonToAdd.IsTrainee}" 
                                       VerticalAlignment="Center" 
                                       HorizontalAlignment="Center"
                                       x:Name="cb_IsTrainee"/>
-                        </DockPanel>
-                    </Grid>
-                    <Button DockPanel.Dock="Top"
-                        Content="{x:Static t:Messages.Btn_Add}"
-                        Command="{Binding AddPersonCommand}"/>
-                    <Grid></Grid>
-                </DockPanel>
-            </HeaderedContentControl>
-            <ctrl:LunchManagementView DataContext="{Binding LunchManagementViewModel}"/>
-        </DockPanel>
-        <Grid Grid.Column="1">
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            <HeaderedContentControl Grid.Row="0"
-                                Header="{x:Static t:Messages.Header_Educators}">
-                <ScrollViewer VerticalScrollBarVisibility="Auto">
-                    <ItemsControl ItemsSource="{Binding Educators}"
-                              BorderThickness="1" BorderBrush="#FF828790">
-                        <ItemsControl.ItemTemplate>
-                            <DataTemplate>
-                                <ctrl:PersonView/>
-                            </DataTemplate>
-                        </ItemsControl.ItemTemplate>
-                    </ItemsControl>
-                </ScrollViewer>
-            </HeaderedContentControl>
-            <HeaderedContentControl Grid.Row="1"
-                                Header="{x:Static t:Messages.Header_Beneficiary}">
-                <ScrollViewer VerticalScrollBarVisibility="Auto">
-                    <ItemsControl ItemsSource="{Binding Beneficiaries}"
-                              BorderThickness="1" BorderBrush="#FF828790">
-                        <ItemsControl.ItemTemplate>
-                            <DataTemplate>
-                                <ctrl:PersonView/>
-                            </DataTemplate>
-                        </ItemsControl.ItemTemplate>
-                    </ItemsControl>
-                </ScrollViewer>
-            </HeaderedContentControl>
-        </Grid>
-        <Grid Grid.Column="2">
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            <Grid Grid.Row="0">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
+                            </DockPanel>
+                        </Grid>
+                        <StackPanel HorizontalAlignment="Right"
+                                    Orientation="Horizontal">
+                            <Button Content="{x:Static t:Messages.Btn_Add}"
+                                    Command="{Binding AddPersonCommand}"
+                                    Style="{StaticResource ButtonToolBoxStyle}"
+                                    Click="Click_CloselAddPersonnel"/>
+                            <Button Style="{StaticResource ButtonToolBoxStyle}"
+                                    Content="{x:Static t:Messages.Btn_Cancel}"
+                                    Click="Click_CloselAddPersonnel"/>
+                        </StackPanel>
+                    </DockPanel>
+                </HeaderedContentControl>
+            </Border>
+        </Popup>
+        <Popup DockPanel.Dock="Right"
+               x:Name="addAbsencePopup"
+               PlacementTarget="{Binding ElementName=mainPage}"
+               Placement="Center"
+               StaysOpen="True"
+               Width="450">
+            <Border BorderThickness="5"
+                    CornerRadius="5"
+                    Background="#FF465A7D">
+                <Border.Effect>
+                    <DropShadowEffect Color="#FFB6B6B6"/>
+                </Border.Effect>
                 <HeaderedContentControl Grid.Row="0"  Header="{x:Static t:Messages.Header_ManageAbsence}">
-                <DockPanel>
-                    <DockPanel DockPanel.Dock="Top">
-                        <TextBlock DockPanel.Dock="Left"  
+                    <DockPanel>
+                        <DockPanel DockPanel.Dock="Top">
+                            <TextBlock DockPanel.Dock="Left"  
                                Text="{x:Static t:Messages.Cb_IsEducator}"
                                Style="{StaticResource TextBoxStyle}"/>
-                        <CheckBox DockPanel.Dock="Right" 
+                            <CheckBox DockPanel.Dock="Right" 
                               IsChecked="{Binding FilterEducator}" 
                               VerticalAlignment="Center" 
                               HorizontalAlignment="Center"/>
-                    </DockPanel>
-                    <DockPanel DockPanel.Dock="Top">
-                        <TextBlock DockPanel.Dock="Left"
+                        </DockPanel>
+                        <DockPanel DockPanel.Dock="Top">
+                            <TextBlock DockPanel.Dock="Left"
                                    Text="{x:Static t:Messages.Lbl_AbsentPerson}"
                                    Style="{StaticResource TextBoxStyle}"/>
-                        <ComboBox ItemsSource="{Binding FilteredPersons}"
+                            <ComboBox ItemsSource="{Binding FilteredPersons}"
                                   SelectedItem="{Binding AbsenceToAdd.Person}"
                                   Margin="5">
-                            <ItemsControl.ItemTemplate>
-                                <DataTemplate>
-                                    <ctrl:PersonFlatCardView/>
-                                </DataTemplate>
-                            </ItemsControl.ItemTemplate>
-                        </ComboBox>
-                    </DockPanel>
-                    <DockPanel DockPanel.Dock="Top">
-                        <TextBlock DockPanel.Dock="Left"  
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <ctrl:PersonFlatCardView/>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ComboBox>
+                        </DockPanel>
+                        <DockPanel DockPanel.Dock="Top">
+                            <TextBlock DockPanel.Dock="Left"  
                                Text="{x:Static t:Messages.Lbl_From}"
                                Style="{StaticResource TextBoxStyle}"/>
-                        <ComboBox x:Name="cb_Start" DockPanel.Dock="Right" Margin="5" Width="62"
+                            <ComboBox x:Name="cb_Start" DockPanel.Dock="Right" Margin="5" Width="62"
                                   SelectionChanged="SelectionChanged_cb_Start">
-                            <ComboBoxItem Content="8:00" IsSelected="True">
-                                <ComboBoxItem.Tag>
-                                    <System:Int32>8</System:Int32>
-                                </ComboBoxItem.Tag>
-                            </ComboBoxItem>
-                            <ComboBoxItem Content="12:00">
-                                <ComboBoxItem.Tag>
-                                    <System:Int32>12</System:Int32>
-                                </ComboBoxItem.Tag>
-                            </ComboBoxItem>
-                            <ComboBoxItem Content="18:00">
-                                <ComboBoxItem.Tag>
-                                    <System:Int32>18</System:Int32>
-                                </ComboBoxItem.Tag>
-                            </ComboBoxItem>
-                        </ComboBox>
-                        <TextBlock DockPanel.Dock="Right" Text="{x:Static t:Messages.Lbl_At}"
+                                <ComboBoxItem Content="8:00" IsSelected="True">
+                                    <ComboBoxItem.Tag>
+                                        <System:Int32>8</System:Int32>
+                                    </ComboBoxItem.Tag>
+                                </ComboBoxItem>
+                                <ComboBoxItem Content="12:00">
+                                    <ComboBoxItem.Tag>
+                                        <System:Int32>12</System:Int32>
+                                    </ComboBoxItem.Tag>
+                                </ComboBoxItem>
+                                <ComboBoxItem Content="18:00">
+                                    <ComboBoxItem.Tag>
+                                        <System:Int32>18</System:Int32>
+                                    </ComboBoxItem.Tag>
+                                </ComboBoxItem>
+                            </ComboBox>
+                            <TextBlock DockPanel.Dock="Right" Text="{x:Static t:Messages.Lbl_At}"
                                    Margin="5" VerticalAlignment="Center"/>
-                        <DatePicker DockPanel.Dock="Left" SelectedDate="{Binding AbsenceToAdd.Start}" FirstDayOfWeek="Monday"
+                            <DatePicker DockPanel.Dock="Left" SelectedDate="{Binding AbsenceToAdd.Start}" FirstDayOfWeek="Monday"
                                     Margin="5"/>
-                    </DockPanel>
-                    <DockPanel DockPanel.Dock="Top">
-                        <TextBlock DockPanel.Dock="Left"  
+                        </DockPanel>
+                        <DockPanel DockPanel.Dock="Top">
+                            <TextBlock DockPanel.Dock="Left"  
                                Text="{x:Static t:Messages.Lbl_ToU}"
                                Style="{StaticResource TextBoxStyle}"/>
-                        <ComboBox x:Name="cb_End" 
+                            <ComboBox x:Name="cb_End" 
                                   DockPanel.Dock="Right" Margin="5" Width="62"
                                   SelectionChanged="SelectionChanged_cb_End">
-                            <ComboBoxItem Content="8:00">
-                                <ComboBoxItem.Tag>
-                                    <System:Int32>8</System:Int32>
-                                </ComboBoxItem.Tag>
-                            </ComboBoxItem>
-                            <ComboBoxItem Content="12:00">
-                                <ComboBoxItem.Tag>
-                                    <System:Int32>12</System:Int32>
-                                </ComboBoxItem.Tag>
-                            </ComboBoxItem>
-                            <ComboBoxItem Content="18:00" IsSelected="True">
-                                <ComboBoxItem.Tag>
-                                    <System:Int32>18</System:Int32>
-                                </ComboBoxItem.Tag>
-                            </ComboBoxItem>
-                        </ComboBox>
-                        <TextBlock DockPanel.Dock="Right" Text="{x:Static t:Messages.Lbl_At}"
+                                <ComboBoxItem Content="8:00">
+                                    <ComboBoxItem.Tag>
+                                        <System:Int32>8</System:Int32>
+                                    </ComboBoxItem.Tag>
+                                </ComboBoxItem>
+                                <ComboBoxItem Content="12:00">
+                                    <ComboBoxItem.Tag>
+                                        <System:Int32>12</System:Int32>
+                                    </ComboBoxItem.Tag>
+                                </ComboBoxItem>
+                                <ComboBoxItem Content="18:00" IsSelected="True">
+                                    <ComboBoxItem.Tag>
+                                        <System:Int32>18</System:Int32>
+                                    </ComboBoxItem.Tag>
+                                </ComboBoxItem>
+                            </ComboBox>
+                            <TextBlock DockPanel.Dock="Right" Text="{x:Static t:Messages.Lbl_At}"
                                    Margin="5" VerticalAlignment="Center"/>
-                        <DatePicker DockPanel.Dock="Left" SelectedDate="{Binding AbsenceToAdd.End}" FirstDayOfWeek="Monday"
+                            <DatePicker DockPanel.Dock="Left" SelectedDate="{Binding AbsenceToAdd.End}" FirstDayOfWeek="Monday"
                                     Margin="5"/>
+                        </DockPanel>
+                        <StackPanel DockPanel.Dock="Bottom" 
+                                        Orientation="Horizontal" HorizontalAlignment="Right">
+                            <Button Style="{StaticResource ButtonToolBoxStyle}"
+                                        Content="{x:Static t:Messages.Btn_Add}"
+                                        Command="{Binding AddAbsenceCommand}"
+                                        HorizontalAlignment="Right"
+                                        Click="Click_CloseManageAbsence"/>
+                            <Button Style="{StaticResource ButtonToolBoxStyle}"
+                                        Content="{x:Static t:Messages.Btn_Cancel}"
+                                        Click="Click_CloseManageAbsence" 
+                                        HorizontalAlignment="Right"/>
+                        </StackPanel>
+                        <Grid/>
                     </DockPanel>
-                    <Button DockPanel.Dock="Top"
-                        Content="{x:Static t:Messages.Btn_Add}"
-                        Command="{Binding AddAbsenceCommand}"/>
-                    <Grid/>
+                </HeaderedContentControl>
+            </Border>
+        </Popup>
+        <Popup DockPanel.Dock="Right"
+               x:Name="addMedicalVisitPopup"
+               PlacementTarget="{Binding ElementName=mainPage}"
+               Placement="Center"
+               StaysOpen="True">
+            <Border BorderThickness="5"
+                    CornerRadius="5"
+                    Background="#FF465A7D">
+                <Border.Effect>
+                    <DropShadowEffect Color="#FFB6B6B6"/>
+                </Border.Effect>
+                <ctrl:MedicalExamView ControlClosing="MedicalExamView_ControlClosing"
+                                      DataContext="{Binding MedicalExamViewModel}"/>
+            </Border>
+        </Popup>
+        <ToolBar Background="#FFDDDDDD">
+            <Button Click="Click_ShowAddPersonnel">
+                <DockPanel>
+                    <Image Source="/Probel.Geho.Gui;component/Images/Add.png"/>
+                    <TextBlock Text="{x:Static t:Messages.Header_AddPerson}"/>
                 </DockPanel>
-            </HeaderedContentControl>
-            <HeaderedContentControl Grid.Row="1" Header="{x:Static t:Messages.Header_Absences}">
-                <ScrollViewer  VerticalScrollBarVisibility="Auto">
-                    <ItemsControl ItemsSource="{Binding Absences}"
-                                  BorderThickness="1" BorderBrush="#FF828790">
+            </Button>
+
+            <Button Click="Click_ShowManageAbsence">
+                <DockPanel>
+                    <Image Source="/Probel.Geho.Gui;component/Images/Absence.png"/>
+                    <TextBlock Text="{x:Static t:Messages.Header_ManageAbsence}"/>
+                </DockPanel>
+            </Button>
+
+            <Button Click="Click_ShowManageMedicalExams">
+                <DockPanel>
+                    <Image Source="/Probel.Geho.Gui;component/Images/Absence.png"/>
+                    <TextBlock Text="{x:Static t:Messages.Header_ManageMedicalExams}"/>
+                </DockPanel>
+            </Button>
+        </ToolBar>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <DockPanel>
+                <ctrl:LunchManagementView DataContext="{Binding LunchManagementViewModel}"/>
+            </DockPanel>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <HeaderedContentControl Grid.Row="0"
+                                Header="{x:Static t:Messages.Header_Educators}">
+                    <ScrollViewer VerticalScrollBarVisibility="Auto">
+                        <ItemsControl ItemsSource="{Binding Educators}"
+                              BorderThickness="1" BorderBrush="#FF828790">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <ctrl:PersonView/>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </ScrollViewer>
+                </HeaderedContentControl>
+                <HeaderedContentControl Grid.Row="1"
+                                Header="{x:Static t:Messages.Header_Beneficiary}">
+                    <ScrollViewer VerticalScrollBarVisibility="Auto">
+                        <ItemsControl ItemsSource="{Binding Beneficiaries}"
+                              BorderThickness="1" BorderBrush="#FF828790">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <ctrl:PersonView/>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </ScrollViewer>
+                </HeaderedContentControl>
+            </Grid>
+            <Grid Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <HeaderedContentControl Grid.Row="1" Header="{x:Static t:Messages.Header_Absences}">
+                        <ScrollViewer  VerticalScrollBarVisibility="Auto">
+                            <ItemsControl ItemsSource="{Binding Absences}"
+                                          BorderThickness="1" BorderBrush="#FF828790">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <ctrl:AbsenceView/>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </ScrollViewer>
+                    </HeaderedContentControl>
+                </Grid>
+                <HeaderedContentControl DockPanel.Dock="Top"
+                                Grid.Row="1"
+                                Header="{x:Static t:Messages.Header_MedicalExam}">
+                    <ItemsControl ItemsSource="{Binding MedicalExams}">
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
                                 <ctrl:AbsenceView/>
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
                     </ItemsControl>
-                </ScrollViewer>
-            </HeaderedContentControl>
+                </HeaderedContentControl>
             </Grid>
-            <ctrl:MedicalExamView Grid.Row="1" DataContext="{Binding MedicalExamViewModel}"/>
         </Grid>
     </Grid>
 </Page>

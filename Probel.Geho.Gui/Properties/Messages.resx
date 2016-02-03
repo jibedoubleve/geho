@@ -429,4 +429,22 @@ Vérifiez:
   <data name="Header_StackTrace" xml:space="preserve">
     <value>Stack trace</value>
   </data>
+  <data name="Btn_Edit" xml:space="preserve">
+    <value>Editer</value>
+  </data>
+  <data name="Msg_Order" xml:space="preserve">
+    <value>Ordre:</value>
+  </data>
+  <data name="Lbl_Status" xml:space="preserve">
+    <value>Status:</value>
+  </data>
+  <data name="Status_IsActive" xml:space="preserve">
+    <value>Activé</value>
+  </data>
+  <data name="Status_IsNotActive" xml:space="preserve">
+    <value>Désactivé</value>
+  </data>
+  <data name="Lbl_WeekOf" xml:space="preserve">
+    <value>Semaine du</value>
+  </data>
 </root>

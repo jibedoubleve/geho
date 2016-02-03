@@ -17,13 +17,15 @@
         private const int GROUP_SIZE = 7;
 
         private readonly DisplayWeekViewModel Week;
+        private readonly DateTime WeekDate;
 
         #endregion Fields
 
         #region Constructors
 
-        public PrintWeekViewModelBuilder(DisplayWeekViewModel week)
+        public PrintWeekViewModelBuilder(DisplayWeekViewModel week, DateTime weekDate)
         {
+            this.WeekDate = weekDate;
             this.Week = week;
         }
 
@@ -65,6 +67,7 @@
             var views = new List<PrintWeekView>();
             foreach (var vm in viewmodels)
             {
+                vm.WeekDate = WeekDate;
                 views.Add(new PrintWeekView(vm));
             }
             return views;

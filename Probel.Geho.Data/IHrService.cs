@@ -25,8 +25,6 @@
 
         void CreateActivity(ActivityDto activity);
 
-        void CreateGroup(string name);
-
         void CreateGroup(GroupDto group);
 
         void CreatePerson(PersonDto person);

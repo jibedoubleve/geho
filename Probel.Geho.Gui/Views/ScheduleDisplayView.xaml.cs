@@ -73,7 +73,8 @@
                 var list = new List<UserControl>();
                 if (args.IsWeekPrinted)
                 {
-                    var builder = new PrintWeekViewModelBuilder(this.uc_week.DataContext as DisplayWeekViewModel);
+                    var vm = this.DataContext as ScheduleDisplayViewModel;
+                    var builder = new PrintWeekViewModelBuilder(this.uc_week.DataContext as DisplayWeekViewModel, vm.SelectedDate);
                     list.AddRange(builder.Build());
 
                 }

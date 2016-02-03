@@ -7,33 +7,85 @@
              xmlns:local="clr-namespace:Probel.Geho.Gui.Views.PrintDocument"
              xmlns:ctrl="clr-namespace:Probel.Geho.Gui.Views.Controls"
              xmlns:conv="clr-namespace:Probel.Geho.Gui.Converters"
+             xmlns:t="clr-namespace:Probel.Geho.Gui.Properties"
              
              mc:Ignorable="d" 
              Height="21cm" 
-             Width="29.7cm" 
-             d:DataContext="{d:DesignData /SampleData/PrintDayViewModelSampleData.xaml}">
+             Width="29.7cm">
     <UserControl.Resources>
         <conv:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
         <conv:DayOfWeekToStringConverter x:Key="DayOfWeekToStringConverter"/>
         <Style TargetType="{x:Type ctrl:DisplayOneDayGroupView}" x:Key="GroupStyle">
-            <Setter Property="Width" Value="160"/>
+            <Setter Property="Width" Value="154"/>
         </Style>
     </UserControl.Resources>
-    <DockPanel LastChildFill="True">
-        <TextBlock DockPanel.Dock="Top" 
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="{x:Static t:Messages.Day_Morning}" 
+                       Margin="5"
+                       FontWeight="Bold" 
+                       TextAlignment="Center" 
+                       Foreground="Black"
+                       HorizontalAlignment="Center" 
+                       VerticalAlignment="Stretch" RenderTransformOrigin="0.5,0.5"
+                       Background="#FFFFF29D" FontSize="17.333">
+                <TextBlock.LayoutTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.LayoutTransform>
+            </TextBlock>
+            <TextBlock Text="{x:Static t:Messages.Day_Afternoon}" 
+                       Grid.Row="1"
+                       Margin="5"
+                       FontWeight="Bold" 
+                       TextAlignment="Center" 
+                       Foreground="Black"
+                       HorizontalAlignment="Center" 
+                       VerticalAlignment="Stretch" RenderTransformOrigin="0.5,0.5"
+                       Background="#FFFFF29D" FontSize="17.333">
+                <TextBlock.LayoutTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.LayoutTransform>
+            </TextBlock>
+        </Grid>
+            <TextBlock Grid.ColumnSpan="2"
+                       DockPanel.Dock="Top" 
                    HorizontalAlignment="Center"
                    Text="{Binding Day, Converter={StaticResource DayOfWeekToStringConverter}}" FontSize="26.667" FontWeight="Bold"/>
-        <ItemsControl ItemsSource="{Binding Groups}">
-        <ItemsControl.ItemsPanel>
-            <ItemsPanelTemplate>
-                <StackPanel Orientation="Horizontal"/>
-            </ItemsPanelTemplate>
-        </ItemsControl.ItemsPanel>
-        <ItemsControl.ItemTemplate>
-            <DataTemplate>
-                <ctrl:DisplayOneDayGroupView Style="{StaticResource GroupStyle}"/>
-            </DataTemplate>
-        </ItemsControl.ItemTemplate>
-    </ItemsControl>
-    </DockPanel>
-</UserControl>
+            <ItemsControl Grid.Row="1"
+                          Grid.Column="2"
+                          ItemsSource="{Binding Groups}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Horizontal"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <ctrl:DisplayOneDayGroupView Style="{StaticResource GroupStyle}"/>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </Grid>
+</UserControl>        

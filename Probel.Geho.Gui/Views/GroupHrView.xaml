@@ -9,261 +9,444 @@
       xmlns:tk="http://schemas.xceed.com/wpf/xaml/toolkit" 
       
       mc:Ignorable="d" 
-      d:DesignHeight="720" d:DesignWidth="1280">
+      d:DesignHeight="720" d:DesignWidth="1280"
+      x:Name="mainPage">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <DockPanel>
-            <HeaderedContentControl  Header="{x:Static t:Messages.Header_Groups}">
-                <DockPanel>
-                    <ScrollViewer VerticalScrollBarVisibility="Auto">
-                        <ListView ItemsSource="{Binding Groups}"                          
-                              SelectedItem="{Binding SelectedGroup}"
-                              HorizontalContentAlignment="Stretch"
-                              VerticalContentAlignment="Stretch">
-                            <ListView.ItemTemplate>
-                                <DataTemplate>
-                                    <ctrl:GroupView/>
-                                </DataTemplate>
-                            </ListView.ItemTemplate>
-                        </ListView>
-                    </ScrollViewer>
-                </DockPanel>
-            </HeaderedContentControl>
-        </DockPanel>
-        <DockPanel Grid.Column="1">
-            <HeaderedContentControl DockPanel.Dock="Bottom"
-                                    Header="{x:Static t:Messages.Header_AddGroup}">
-                <DockPanel>
-                    <DockPanel DockPanel.Dock="Top">
-                        <TextBlock DockPanel.Dock="Left"  
-                               Text="{x:Static t:Messages.Lbl_Group}"
-                               Style="{StaticResource TextBoxStyle}"/>
-                        <TextBox DockPanel.Dock="Right" Text="{Binding GroupToAdd.Name, UpdateSourceTrigger=PropertyChanged}"/>
+        <Popup DockPanel.Dock="Right"
+                               x:Name="addGroupPopup"
+                               PlacementTarget="{Binding ElementName=mainPage}"
+                               Placement="Center"
+                               StaysOpen="True">
+            <Border BorderThickness="5"
+                                    CornerRadius="5"
+                                    Background="#FF465A7D">
+                <Border.Effect>
+                    <DropShadowEffect Color="#FFB6B6B6"/>
+                </Border.Effect>
+                <HeaderedContentControl DockPanel.Dock="Bottom"
+                                        Header="{x:Static t:Messages.Header_AddGroup}"
+                                        Width="300">
+                    <DockPanel>
+                        <DockPanel DockPanel.Dock="Top">
+                            <TextBlock DockPanel.Dock="Left"  
+                                       Text="{x:Static t:Messages.Lbl_Group}"
+                                       Style="{StaticResource TextBoxStyle}"/>
+                            <TextBox DockPanel.Dock="Right" Text="{Binding GroupToAdd.Name, UpdateSourceTrigger=PropertyChanged}"/>
+                        </DockPanel>
+                        <DockPanel DockPanel.Dock="Top">
+                            <TextBlock DockPanel.Dock="Left" 
+                                       Text="{x:Static t:Messages.Lbl_Order}"
+                                       Style="{StaticResource TextBoxStyle}"/>
+                            <tk:IntegerUpDown DockPanel.Dock="Right"
+                                              Margin="5"
+                                              Value="{Binding GroupToAdd.Order, UpdateSourceTrigger=PropertyChanged}"/>
+                        </DockPanel>
+                        <StackPanel DockPanel.Dock="Right" 
+                                                    Orientation="Horizontal">
+                            <Button DockPanel.Dock="Left"
+                                                    Click="Click_CloseAddGroup"
+                                                    Style="{StaticResource ButtonToolBoxStyle}"
+                                                    Content="{x:Static t:Messages.Btn_Add}"
+                                                    Command="{Binding AddGroupCommand}"/>
+                            <Button DockPanel.Dock="Left"
+                                                    Style="{StaticResource ButtonToolBoxStyle}"
+                                                    Content="{x:Static t:Messages.Btn_Cancel}"
+                                                    Click="Click_CancelAddGroup"/>
+                        </StackPanel>
+                        <Grid/>
                     </DockPanel>
-                    <Button DockPanel.Dock="Top"
-                        Content="{x:Static t:Messages.Btn_Add}"
-                        Command="{Binding AddGroupCommand}"/>
-                    <Grid/>
-                </DockPanel>
-            </HeaderedContentControl>
-            <HeaderedContentControl DockPanel.Dock="Top" 
-                                    Header="{x:Static t:Messages.Header_ManageGroup}">
-                <DockPanel>
-                    <DockPanel DockPanel.Dock="Top">
-                        <TextBlock DockPanel.Dock="Left"  
-                               Text="{x:Static t:Messages.Lbl_Group}"
-                               Style="{StaticResource TextBoxStyle}"/>
-                        <TextBox DockPanel.Dock="Right" 
-                                 Text="{Binding SelectedGroup.Group.Name, UpdateSourceTrigger=PropertyChanged}"/>
+                </HeaderedContentControl>
+            </Border>
+        </Popup>
+        <Popup DockPanel.Dock="Right"
+                   x:Name="editGroupPopup"
+                   Placement="Center"
+                   PlacementTarget="{Binding ElementName=mainPage}"
+                   StaysOpen="True">
+            <Border BorderThickness="5"
+                        CornerRadius="5"
+                        Background="#FF465A7D">
+                <Border.Effect>
+                    <DropShadowEffect Color="#FFB6B6B6"/>
+                </Border.Effect>
+                <HeaderedContentControl DockPanel.Dock="Top" 
+                                            Header="{x:Static t:Messages.Header_ManageGroup}"
+                                            Height="600"
+                                            Width="400">
+                    <DockPanel>
+                        <DockPanel DockPanel.Dock="Top">
+                            <TextBlock DockPanel.Dock="Left"  
+                                           Text="{x:Static t:Messages.Lbl_Group}"
+                                           Style="{StaticResource TextBoxStyle}"/>
+                            <TextBox DockPanel.Dock="Right" 
+                                         Text="{Binding SelectedGroup.Group.Name, UpdateSourceTrigger=PropertyChanged}"/>
+                        </DockPanel>
+                        <DockPanel DockPanel.Dock="Top">
+                            <TextBlock DockPanel.Dock="Left"
+                                           Text="{x:Static t:Messages.Lbl_Order}"
+                                           Style="{StaticResource TextBoxStyle}"/>
+                            <tk:IntegerUpDown DockPanel.Dock="Right" 
+                                                  Text="{Binding SelectedGroup.Group.Order, UpdateSourceTrigger=PropertyChanged}"
+                                                  Margin="5"/>
+                        </DockPanel>
+                        <StackPanel DockPanel.Dock="Bottom" 
+                                        Orientation="Horizontal" HorizontalAlignment="Right">
+                            <Button Click="Click_CloseEditGroup"
+                                    Style="{StaticResource ButtonToolBoxStyle}"
+                                    Content="{x:Static t:Messages.Btn_Update}"
+                                    Command="{Binding UpdateGroupCommand}"/>
+                            <Button Style="{StaticResource ButtonToolBoxStyle}"
+                                    Content="{x:Static t:Messages.Btn_Cancel}"
+                                    Click="Click_CancelEditGroup"/>
+                        </StackPanel>
+                        <ScrollViewer VerticalScrollBarVisibility="Auto" DockPanel.Dock="Bottom">
+                            <ItemsControl BorderThickness="1" BorderBrush="#FF828790"
+                                              ItemsSource="{Binding BeneficiariesInGroup}">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <ctrl:PersonCheckboxView/>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </ScrollViewer>
                     </DockPanel>
-                    <DockPanel DockPanel.Dock="Top">
-                        <TextBlock DockPanel.Dock="Left"
-                                   Text="{x:Static t:Messages.Lbl_Order}"
-                               Style="{StaticResource TextBoxStyle}"/>
-                        <tk:IntegerUpDown DockPanel.Dock="Right" 
-                                          Text="{Binding SelectedGroup.Group.Order, UpdateSourceTrigger=PropertyChanged}"
-                                          Margin="5"/>
-                    </DockPanel>                               
-                    <Button DockPanel.Dock="Bottom"
-                        Content="{x:Static t:Messages.Btn_Update}"
-                        Command="{Binding UpdateGroupCommand}"/>
-                    <ScrollViewer VerticalScrollBarVisibility="Auto" DockPanel.Dock="Bottom">
-                        <ItemsControl BorderThickness="1" BorderBrush="#FF828790"
-                                  ItemsSource="{Binding BeneficiariesInGroup}">
-                            <ItemsControl.ItemTemplate>
-                                <DataTemplate>
-                                    <ctrl:PersonCheckboxView/>
-                                </DataTemplate>
-                            </ItemsControl.ItemTemplate>
-                        </ItemsControl>
-                    </ScrollViewer>
-                </DockPanel>
-            </HeaderedContentControl>
-        </DockPanel>
-        <Grid Grid.Column="2">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="2*"/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            <HeaderedContentControl Header="{x:Static t:Messages.Header_Activities}">
-                <ScrollViewer VerticalScrollBarVisibility="Auto">
-                    <ListView ItemsSource="{Binding Activities}"
-                          SelectedItem="{Binding SelectedActivity}"
-                          HorizontalContentAlignment="Stretch"
-                          VerticalContentAlignment="Stretch">
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <ctrl:ActivityView/>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>
-                </ScrollViewer>
-            </HeaderedContentControl>
-            <HeaderedContentControl Header="{x:Static t:Messages.Header_AdministrativeTasks}"
-                                    Grid.Row="1">
-                <ScrollViewer VerticalScrollBarVisibility="Auto">
-                    <ListView ItemsSource="{Binding AdministrativeActivities}"
+                </HeaderedContentControl>
+            </Border>
+        </Popup>
+        <Popup DockPanel.Dock="Right"
+               x:Name="editActivityPopup"
+               Placement="Center"
+               PlacementTarget="{Binding ElementName=mainPage}"
+               StaysOpen="True">
+            <Border BorderThickness="5"
+                                    CornerRadius="5"
+                                    Background="#FF465A7D">
+                <Border.Effect>
+                    <DropShadowEffect Color="#FFB6B6B6"/>
+                </Border.Effect>
+                <HeaderedContentControl DockPanel.Dock="Top" 
+                                        Header="{x:Static t:Messages.Header_ManageAtivity}"
+                                        Height="600"
+                                        Width="450">
+                    <DockPanel LastChildFill="True">
+                        <DockPanel DockPanel.Dock="Top">
+                            <TextBlock DockPanel.Dock="Left"  
+                                                       Text="{x:Static t:Messages.Lbl_Activity}"
+                                                       Style="{StaticResource TextBoxStyle}"/>
+                            <TextBox DockPanel.Dock="Right" 
+                                                     Text="{Binding SelectedActivity.Name, UpdateSourceTrigger=PropertyChanged}"/>
+                        </DockPanel>
+                        <DockPanel DockPanel.Dock="Top">
+                            <TextBlock DockPanel.Dock="Left" 
+                                       Text="{x:Static t:Messages.Lbl_Day}"
+                                       Style="{StaticResource TextBoxStyle}"/>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <ComboBox x:Name="cb_DayUpdate" 
+                                          Grid.Column="0"
+                                          DockPanel.Dock="Right" 
+                                          Margin="5"
+                                          SelectionChanged="Selected_cb_DayUpdate">
+                                    <ComboBoxItem Content="{x:Static t:Messages.Day_Monday}" Tag="1"/>
+                                    <ComboBoxItem Content="{x:Static t:Messages.Day_Tuesday}" Tag="2"/>
+                                    <ComboBoxItem Content="{x:Static t:Messages.Day_Wednesday}" Tag="3"/>
+                                    <ComboBoxItem Content="{x:Static t:Messages.Day_Thursday}" Tag="4"/>
+                                    <ComboBoxItem Content="{x:Static t:Messages.Day_Friday}" Tag="5"/>
+                                </ComboBox>
+                                <ComboBox x:Name="cb_NoonUpdate" 
+                                                          Grid.Column="1" 
+                                                          DockPanel.Dock="Right" 
+                                                          Margin="5"
+                                                          SelectionChanged="Selected_cb_NoonUpdate">
+                                    <ComboBoxItem Content="{x:Static t:Messages.Day_Morning}" Tag="1"/>
+                                    <ComboBoxItem Content="{x:Static t:Messages.Day_Afternoon}" Tag="2"/>
+                                    <ComboBoxItem Content="{x:Static t:Messages.Day_AllDay}" Tag="3"/>
+                                </ComboBox>
+                            </Grid>
+                        </DockPanel>
+                        <DockPanel DockPanel.Dock="Top">
+                            <TextBlock DockPanel.Dock="Left"
+                                       Text="{x:Static t:Messages.Lbl_Status}"
+                                       Style="{StaticResource TextBoxStyle}"/>
+                            <Image DockPanel.Dock="Right"                                   
+                                   Height="25">
+                                <Image.Resources>
+                                    <Style TargetType="Image">
+                                        <Setter Property="Source" Value="{x:Null}"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding ElementName=cb_Status, Path=SelectedItem.Tag}" Value="False">
+                                                <Setter Property="Source" Value="/Probel.Geho.Gui;component/Images/Warning.png"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Image.Resources>
+                            </Image>
+                            <ComboBox DockPanel.Dock="Left" Margin="5" x:Name="cb_Status"
+                                      SelectionChanged="Selected_cb_Status">
+                                <ComboBoxItem Content="{x:Static t:Messages.Status_IsActive}" Tag="True"/>
+                                <ComboBoxItem Content="{x:Static t:Messages.Status_IsNotActive}" Tag="False"/>
+                            </ComboBox>
+                        </DockPanel>
+                        <DockPanel DockPanel.Dock="Bottom" 
+                                                   LastChildFill="False">
+                            <Button DockPanel.Dock="Right"
+                                                    Style="{StaticResource ButtonToolBoxStyle}"
+                                                    Content="{x:Static t:Messages.Btn_Cancel}"
+                                                    Click="Click_CancelEditActivity"/>
+                            <Button DockPanel.Dock="Right"
+                                                    Click="Click_CloseEditActivity"
+                                                    Style="{StaticResource ButtonToolBoxStyle}"
+                                                    Content="{x:Static t:Messages.Btn_Update}"
+                                                    Command="{Binding UpdateActivityCommand}"/>
+                        </DockPanel>
+                        <Grid Background="#FF465A7D">
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <HeaderedContentControl DockPanel.Dock="Top" 
+                                                    Header="{x:Static t:Messages.Header_Educators}">
+                                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                                    <ItemsControl DockPanel.Dock="Bottom"
+                                                                  BorderThickness="1" BorderBrush="#FF828790"
+                                                                  ItemsSource="{Binding EducatorsInActivity}">
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <ctrl:PersonCheckboxView/>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+                                </ScrollViewer>
+                            </HeaderedContentControl>
+                            <HeaderedContentControl Grid.Row="1" DockPanel.Dock="Top" 
+                                                                    Header="{x:Static t:Messages.Header_Beneficiary}">
+
+                                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                                    <ItemsControl DockPanel.Dock="Bottom"
+                                                                  BorderThickness="1" BorderBrush="#FF828790"
+                                                                  ItemsSource="{Binding BeneficiariesInActivity}">
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <ctrl:PersonCheckboxView/>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+                                </ScrollViewer>
+                            </HeaderedContentControl>
+                        </Grid>
+                    </DockPanel>
+                </HeaderedContentControl>
+            </Border>
+        </Popup>
+        <Popup DockPanel.Dock="Right"
+               x:Name="addActivityPopup"
+               Placement="Center"
+               PlacementTarget="{Binding ElementName=mainPage}"
+               StaysOpen="True">
+            <Border BorderThickness="5"
+                                    CornerRadius="5"
+                                    Background="#FF465A7D">
+                <Border.Effect>
+                    <DropShadowEffect Color="#FFB6B6B6"/>
+                </Border.Effect>
+                <HeaderedContentControl DockPanel.Dock="Bottom"
+                                        Header="{x:Static t:Messages.Header_AddActivity}">
+                    <DockPanel Width="450">
+                        <DockPanel DockPanel.Dock="Top">
+                            <TextBlock DockPanel.Dock="Left"  
+                                                       Text="{x:Static t:Messages.Lbl_Activity}"
+                                                       Style="{StaticResource TextBoxStyle}"/>
+                            <TextBox DockPanel.Dock="Right" Text="{Binding ActivityToAdd.Name, UpdateSourceTrigger=PropertyChanged}"/>
+                        </DockPanel>
+                        <DockPanel DockPanel.Dock="Top">
+                            <TextBlock DockPanel.Dock="Left"  
+                                                       Text="{x:Static t:Messages.Lbl_Day}"
+                                                       Style="{StaticResource TextBoxStyle}"/>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <ComboBox x:Name="cb_Day" 
+                                                          Grid.Column="0"
+                                                          DockPanel.Dock="Right" 
+                                                          Margin="5"
+                                                          SelectionChanged="Selected_cb_Day">
+                                    <ComboBoxItem Content="{x:Static t:Messages.Day_Monday}" Tag="1"/>
+                                    <ComboBoxItem Content="{x:Static t:Messages.Day_Tuesday}" Tag="2"/>
+                                    <ComboBoxItem Content="{x:Static t:Messages.Day_Wednesday}" Tag="3"/>
+                                    <ComboBoxItem Content="{x:Static t:Messages.Day_Thursday}" Tag="4"/>
+                                    <ComboBoxItem Content="{x:Static t:Messages.Day_Friday}" Tag="5"/>
+                                </ComboBox>
+                                <ComboBox x:Name="cb_Noon" 
+                                                          Grid.Column="1" 
+                                                          DockPanel.Dock="Right" 
+                                                          Margin="5"
+                                                          SelectionChanged="Selected_cb_Noon_Selected">
+                                    <ComboBoxItem Content="{x:Static t:Messages.Day_Morning}" Tag="1"/>
+                                    <ComboBoxItem Content="{x:Static t:Messages.Day_Afternoon}" Tag="2"/>
+                                    <ComboBoxItem Content="{x:Static t:Messages.Day_AllDay}" Tag="3"/>
+                                </ComboBox>
+                            </Grid>
+                        </DockPanel>
+                        <StackPanel DockPanel.Dock="Right" 
+                                                    Orientation="Horizontal">
+                            <Button DockPanel.Dock="Left"
+                                                    Click="Click_CloseAddActivity"
+                                                    Style="{StaticResource ButtonToolBoxStyle}"
+                                                    Content="{x:Static t:Messages.Btn_Add}"
+                                                    Command="{Binding AddActivityCommand}"/>
+                            <Button DockPanel.Dock="Left"
+                                                    Style="{StaticResource ButtonToolBoxStyle}"
+                                                    Content="{x:Static t:Messages.Btn_Cancel}"
+                                                    Click="Click_CancelAddActivity"/>
+                        </StackPanel>
+                        <Grid/>
+                    </DockPanel>
+                </HeaderedContentControl>
+            </Border>
+        </Popup>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <DockPanel>
+                <HeaderedContentControl  Header="{x:Static t:Messages.Header_Groups}">
+                    <DockPanel>
+                        <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom" HorizontalAlignment="Right">
+                            <Button Click="Click_AddGroup">
+                                <Button.Content>
+                                    <DockPanel LastChildFill="True">
+                                        <Image DockPanel.Dock="Left"
+                                           Source="/Probel.Geho.Gui;component/Images/Add_Group.png" 
+                                           Height="15" Width="15"/>
+                                        <TextBlock DockPanel.Dock="Right"
+                                               Text="{x:Static t:Messages.Btn_Add}" Margin="5,0,0,0"/>
+                                    </DockPanel>
+                                </Button.Content>
+                            </Button>
+                            <Button Click="Click_EditGroup"
+                                Command="{Binding ShowUpdateGroupCommand}">
+                                <Button.Content>
+                                    <DockPanel LastChildFill="True">
+                                        <Image DockPanel.Dock="Left"
+                                           Source="/Probel.Geho.Gui;component/Images/Edit.png" 
+                                           Height="15" Width="15"/>
+                                        <TextBlock DockPanel.Dock="Right"
+                                               Text="{x:Static t:Messages.Btn_Edit}" Margin="5,0,0,0"/>
+                                    </DockPanel>
+                                </Button.Content>
+                            </Button>
+                        </StackPanel>
+                        <ScrollViewer VerticalScrollBarVisibility="Auto">
+                            <ListView ItemsSource="{Binding Groups}"
+                                      SelectedItem="{Binding SelectedGroup}"
+                                      HorizontalContentAlignment="Stretch"
+                                      VerticalContentAlignment="Stretch">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ctrl:GroupView/>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </ScrollViewer>
+                    </DockPanel>
+                </HeaderedContentControl>
+            </DockPanel>
+            <DockPanel Grid.Column="1">
+            </DockPanel>
+            <Grid Grid.Column="1">
+                <HeaderedContentControl Header="{x:Static t:Messages.Header_Activities}">
+                    <DockPanel LastChildFill="True">
+                        <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom" HorizontalAlignment="Right">
+                            <Button Click="Click_AddActivity">
+                                <Button.Content>
+                                    <DockPanel LastChildFill="True">
+                                        <Image DockPanel.Dock="Left"
+                                           Source="/Probel.Geho.Gui;component/Images/Add_Group.png" 
+                                           Height="15" Width="15"/>
+                                        <TextBlock DockPanel.Dock="Right"
+                                               Text="{x:Static t:Messages.Btn_Add}" Margin="5,0,0,0"/>
+                                    </DockPanel>
+                                </Button.Content>
+                            </Button>
+                            <Button Click="Click_EditActivity"
+                                Command="{Binding ShowUpdateActivityCommand}">
+                                <Button.Content>
+                                    <DockPanel LastChildFill="True">
+                                        <Image DockPanel.Dock="Left"
+                                           Source="/Probel.Geho.Gui;component/Images/Edit.png" 
+                                           Height="15" Width="15"/>
+                                        <TextBlock DockPanel.Dock="Right"
+                                               Text="{x:Static t:Messages.Btn_Edit}" Margin="5,0,0,0"/>
+                                    </DockPanel>
+                                </Button.Content>
+                            </Button>
+                        </StackPanel>
+                        <ScrollViewer VerticalScrollBarVisibility="Auto">
+                            <ListView ItemsSource="{Binding Activities}"
                               SelectedItem="{Binding SelectedActivity}"
                               HorizontalContentAlignment="Stretch"
                               VerticalContentAlignment="Stretch">
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <ctrl:ActivityView/>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>
-                </ScrollViewer>
-            </HeaderedContentControl>
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ctrl:ActivityView/>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </ScrollViewer>
+                    </DockPanel>
+                </HeaderedContentControl>
+            </Grid>
+            <DockPanel Grid.Column="2">
+                <HeaderedContentControl Header="{x:Static t:Messages.Header_AdministrativeTasks}"
+                                    Grid.Row="1">
+                    <DockPanel LastChildFill="True">
+                        <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom" HorizontalAlignment="Right">
+                            <Button Click="Click_AddActivity">
+                                <Button.Content>
+                                    <DockPanel LastChildFill="True">
+                                        <Image DockPanel.Dock="Left"
+                                           Source="/Probel.Geho.Gui;component/Images/Add_Group.png" 
+                                           Height="15" Width="15"/>
+                                        <TextBlock DockPanel.Dock="Right"
+                                               Text="{x:Static t:Messages.Btn_Add}" Margin="5,0,0,0"/>
+                                    </DockPanel>
+                                </Button.Content>
+                            </Button>
+                            <Button Click="Click_EditActivity"
+                                Command="{Binding ShowUpdateActivityCommand}">
+                                <Button.Content>
+                                    <DockPanel LastChildFill="True">
+                                        <Image DockPanel.Dock="Left"
+                                           Source="/Probel.Geho.Gui;component/Images/Edit.png" 
+                                           Height="15" Width="15"/>
+                                        <TextBlock DockPanel.Dock="Right"
+                                               Text="{x:Static t:Messages.Btn_Edit}" Margin="5,0,0,0"/>
+                                    </DockPanel>
+                                </Button.Content>
+                            </Button>
+                        </StackPanel>
+                        <ScrollViewer VerticalScrollBarVisibility="Auto">
+                            <ListView ItemsSource="{Binding AdministrativeActivities}"
+                                  SelectedItem="{Binding SelectedActivity}"
+                                  HorizontalContentAlignment="Stretch"
+                                  VerticalContentAlignment="Stretch">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ctrl:ActivityView/>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </ScrollViewer>
+                    </DockPanel>
+                </HeaderedContentControl>
+            </DockPanel>
         </Grid>
-        <DockPanel Grid.Column="3">
-            <HeaderedContentControl DockPanel.Dock="Bottom"
-                                    Header="{x:Static t:Messages.Header_AddActivity}">
-                <DockPanel>
-                    <DockPanel DockPanel.Dock="Top">
-                        <TextBlock DockPanel.Dock="Left"  
-                               Text="{x:Static t:Messages.Lbl_Activity}"
-                               Style="{StaticResource TextBoxStyle}"/>
-                        <TextBox DockPanel.Dock="Right" Text="{Binding ActivityToAdd.Name, UpdateSourceTrigger=PropertyChanged}"/>
-                    </DockPanel>
-                    <DockPanel DockPanel.Dock="Top">
-                        <TextBlock DockPanel.Dock="Left"  
-                               Text="{x:Static t:Messages.Lbl_Day}"
-                               Style="{StaticResource TextBoxStyle}"/>
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition/>
-                                <ColumnDefinition/>
-                            </Grid.ColumnDefinitions>
-                            <ComboBox x:Name="cb_Day" 
-                                  Grid.Column="0"
-                                  DockPanel.Dock="Right" 
-                                  Margin="5"
-                                  SelectionChanged="Selected_cb_Day">
-                                <ComboBoxItem Content="{x:Static t:Messages.Day_Monday}" 
-                                          Tag="1"/>
-                                <ComboBoxItem Content="{x:Static t:Messages.Day_Tuesday}" 
-                                          Tag="2"/>
-                                <ComboBoxItem Content="{x:Static t:Messages.Day_Wednesday}" 
-                                          Tag="3"/>
-                                <ComboBoxItem Content="{x:Static t:Messages.Day_Thursday}" 
-                                          Tag="4"/>
-                                <ComboBoxItem Content="{x:Static t:Messages.Day_Friday}" 
-                                          Tag="5"/>
-                            </ComboBox>
-                            <ComboBox x:Name="cb_Noon" 
-                                  Grid.Column="1" 
-                                  DockPanel.Dock="Right" 
-                                  Margin="5"
-                                  SelectionChanged="Selected_cb_Noon_Selected">
-                                <ComboBoxItem Content="{x:Static t:Messages.Day_Morning}" 
-                                                  Tag="1"/>
-                                <ComboBoxItem Content="{x:Static t:Messages.Day_Afternoon}" 
-                                                  Tag="2"/>
-                                <ComboBoxItem Content="{x:Static t:Messages.Day_AllDay}"
-                                              Tag="3"/>
-                            </ComboBox>
-                        </Grid>
-                    </DockPanel>
-                    <Button DockPanel.Dock="Top"
-                        Content="{x:Static t:Messages.Btn_Add}"
-                        Command="{Binding AddActivityCommand}"/>
-                    <Grid/>
-                </DockPanel>
-            </HeaderedContentControl>
-            <HeaderedContentControl DockPanel.Dock="Top" 
-                                    Header="{x:Static t:Messages.Header_ManageAtivity}">
-                <DockPanel LastChildFill="True">
-                    <DockPanel DockPanel.Dock="Top">
-                        <TextBlock DockPanel.Dock="Left"  
-                               Text="{x:Static t:Messages.Lbl_Activity}"
-                               Style="{StaticResource TextBoxStyle}"/>
-                        <TextBox DockPanel.Dock="Right" 
-                                 Text="{Binding SelectedActivity.Name, UpdateSourceTrigger=PropertyChanged}"/>
-                    </DockPanel>
-                    <DockPanel DockPanel.Dock="Top">
-                        <TextBlock DockPanel.Dock="Left"  
-                               Text="{x:Static t:Messages.Lbl_Day}"
-                               Style="{StaticResource TextBoxStyle}"/>
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition/>
-                                <ColumnDefinition/>
-                            </Grid.ColumnDefinitions>
-                            <ComboBox x:Name="cb_DayUpdate" 
-                                  Grid.Column="0"
-                                  DockPanel.Dock="Right" 
-                                  Margin="5"
-                                  SelectionChanged="Selected_cb_DayUpdate">
-                                <ComboBoxItem Content="{x:Static t:Messages.Day_Monday}" 
-                                          Tag="1"/>
-                                <ComboBoxItem Content="{x:Static t:Messages.Day_Tuesday}" 
-                                          Tag="2"/>
-                                <ComboBoxItem Content="{x:Static t:Messages.Day_Wednesday}" 
-                                          Tag="3"/>
-                                <ComboBoxItem Content="{x:Static t:Messages.Day_Thursday}" 
-                                          Tag="4"/>
-                                <ComboBoxItem Content="{x:Static t:Messages.Day_Friday}" 
-                                          Tag="5"/>
-                            </ComboBox>
-                            <ComboBox x:Name="cb_NoonUpdate" 
-                                  Grid.Column="1" 
-                                  DockPanel.Dock="Right" 
-                                  Margin="5"
-                                  SelectionChanged="Selected_cb_NoonUpdate">
-                                <ComboBoxItem Content="{x:Static t:Messages.Day_Morning}" 
-                                                  Tag="1"/>
-                                <ComboBoxItem Content="{x:Static t:Messages.Day_Afternoon}" 
-                                                  Tag="2"/>
-                                <ComboBoxItem Content="{x:Static t:Messages.Day_AllDay}"
-                                              Tag="3"/>
-                            </ComboBox>
-                        </Grid>
-                    </DockPanel>
-                    <Button DockPanel.Dock="Bottom"
-                        Content="{x:Static t:Messages.Btn_Update}"
-                        Command="{Binding UpdateActivityCommand}"/>
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition/>
-                            <RowDefinition/>
-                        </Grid.RowDefinitions>
-                        <HeaderedContentControl DockPanel.Dock="Top" 
-                                    Header="{x:Static t:Messages.Header_Educators}">
-                            <ScrollViewer VerticalScrollBarVisibility="Auto">
-                                <ItemsControl DockPanel.Dock="Bottom"
-                                          BorderThickness="1" BorderBrush="#FF828790"
-                                          ItemsSource="{Binding EducatorsInActivity}">
-                                    <ItemsControl.ItemTemplate>
-                                        <DataTemplate>
-                                            <ctrl:PersonCheckboxView/>
-                                        </DataTemplate>
-                                    </ItemsControl.ItemTemplate>
-                                </ItemsControl>
-                            </ScrollViewer>
-                        </HeaderedContentControl>
-                        <HeaderedContentControl Grid.Row="1" DockPanel.Dock="Top" 
-                                                Header="{x:Static t:Messages.Header_Beneficiary}">
-
-                            <ScrollViewer VerticalScrollBarVisibility="Auto">
-                                <ItemsControl DockPanel.Dock="Bottom"
-                                          BorderThickness="1" BorderBrush="#FF828790"
-                                          ItemsSource="{Binding BeneficiariesInActivity}">
-                                    <ItemsControl.ItemTemplate>
-                                        <DataTemplate>
-                                            <ctrl:PersonCheckboxView/>
-                                        </DataTemplate>
-                                    </ItemsControl.ItemTemplate>
-                                </ItemsControl>
-                            </ScrollViewer>
-                        </HeaderedContentControl>
-                    </Grid>
-                </DockPanel>
-            </HeaderedContentControl>
-        </DockPanel>
     </Grid>
 </Page>

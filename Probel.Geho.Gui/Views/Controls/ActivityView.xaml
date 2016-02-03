@@ -12,21 +12,56 @@
     <UserControl.Resources>
         <conv:DayOfWeekToStringConverter x:Key="dayOfWeekConv"/>
         <conv:StringToNoonConverter x:Key="noonConv"/>
-        <conv:BoolToRedOrItemListBackgroundConverter x:Key="btr"/>
         <conv:BoolToVisibilityConverter x:Key="btv"/>
     </UserControl.Resources>
     <Border BorderThickness="5"
-            CornerRadius="5"
-            Background="{Binding HasBeneficiaries, Converter={StaticResource btr}}">
-            <!--Background="#FFC6E2FD">-->
+            CornerRadius="5">
+        <Border.Resources>
+            <Style TargetType="Border">
+                <Setter Property="Background" Value="#FFFDC5C5"/>
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding HasBeneficiaries}" Value="False">
+                        <Setter Property="Background" Value="#FFC8F3B8"/>
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+        </Border.Resources>
         <Border.Effect>
             <DropShadowEffect Color="#FFB6B6B6"/>
         </Border.Effect>
         <DockPanel>
-            <Image DockPanel.Dock="Left"
+            <StackPanel>
+                <Image DockPanel.Dock="Left"
                    Source="/Probel.Geho.Gui;component/Images/Activity.png"
                    Width="32"
-                   Height="32" VerticalAlignment="Top"/>
+                   Height="32" VerticalAlignment="Top">
+                    <Image.Resources>
+                        <Style TargetType="Image">
+                            <Setter Property="Visibility" Value="Visible"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Activity.IsActive}" Value="False">
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Resources>
+                </Image>
+                <Image DockPanel.Dock="Left"
+                       Width="32"
+                       Height="32"
+                       Source="/Probel.Geho.Gui;component/Images/BigWarning.png">
+                    <Image.Resources>
+                        <Style TargetType="Image">
+                            <Setter Property="Visibility" Value="Collapsed"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Activity.IsActive}" Value="False">
+                                    <Setter Property="Visibility" Value="Visible"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Resources>
+                </Image>
+            </StackPanel>
             <Button DockPanel.Dock="Right"
                     Style="{StaticResource EditionButtonStyle}"
                     Command="{Binding DeleteActivityCommand}" VerticalAlignment="Bottom">

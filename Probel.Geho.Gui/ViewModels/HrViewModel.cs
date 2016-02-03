@@ -3,10 +3,12 @@
     using System;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
+    using System.Threading.Tasks;
     using System.Windows.Input;
 
     using Mvvm.Gui;
     using Mvvm.Toolkit.DataBinding;
+    using Mvvm.Toolkit.Events;
 
     using Probel.Geho.Gui.ViewModels.Controls;
     using Probel.Geho.Services.BusinessLogic;
@@ -17,7 +19,7 @@
 
     using Tools;
 
-    public class HrViewModel : LoadeableViewModel
+    public class HrViewModel : LoadeableViewModel, IEventHandler<MedicalExamViewModel>
     {
         #region Fields
 
@@ -45,6 +47,7 @@
             this.Beneficiaries = new ObservableCollection<PersonViewModel>();
             this.Educators = new ObservableCollection<PersonViewModel>();
             this.Absences = new ObservableCollection<AbsenceViewModel>();
+            this.MedicalExams = new ObservableCollection<AbsenceViewModel>();
             this.FilteredPersons = new ObservableCollection<PersonDto>();
             this.Groups = new ObservableCollection<GroupViewModel>();
             this.Activities = new ObservableCollection<ActivityCardViewModel>();
@@ -54,6 +57,8 @@
 
             this.addPersonCommand = new RelayCommand(AddPerson, CanAddPerson);
             this.addAbsenceCommand = new RelayCommand(AddAbsence, CanAddAbsence);
+
+            AppContext.Messenger.Subscribe(this);
         }
 
         #endregion Constructors
@@ -150,6 +155,12 @@
             }
         }
 
+        public ObservableCollection<AbsenceViewModel> MedicalExams
+        {
+            get;
+            private set;
+        }
+
         public MedicalExamViewModel MedicalExamViewModel
         {
             get { return this.medicalExamViewModel; }
@@ -184,14 +195,22 @@
 
         #region Methods
 
+        public async void HandleEvent(MedicalExamViewModel context)
+        {
+            this.bufferPersons = await Task.Run(() => this.Service.GetPersons());
+            this.FilterEducator = false;
+            var me = await Task.Run(() => this.Service.GetAbsences(isPresent: true));
+            this.MedicalExams.Refill(me.ToViewModels(Service, this));
+        }
+
         public override void Load()
         {
             this.Status.Loading();
-            this.MedicalExamViewModel.Load();
             bufferPersons = this.Service.GetPersons();
 
             var p = bufferPersons;
             var a = this.Service.GetAbsences();
+            var v = this.Service.GetAbsences(isPresent: true);
             var g = this.Service.GetGroups();
             var ac = this.Service.GetActivities();
 
@@ -201,11 +220,13 @@
             this.Beneficiaries.Refill(p.GetBeneficiaries().ToViewModels(Service, this));
             this.Educators.Refill(p.GetEducators().ToViewModels(Service, this));
             this.Absences.Refill(a.ToViewModels(Service, this));
+            this.MedicalExams.Refill(v.ToViewModels(Service, this));
             this.Groups.Refill(g.ToViewModels(Service, this));
             this.Activities.Refill(ac.ToViewModels());
 
             var vm = new LunchManagementViewModel(this.Service);
             vm.Load();
+            this.MedicalExamViewModel.Load();
             this.LunchManagementViewModel = vm;
             this.Status.Ready();
         }

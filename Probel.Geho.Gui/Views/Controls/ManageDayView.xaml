@@ -10,7 +10,7 @@
              xmlns:ctrl="clr-namespace:Probel.Geho.Gui.Views.Controls"
              
              d:DesignWidth="768"
-             d:DesignHeight="200" d:DataContext="{d:DesignData /SampleData/DayViewModelSampleData.xaml}">
+             d:DesignHeight="200">
     <UserControl.Resources>
         <conv:DayOfWeekToStringConverter x:Key="dayOfWeekConv"/>
     </UserControl.Resources>

@@ -1,11 +1,14 @@
 ﻿namespace Probel.Geho.Gui
 {
+    using System;
+    using System.Globalization;
     using System.Windows;
+    using System.Windows.Markup;
 
     using Probel.Geho.Services;
 
     using Tools;
-
+    using System.Windows.Documents;
     /// <summary>
     /// Interaction logic for App.xaml
     /// </summary>
@@ -15,6 +18,7 @@
 
         protected override void OnStartup(StartupEventArgs e)
         {
+            this.ConfigureCulture();
             DataBootstrap.Initialise();
             UnityBootstrap.Initialise();
 
@@ -22,6 +26,15 @@
             view.Show();
 
             base.OnStartup(e);
+        }
+
+        private void ConfigureCulture()
+        {
+            FrameworkElement.LanguageProperty.OverrideMetadata(typeof(FrameworkElement),
+                new FrameworkPropertyMetadata(XmlLanguage.GetLanguage(CultureInfo.CurrentCulture.IetfLanguageTag)));
+            
+            FrameworkElement.LanguageProperty.OverrideMetadata(typeof(Run),
+                new FrameworkPropertyMetadata(XmlLanguage.GetLanguage(CultureInfo.CurrentCulture.IetfLanguageTag)));
         }
 
         private void Application_DispatcherUnhandledException(object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e)

@@ -1,5 +1,6 @@
 ﻿namespace Probel.Geho.Gui.ViewModels.Controls
 {
+    using System;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
 
@@ -7,6 +8,12 @@
 
     public class DisplayWeekViewModel : ObservableObject
     {
+        #region Fields
+
+        private DateTime weekDate;
+
+        #endregion Fields
+
         #region Constructors
 
         public DisplayWeekViewModel(IEnumerable<DisplayDayViewModel> days)
@@ -22,6 +29,16 @@
         {
             get;
             private set;
+        }
+
+        public DateTime WeekDate
+        {
+            get { return this.weekDate; }
+            set
+            {
+                this.weekDate = value;
+                this.OnPropertyChanged(() => WeekDate);
+            }
         }
 
         #endregion Properties

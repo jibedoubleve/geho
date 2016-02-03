@@ -13,7 +13,9 @@
     public class MainViewModel : BaseViewModel, IEventHandler<UiMessage>
     {
         #region Fields
+
         private string appVersion;
+        private bool isError;
         private UiMessage uiMessage;
 
         #endregion Fields
@@ -41,6 +43,16 @@
             }
         }
 
+        public bool IsError
+        {
+            get { return this.isError; }
+            set
+            {
+                this.isError = value;
+                this.OnPropertyChanged(() => IsError);
+            }
+        }
+
         public UiMessage UiMessage
         {
             get { return this.uiMessage; }
@@ -61,16 +73,6 @@
             this.IsError = (context.Exception != null);
         }
 
-        private bool isError;
-        public bool IsError
-        {
-            get { return this.isError; }
-            set
-            {
-                this.isError = value;
-                this.OnPropertyChanged(() => IsError);
-            }
-        }
         #endregion Methods
     }
 }

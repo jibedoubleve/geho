@@ -90,24 +90,19 @@
             this.CreateActivity(activity.DayOfWeek, activity.MomentDay, activity.People, activity.Name);
         }
 
-        public void CreateGroup(string name)
+        public void CreateGroup(GroupDto group)
         {
-            var lowerName = name.ToLower();
+            group.Name = group.Name.ToLower();
             using (var db = new DataContext())
             {
                 var exist = (from g in db.Groups
-                             where g.Name.ToLower() == lowerName
+                             where g.Name.ToLower() == @group.Name
                              select g).Count() > 0;
                 if (exist) { throw new EntityAlreadyExistException(); }
 
-                db.Groups.Add(new Group() { Name = name });
+                db.Groups.Add(group.ToEntity());
                 db.SaveChanges();
             }
-        }
-
-        public void CreateGroup(GroupDto group)
-        {
-            this.CreateGroup(group.Name);
         }
 
         public void CreatePerson(PersonDto person)

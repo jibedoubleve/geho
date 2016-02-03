@@ -88,6 +88,15 @@ namespace Probel.Geho.Gui.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Editer.
+        /// </summary>
+        public static string Btn_Edit {
+            get {
+                return ResourceManager.GetString("Btn_Edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Gestion des groupes.
         /// </summary>
         public static string Btn_GroupMgmt {
@@ -676,6 +685,15 @@ namespace Probel.Geho.Gui.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Status:.
+        /// </summary>
+        public static string Lbl_Status {
+            get {
+                return ResourceManager.GetString("Lbl_Status", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Nom:.
         /// </summary>
         public static string Lbl_Surname {
@@ -699,6 +717,15 @@ namespace Probel.Geho.Gui.Properties {
         public static string Lbl_ToU {
             get {
                 return ResourceManager.GetString("Lbl_ToU", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Semaine du.
+        /// </summary>
+        public static string Lbl_WeekOf {
+            get {
+                return ResourceManager.GetString("Lbl_WeekOf", resourceCulture);
             }
         }
         
@@ -874,6 +901,15 @@ namespace Probel.Geho.Gui.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ordre:.
+        /// </summary>
+        public static string Msg_Order {
+            get {
+                return ResourceManager.GetString("Msg_Order", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to {0} {1} a été créé..
         /// </summary>
         public static string Msg_PersonAdded {
@@ -933,6 +969,24 @@ namespace Probel.Geho.Gui.Properties {
         public static string Msg_UpdateDone {
             get {
                 return ResourceManager.GetString("Msg_UpdateDone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Activé.
+        /// </summary>
+        public static string Status_IsActive {
+            get {
+                return ResourceManager.GetString("Status_IsActive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Désactivé.
+        /// </summary>
+        public static string Status_IsNotActive {
+            get {
+                return ResourceManager.GetString("Status_IsNotActive", resourceCulture);
             }
         }
         

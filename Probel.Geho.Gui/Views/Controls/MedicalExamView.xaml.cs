@@ -23,7 +23,21 @@
 
         #endregion Constructors
 
+        #region Events
+
+        public event EventHandler ControlClosing;
+
+        #endregion Events
+
         #region Methods
+
+        private void Click_CloseControl(object sender, System.Windows.RoutedEventArgs e)
+        {
+            if (this.ControlClosing != null)
+            {
+                this.ControlClosing(this, EventArgs.Empty);
+            }
+        }
 
         private void SelectionChanged_cb_Start(object sender, SelectionChangedEventArgs e)
         {
@@ -45,7 +59,7 @@
                         vm.StartOffset = 8;
                         vm.EndOffset = 18;
                         break;
-                    default:throw new NotSupportedException("This type of enumeration is not supported.");
+                    default: throw new NotSupportedException("This type of enumeration is not supported.");
                 }
             }
         }

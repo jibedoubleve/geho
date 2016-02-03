@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             
+             xmlns:t="clr-namespace:Probel.Geho.Gui.Properties"
              xmlns:ctrl="clr-namespace:Probel.Geho.Gui.Views.Controls"
              
              mc:Ignorable="d" d:DesignWidth="300">
@@ -29,6 +29,10 @@
                        FontWeight="Bold" VerticalAlignment="Center" 
                        Margin="15,0,0,0">
                 <Run Text="{Binding Group.Name}"/>
+                <Run Text="("/>
+                <Run Text="{x:Static t:Messages.Msg_Order}" FontSize="9.333" FontStyle="Italic"/>
+                <Run Text="{Binding Group.Order}" FontSize="9.333" FontStyle="Italic"/>
+                <Run Text=")"/>
             </TextBlock>
             <ItemsControl ItemsSource="{Binding Group.People}">
                 <ItemsControl.ItemTemplate>

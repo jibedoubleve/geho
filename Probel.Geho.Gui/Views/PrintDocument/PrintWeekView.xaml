@@ -7,12 +7,22 @@
              xmlns:local="clr-namespace:Probel.Geho.Gui.Views.PrintDocument"
              xmlns:ctrl="clr-namespace:Probel.Geho.Gui.Views.Controls"
              xmlns:conv="clr-namespace:Probel.Geho.Gui.Converters"
+             xmlns:t="clr-namespace:Probel.Geho.Gui.Properties"
              
              mc:Ignorable="d"
              Height="21cm" 
              Width="29.7cm">
     <Grid>
-        <ItemsControl ItemsSource="{Binding Days}"
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock FontSize="26.667" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Run Text="{x:Static t:Messages.Lbl_WeekOf}"/>
+            <Run Text="{Binding WeekDate, StringFormat=d}"/>
+        </TextBlock>
+        <ItemsControl Grid.Row="1"
+                      ItemsSource="{Binding Days}"
                       HorizontalContentAlignment="Center"
                       VerticalContentAlignment="Center">
             <ItemsControl.ItemsPanel>

@@ -24,10 +24,30 @@
             <DropShadowEffect Color="#FFB6B6B6"/>
         </Border.Effect>
         <DockPanel>
-            <Image DockPanel.Dock="Left"
-                   Source="/Probel.Geho.Gui;component/Images/Activity.png"
+            <StackPanel>
+                <Image DockPanel.Dock="Left"                   
                    Width="32"
-                   Height="32" VerticalAlignment="Top"/>
+                   Height="32" VerticalAlignment="Top" Source="/Probel.Geho.Gui;component/Images/Activity.png">
+                </Image>
+                <Image DockPanel.Dock="Left"
+                       Width="32"
+                       Height="32">
+                    <Image.Resources>
+                        <Style TargetType="Image">
+                            <Setter Property="Source" Value="{x:Null}"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Activity.IsActive}" Value="False">
+                                    <Setter Property="Source" Value="/Probel.Geho.Gui;component/Images/BigWarning.png"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Resources>
+                </Image>
+                <TextBlock>
+                    <Run Text="Is active:"/>
+                    <Run Text="{Binding Activity.IsActive}"/>
+                </TextBlock>
+            </StackPanel>
             <TextBlock DockPanel.Dock="Top"
                        FontWeight="Bold" VerticalAlignment="Center" 
                        Margin="15,0,0,0" FontSize="14" TextDecorations="Underline">

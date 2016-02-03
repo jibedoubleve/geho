@@ -137,6 +137,7 @@
                                                                                                   && pe.Absences.Where(ab => ab.Start <= d && d <= ab.End && !ab.IsPresent).Count() != 0)
                                                                                               .Count()
                                                                                      != db.People.Where(pe => pe.IsEducator && pe.Activities.Contains(a)).Count()
+                                                                                     && a.IsActive
                                                                                    )).Count() == 0))
                                         .SingleOrDefault();
 
@@ -177,7 +178,10 @@
                                           .Include(e => e.Days.Select(g => g.Group))
                               where p.IsEducator
                                  && p.Absences.Where(e => e.Start <= d && d <= e.End).Count() == 0
-                                 && p.Activities.Where(e => e.DayOfWeek == currentDay.DayOfWeek && (e.MomentDay & md) != 0).Count() == 0
+                                 && p.Activities.Where(e => e.DayOfWeek == currentDay.DayOfWeek
+                                                        && (e.MomentDay & md) != 0
+                                                        && e.IsActive
+                                                      ).Count() == 0
                               select p);
 
                 var result = people.ToDto();

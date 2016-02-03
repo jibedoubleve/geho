@@ -11,8 +11,7 @@
              
              mc:Ignorable="d" 
              d:DesignWidth="300"
-             Margin="5" 
-             d:DataContext="{d:DesignData /SampleData/DisplayDayViewModelSampleData1.xaml}">
+             Margin="5">
     <UserControl.Resources>
         <conv:DayOfWeekToStringConverter x:Key="dowc"/>
     </UserControl.Resources>

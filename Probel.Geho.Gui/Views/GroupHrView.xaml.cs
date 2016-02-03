@@ -32,6 +32,66 @@
 
         #region Methods
 
+        private void Click_AddActivity(object sender, RoutedEventArgs e)
+        {
+            this.addActivityPopup.IsOpen = true;
+        }
+
+        private void Click_AddGroup(object sender, RoutedEventArgs e)
+        {
+            this.addGroupPopup.IsOpen = true;
+        }
+
+        private void Click_CancelAddActivity(object sender, RoutedEventArgs e)
+        {
+            this.addActivityPopup.IsOpen = false;
+        }
+
+        private void Click_CancelAddGroup(object sender, RoutedEventArgs e)
+        {
+            this.addGroupPopup.IsOpen = false;
+        }
+
+        private void Click_CancelEditActivity(object sender, RoutedEventArgs e)
+        {
+            this.editActivityPopup.IsOpen = false;
+        }
+
+        private void Click_CancelEditGroup(object sender, RoutedEventArgs e)
+        {
+            this.editGroupPopup.IsOpen = false;
+        }
+
+        private void Click_CloseAddActivity(object sender, RoutedEventArgs e)
+        {
+            this.addActivityPopup.IsOpen = false;
+        }
+
+        private void Click_CloseAddGroup(object sender, RoutedEventArgs e)
+        {
+            this.addGroupPopup.IsOpen = false;
+        }
+
+        private void Click_CloseEditActivity(object sender, RoutedEventArgs e)
+        {
+            this.editActivityPopup.IsOpen = false;
+        }
+
+        private void Click_CloseEditGroup(object sender, RoutedEventArgs e)
+        {
+            this.editGroupPopup.IsOpen = false;
+        }
+
+        private void Click_EditActivity(object sender, RoutedEventArgs e)
+        {
+            this.editActivityPopup.IsOpen = true;
+        }
+
+        private void Click_EditGroup(object sender, RoutedEventArgs e)
+        {
+            this.editGroupPopup.IsOpen = true;
+        }
+
         private void RefreshActivityToUpdate()
         {
             if (this.DataContext is GroupHrViewModel)
@@ -59,6 +119,18 @@
                         if (ci.Tag.ToString().ToLower() == ((int)vm.SelectedActivity.MomentDay).ToString().ToLower())
                         {
                             cb_NoonUpdate.SelectedItem = ci;
+                        }
+                    }
+                }
+                //Select the status (active or non active)
+                foreach (var item in cb_Status.Items)
+                {
+                    if(item is ComboBoxItem && vm.SelectedActivity!= null)
+                    {
+                        var ci = (ComboBoxItem)item;
+                        if(ci.Tag.ToString().ToLower() == vm.SelectedActivity.Activity.IsActive.ToString().ToLower())
+                        {
+                            cb_Status.SelectedItem = ci;
                         }
                     }
                 }
@@ -108,6 +180,17 @@
                 var momentDay = (MomentDay)integer;
                 var vm = this.GetViewModel<GroupHrViewModel>();
                 if (vm.ActivityToAdd != null) { vm.ActivityToAdd.MomentDay = momentDay; }
+            }
+        }
+
+        private void Selected_cb_Status(object sender, SelectionChangedEventArgs e)
+        {
+            var cbi = cb_Status.SelectedItem as ComboBoxItem;
+            if (this.DataContext is GroupHrViewModel && cb_Status.SelectedItem is ComboBoxItem)
+            {
+                var isActive = Boolean.Parse((string)cbi.Tag);
+                var vm = this.GetViewModel<GroupHrViewModel>();
+                if (vm.SelectedActivity != null) { vm.SelectedActivity.Activity.IsActive = isActive; }
             }
         }
 

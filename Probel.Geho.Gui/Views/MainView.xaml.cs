@@ -5,17 +5,20 @@
 
     using Microsoft.Practices.Unity;
 
+    using Models;
+
     using Mvvm.Gui;
+    using Mvvm.Toolkit.Events;
 
     using Probel.Geho.Gui.Tools;
     using Probel.Geho.Gui.ViewModels;
     using Probel.Geho.Gui.Views;
 
     using Runtime;
-    using Mvvm.Toolkit.Events;
-    using Models;    /// <summary>
-                     /// Interaction logic for MainWindow.xaml
-                     /// </summary>
+
+    /// <summary>
+    /// Interaction logic for MainWindow.xaml
+    /// </summary>
     public partial class MainView : Window
     {
         #region Fields
