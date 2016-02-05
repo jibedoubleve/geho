@@ -1,6 +1,7 @@
 ﻿namespace Probel.Geho.Gui.Tools
 {
     using System;
+    using System.Diagnostics;
 
     using Mvvm.Toolkit.Events;
 
@@ -17,6 +18,22 @@
         #endregion Fields
 
         #region Methods
+
+        [Conditional("DEBUG")]
+        public void Debug(string message)
+        {
+            var dt = string.Format("{0} - {1}", DateTime.Now.ToString("HH:mm:ss.ff"), message);
+            System.Diagnostics.Debug.WriteLine(message);
+            this.Write(Status.Debug, message);
+        }
+
+        [Conditional("DEBUG")]
+        public void Debug(string format, params object[] args)
+        {
+            var message = string.Format("{0} - {1}", DateTime.Now.ToString("HH:mm:ss.ff"), string.Format(format, args));
+            System.Diagnostics.Debug.WriteLine(message);
+            this.Write(Status.Debug, message);
+        }
 
         public void Error(Exception ex)
         {

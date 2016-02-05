@@ -30,7 +30,7 @@
             }
         }
 
-        public void FeedDay(DateTime date, IEnumerable<PersonDto> educators, GroupDto group, bool isMorning)
+        public void FeedDay(DateTime date, IEnumerable<PersonDto> educators, GroupBaseDto group, bool isMorning)
         {
             var monday = date.GetMonday();
             using (var db = new DataContext())
@@ -62,7 +62,7 @@
             }
         }
 
-        public void FeedDay(DateTime date, GroupDto group, bool isMorning)
+        public void FeedDay(DateTime date, GroupBaseDto group, bool isMorning)
         {
             var monday = date.GetMonday();
             using (var db = new DataContext())
@@ -84,6 +84,21 @@
                 else { dayManager.UpdateGroupForDay(group, isMorning); }
 
                 db.SaveChanges();
+            }
+        }
+
+        public IEnumerable<GroupBaseDto> GetBaseGroups()
+        {
+            using (var db = new DataContext())
+            {
+                return (from d in db.Days
+                                    .Include(e => e.Group)
+                        select new GroupBaseDto()
+                        {
+                            Id = d.Group.Id,
+                            Name = d.Group.Name,
+                        }).Distinct()
+                          .ToList();
             }
         }
 
@@ -114,8 +129,11 @@
             }
         }
 
-        public IEnumerable<PersonDto> GetFreeBeneficiaries(GroupDto group, DateTime currentDay, bool isMorning)
+        public IEnumerable<PersonDto> GetFreeBeneficiaries(GroupBaseDto group, DateTime currentDay, bool isMorning)
         {
+            if (group == null) { throw new ArgumentNullException(nameof(group)); }
+            if (currentDay == null) { throw new ArgumentNullException(nameof(currentDay)); }
+
             var md = isMorning ? MomentDay.Morning : MomentDay.Afternoon;
             var d = (isMorning)
                 ? new DateTime(currentDay.Year, currentDay.Month, currentDay.Day, 8, 1, 0)
@@ -164,6 +182,8 @@
 
         public IEnumerable<PersonDto> GetFreeEducators(DateTime currentDay, bool isMorning)
         {
+            if (currentDay == null) { throw new ArgumentNullException(nameof(currentDay)); }
+
             var md = isMorning ? MomentDay.Morning : MomentDay.Afternoon;
             var d = (isMorning)
                 ? new DateTime(currentDay.Year, currentDay.Month, currentDay.Day, 8, 1, 0)
@@ -214,23 +234,32 @@
             }
         }
 
-        public IEnumerable<DateTime> GetMondays()
+        public IEnumerable<DateTime> GetNotConfiguredMondays(DateTime from, int weeks = 26)
         {
-            var thisMonday = DateTime.Today.GetMonday();
+            var mondays = from.GetMondays(weeks);
             using (var db = new DataContext())
             {
-                var dates = (from w in db.Weeks
-                             where w.Monday >= thisMonday
-                             select w.Monday).ToList();
-                return dates;
+                var dates = (from d in db.Weeks
+                             select d.Monday).ToList();
+                return (from m in mondays
+                        where !dates.Contains(m)
+                        select m).OrderBy(e => e)
+                                 .ToList();
             }
         }
 
+        //TODO: continue work here...
         public WeekDto GetWeek(DateTime dateInWeek)
         {
             using (var db = new DataContext())
             {
-                var entity = GetWeekEntity(db, dateInWeek);
+                var monday = dateInWeek.GetMonday().Date;
+
+                var entity = (from w in db.Weeks.Include(e => e.Days)
+                                                .Include(e => e.Days.Select(f => f.People))
+                                                .Include(e => e.Days.Select(f => f.Group))
+                              where w.Monday == monday
+                              select w).FirstOrDefault();
                 return entity.ToDto();
             }
         }
@@ -247,6 +276,13 @@
                               select w).Single();
                 return Mapper.Map<Week, WeekDto>(entity);
             }
+        }
+
+        public IEnumerable<DateTime> GetWeekDates(bool isPastExcluded = false)
+        {
+            return isPastExcluded
+                        ? GetWeekDatesWithoutHistory()
+                        : GetAllWeeksDates();
         }
 
         public IEnumerable<WeekDto> GetWeeks()
@@ -274,15 +310,26 @@
             }
         }
 
-        private Week GetWeekEntity(DataContext db, DateTime dateInWeek)
+        private static IEnumerable<DateTime> GetAllWeeksDates()
         {
-            var monday = dateInWeek.GetMonday().Date;
+            using (var db = new DataContext())
+            {
+                var entities = (from w in db.Weeks
+                                select w.Monday).OrderBy(e => e);
+                return entities.ToList();
+            }
+        }
 
-            return (from w in db.Weeks.Include(e => e.Days)
-                                      .Include(e => e.Days.Select(f => f.People))
-                                      .Include(e => e.Days.Select(f => f.Group))
-                    where w.Monday == monday
-                    select w).FirstOrDefault();
+        private static IEnumerable<DateTime> GetWeekDatesWithoutHistory()
+        {
+            using (var db = new DataContext())
+            {
+                var today = DateTime.Today.GetMonday();
+                var entities = (from w in db.Weeks
+                                where w.Monday >= today
+                                select w.Monday).OrderBy(e => e);
+                return entities.ToList();
+            }
         }
 
         #endregion Methods

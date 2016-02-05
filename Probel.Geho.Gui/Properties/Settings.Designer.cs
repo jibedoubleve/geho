@@ -118,5 +118,17 @@ namespace Probel.Geho.Gui.Properties {
                 this["IsWeekSelected"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool IsPastWeekExcluded {
+            get {
+                return ((bool)(this["IsPastWeekExcluded"]));
+            }
+            set {
+                this["IsPastWeekExcluded"] = value;
+            }
+        }
     }
 }

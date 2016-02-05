@@ -16,13 +16,13 @@
     using System.Windows.Shapes;
 
     /// <summary>
-    /// Interaction logic for DayCardView.xaml
+    /// Interaction logic for EditGroupScheduleView.xaml
     /// </summary>
-    public partial class ManageDayView : UserControl
+    public partial class EditGroupScheduleView : UserControl
     {
         #region Constructors
 
-        public ManageDayView()
+        public EditGroupScheduleView()
         {
             InitializeComponent();
         }

@@ -146,8 +146,10 @@
                                      .Include(e => e.People)
                          where a.People.Where(p => !p.IsEducator)
                                        .Count() == 0
-                         select a).OrderBy(e => e.MomentDay)
-                                 .OrderBy(e => e.DayOfWeek)
+                         select a).OrderBy(e => e.DayOfWeek)
+                                  .ThenBy(e => e.MomentDay)
+                                  .ThenBy(e => e.Name)
+
                                  .ToDto();
                 return r;
             }

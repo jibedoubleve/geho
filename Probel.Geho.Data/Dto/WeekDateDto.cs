@@ -1,24 +1,23 @@
 ﻿namespace Probel.Geho.Services.Dto
 {
+    using System;
     using System.Collections.Generic;
-    using System.Diagnostics;
 
-    [DebuggerDisplay("{Date} - {Group.Name} - IsMorning: {IsMorning}")]
-    public class DayDto : DayBaseDto
+    public class WeekDateDto
     {
         #region Properties
 
-        public GroupDto Group
+        public DateTime Date
         {
             get; set;
         }
 
-        public bool IsMorning
+        public IEnumerable<DayBaseDto> Days
         {
             get; set;
         }
 
-        public IEnumerable<PersonDto> People
+        public int Id
         {
             get; set;
         }

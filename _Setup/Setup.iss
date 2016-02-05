@@ -57,6 +57,7 @@ Source: "..\Probel.Geho.Gui\bin\Release\Xceed.Wpf.DataGrid.dll"; DestDir: "{app}
 Source: "..\Probel.Geho.Gui\bin\Release\Xceed.Wpf.Toolkit.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\Probel.Geho.Gui\bin\Release\Probel.Mvvm.Gui.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\Probel.Geho.Gui\bin\Release\Probel.Mvvm.Toolkit.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\Probel.Geho.Gui\bin\Release\System.Windows.Interactivity.dll"; DestDir: "{app}"; Flags: ignoreversion
 
 [Icons]
 Name: "{group}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"

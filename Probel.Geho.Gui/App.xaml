@@ -50,7 +50,8 @@
                             </Border>
 
                             <Border Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" CornerRadius="0,0,2,2">
-                                <ContentControl Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" />
+                                <ContentControl Content="{TemplateBinding Content}" 
+                                                ContentTemplate="{TemplateBinding ContentTemplate}"/>
                             </Border>
                         </DockPanel>
                     </ControlTemplate>
@@ -68,7 +69,7 @@
             <Setter Property="HeaderTemplate">
                 <Setter.Value>
                     <DataTemplate>
-                        <TextBlock Text="{Binding}" FontSize="17.333" Foreground="Black" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding}" Foreground="Black" FontWeight="Bold"/>
                     </DataTemplate>
                 </Setter.Value>
             </Setter>
@@ -81,7 +82,9 @@
                             </Border>
 
                             <Border Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" CornerRadius="0,0,2,2">
-                                <ContentControl Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" />
+                                <Grid Background="White">
+                                    <ContentControl Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" />
+                                </Grid>
                             </Border>
                         </DockPanel>
                     </ControlTemplate>
@@ -239,7 +242,7 @@
         </Style>
 
         <SolidColorBrush Color="#003399" x:Key="TaskDialogMainInstructionBrush" PresentationOptions:Freeze="True" />
-        
+
         <!-- DisplayGroupView style -->
         <Style TargetType="{x:Type ctrl:DisplayGroupView}">
             <Setter Property="Width" Value="190"/>

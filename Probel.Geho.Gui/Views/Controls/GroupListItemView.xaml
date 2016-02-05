@@ -10,7 +10,6 @@
              mc:Ignorable="d" d:DesignWidth="300">
     <Border BorderThickness="5"
             CornerRadius="5">
-        <!--Background="#FFD6DBE9">-->
         <Border.Resources>
             <Style TargetType="Border">
                 <Setter Property="Background" Value="#FFD6DBE9"/>
@@ -37,7 +36,7 @@
             <TextBlock DockPanel.Dock="Right"
                        FontWeight="Bold" VerticalAlignment="Center" 
                        Margin="15,0,0,0">
-                <Run Text="{Binding GroupName}"/>
+                <Run Text="{Binding Name}"/>
             </TextBlock>
         </DockPanel>
     </Border>

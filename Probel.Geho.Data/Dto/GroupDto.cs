@@ -7,15 +7,9 @@
     using System.Text;
     using System.Threading.Tasks;
 
-    public class GroupDto : BaseDto
+    public class GroupDto : GroupBaseDto
     {
         #region Properties
-
-        public string Name
-        {
-            get;
-            set;
-        }
 
         public int Order
         {

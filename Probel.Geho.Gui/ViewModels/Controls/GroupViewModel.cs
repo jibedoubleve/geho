@@ -36,6 +36,16 @@
 
         #region Properties
 
+        private bool isSelected;
+        public bool IsSelected
+        {
+            get { return this.isSelected; }
+            set
+            {
+                this.isSelected = value;
+                this.OnPropertyChanged(() => IsSelected);
+            }
+        }
         public ICommand DeleteGroupCommand
         {
             get { return this.deleteGroupCommand; }

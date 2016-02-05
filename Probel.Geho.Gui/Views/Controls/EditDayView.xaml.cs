@@ -2,16 +2,14 @@
 {
     using System.Windows.Controls;
 
-    using ViewModels.Controls;
-
     /// <summary>
-    /// Interaction logic for GroupDayView.xaml
+    /// Interaction logic for EditDayView.xaml
     /// </summary>
-    public partial class ManageGroupDayView : UserControl
+    public partial class EditDayView : UserControl
     {
         #region Constructors
 
-        public ManageGroupDayView()
+        public EditDayView()
         {
             InitializeComponent();
         }

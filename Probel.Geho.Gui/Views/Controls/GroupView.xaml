@@ -5,8 +5,12 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:t="clr-namespace:Probel.Geho.Gui.Properties"
              xmlns:ctrl="clr-namespace:Probel.Geho.Gui.Views.Controls"
+             xmlns:conv="clr-namespace:Probel.Geho.Gui.Converters"
              
              mc:Ignorable="d" d:DesignWidth="300">
+    <UserControl.Resources>
+        <conv:BoolToVisibilityCollapsedConverter x:Key="BoolToVisibilityCollapsedConverter"/>
+    </UserControl.Resources>
     <Border BorderThickness="5"
             CornerRadius="5"
             Background="#FFD6DBE9">
@@ -34,13 +38,15 @@
                 <Run Text="{Binding Group.Order}" FontSize="9.333" FontStyle="Italic"/>
                 <Run Text=")"/>
             </TextBlock>
-            <ItemsControl ItemsSource="{Binding Group.People}">
-                <ItemsControl.ItemTemplate>
-                    <DataTemplate>
-                        <ctrl:PersonCardView />
-                    </DataTemplate>
-                </ItemsControl.ItemTemplate>
-            </ItemsControl>
+            <Grid Visibility="{Binding IsSelected, Converter={StaticResource BoolToVisibilityCollapsedConverter}}">
+                <ItemsControl ItemsSource="{Binding Group.People}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <ctrl:PersonCardView />
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </Grid>
         </DockPanel>
     </Border>
 </UserControl>

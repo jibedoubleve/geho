@@ -9,7 +9,7 @@
              mc:Ignorable="d" d:DataContext="{d:DesignData /SampleData/AbsenceViewModelSampleData.xaml}"
              d:DesignWidth="500">
     <UserControl.Resources>
-        <conv:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+        <conv:BoolToVisibilityCollapsedConverter x:Key="BoolToVisibilityConverter"/>
     </UserControl.Resources>
     <Border BorderThickness="5"
             CornerRadius="5"

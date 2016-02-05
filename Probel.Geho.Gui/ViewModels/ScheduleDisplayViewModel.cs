@@ -4,6 +4,7 @@
     using System.Collections.ObjectModel;
     using System.Linq;
     using System.Threading.Tasks;
+    using System.Windows.Input;
 
     using Controls;
 
@@ -23,7 +24,6 @@
     {
         #region Fields
 
-        private readonly IContext AppContext;
         private readonly IScheduleService Service;
 
         private ActivityGridViewModel activityGirdViewModel;
@@ -40,9 +40,10 @@
 
         #region Constructors
 
-        public ScheduleDisplayViewModel(IScheduleService service, IContext appContext)
+        public ScheduleDisplayViewModel(IScheduleService service)
         {
-            this.AppContext = appContext;
+            this.RefreshDatesCommand = new RelayCommand(RefreshDates);
+
             this.Mondays = new ObservableCollection<DateTime>();
             this.Service = service;
         }
@@ -81,6 +82,17 @@
             }
         }
 
+        public bool ExcludePastWeeks
+        {
+            get { return Settings.Default.IsPastWeekExcluded; }
+            set
+            {
+                Settings.Default.IsPastWeekExcluded = value;
+                Settings.Default.Save();
+                this.OnPropertyChanged(() => ExcludePastWeeks);
+            }
+        }
+
         public DisplayOneDayViewModel Friday
         {
             get { return this.friday; }
@@ -107,13 +119,19 @@
             private set;
         }
 
+        public ICommand RefreshDatesCommand
+        {
+            get;
+            private set;
+        }
+
         public DateTime SelectedDate
         {
             get { return this.selectedDate; }
             set
             {
                 this.selectedDate
-                    = AppContext.WeekToDisplay
+                    = NavigationContext.WeekToDisplay
                     = value;
                 this.OnPropertyChanged(() => SelectedDate);
                 this.LoadWeek();
@@ -160,7 +178,7 @@
             {
                 this.Status.Loading();
 
-                var mondays = await Task.Run(() => this.Service.GetMondays());
+                var mondays = await Task.Run(() => this.Service.GetWeekDates(isPastExcluded: this.ExcludePastWeeks));
                 this.Mondays.Refill(mondays);
                 SelectedFirstMonday();
 
@@ -225,10 +243,22 @@
             return vm;
         }
 
+        private async void RefreshDates()
+        {
+            var sd = SelectedDate;
+            var mondays = await Task.Run(() => this.Service.GetWeekDates(isPastExcluded: this.ExcludePastWeeks));
+            this.Mondays.Refill(mondays);
+
+            this.SelectedDate = (from d in Mondays
+                                 where d == sd
+                                 select d).FirstOrDefault();
+            if (SelectedDate == DateTime.MinValue) { SelectedDate = Mondays.ElementAt(0); }
+        }
+
         private void SelectedFirstMonday()
         {
             var date = (from d in Mondays
-                        where d == AppContext.WeekToDisplay
+                        where d == NavigationContext.WeekToDisplay
                         select d).FirstOrDefault();
 
             if (date != null) { this.SelectedDate = date; }

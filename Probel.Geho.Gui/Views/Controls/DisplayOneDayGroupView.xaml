@@ -13,7 +13,7 @@
              Loaded="UserControl_Loaded">
     <UserControl.Resources>
         <conv:BoolToWhiteOrRedConverter x:Key="btw"/>
-        <conv:BoolToVisibilityConverter x:Key="btv"/>
+        <conv:BoolToVisibilityCollapsedConverter x:Key="btv"/>
     </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>

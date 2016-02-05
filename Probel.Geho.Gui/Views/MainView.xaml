@@ -69,13 +69,14 @@
                     </DockPanel>
                 </Button>
                 <Button ToolTip="{x:Static t:Messages.Btn_ScheduleManagement}"
-                        Click="Click_ScheduleManagement">
+                        Click="Click_ScheduleEditor">
                     <DockPanel>
                         <Image DockPanel.Dock="Left" Source="/Probel.Geho.Gui;component/Images/Schedule.png"/>
-                        <TextBlock Text="{x:Static t:Messages.Btn_ScheduleManagement}"
-                                   Visibility="{s:GuiSettings IsMenuTextVisible}"
+                        <TextBlock Visibility="{s:GuiSettings IsMenuTextVisible}"
                                    VerticalAlignment="Center"
-                                   Margin="5,0,0,0"/>
+                                   Margin="5,0,0,0">
+                            <Run Text="{x:Static t:Messages.Btn_ScheduleManagement}"/>
+                        </TextBlock>
                     </DockPanel>
                 </Button>
                 <Button ToolTip="{x:Static t:Messages.Btn_ScheduleDisplay}"

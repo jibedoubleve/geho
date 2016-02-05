@@ -11,15 +11,17 @@
 
         void CreateWeek(DateTime dateInWeek);
 
-        void FeedDay(DateTime date, IEnumerable<PersonDto> educators, GroupDto group, bool isMorning);
+        void FeedDay(DateTime date, IEnumerable<PersonDto> educators, GroupBaseDto group, bool isMorning);
 
-        void FeedDay(DateTime date, GroupDto group, bool isMorning);
+        void FeedDay(DateTime date, GroupBaseDto group, bool isMorning);
 
         IEnumerable<ActivityDto> GetActivities();
 
+        IEnumerable<GroupBaseDto> GetBaseGroups();
+
         IEnumerable<PersonDto> GetEducatorsBusyInDay(DateTime currentDay, bool isMorning);
 
-        IEnumerable<PersonDto> GetFreeBeneficiaries(GroupDto group, DateTime currentDay, bool isMorning);
+        IEnumerable<PersonDto> GetFreeBeneficiaries(GroupBaseDto group, DateTime currentDay, bool isMorning);
 
         IEnumerable<PersonDto> GetFreeEducators(DateTime currentDay, bool isMorning);
 
@@ -30,14 +32,18 @@
         IEnumerable<LunchTimeDto> GetLunchTimes();
 
         /// <summary>
-        /// Gets all the mondays of the configured weeks
+        /// Get all the weeks (mondays) that are not configured in the schedule manager
         /// </summary>
-        /// <returns>A list of datetime representing the monday of the configured weeks</returns>
-        IEnumerable<DateTime> GetMondays();
+        /// <param name="weeks">number of unconfigured weeks to return. By default 6 months</param>
+        /// <param name="from">Starting date. It'll be converted to the monday of the week that contains this date</param>
+        /// <returns>A list of not configured mondays</returns>
+        IEnumerable<DateTime> GetNotConfiguredMondays(DateTime from,int weeks = 26);
 
         WeekDto GetWeek(DateTime dateInWeek);
 
         WeekDto GetWeek(int id);
+
+        IEnumerable<DateTime> GetWeekDates(bool isPastExcluded = false);
 
         IEnumerable<WeekDto> GetWeeks();
 

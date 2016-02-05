@@ -7,10 +7,15 @@
       xmlns:t="clr-namespace:Probel.Geho.Gui.Properties"
       xmlns:ctrl="clr-namespace:Probel.Geho.Gui.Views.Controls"
       xmlns:tk="http://schemas.xceed.com/wpf/xaml/toolkit" 
+      xmlns:conv="clr-namespace:Probel.Geho.Gui.Converters"
       
       mc:Ignorable="d" 
       d:DesignHeight="720" d:DesignWidth="1280"
       x:Name="mainPage">
+    <Page.Resources>
+        <conv:DayOfWeekToStringConverter x:Key="DayOfWeekToStringConverter"/>
+        <conv:MomentDayToStringConverter x:Key="MomentDayToStringConverter"/>
+    </Page.Resources>
     <Grid>
         <Popup DockPanel.Dock="Right"
                                x:Name="addGroupPopup"
@@ -344,10 +349,15 @@
                             </Button>
                         </StackPanel>
                         <ScrollViewer VerticalScrollBarVisibility="Auto">
-                            <ListView ItemsSource="{Binding Groups}"
+                            <ListView ItemsSource="{Binding Groups}" x:Name="lv_groups"
                                       SelectedItem="{Binding SelectedGroup}"
                                       HorizontalContentAlignment="Stretch"
                                       VerticalContentAlignment="Stretch">
+                                <ListView.ItemContainerStyle>
+                                    <Style TargetType="ListViewItem">
+                                        <Setter Property="IsSelected" Value="{Binding IsSelected}"/>
+                                    </Style>
+                                </ListView.ItemContainerStyle>
                                 <ListView.ItemTemplate>
                                     <DataTemplate>
                                         <ctrl:GroupView/>
@@ -390,9 +400,45 @@
                         </StackPanel>
                         <ScrollViewer VerticalScrollBarVisibility="Auto">
                             <ListView ItemsSource="{Binding Activities}"
-                              SelectedItem="{Binding SelectedActivity}"
-                              HorizontalContentAlignment="Stretch"
-                              VerticalContentAlignment="Stretch">
+                                      SelectedItem="{Binding SelectedActivity}"
+                                      HorizontalContentAlignment="Stretch"
+                                      VerticalContentAlignment="Stretch"
+                                      Background="White">
+                                <ListView.ItemContainerStyle>
+                                    <Style TargetType="ListViewItem">
+                                        <Setter Property="IsSelected" Value="{Binding IsSelected}"/>
+                                    </Style>
+                                </ListView.ItemContainerStyle>
+                                <ListView.GroupStyle>
+                                    <GroupStyle>
+                                        <GroupStyle.ContainerStyle>
+                                            <Style TargetType="{x:Type GroupItem}">
+                                                <Setter Property="Template">
+                                                    <Setter.Value>
+                                                        <ControlTemplate TargetType="{x:Type GroupItem}">
+                                                            <HeaderedContentControl Header="{Binding Path=Name
+                                                                                        , Converter={StaticResource DayOfWeekToStringConverter}}"
+                                                                                Style="{StaticResource LightHeaderedContent}" 
+                                                                                Background="#FFD6DBE9">
+                                                                <ItemsPresenter/>
+                                                            </HeaderedContentControl>
+                                                        </ControlTemplate>
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </Style>
+                                        </GroupStyle.ContainerStyle>
+                                    </GroupStyle>
+                                    <GroupStyle>
+                                        <GroupStyle.HeaderTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Margin="5">
+                                                        <Run Text="{Binding Name, Converter={StaticResource MomentDayToStringConverter}, Mode=OneWay}" 
+                                                             Foreground="Black" FontWeight="Bold"/>
+                                                </TextBlock>
+                                            </DataTemplate>
+                                        </GroupStyle.HeaderTemplate>
+                                    </GroupStyle>
+                                </ListView.GroupStyle>
                                 <ListView.ItemTemplate>
                                     <DataTemplate>
                                         <ctrl:ActivityView/>
@@ -434,9 +480,44 @@
                         </StackPanel>
                         <ScrollViewer VerticalScrollBarVisibility="Auto">
                             <ListView ItemsSource="{Binding AdministrativeActivities}"
-                                  SelectedItem="{Binding SelectedActivity}"
-                                  HorizontalContentAlignment="Stretch"
-                                  VerticalContentAlignment="Stretch">
+                                      SelectedItem="{Binding SelectedActivity}"
+                                      HorizontalContentAlignment="Stretch"
+                                      VerticalContentAlignment="Stretch">
+                                <ListView.ItemContainerStyle>
+                                    <Style TargetType="ListViewItem">
+                                        <Setter Property="IsSelected" Value="{Binding IsSelected}"/>
+                                    </Style>
+                                </ListView.ItemContainerStyle>
+                                <ListView.GroupStyle>
+                                    <GroupStyle>
+                                        <GroupStyle.ContainerStyle>
+                                            <Style TargetType="{x:Type GroupItem}">
+                                                <Setter Property="Template">
+                                                    <Setter.Value>
+                                                        <ControlTemplate TargetType="{x:Type GroupItem}">
+                                                            <HeaderedContentControl Header="{Binding Path=Name
+                                                                                        , Converter={StaticResource DayOfWeekToStringConverter}}"
+                                                                                Style="{StaticResource LightHeaderedContent}" 
+                                                                                Background="#FFD6DBE9">
+                                                                <ItemsPresenter/>
+                                                            </HeaderedContentControl>
+                                                        </ControlTemplate>
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </Style>
+                                        </GroupStyle.ContainerStyle>
+                                    </GroupStyle>
+                                    <GroupStyle>
+                                        <GroupStyle.HeaderTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Margin="5">
+                                                        <Run Text="{Binding Name, Converter={StaticResource MomentDayToStringConverter}, Mode=OneWay}" 
+                                                             Foreground="Black" FontWeight="Bold"/>
+                                                </TextBlock>
+                                            </DataTemplate>
+                                        </GroupStyle.HeaderTemplate>
+                                    </GroupStyle>
+                                </ListView.GroupStyle>
                                 <ListView.ItemTemplate>
                                     <DataTemplate>
                                         <ctrl:ActivityView/>

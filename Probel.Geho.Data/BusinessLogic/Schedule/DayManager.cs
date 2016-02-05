@@ -35,7 +35,7 @@
 
         #region Methods
 
-        public void CreateEducatorForNewDay(GroupDto group, IEnumerable<PersonDto> educators, bool isMorning)
+        public void CreateEducatorForNewDay(GroupBaseDto group, IEnumerable<PersonDto> educators, bool isMorning)
         {
             var newDay = new Day()
             {
@@ -53,7 +53,7 @@
             week.Days.Add(newDay);
         }
 
-        public void CreateGroupForNewDay(GroupDto group, bool isMorning)
+        public void CreateGroupForNewDay(GroupBaseDto group, bool isMorning)
         {
             var newDay = new Day() { Date = date, IsMorning = isMorning };
 
@@ -75,7 +75,7 @@
             }
         }
 
-        public void UpdateGroupForDay(GroupDto group, bool isMorning)
+        public void UpdateGroupForDay(GroupBaseDto group, bool isMorning)
         {
             var entity = db.Groups.Find(group.Id);
             day.Group = entity;

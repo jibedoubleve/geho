@@ -9,7 +9,7 @@
 
              mc:Ignorable="d" d:DesignWidth="300">
     <UserControl.Resources>
-        <Converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+        <Converters:BoolToVisibilityHiddenConverter x:Key="BoolToVisibilityConverter"/>
     </UserControl.Resources>
     <Border BorderThickness="5"
 		CornerRadius="5"
@@ -19,9 +19,9 @@
         </Border.Effect>
         <DockPanel>
             <Image DockPanel.Dock="Left"
-				Source="/Probel.Geho.Gui;component/Images/Educator.png"
-				Width="16"
-				Height="16"/>
+                   Source="/Probel.Geho.Gui;component/Images/Educator.png"
+                   Width="16"
+                   Height="16"/>
             <Image DockPanel.Dock="Left" Source="/Probel.Geho.Gui;component/Images/Trainee.png" Width="15" Height="15" 
                    Visibility="{Binding Person.IsTrainee, Converter={StaticResource BoolToVisibilityConverter}}">
                 <Image.ToolTip>
