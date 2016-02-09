@@ -195,7 +195,9 @@
             {
                 var people = (from p in db.People.Include(e => e.Activities)
                               where !p.IsEducator
-                              && p.Activities.Where(e => e.DayOfWeek == dayOfWeek && (e.MomentDay & md) != 0).Count() == 0
+                              && p.Activities.Where(e => e.DayOfWeek == dayOfWeek
+                                                     && (e.MomentDay & md) != 0
+                                                     && e.IsActive).Count() == 0
                               select p).ToList();
                 return people.ToDto();
             }
@@ -267,7 +269,9 @@
             {
                 var people = (from p in db.People.Include(e => e.Activities)
                               where p.IsEducator
-                                 && p.Activities.Where(e => e.DayOfWeek == dayOfWeek && (e.MomentDay & md) != 0).Count() == 0
+                                 && p.Activities.Where(e => e.DayOfWeek == dayOfWeek
+                                                        && (e.MomentDay & md) != 0
+                                                        && e.IsActive).Count() == 0
                               select p).ToList();
                 return people.ToDto();
             }
