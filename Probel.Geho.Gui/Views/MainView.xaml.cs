@@ -1,6 +1,7 @@
 ﻿namespace Probel.Geho.Gui
 {
     using System;
+    using System.Diagnostics;
     using System.Windows;
 
     using Microsoft.Practices.Unity;
@@ -93,6 +94,12 @@
         private void Click_ShowError(object sender, RoutedEventArgs e)
         {
             this.errorPopup.IsOpen = true;
+        }
+
+        private void Hyperlink_RequestNavigate(object sender, System.Windows.Navigation.RequestNavigateEventArgs e)
+        {
+            Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri));
+            e.Handled = true;
         }
 
         #endregion Methods

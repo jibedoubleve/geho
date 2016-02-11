@@ -199,7 +199,7 @@
             var g = this.Service.GetGroups();
             this.Groups.Refill(g.ToViewModels(Service, this));
 
-            var a = this.Service.GetActivities();
+            var a = this.Service.GetActivities(includeDeactivated: true);
             this.Activities = new ListCollectionView((a.ToViewModels(Service, this).ToList()));
             this.Activities.GroupDescriptions.Add(new PropertyGroupDescription("DayOfWeek"));
             this.Activities.GroupDescriptions.Add(new PropertyGroupDescription("MomentDay"));
@@ -284,7 +284,6 @@
             if (this.SelectedActivity == null
             || this.SelectedActivity.Beneficiaries == null
             || this.SelectedActivity.Educators == null) { return; }
-            
 
             var fe = this.Service.GetEducatorWithoutActivities(this.SelectedActivity.DayOfWeek, (this.SelectedActivity.MomentDay & MomentDay.Morning) != 0);
             this.EducatorsInActivity.Refill(PersonModel.ToModel(SelectedActivity.Educators));

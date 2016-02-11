@@ -128,7 +128,15 @@
                 </StackPanel>
             </StatusBarItem>
             <StatusBarItem HorizontalAlignment="Right" Background="#FF007ACC">
-                <TextBlock Text="{Binding AppVersion}"/>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{Binding AppVersion}"/>
+                    <TextBlock Margin="15,0,5,0">
+                    <Hyperlink NavigateUri="https://onedrive.live.com/redir?resid=3C7377ACCD1A1616!140890&amp;authkey=!ADLKRtVMVzT-Pgc&amp;ithint=folder%2cMSI"
+                           RequestNavigate="Hyperlink_RequestNavigate">
+                        <Image Source="/Probel.Geho.Gui;component/Images/Web.png" Height="15" Width="15"/>
+                    </Hyperlink>
+                    </TextBlock>
+                </StackPanel>
             </StatusBarItem>
         </StatusBar>
     </Grid>

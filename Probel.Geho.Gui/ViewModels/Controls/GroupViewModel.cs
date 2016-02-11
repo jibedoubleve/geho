@@ -18,6 +18,7 @@
         private readonly IHrService Service;
 
         private GroupDto group;
+        private bool isSelected;
 
         #endregion Fields
 
@@ -36,16 +37,6 @@
 
         #region Properties
 
-        private bool isSelected;
-        public bool IsSelected
-        {
-            get { return this.isSelected; }
-            set
-            {
-                this.isSelected = value;
-                this.OnPropertyChanged(() => IsSelected);
-            }
-        }
         public ICommand DeleteGroupCommand
         {
             get { return this.deleteGroupCommand; }
@@ -58,6 +49,16 @@
             {
                 this.group = value;
                 this.OnPropertyChanged(() => Group);
+            }
+        }
+
+        public bool IsSelected
+        {
+            get { return this.isSelected; }
+            set
+            {
+                this.isSelected = value;
+                this.OnPropertyChanged(() => IsSelected);
             }
         }
 

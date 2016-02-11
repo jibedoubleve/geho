@@ -15,7 +15,7 @@
 
         void FeedDay(DateTime date, GroupBaseDto group, bool isMorning);
 
-        IEnumerable<ActivityDto> GetActivities();
+        IEnumerable<ActivityDto> GetActivities(bool includeDeactivated = false);
 
         IEnumerable<GroupBaseDto> GetBaseGroups();
 

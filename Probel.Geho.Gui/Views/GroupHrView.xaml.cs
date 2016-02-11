@@ -1,9 +1,10 @@
 ﻿namespace Probel.Geho.Gui.Views
 {
     using System;
+    using System.Linq;
     using System.Windows;
     using System.Windows.Controls;
-    using System.Linq;
+
     using Mvvm.Toolkit.DataBinding;
 
     using Probel.Geho.Gui.ViewModels;
