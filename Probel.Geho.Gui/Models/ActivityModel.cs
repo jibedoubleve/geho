@@ -73,8 +73,8 @@
             {
                 sb.AppendFormat("{0} {1}, ", educator.Name.Trim(), educator.Surname.Trim());
             }
-            var l = (", ".Length);
-            sb.Remove(sb.Length - l, l);
+            var c = (", ".Length);
+            if (sb.Length >= c) { sb.Remove(sb.Length - c, c); }
             return sb.ToString();
         }
 
