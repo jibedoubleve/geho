@@ -1,6 +1,7 @@
 ﻿namespace Probel.Geho.Gui
 {
     using System;
+    using System.Diagnostics;
     using System.Windows;
 
     using Microsoft.Practices.Unity;
@@ -71,21 +72,19 @@
             try
             {
                 var vm = Ioc.Resolve<ScheduleDisplayViewModel>();
-                var ctx = Ioc.Resolve<IContext>();
-                var view = new ScheduleDisplayView(vm, ctx);
+                var view = new ScheduleDisplayView(vm);
                 this.mainFrame.Navigate(view);
                 new StatusWriter().Ready();
             }
             catch (Exception ex) { new ErrorHandler().HandleError(ex); }
         }
 
-        private void Click_ScheduleManagement(object sender, RoutedEventArgs e)
+        private void Click_ScheduleEditor(object sender, RoutedEventArgs e)
         {
             try
             {
-                var vm = Ioc.Resolve<ScheduleManagerViewModel>();
-
-                var view = new ScheduleManagerView(vm);
+                var vm = Ioc.Resolve<ScheduleEditorViewModel>();
+                var view = new ScheduleEditorView(vm);
                 vm.Load();
                 this.mainFrame.Navigate(view);
             }
@@ -95,6 +94,12 @@
         private void Click_ShowError(object sender, RoutedEventArgs e)
         {
             this.errorPopup.IsOpen = true;
+        }
+
+        private void Hyperlink_RequestNavigate(object sender, System.Windows.Navigation.RequestNavigateEventArgs e)
+        {
+            Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri));
+            e.Handled = true;
         }
 
         #endregion Methods

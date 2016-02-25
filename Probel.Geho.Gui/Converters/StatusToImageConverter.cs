@@ -24,6 +24,8 @@
                         return new Uri(string.Format(uri, "Warn"), UriKind.Relative);
                     case Status.Error:
                         return new Uri(string.Format(uri, "Error"), UriKind.Relative);
+                    case Status.Debug:
+                        return new Uri(string.Format(uri, "Debug"), UriKind.Relative);
                     default:
                         return new Uri(string.Format(uri, "Empty"), UriKind.Relative);
                 }

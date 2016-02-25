@@ -104,6 +104,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -152,16 +153,19 @@
     <Compile Include="Converters\BoolToGreenConverter.cs" />
     <Compile Include="Converters\BoolToRedOrItemListBackgroundConverter.cs" />
     <Compile Include="Converters\BoolToRedTextConverter.cs" />
-    <Compile Include="Converters\BoolToVisibilityConverter.cs" />
+    <Compile Include="Converters\BoolToVisibilityCollapsedConverter.cs" />
     <Compile Include="Converters\BoolToRedConverter.cs" />
     <Compile Include="Converters\BoolToWhiteOrRedConverter.cs" />
+    <Compile Include="Converters\BoolToVisibilityHiddenConverter.cs" />
     <Compile Include="Converters\MomentDayToColourConverter.cs" />
     <Compile Include="Converters\MomentDayToStringConverter.cs" />
     <Compile Include="Converters\StatusToColourConverter.cs" />
     <Compile Include="Converters\StringToVisibilityConverter.cs" />
     <Compile Include="Models\ActivityModel.cs" />
-    <Compile Include="Runtime\Context.cs" />
+    <Compile Include="Runtime\NavigationContext.cs" />
+    <Compile Include="Tools\Enumerations.cs" />
     <Compile Include="Tools\ErrorHandler.cs" />
+    <Compile Include="Tools\LoopExtensions.cs" />
     <Compile Include="Tools\StatusWriter.cs" />
     <Compile Include="Tools\ViewModelExtensions.cs" />
     <Compile Include="ViewModels\Controls\ActivityGirdViewModel.cs" />
@@ -173,13 +177,13 @@
     <Compile Include="ViewModels\Controls\DisplayOneDayViewModel.cs" />
     <Compile Include="ViewModels\Controls\DisplayWeekViewModel.cs" />
     <Compile Include="ViewModels\Controls\DisplayGroupViewModel.cs" />
+    <Compile Include="ViewModels\Controls\EditDayViewModel.cs" />
+    <Compile Include="ViewModels\Controls\EditPersonScheduleViewModel.cs" />
     <Compile Include="ViewModels\Controls\ExceptionHandlerViewModel.cs" />
-    <Compile Include="ViewModels\Controls\ManageDayViewModel.cs" />
-    <Compile Include="ViewModels\Controls\ManageGroupDayViewModel.cs" />
     <Compile Include="ViewModels\Controls\LunchManagementViewModel.cs" />
     <Compile Include="ViewModels\Controls\MedicalExamViewModel.cs" />
-    <Compile Include="ViewModels\Controls\PersonFlatBusyViewModel.cs" />
     <Compile Include="ViewModels\Controls\PrintViewModel.cs" />
+    <Compile Include="ViewModels\Controls\EditGroupScheduleViewModel.cs" />
     <Compile Include="ViewModels\Helpers\EnumerableHelper.cs" />
     <Compile Include="ViewModels\Helpers\PrintDayViewModelBuilder.cs" />
     <Compile Include="ViewModels\Helpers\PrintWeekViewModelBuilder.cs" />
@@ -188,7 +192,7 @@
     <Compile Include="ViewModels\PrintDocument\PrintDayViewModel.cs" />
     <Compile Include="ViewModels\PrintDocument\PrintLunchesViewModel.cs" />
     <Compile Include="ViewModels\ScheduleDisplayViewModel.cs" />
-    <Compile Include="ViewModels\ScheduleManagerViewModel.cs" />
+    <Compile Include="ViewModels\ScheduleEditorViewModel.cs" />
     <Compile Include="Views\Controls\ActivityGridView.xaml.cs">
       <DependentUpon>ActivityGridView.xaml</DependentUpon>
     </Compile>
@@ -207,11 +211,11 @@
     <Compile Include="Views\Controls\DisplayWeekView.xaml.cs">
       <DependentUpon>DisplayWeekView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Controls\EditGroupScheduleView.xaml.cs">
+      <DependentUpon>EditGroupScheduleView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Controls\ExceptionHandlerView.xaml.cs">
       <DependentUpon>ExceptionHandlerView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Controls\ManageGroupDayView.xaml.cs">
-      <DependentUpon>ManageGroupDayView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Controls\GroupListItemView.xaml.cs">
       <DependentUpon>GroupListItemView.xaml</DependentUpon>
@@ -231,6 +235,9 @@
     <Compile Include="Views\Controls\PrintView.xaml.cs">
       <DependentUpon>PrintView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Controls\EditDayView.xaml.cs">
+      <DependentUpon>EditDayView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\PrintDocument\PrintActivitiesView.xaml.cs">
       <DependentUpon>PrintActivitiesView.xaml</DependentUpon>
     </Compile>
@@ -246,8 +253,8 @@
     <Compile Include="Views\ScheduleDisplayView.xaml.cs">
       <DependentUpon>ScheduleDisplayView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\ScheduleManagerView.xaml.cs">
-      <DependentUpon>ScheduleManagerView.xaml</DependentUpon>
+    <Compile Include="Views\ScheduleEditorView.xaml.cs">
+      <DependentUpon>ScheduleEditorView.xaml</DependentUpon>
     </Compile>
     <DesignData Include="SampleData\PersonDtoSampleData1.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -273,11 +280,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Controls\ExceptionHandlerView.xaml">
+    <Page Include="Views\Controls\EditGroupScheduleView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Controls\ManageDayView.xaml">
+    <Page Include="Views\Controls\ExceptionHandlerView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -294,10 +301,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Controls\DisplayWeekView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Controls\ManageGroupDayView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -345,6 +348,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Controls\EditDayView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\GroupHrView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -385,9 +392,6 @@
     </Compile>
     <Compile Include="Views\Controls\ActivityView.xaml.cs">
       <DependentUpon>ActivityView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Controls\ManageDayView.xaml.cs">
-      <DependentUpon>ManageDayView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Controls\GroupView.xaml.cs">
       <DependentUpon>GroupView.xaml</DependentUpon>
@@ -434,7 +438,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\ScheduleManagerView.xaml">
+    <Page Include="Views\ScheduleEditorView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -560,6 +564,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Security_Shields_Alert_32xLG_color.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Status\Debug.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Web.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Expression\Blend\.NETFramework\v4.5\Microsoft.Expression.Blend.WPF.targets" />

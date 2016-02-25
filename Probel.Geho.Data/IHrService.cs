@@ -31,7 +31,7 @@
 
         IEnumerable<AbsenceDto> GetAbsences(bool isPresent = false);
 
-        IEnumerable<ActivityDto> GetActivities();
+        IEnumerable<ActivityDto> GetActivities(bool includeDeactivated = false);
 
         IEnumerable<ActivityDto> GetAdministrativeActivities();
 

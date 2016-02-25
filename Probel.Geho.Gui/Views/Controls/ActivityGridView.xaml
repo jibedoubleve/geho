@@ -22,7 +22,8 @@
               CanUserResizeColumns="True" 
               CanUserSortColumns="False" 
               CanUserResizeRows="False" 
-              GridLinesVisibility="None" HeadersVisibility="Column">
+              GridLinesVisibility="None" 
+              HeadersVisibility="Column">
         <DataGrid.Resources>
             <ResourceDictionary>
                 <Style x:Key="{x:Type DataGridCell}" TargetType="{x:Type DataGridCell}">

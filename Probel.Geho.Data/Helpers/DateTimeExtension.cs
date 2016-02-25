@@ -20,6 +20,17 @@
             return date.Date;
         }
 
+        public static IEnumerable<DateTime> GetMondays(this DateTime from, int weeks = 26)
+        {
+            var fromMonday = from.GetMonday();
+            var results = new List<DateTime>();
+            for (int i = 0; i <= weeks; i++)
+            {
+                results.Add(fromMonday.AddDays(i * 7));
+            }
+            return results;
+        }
+
         #endregion Methods
     }
 }

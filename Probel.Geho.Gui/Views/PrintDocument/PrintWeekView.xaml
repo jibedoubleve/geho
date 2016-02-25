@@ -38,7 +38,7 @@
                                 <Setter Property="Height" Value="3.8cm"/>
                             </Style>
                             <Style TargetType="ctrl:DisplayGroupView">
-                                <Setter Property="Width" Value="3.7cm"/>
+                                <Setter Property="Width" Value="4cm"/>
                             </Style>
                         </ctrl:DisplayDayView.Resources>
                     </ctrl:DisplayDayView>

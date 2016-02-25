@@ -34,18 +34,6 @@
             return list;
         }
 
-        public static IEnumerable<ManageGroupDayViewModel> ToViewModels(this IEnumerable<GroupDto> groups, IScheduleService srv, ManageDayViewModel parentVm)
-        {
-            if (srv == null) { throw new ArgumentNullException("srv"); }
-            var list = new List<ManageGroupDayViewModel>();
-            foreach (var item in groups)
-            {
-                var vm = new ManageGroupDayViewModel(item, srv, parentVm);
-                list.Add(vm);
-            }
-            return list;
-        }
-
         public static IEnumerable<GroupViewModel> ToViewModels(this IEnumerable<GroupDto> groups, IHrService srv, ILoadeableViewModel parentVm)
         {
             var list = new List<GroupViewModel>();
@@ -66,12 +54,12 @@
             return result;
         }
 
-        public static IEnumerable<PersonFlatBusyViewModel> ToViewModels(this IEnumerable<PersonDto> people, IScheduleService service, ManageGroupDayViewModel parentVm)
+        public static IEnumerable<EditPersonScheduleViewModel> ToViewModels(this IEnumerable<PersonDto> people)
         {
-            var list = new List<PersonFlatBusyViewModel>();
+            var list = new List<EditPersonScheduleViewModel>();
             foreach (var person in people.OrderBy(e => e.Name).ThenBy(e => e.Surname))
             {
-                list.Add(new PersonFlatBusyViewModel(person, service, parentVm));
+                list.Add(new EditPersonScheduleViewModel(person));
             }
             return list;
         }

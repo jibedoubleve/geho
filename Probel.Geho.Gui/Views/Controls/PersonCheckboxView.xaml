@@ -10,7 +10,7 @@
              mc:Ignorable="d" d:DesignWidth="300"
              MouseUp="UserControl_MouseUp">
     <UserControl.Resources>
-        <Converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+        <Converters:BoolToVisibilityCollapsedConverter x:Key="BoolToVisibilityConverter"/>
     </UserControl.Resources>
     <Border BorderThickness="5"
             CornerRadius="5">

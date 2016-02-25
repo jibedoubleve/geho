@@ -1,6 +1,7 @@
 ﻿namespace Probel.Geho.Gui.Views
 {
     using System;
+    using System.Linq;
     using System.Windows;
     using System.Windows.Controls;
 
@@ -125,10 +126,10 @@
                 //Select the status (active or non active)
                 foreach (var item in cb_Status.Items)
                 {
-                    if(item is ComboBoxItem && vm.SelectedActivity!= null)
+                    if (item is ComboBoxItem && vm.SelectedActivity != null)
                     {
                         var ci = (ComboBoxItem)item;
-                        if(ci.Tag.ToString().ToLower() == vm.SelectedActivity.Activity.IsActive.ToString().ToLower())
+                        if (ci.Tag.ToString().ToLower() == vm.SelectedActivity.Activity.IsActive.ToString().ToLower())
                         {
                             cb_Status.SelectedItem = ci;
                         }

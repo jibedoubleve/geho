@@ -11,14 +11,14 @@
     {
         #region Methods
 
-        public IEnumerable<ActivityDto> GetActivities()
+        public IEnumerable<ActivityDto> GetActivities(bool includeDeactivated = false)
         {
             using (var db = new DataContext())
             {
                 return (from a in db.Activities
                                     .Include(e => e.People)
-                        where a.People.Where(p => !p.IsEducator)
-                                      .Count() > 0
+                        where a.People.Where(p => !p.IsEducator).Count() > 0 //Group without educator should be ignored
+                                      && ((!includeDeactivated && a.IsActive) || includeDeactivated)
                         select a).OrderBy(e => e.DayOfWeek)
                                  .ThenBy(e => e.MomentDay)
                                  .ThenBy(e => e.Name)

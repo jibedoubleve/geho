@@ -447,4 +447,34 @@ Vérifiez:
   <data name="Lbl_WeekOf" xml:space="preserve">
     <value>Semaine du</value>
   </data>
+  <data name="Msg_ShowDayInWeek" xml:space="preserve">
+    <value>Affichage du {0}</value>
+  </data>
+  <data name="Msg_NoDateSelected" xml:space="preserve">
+    <value>Aucune date sélectionnée</value>
+  </data>
+  <data name="Msg_NoGroupSelected" xml:space="preserve">
+    <value>Aucun groupe sélectionné</value>
+  </data>
+  <data name="Btn_Save" xml:space="preserve">
+    <value>Sauver</value>
+  </data>
+  <data name="Msg_SavedSchedule" xml:space="preserve">
+    <value>Horaire sauvegardé</value>
+  </data>
+  <data name="Cb_ExcludePastWeek" xml:space="preserve">
+    <value>Exclure les semaines passées</value>
+  </data>
+  <data name="Lbl_WeekToAdd" xml:space="preserve">
+    <value>Semaine à ajouter:</value>
+  </data>
+  <data name="Header_AddWeek" xml:space="preserve">
+    <value>Créer une semaine</value>
+  </data>
+  <data name="Msg_WeekAdded" xml:space="preserve">
+    <value>Semaine du {0} ajoutée</value>
+  </data>
+  <data name="Lbl_BeneficiariesCount" xml:space="preserve">
+    <value>Bénéficiaires: </value>
+  </data>
 </root>

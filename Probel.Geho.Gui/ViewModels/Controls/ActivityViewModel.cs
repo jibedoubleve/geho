@@ -17,6 +17,8 @@
         private readonly ILoadeableViewModel ParentVm;
         private readonly IHrService Service;
 
+        private bool isSelected;
+
         #endregion Fields
 
         #region Constructors
@@ -36,6 +38,16 @@
         public ICommand DeleteActivityCommand
         {
             get { return this.deleteActivityCommand; }
+        }
+
+        public bool IsSelected
+        {
+            get { return this.isSelected; }
+            set
+            {
+                this.isSelected = value;
+                this.OnPropertyChanged(() => IsSelected);
+            }
         }
 
         #endregion Properties

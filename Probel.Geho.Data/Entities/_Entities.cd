@@ -1,31 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="Probel.Geho.Data.Entities.Absence">
+  <Class Name="Probel.Geho.Services.Entities.Absence">
     <Position X="7.75" Y="4" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AIIAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AIIAAAAAECAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Entities\Absence.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="Person" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="Probel.Geho.Data.Entities.Activity">
+  <Class Name="Probel.Geho.Services.Entities.Activity">
     <Position X="7.75" Y="1.75" Width="1.5" />
-    <AssociationLine Name="People" Type="Probel.Geho.Data.Entities.Person">
+    <AssociationLine Name="People" Type="Probel.Geho.Services.Entities.Person">
       <MemberNameLabel ManuallyPlaced="true">
-        <Position X="-1.276" Y="-0.002" />
+        <Position X="0.443" Y="0.092" />
       </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAQAAAAIAAAAAAAAAAAAQAAAAAAAAAAAAEAAAAAAA=</HashCode>
+      <HashCode>AAAAQAAAAIAAAAAAEAAAAAQAAAAAAAAAAAAEAAAAAAA=</HashCode>
       <FileName>Entities\Activity.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
       <Property Name="People" />
     </ShowAsCollectionAssociation>
   </Class>
-  <Class Name="Probel.Geho.Data.Entities.Week">
+  <Class Name="Probel.Geho.Services.Entities.Week">
     <Position X="4.25" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
@@ -35,35 +35,35 @@
       <Property Name="Days" />
     </ShowAsCollectionAssociation>
   </Class>
-  <Class Name="Probel.Geho.Data.Entities.Person">
+  <Class Name="Probel.Geho.Services.Entities.Person">
     <Position X="4.75" Y="3.25" Width="1.5" />
     <Members>
       <Method Name="Person" Hidden="true" />
     </Members>
     <TypeIdentifier>
-      <HashCode>AAAAAEAAAAAAAAAAAAAAAAQABAAAQAAAQAAAAIAEAAQ=</HashCode>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAASABAAAQAAAQAAAAIAEAAQ=</HashCode>
       <FileName>Entities\Person.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="Group" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="Probel.Geho.Data.Entities.Group">
+  <Class Name="Probel.Geho.Services.Entities.Group">
     <Position X="1.25" Y="3.5" Width="1.5" />
     <Members>
       <Method Name="Group" Hidden="true" />
     </Members>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAIAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAEAAAAAAIAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Entities\Group.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Probel.Geho.Data.Entities.Day">
+  <Class Name="Probel.Geho.Services.Entities.Day">
     <Position X="1" Y="1.25" Width="2" />
     <Members>
       <Method Name="Day" Hidden="true" />
     </Members>
-    <AssociationLine Name="Group" Type="Probel.Geho.Data.Entities.Group" FixedToPoint="true">
+    <AssociationLine Name="Group" Type="Probel.Geho.Services.Entities.Group" FixedToPoint="true">
       <Path>
         <Point X="1.938" Y="2.675" />
         <Point X="1.938" Y="3.5" />
@@ -72,7 +72,7 @@
         <Position X="-0.795" Y="0.193" />
       </MemberNameLabel>
     </AssociationLine>
-    <AssociationLine Name="People" Type="Probel.Geho.Data.Entities.Person" FixedFromPoint="true" FixedToPoint="true">
+    <AssociationLine Name="People" Type="Probel.Geho.Services.Entities.Person" FixedFromPoint="true" FixedToPoint="true">
       <Path>
         <Point X="3" Y="2.5" />
         <Point X="5.25" Y="2.5" />
@@ -90,7 +90,7 @@
       <Property Name="People" />
     </ShowAsCollectionAssociation>
   </Class>
-  <Class Name="Probel.Geho.Data.Entities.LunchTime">
+  <Class Name="Probel.Geho.Services.Entities.LunchTime">
     <Position X="1.5" Y="6" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAA=</HashCode>

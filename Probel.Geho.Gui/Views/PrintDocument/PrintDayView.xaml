@@ -13,7 +13,7 @@
              Height="21cm" 
              Width="29.7cm">
     <UserControl.Resources>
-        <conv:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+        <conv:BoolToVisibilityCollapsedConverter x:Key="BoolToVisibilityConverter"/>
         <conv:DayOfWeekToStringConverter x:Key="DayOfWeekToStringConverter"/>
         <Style TargetType="{x:Type ctrl:DisplayOneDayGroupView}" x:Key="GroupStyle">
             <Setter Property="Width" Value="154"/>

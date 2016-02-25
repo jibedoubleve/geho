@@ -25,19 +25,12 @@
     /// </summary>
     public partial class ScheduleDisplayView : Page
     {
-        #region Fields
-
-        private readonly IContext AppContext;
-
-        #endregion Fields
-
         #region Constructors
 
-        public ScheduleDisplayView(ScheduleDisplayViewModel vm, IContext ctx)
+        public ScheduleDisplayView(ScheduleDisplayViewModel vm)
         {
             InitializeComponent();
             this.DataContext = vm;
-            this.AppContext = ctx;
             this.SelectTab();
         }
 
@@ -131,26 +124,26 @@
 
         private void SelectTab()
         {
-            if (AppContext.WeekToDisplayTab == "tab_week") { this.tab_week.IsSelected = true; }
-            else if (AppContext.WeekToDisplayTab == "tab_monday") { this.tab_monday.IsSelected = true; }
-            else if (AppContext.WeekToDisplayTab == "tab_tuesday") { this.tab_tuesday.IsSelected = true; }
-            else if (AppContext.WeekToDisplayTab == "tab_wednesday") { this.tab_wednesday.IsSelected = true; }
-            else if (AppContext.WeekToDisplayTab == "tab_thursday") { this.tab_thursday.IsSelected = true; }
-            else if (AppContext.WeekToDisplayTab == "tab_friday") { this.tab_friday.IsSelected = true; }
-            else if (AppContext.WeekToDisplayTab == "tab_activities") { this.tab_activities.IsSelected = true; }
-            else if (AppContext.WeekToDisplayTab == "tab_lunches") { this.tab_lunches.IsSelected = true; }
+            if (NavigationContext.WeekToDisplayTab == "tab_week") { this.tab_week.IsSelected = true; }
+            else if (NavigationContext.WeekToDisplayTab == "tab_monday") { this.tab_monday.IsSelected = true; }
+            else if (NavigationContext.WeekToDisplayTab == "tab_tuesday") { this.tab_tuesday.IsSelected = true; }
+            else if (NavigationContext.WeekToDisplayTab == "tab_wednesday") { this.tab_wednesday.IsSelected = true; }
+            else if (NavigationContext.WeekToDisplayTab == "tab_thursday") { this.tab_thursday.IsSelected = true; }
+            else if (NavigationContext.WeekToDisplayTab == "tab_friday") { this.tab_friday.IsSelected = true; }
+            else if (NavigationContext.WeekToDisplayTab == "tab_activities") { this.tab_activities.IsSelected = true; }
+            else if (NavigationContext.WeekToDisplayTab == "tab_lunches") { this.tab_lunches.IsSelected = true; }
         }
 
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (tab_week.IsSelected) { AppContext.WeekToDisplayTab = "tab_week"; }
-            else if (tab_monday.IsSelected) { AppContext.WeekToDisplayTab = "tab_monday"; }
-            else if (tab_tuesday.IsSelected) { AppContext.WeekToDisplayTab = "tab_tuesday"; }
-            else if (tab_wednesday.IsSelected) { AppContext.WeekToDisplayTab = "tab_wednesday"; }
-            else if (tab_thursday.IsSelected) { AppContext.WeekToDisplayTab = "tab_thursday"; }
-            else if (tab_friday.IsSelected) { AppContext.WeekToDisplayTab = "tab_friday"; }
-            else if (tab_activities.IsSelected) { AppContext.WeekToDisplayTab = "tab_activities"; }
-            else if (tab_lunches.IsSelected) { AppContext.WeekToDisplayTab = "tab_lunches"; }
+            if (tab_week.IsSelected) { NavigationContext.WeekToDisplayTab = "tab_week"; }
+            else if (tab_monday.IsSelected) { NavigationContext.WeekToDisplayTab = "tab_monday"; }
+            else if (tab_tuesday.IsSelected) { NavigationContext.WeekToDisplayTab = "tab_tuesday"; }
+            else if (tab_wednesday.IsSelected) { NavigationContext.WeekToDisplayTab = "tab_wednesday"; }
+            else if (tab_thursday.IsSelected) { NavigationContext.WeekToDisplayTab = "tab_thursday"; }
+            else if (tab_friday.IsSelected) { NavigationContext.WeekToDisplayTab = "tab_friday"; }
+            else if (tab_activities.IsSelected) { NavigationContext.WeekToDisplayTab = "tab_activities"; }
+            else if (tab_lunches.IsSelected) { NavigationContext.WeekToDisplayTab = "tab_lunches"; }
         }
 
         #endregion Methods

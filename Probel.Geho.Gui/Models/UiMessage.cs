@@ -11,6 +11,7 @@
         Warn,
         Error,
         Info,
+        Debug,
         Empty,
     }
 

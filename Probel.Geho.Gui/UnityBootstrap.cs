@@ -31,7 +31,6 @@
         {
             Container.RegisterType<IHrService, HrService>();
             Container.RegisterType<IScheduleService, ScheduleService>();
-            Container.RegisterInstance<IContext>(new Context());
         }
 
         #endregion Methods

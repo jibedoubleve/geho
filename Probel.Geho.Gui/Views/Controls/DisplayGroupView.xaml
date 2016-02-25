@@ -10,8 +10,9 @@
              xmlns:conv="clr-namespace:Probel.Geho.Gui.Converters"
              
              mc:Ignorable="d"
-             Margin="5,0,5,0" 
-             d:DataContext="{d:DesignData /SampleData/DisplayGroupViewModelSampleData.xaml}">
+             d:DesignHeight="200"
+             d:DesignWidth="200"
+             Margin="0,0,0,0">
     <UserControl.Resources>
         <Style TargetType="ItemsControl">
             <Setter Property="Background" Value="White"/>
@@ -22,24 +23,33 @@
             </Style.Triggers>
         </Style>
     </UserControl.Resources>
-    <HeaderedContentControl Style="{StaticResource LightHeaderedContent}"
-                            Header="{Binding GroupName}"
-                            Background="#FFD6DBE9">
-        <Grid Margin="0">
+    <HeaderedContentControl Header="{Binding GroupName}"
+                            Background="#FF465A7D"
+                            Margin="5,0,0,0">
+        <Grid Margin="0" Background="#FFD6DBE9">
             <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition Height="5"/>
-                <RowDefinition/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="13*"/>
+                <RowDefinition Height="63*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="76*"/>
             </Grid.RowDefinitions>
-            <ItemsControl Name="icMorning" ItemsSource="{Binding EducatorsMorning}">
+            <TextBlock Margin="5,0,0,0" Foreground="Black" HorizontalAlignment="Center">
+                <Run Text="{x:Static t:Messages.Lbl_Morning}"/>
+            </TextBlock>
+            <ItemsControl Grid.Row="1" Name="icMorning" ItemsSource="{Binding EducatorsMorning}" Grid.RowSpan="2">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
                         <ctrl:PersonFlatCardView/>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
+
+            <TextBlock Grid.Row="3" Margin="5,0,0,0" Foreground="Black" HorizontalAlignment="Center">
+                <Run Text="{x:Static t:Messages.Lbl_Afternoon}"/>
+            </TextBlock>
             <ItemsControl Name="icAfternoon"
-                          Grid.Row="2"
+                          Grid.Row="4"
                           ItemsSource="{Binding EducatorsAfternoon}">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>

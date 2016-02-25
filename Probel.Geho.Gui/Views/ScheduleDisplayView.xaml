@@ -3,6 +3,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
       
       xmlns:t="clr-namespace:Probel.Geho.Gui.Properties"
       xmlns:ctrl="clr-namespace:Probel.Geho.Gui.Views.Controls"
@@ -13,17 +14,31 @@
       Title="ScheduleDisplayView"
       Loaded="Page_Loaded">
     <Page.Resources>
-        <Converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+        <Converters:BoolToVisibilityCollapsedConverter x:Key="BoolToVisibilityConverter"/>
     </Page.Resources>
     <HeaderedContentControl Header="{x:Static t:Messages.Header_DisplaySchedule}">
         <DockPanel LastChildFill="True">
             <DockPanel DockPanel.Dock="Top">
+                <TextBlock Text="{x:Static t:Messages.Lbl_SelectDate}"
+                           Style="{StaticResource TextBoxStyle}" HorizontalAlignment="Left"/>
                 <ComboBox x:Name="cb_Dates" 
                           ItemsSource="{Binding Mondays}"
                           ItemStringFormat="D"
                           Margin="5"
-                          MinWidth="200"
+                          MinWidth="150"
                           SelectedItem="{Binding SelectedDate}"/>
+                <CheckBox Content="{x:Static t:Messages.Cb_ExcludePastWeek}"
+                          VerticalAlignment="Center"
+                          IsChecked="{Binding ExcludePastWeeks}">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Checked">
+                            <i:InvokeCommandAction Command="{Binding RefreshDatesCommand, Mode=OneWay}"/>
+                        </i:EventTrigger>
+                        <i:EventTrigger EventName="Unchecked">
+                            <i:InvokeCommandAction Command="{Binding RefreshDatesCommand, Mode=OneWay}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </CheckBox>
                 <DockPanel DockPanel.Dock="Right">
                     <Button DockPanel.Dock="Right" Click="Click_Print">
                         <Button.Content>
@@ -32,7 +47,7 @@
                                Height="16"/>
                         </Button.Content>
                     </Button>
-                    <Popup DockPanel.Dock="Right"	
+                    <Popup DockPanel.Dock="Right"
                            x:Name="printPopup"
                            Placement="Left"
                            StaysOpen="False">

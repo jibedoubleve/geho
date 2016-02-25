@@ -11,6 +11,8 @@
 
     using Probel.Geho.Gui.ViewModels.Controls;
 
+    using Tools;
+
     public class StatusToColourConverter : IValueConverter
     {
         #region Methods

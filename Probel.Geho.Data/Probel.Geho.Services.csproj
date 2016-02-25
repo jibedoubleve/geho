@@ -65,8 +65,11 @@
     <Compile Include="BusinessLogic\Hr\HrService.cs" />
     <Compile Include="BusinessLogic\Hr\UpdateEntity.cs" />
     <Compile Include="BusinessLogic\ServiceBase.cs" />
+    <Compile Include="Dto\DayBaseDto.cs" />
+    <Compile Include="Dto\GroupBaseDto.cs" />
     <Compile Include="Dto\LunchTimeDto.cs" />
     <Compile Include="Dto\ValidationStatusDto.cs" />
+    <Compile Include="Dto\WeekDateDto.cs" />
     <Compile Include="Entities\LunchTime.cs" />
     <Compile Include="Entities\MomentDay.cs" />
     <Compile Include="Helpers\MomentDayExtension.cs" />

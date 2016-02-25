@@ -8,18 +8,19 @@
              
              mc:Ignorable="d"  d:DesignWidth="300" d:DataContext="{d:DesignData /SampleData/PersonDtoSampleData1.xaml}">
     <UserControl.Resources>
-        <Converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+        <Converters:BoolToVisibilityHiddenConverter x:Key="BoolToVisibilityConverter"/>
         <Converters:BoolToRedTextConverter x:Key="BoolToRedTextConverter"/>
     </UserControl.Resources>
     <DockPanel>
         <Image DockPanel.Dock="Left"
-			Source="/Probel.Geho.Gui;component/Images/Educator.png"
-			Width="16"
-			Height="16"/>
+               Source="/Probel.Geho.Gui;component/Images/Educator.png"
+               Width="16"
+               Height="16"
+               Visibility="Collapsed"/>
         <Image DockPanel.Dock="Left" Source="/Probel.Geho.Gui;component/Images/Trainee.png" Width="15" Height="15" Visibility="{Binding IsTrainee, Converter={StaticResource BoolToVisibilityConverter}}"/>
         <TextBlock DockPanel.Dock="Left"
-                   FontWeight="Bold" VerticalAlignment="Center" 
-                   Margin="15,0,0,0" Foreground="{Binding IsPresent,Converter={StaticResource BoolToRedTextConverter}}">
+                   FontWeight="Bold" VerticalAlignment="Center"
+                   Foreground="{Binding IsPresent,Converter={StaticResource BoolToRedTextConverter}}">
             <Run Text="{Binding Name}"/>
             <Run Text=" "/>
             <Run Text="{Binding Surname}"/>

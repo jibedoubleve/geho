@@ -12,7 +12,7 @@
     <UserControl.Resources>
         <conv:DayOfWeekToStringConverter x:Key="dayOfWeekConv"/>
         <conv:StringToNoonConverter x:Key="noonConv"/>
-        <conv:BoolToVisibilityConverter x:Key="btv"/>
+        <conv:BoolToVisibilityCollapsedConverter x:Key="btv"/>
     </UserControl.Resources>
     <Border BorderThickness="5"
             CornerRadius="5">
@@ -80,28 +80,30 @@
                 <Run Text="{Binding MomentDay,Converter={StaticResource noonConv}}"/>
                 <Run Text=")"/>
             </TextBlock>
-            <TextBlock DockPanel.Dock="Top">
-                <Run Text="{x:Static t:Messages.Lbl_Educators}"/>
-            </TextBlock>
-            <ItemsControl DockPanel.Dock="Top"
-                          ItemsSource="{Binding Educators}">
-                <ItemsControl.ItemTemplate>
-                    <DataTemplate>
-                        <ctrl:PersonCardView />
-                    </DataTemplate>
-                </ItemsControl.ItemTemplate>
-            </ItemsControl>
-            <TextBlock DockPanel.Dock="Top" Visibility="{Binding HasBeneficiaries, Converter={StaticResource btv}}">
-                <Run Text="{x:Static t:Messages.Lbl_Beneficiaries}"/>
-            </TextBlock>
-            <ItemsControl DockPanel.Dock="Top"
-                          ItemsSource="{Binding Beneficiaries}">
-                <ItemsControl.ItemTemplate>
-                    <DataTemplate>
-                        <ctrl:PersonCardView />
-                    </DataTemplate>
-                </ItemsControl.ItemTemplate>
-            </ItemsControl>
+            <StackPanel Visibility="{Binding IsSelected, Converter={StaticResource btv}}">
+                <TextBlock DockPanel.Dock="Top">
+                        <Run Text="{x:Static t:Messages.Lbl_Educators}"/>
+                </TextBlock>
+                <ItemsControl DockPanel.Dock="Top"
+                                  ItemsSource="{Binding Educators}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <ctrl:PersonCardView />
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+                <TextBlock DockPanel.Dock="Top" Visibility="{Binding HasBeneficiaries, Converter={StaticResource btv}}">
+                        <Run Text="{x:Static t:Messages.Lbl_Beneficiaries}"/>
+                </TextBlock>
+                <ItemsControl DockPanel.Dock="Top"
+                                  ItemsSource="{Binding Beneficiaries}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <ctrl:PersonCardView />
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </StackPanel>
         </DockPanel>
     </Border>
 </UserControl>

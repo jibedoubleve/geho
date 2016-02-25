@@ -4,7 +4,10 @@
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
     using System.Linq;
+    using System.Windows.Data;
     using System.Windows.Input;
+
+    using Converters;
 
     using Mvvm.Gui;
     using Mvvm.Toolkit.DataBinding;
@@ -28,7 +31,9 @@
         private readonly ICommand updateActivityCommand;
         private readonly ICommand updateGroupCommand;
 
+        private ListCollectionView activities;
         private ActivityDto activityToAdd = new ActivityDto();
+        private ListCollectionView administrativeActivities;
         private GroupDto groupToAdd = new GroupDto();
         private ActivityViewModel selectedActivity;
         private GroupViewModel selectedGroup;
@@ -42,8 +47,8 @@
         {
             this.Service = service;
             this.Groups = new ObservableCollection<GroupViewModel>();
-            this.Activities = new ObservableCollection<ActivityViewModel>();
-            this.AdministrativeActivities = new ObservableCollection<ActivityViewModel>();
+            this.Activities = new ListCollectionView(new List<ActivityViewModel>());
+            this.AdministrativeActivities = new ListCollectionView(new List<ActivityViewModel>());
             this.BeneficiariesInGroup = new ObservableCollection<PersonModel>();
             this.BeneficiariesInActivity = new ObservableCollection<PersonModel>();
             this.EducatorsInActivity = new ObservableCollection<PersonModel>();
@@ -60,10 +65,14 @@
 
         #region Properties
 
-        public ObservableCollection<ActivityViewModel> Activities
+        public ListCollectionView Activities
         {
-            get;
-            private set;
+            get { return this.activities; }
+            set
+            {
+                this.activities = value;
+                this.OnPropertyChanged(() => Activities);
+            }
         }
 
         public ActivityDto ActivityToAdd
@@ -86,10 +95,14 @@
             get { return this.addGroupCommand; }
         }
 
-        public ObservableCollection<ActivityViewModel> AdministrativeActivities
+        public ListCollectionView AdministrativeActivities
         {
-            get;
-            private set;
+            get { return this.administrativeActivities; }
+            set
+            {
+                this.administrativeActivities = value;
+                this.OnPropertyChanged(() => AdministrativeActivities);
+            }
         }
 
         public ObservableCollection<PersonModel> BeneficiariesInActivity
@@ -186,11 +199,15 @@
             var g = this.Service.GetGroups();
             this.Groups.Refill(g.ToViewModels(Service, this));
 
-            var a = this.Service.GetActivities();
-            this.Activities.Refill(a.ToViewModels(Service, this));
+            var a = this.Service.GetActivities(includeDeactivated: true);
+            this.Activities = new ListCollectionView((a.ToViewModels(Service, this).ToList()));
+            this.Activities.GroupDescriptions.Add(new PropertyGroupDescription("DayOfWeek"));
+            this.Activities.GroupDescriptions.Add(new PropertyGroupDescription("MomentDay"));
 
             var aa = this.Service.GetAdministrativeActivities();
-            this.AdministrativeActivities.Refill(aa.ToViewModels(Service, this));
+            this.AdministrativeActivities = new ListCollectionView((aa.ToViewModels(Service, this).ToList()));
+            this.AdministrativeActivities.GroupDescriptions.Add(new PropertyGroupDescription("DayOfWeek"));
+            this.AdministrativeActivities.GroupDescriptions.Add(new PropertyGroupDescription("MomentDay"));
 
             this.PeopleWithoutGroup = PersonModel.ToModel(this.Service.GetBeneficiariesWithoutGroup());
 
