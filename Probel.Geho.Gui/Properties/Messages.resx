@@ -477,4 +477,13 @@ Vérifiez:
   <data name="Lbl_BeneficiariesCount" xml:space="preserve">
     <value>Bénéficiaires: </value>
   </data>
+  <data name="Status_UpdateProgress" xml:space="preserve">
+    <value>Mise à jour:</value>
+  </data>
+  <data name="Status_Offline" xml:space="preserve">
+    <value>Hors ligne.</value>
+  </data>
+  <data name="Status_UpdateCompleted" xml:space="preserve">
+    <value>Redémarrez pour terminer la mise à jour.</value>
+  </data>
 </root>

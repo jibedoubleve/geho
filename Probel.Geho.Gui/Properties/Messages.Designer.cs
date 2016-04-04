@@ -1081,6 +1081,33 @@ namespace Probel.Geho.Gui.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Hors ligne..
+        /// </summary>
+        public static string Status_Offline {
+            get {
+                return ResourceManager.GetString("Status_Offline", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Redémarrez pour terminer la mise à jour..
+        /// </summary>
+        public static string Status_UpdateCompleted {
+            get {
+                return ResourceManager.GetString("Status_UpdateCompleted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mise à jour:.
+        /// </summary>
+        public static string Status_UpdateProgress {
+            get {
+                return ResourceManager.GetString("Status_UpdateProgress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Vendredi.
         /// </summary>
         public static string Tab_Friday {
