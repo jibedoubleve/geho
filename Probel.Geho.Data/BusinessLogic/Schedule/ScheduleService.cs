@@ -248,7 +248,6 @@
             }
         }
 
-        //TODO: continue work here...
         public WeekDto GetWeek(DateTime dateInWeek)
         {
             using (var db = new DataContext())

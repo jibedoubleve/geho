@@ -201,3 +201,4 @@ src/Probel.Tiburon/App_Data/Database1.mdf
 *.ldf
 *.~ml
 *.~ml
+/_Setup/SqlLocalDB.msi

@@ -29,9 +29,7 @@
         {
             using (var db = new DataContext())
             {
-                var person = (from b in db.People
-                              where b.Id == personId
-                              select b).FirstOrDefault();
+                var person = db.People.Find(personId);
                 if (person == null) { throw new EntityNotFountException(); }
 
                 var absence = new Absence()
@@ -45,6 +43,8 @@
                 new AbsenceAdapter(absence)
                     .Validate()
                     .ClearOccupations(db);
+
+                this.RemoveFromSchedule(person, start, end, db);
 
                 db.Absences.Add(absence);
                 db.SaveChanges();
@@ -128,9 +128,11 @@
         {
             using (var db = new DataContext())
             {
+                var today = DateTime.Today;
                 var entities = (from a in db.Absences
                                             .Include(e => e.Person)
                                 where a.IsPresent == isPresent
+                                   && a.End >= today
                                 select a).ToList();
 
                 var result = Mapper.Map<IEnumerable<Absence>, IEnumerable<AbsenceDto>>(entities);
@@ -548,6 +550,26 @@
         {
             surname = (surname == null) ? string.Empty : surname.ToLower();
             name = name.ToLower() ?? string.Empty;
+        }
+
+        private void RemoveFromSchedule(Person person, DateTime start, DateTime end, DataContext db)
+        {
+            start = start.Date;
+            end = end.Date;
+            var days = (from d in db.Days.Include(e => e.People)
+                        where d.Date >= start
+                           && d.Date <= end
+                           && d.People.Where(p => p.Id == person.Id).Count() > 0
+                        select d);
+
+            foreach (var day in days)
+            {
+                if (day.IsMorning && end.Hour < 12
+                 || !day.IsMorning && end.Hour > 12)
+                {
+                    day.People.Remove(person);
+                }
+            }
         }
 
         #endregion Methods

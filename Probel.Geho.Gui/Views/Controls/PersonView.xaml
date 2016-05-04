@@ -39,8 +39,11 @@
                 <Image Source="/Probel.Geho.Gui;component/Images/Edit.png"/>
             </Button>
             <TextBlock DockPanel.Dock="Top"
-				FontWeight="Bold" VerticalAlignment="Center" 
-				Margin="15,0,0,0"><Run Text="{Binding Person.Name}"/><Run Text=" "/><Run Text="{Binding Person.Surname}"/></TextBlock>
+                       FontWeight="Bold" VerticalAlignment="Center" 
+                       Margin="15,0,0,0"><Run Text="{Binding Person.Name}"/>
+                <Run Text=" "/>
+                <Run Text="{Binding Person.Surname}"/>
+            </TextBlock>
             <Popup DockPanel.Dock="Bottom"
 				x:Name="editPopup"
 				Placement="Bottom"
